@@ -18,6 +18,7 @@ else
 FSIMGTXTFILES :=	fs/motd_guest
 endif
 
+
 ifndef GUEST_KERN
 USERAPPS :=		$(USERAPPS) \
 			$(OBJDIR)/user/cat \

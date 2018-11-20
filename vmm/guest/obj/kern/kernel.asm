@@ -1234,13 +1234,13 @@ i386_init(void)
 	memset(edata, 0, end - edata);
   800420012d:	48 ba 10 f0 71 04 80 	movabs $0x800471f010,%rdx
   8004200134:	00 00 00 
-  8004200137:	48 b8 b8 c0 4d 04 80 	movabs $0x80044dc0b8,%rax
+  8004200137:	48 b8 f0 c1 4d 04 80 	movabs $0x80044dc1f0,%rax
   800420013e:	00 00 00 
   8004200141:	48 29 c2             	sub    %rax,%rdx
   8004200144:	48 89 d0             	mov    %rdx,%rax
   8004200147:	48 89 c2             	mov    %rax,%rdx
   800420014a:	be 00 00 00 00       	mov    $0x0,%esi
-  800420014f:	48 bf b8 c0 4d 04 80 	movabs $0x80044dc0b8,%rdi
+  800420014f:	48 bf f0 c1 4d 04 80 	movabs $0x80044dc1f0,%rdi
   8004200156:	00 00 00 
   8004200159:	48 b8 8b 0f 21 04 80 	movabs $0x8004210f8b,%rax
   8004200160:	00 00 00 
@@ -1308,7 +1308,7 @@ i386_init(void)
 	// Start fs.
 	ENV_CREATE(fs_fs, ENV_TYPE_FS);
   80042001d2:	be 01 00 00 00       	mov    $0x1,%esi
-  80042001d7:	48 bf 68 cf 2b 04 80 	movabs $0x80042bcf68,%rdi
+  80042001d7:	48 bf 88 cf 2b 04 80 	movabs $0x80042bcf88,%rdi
   80042001de:	00 00 00 
   80042001e1:	48 b8 65 90 20 04 80 	movabs $0x8004209065,%rax
   80042001e8:	00 00 00 
@@ -1320,7 +1320,7 @@ i386_init(void)
 
 	ENV_CREATE(user_icode, ENV_TYPE_USER);
   80042001ed:	be 00 00 00 00       	mov    $0x0,%esi
-  80042001f2:	48 bf 98 4d 2a 04 80 	movabs $0x80042a4d98,%rdi
+  80042001f2:	48 bf b0 4d 2a 04 80 	movabs $0x80042a4db0,%rdi
   80042001f9:	00 00 00 
   80042001fc:	48 b8 65 90 20 04 80 	movabs $0x8004209065,%rax
   8004200203:	00 00 00 
@@ -3240,10 +3240,10 @@ mon_kerninfo(int argc, char **argv, struct Trapframe *tf)
   80042013fa:	00 00 00 
   80042013fd:	ff d1                	callq  *%rcx
 	cprintf("  edata  %08x (virt)  %08x (phys)\n", edata, edata - KERNBASE);
-  80042013ff:	48 b8 b8 c0 4d 00 00 	movabs $0x4dc0b8,%rax
+  80042013ff:	48 b8 f0 c1 4d 00 00 	movabs $0x4dc1f0,%rax
   8004201406:	00 00 00 
   8004201409:	48 89 c2             	mov    %rax,%rdx
-  800420140c:	48 be b8 c0 4d 04 80 	movabs $0x80044dc0b8,%rsi
+  800420140c:	48 be f0 c1 4d 04 80 	movabs $0x80044dc1f0,%rsi
   8004201413:	00 00 00 
   8004201416:	48 bf 10 f0 21 04 80 	movabs $0x800421f010,%rdi
   800420141d:	00 00 00 
@@ -43549,7 +43549,7 @@ vmclear( physaddr_t vmcs_region ) {
             : "=q"( error ) : "m" ( vmcs_region ) : "cc");
     return error;
   800421dd13:	0f b6 45 d7          	movzbl -0x29(%rbp),%eax
-
+        
 		// Call VMCLEAR on the VMCS region.
 		error = vmclear(vmcs_phy_addr);
   800421dd17:	88 45 ee             	mov    %al,-0x12(%rbp)
@@ -45208,7 +45208,7 @@ handle_vmcall(struct Trapframe *tf, struct VmxGuestInfo *gInfo, uint64_t *eptrt)
   800421ed21:	00 00 00 
 		ENV_CREATE(user_sh, ENV_TYPE_USER);	//create a new host shell
   800421ed24:	be 00 00 00 00       	mov    $0x0,%esi
-  800421ed29:	48 bf d0 e0 4b 04 80 	movabs $0x80044be0d0,%rdi
+  800421ed29:	48 bf f0 e1 4b 04 80 	movabs $0x80044be1f0,%rdi
   800421ed30:	00 00 00 
   800421ed33:	48 b8 65 90 20 04 80 	movabs $0x8004209065,%rax
   800421ed3a:	00 00 00 

@@ -434,7 +434,7 @@ Linker script and memory map
  .rela.data     0x0000008004222998        0x0 vmm/guest/obj/kern/bootstrap.o
                 0x0000008004223000                . = ALIGN (0x1000)
 
-.data           0x0000008004223000   0x2b90b8 load address 0x0000000000223000
+.data           0x0000008004223000   0x2b91f0 load address 0x0000000000223000
  *(EXCLUDE_FILE(vmm/guest/obj/kern/bootstrap.o) .data)
  .data          0x0000008004223000    0x10042 vmm/guest/obj/kern/entry.o
                 0x0000008004223000                bootstack
@@ -487,82 +487,82 @@ Linker script and memory map
  .data          0x0000008004233878        0x0 vmm/guest/obj/vmm/ept.o
  .data          0x0000008004233878        0x0 vmm/guest/obj/vmm/vmx.o
  .data          0x0000008004233878        0x0 vmm/guest/obj/vmm/vmexits.o
- .data          0x0000008004233878    0x16108 vmm/guest/obj/user/hello
+ .data          0x0000008004233878    0x16110 vmm/guest/obj/user/hello
                 0x0000008004233878                _binary_vmm_guest_obj_user_hello_start
-                0x0000008004249980                _binary_vmm_guest_obj_user_hello_end
- .data          0x0000008004249980    0x15be8 vmm/guest/obj/user/idle
-                0x0000008004249980                _binary_vmm_guest_obj_user_idle_start
-                0x000000800425f568                _binary_vmm_guest_obj_user_idle_end
- .data          0x000000800425f568    0x17538 vmm/guest/obj/user/testfile
-                0x000000800425f568                _binary_vmm_guest_obj_user_testfile_start
-                0x0000008004276aa0                _binary_vmm_guest_obj_user_testfile_end
- .data          0x0000008004276aa0    0x15c70 vmm/guest/obj/user/writemotd
-                0x0000008004276aa0                _binary_vmm_guest_obj_user_writemotd_start
-                0x000000800428c710                _binary_vmm_guest_obj_user_writemotd_end
- .data          0x000000800428c710    0x18688 vmm/guest/obj/user/spawnhello
-                0x000000800428c710                _binary_vmm_guest_obj_user_spawnhello_start
-                0x00000080042a4d98                _binary_vmm_guest_obj_user_spawnhello_end
- .data          0x00000080042a4d98    0x181d0 vmm/guest/obj/user/icode
-                0x00000080042a4d98                _binary_vmm_guest_obj_user_icode_start
-                0x00000080042bcf68                _binary_vmm_guest_obj_user_icode_end
- .data          0x00000080042bcf68    0x284d8 vmm/guest/obj/fs/fs
-                0x00000080042bcf68                _binary_vmm_guest_obj_fs_fs_start
-                0x00000080042e5440                _binary_vmm_guest_obj_fs_fs_end
- .data          0x00000080042e5440    0x15e10 vmm/guest/obj/user/testtime
-                0x00000080042e5440                _binary_vmm_guest_obj_user_testtime_start
-                0x00000080042fb250                _binary_vmm_guest_obj_user_testtime_end
- .data          0x00000080042fb250    0x1a310 vmm/guest/obj/user/httpd
-                0x00000080042fb250                _binary_vmm_guest_obj_user_httpd_start
-                0x0000008004315560                _binary_vmm_guest_obj_user_httpd_end
- .data          0x0000008004315560    0x17b48 vmm/guest/obj/user/echosrv
-                0x0000008004315560                _binary_vmm_guest_obj_user_echosrv_start
-                0x000000800432d0a8                _binary_vmm_guest_obj_user_echosrv_end
- .data          0x000000800432d0a8    0x17a88 vmm/guest/obj/user/echotest
-                0x000000800432d0a8                _binary_vmm_guest_obj_user_echotest_start
-                0x0000008004344b30                _binary_vmm_guest_obj_user_echotest_end
- .data          0x0000008004344b30    0x19598 vmm/guest/obj/net/testoutput
-                0x0000008004344b30                _binary_vmm_guest_obj_net_testoutput_start
-                0x000000800435e0c8                _binary_vmm_guest_obj_net_testoutput_end
- .data          0x000000800435e0c8    0x1b5f0 vmm/guest/obj/net/testinput
-                0x000000800435e0c8                _binary_vmm_guest_obj_net_testinput_start
-                0x00000080043796b8                _binary_vmm_guest_obj_net_testinput_end
- .data          0x00000080043796b8    0x651c8 vmm/guest/obj/net/ns
-                0x00000080043796b8                _binary_vmm_guest_obj_net_ns_start
-                0x00000080043de880                _binary_vmm_guest_obj_net_ns_end
- .data          0x00000080043de880    0x1af80 vmm/guest/obj/user/testpteshare
-                0x00000080043de880                _binary_vmm_guest_obj_user_testpteshare_start
-                0x00000080043f9800                _binary_vmm_guest_obj_user_testpteshare_end
- .data          0x00000080043f9800    0x189e0 vmm/guest/obj/user/testfdsharing
-                0x00000080043f9800                _binary_vmm_guest_obj_user_testfdsharing_start
-                0x00000080044121e0                _binary_vmm_guest_obj_user_testfdsharing_end
- .data          0x00000080044121e0    0x18ec0 vmm/guest/obj/user/testpipe
-                0x00000080044121e0                _binary_vmm_guest_obj_user_testpipe_start
-                0x000000800442b0a0                _binary_vmm_guest_obj_user_testpipe_end
- .data          0x000000800442b0a0    0x187c0 vmm/guest/obj/user/testpiperace
-                0x000000800442b0a0                _binary_vmm_guest_obj_user_testpiperace_start
-                0x0000008004443860                _binary_vmm_guest_obj_user_testpiperace_end
- .data          0x0000008004443860    0x187a0 vmm/guest/obj/user/testpiperace2
-                0x0000008004443860                _binary_vmm_guest_obj_user_testpiperace2_start
-                0x000000800445c000                _binary_vmm_guest_obj_user_testpiperace2_end
- .data          0x000000800445c000    0x18248 vmm/guest/obj/user/primespipe
-                0x000000800445c000                _binary_vmm_guest_obj_user_primespipe_start
-                0x0000008004474248                _binary_vmm_guest_obj_user_primespipe_end
- .data          0x0000008004474248    0x16788 vmm/guest/obj/user/testkbd
-                0x0000008004474248                _binary_vmm_guest_obj_user_testkbd_start
-                0x000000800448a9d0                _binary_vmm_guest_obj_user_testkbd_end
- .data          0x000000800448a9d0    0x1b010 vmm/guest/obj/user/testshell
-                0x000000800448a9d0                _binary_vmm_guest_obj_user_testshell_start
-                0x00000080044a59e0                _binary_vmm_guest_obj_user_testshell_end
- .data          0x00000080044a59e0    0x186f0 vmm/guest/obj/user/vmm
-                0x00000080044a59e0                _binary_vmm_guest_obj_user_vmm_start
-                0x00000080044be0d0                _binary_vmm_guest_obj_user_vmm_end
- .data          0x00000080044be0d0    0x1dfe8 vmm/guest/obj/user/sh
-                0x00000080044be0d0                _binary_vmm_guest_obj_user_sh_start
-                0x00000080044dc0b8                _binary_vmm_guest_obj_user_sh_end
-                0x00000080044dc0b8                PROVIDE (edata, .)
+                0x0000008004249988                _binary_vmm_guest_obj_user_hello_end
+ .data          0x0000008004249988    0x15be8 vmm/guest/obj/user/idle
+                0x0000008004249988                _binary_vmm_guest_obj_user_idle_start
+                0x000000800425f570                _binary_vmm_guest_obj_user_idle_end
+ .data          0x000000800425f570    0x17538 vmm/guest/obj/user/testfile
+                0x000000800425f570                _binary_vmm_guest_obj_user_testfile_start
+                0x0000008004276aa8                _binary_vmm_guest_obj_user_testfile_end
+ .data          0x0000008004276aa8    0x15c78 vmm/guest/obj/user/writemotd
+                0x0000008004276aa8                _binary_vmm_guest_obj_user_writemotd_start
+                0x000000800428c720                _binary_vmm_guest_obj_user_writemotd_end
+ .data          0x000000800428c720    0x18690 vmm/guest/obj/user/spawnhello
+                0x000000800428c720                _binary_vmm_guest_obj_user_spawnhello_start
+                0x00000080042a4db0                _binary_vmm_guest_obj_user_spawnhello_end
+ .data          0x00000080042a4db0    0x181d8 vmm/guest/obj/user/icode
+                0x00000080042a4db0                _binary_vmm_guest_obj_user_icode_start
+                0x00000080042bcf88                _binary_vmm_guest_obj_user_icode_end
+ .data          0x00000080042bcf88    0x284f0 vmm/guest/obj/fs/fs
+                0x00000080042bcf88                _binary_vmm_guest_obj_fs_fs_start
+                0x00000080042e5478                _binary_vmm_guest_obj_fs_fs_end
+ .data          0x00000080042e5478    0x15e18 vmm/guest/obj/user/testtime
+                0x00000080042e5478                _binary_vmm_guest_obj_user_testtime_start
+                0x00000080042fb290                _binary_vmm_guest_obj_user_testtime_end
+ .data          0x00000080042fb290    0x1a318 vmm/guest/obj/user/httpd
+                0x00000080042fb290                _binary_vmm_guest_obj_user_httpd_start
+                0x00000080043155a8                _binary_vmm_guest_obj_user_httpd_end
+ .data          0x00000080043155a8    0x17b60 vmm/guest/obj/user/echosrv
+                0x00000080043155a8                _binary_vmm_guest_obj_user_echosrv_start
+                0x000000800432d108                _binary_vmm_guest_obj_user_echosrv_end
+ .data          0x000000800432d108    0x17a98 vmm/guest/obj/user/echotest
+                0x000000800432d108                _binary_vmm_guest_obj_user_echotest_start
+                0x0000008004344ba0                _binary_vmm_guest_obj_user_echotest_end
+ .data          0x0000008004344ba0    0x195a8 vmm/guest/obj/net/testoutput
+                0x0000008004344ba0                _binary_vmm_guest_obj_net_testoutput_start
+                0x000000800435e148                _binary_vmm_guest_obj_net_testoutput_end
+ .data          0x000000800435e148    0x1b608 vmm/guest/obj/net/testinput
+                0x000000800435e148                _binary_vmm_guest_obj_net_testinput_start
+                0x0000008004379750                _binary_vmm_guest_obj_net_testinput_end
+ .data          0x0000008004379750    0x651d8 vmm/guest/obj/net/ns
+                0x0000008004379750                _binary_vmm_guest_obj_net_ns_start
+                0x00000080043de928                _binary_vmm_guest_obj_net_ns_end
+ .data          0x00000080043de928    0x1af98 vmm/guest/obj/user/testpteshare
+                0x00000080043de928                _binary_vmm_guest_obj_user_testpteshare_start
+                0x00000080043f98c0                _binary_vmm_guest_obj_user_testpteshare_end
+ .data          0x00000080043f98c0    0x189e8 vmm/guest/obj/user/testfdsharing
+                0x00000080043f98c0                _binary_vmm_guest_obj_user_testfdsharing_start
+                0x00000080044122a8                _binary_vmm_guest_obj_user_testfdsharing_end
+ .data          0x00000080044122a8    0x18ed0 vmm/guest/obj/user/testpipe
+                0x00000080044122a8                _binary_vmm_guest_obj_user_testpipe_start
+                0x000000800442b178                _binary_vmm_guest_obj_user_testpipe_end
+ .data          0x000000800442b178    0x187c8 vmm/guest/obj/user/testpiperace
+                0x000000800442b178                _binary_vmm_guest_obj_user_testpiperace_start
+                0x0000008004443940                _binary_vmm_guest_obj_user_testpiperace_end
+ .data          0x0000008004443940    0x187a8 vmm/guest/obj/user/testpiperace2
+                0x0000008004443940                _binary_vmm_guest_obj_user_testpiperace2_start
+                0x000000800445c0e8                _binary_vmm_guest_obj_user_testpiperace2_end
+ .data          0x000000800445c0e8    0x18260 vmm/guest/obj/user/primespipe
+                0x000000800445c0e8                _binary_vmm_guest_obj_user_primespipe_start
+                0x0000008004474348                _binary_vmm_guest_obj_user_primespipe_end
+ .data          0x0000008004474348    0x16790 vmm/guest/obj/user/testkbd
+                0x0000008004474348                _binary_vmm_guest_obj_user_testkbd_start
+                0x000000800448aad8                _binary_vmm_guest_obj_user_testkbd_end
+ .data          0x000000800448aad8    0x1b020 vmm/guest/obj/user/testshell
+                0x000000800448aad8                _binary_vmm_guest_obj_user_testshell_start
+                0x00000080044a5af8                _binary_vmm_guest_obj_user_testshell_end
+ .data          0x00000080044a5af8    0x186f8 vmm/guest/obj/user/vmm
+                0x00000080044a5af8                _binary_vmm_guest_obj_user_vmm_start
+                0x00000080044be1f0                _binary_vmm_guest_obj_user_vmm_end
+ .data          0x00000080044be1f0    0x1e000 vmm/guest/obj/user/sh
+                0x00000080044be1f0                _binary_vmm_guest_obj_user_sh_start
+                0x00000080044dc1f0                _binary_vmm_guest_obj_user_sh_end
+                0x00000080044dc1f0                PROVIDE (edata, .)
 
-.igot.plt       0x00000080044dc0b8        0x0 load address 0x00000000004dc0b8
- .igot.plt      0x00000080044dc0b8        0x0 vmm/guest/obj/kern/bootstrap.o
+.igot.plt       0x00000080044dc1f0        0x0 load address 0x00000000004dc1f0
+ .igot.plt      0x00000080044dc1f0        0x0 vmm/guest/obj/kern/bootstrap.o
 
 .bss            0x00000080044dd000   0x242010 load address 0x00000000004dd000
  *(EXCLUDE_FILE(vmm/guest/obj/kern/bootstrap.o) .bss)
@@ -723,40 +723,40 @@ Linker script and memory map
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000    0x16fba
+.debug_info     0x0000000000000000    0x16fd2
  *(.debug_info .gnu.linkonce.wi.*)
- .debug_info    0x0000000000000000       0x6c vmm/guest/obj/kern/bootstrap.o
- .debug_info    0x000000000000006c       0x68 vmm/guest/obj/kern/entry.o
- .debug_info    0x00000000000000d4      0xb96 vmm/guest/obj/kern/init.o
- .debug_info    0x0000000000000c6a      0xcac vmm/guest/obj/kern/console.o
- .debug_info    0x0000000000001916      0x8d2 vmm/guest/obj/kern/monitor.o
- .debug_info    0x00000000000021e8     0x23e5 vmm/guest/obj/kern/pmap.o
- .debug_info    0x00000000000045cd     0x14e1 vmm/guest/obj/kern/env.o
- .debug_info    0x0000000000005aae      0x1ee vmm/guest/obj/kern/kclock.o
- .debug_info    0x0000000000005c9c      0x483 vmm/guest/obj/kern/picirq.o
- .debug_info    0x000000000000611f      0x1d8 vmm/guest/obj/kern/printf.o
- .debug_info    0x00000000000062f7     0x12b1 vmm/guest/obj/kern/trap.o
- .debug_info    0x00000000000075a8       0x6c vmm/guest/obj/kern/trapentry.o
- .debug_info    0x0000000000007614      0x8d2 vmm/guest/obj/kern/sched.o
- .debug_info    0x0000000000007ee6     0x1153 vmm/guest/obj/kern/syscall.o
- .debug_info    0x0000000000009039     0x155a vmm/guest/obj/kern/kdebug.o
- .debug_info    0x000000000000a593      0x5e9 vmm/guest/obj/kern/printfmt.o
- .debug_info    0x000000000000ab7c      0x16d vmm/guest/obj/kern/readline.o
- .debug_info    0x000000000000ace9      0x69a vmm/guest/obj/kern/string.o
- .debug_info    0x000000000000b383     0x142d vmm/guest/obj/kern/libdwarf_rw.o
- .debug_info    0x000000000000c7b0     0x109a vmm/guest/obj/kern/libdwarf_frame.o
- .debug_info    0x000000000000d84a      0xdef vmm/guest/obj/kern/libdwarf_lineno.o
- .debug_info    0x000000000000e639      0x96e vmm/guest/obj/kern/elf_rw.o
- .debug_info    0x000000000000efa7       0x6a vmm/guest/obj/kern/mpentry.o
- .debug_info    0x000000000000f011      0xccb vmm/guest/obj/kern/mpconfig.o
- .debug_info    0x000000000000fcdc      0x8f0 vmm/guest/obj/kern/lapic.o
- .debug_info    0x00000000000105cc      0xa4e vmm/guest/obj/kern/spinlock.o
- .debug_info    0x000000000001101a      0x59c vmm/guest/obj/kern/e1000.o
- .debug_info    0x00000000000115b6      0x70a vmm/guest/obj/kern/pci.o
- .debug_info    0x0000000000011cc0       0xaf vmm/guest/obj/kern/time.o
- .debug_info    0x0000000000011d6f      0x825 vmm/guest/obj/vmm/ept.o
- .debug_info    0x0000000000012594     0x35b2 vmm/guest/obj/vmm/vmx.o
- .debug_info    0x0000000000015b46     0x1474 vmm/guest/obj/vmm/vmexits.o
+ .debug_info    0x0000000000000000       0x72 vmm/guest/obj/kern/bootstrap.o
+ .debug_info    0x0000000000000072       0x6e vmm/guest/obj/kern/entry.o
+ .debug_info    0x00000000000000e0      0xb96 vmm/guest/obj/kern/init.o
+ .debug_info    0x0000000000000c76      0xcac vmm/guest/obj/kern/console.o
+ .debug_info    0x0000000000001922      0x8d2 vmm/guest/obj/kern/monitor.o
+ .debug_info    0x00000000000021f4     0x23e5 vmm/guest/obj/kern/pmap.o
+ .debug_info    0x00000000000045d9     0x14e1 vmm/guest/obj/kern/env.o
+ .debug_info    0x0000000000005aba      0x1ee vmm/guest/obj/kern/kclock.o
+ .debug_info    0x0000000000005ca8      0x483 vmm/guest/obj/kern/picirq.o
+ .debug_info    0x000000000000612b      0x1d8 vmm/guest/obj/kern/printf.o
+ .debug_info    0x0000000000006303     0x12b1 vmm/guest/obj/kern/trap.o
+ .debug_info    0x00000000000075b4       0x72 vmm/guest/obj/kern/trapentry.o
+ .debug_info    0x0000000000007626      0x8d2 vmm/guest/obj/kern/sched.o
+ .debug_info    0x0000000000007ef8     0x1153 vmm/guest/obj/kern/syscall.o
+ .debug_info    0x000000000000904b     0x155a vmm/guest/obj/kern/kdebug.o
+ .debug_info    0x000000000000a5a5      0x5e9 vmm/guest/obj/kern/printfmt.o
+ .debug_info    0x000000000000ab8e      0x16d vmm/guest/obj/kern/readline.o
+ .debug_info    0x000000000000acfb      0x69a vmm/guest/obj/kern/string.o
+ .debug_info    0x000000000000b395     0x142d vmm/guest/obj/kern/libdwarf_rw.o
+ .debug_info    0x000000000000c7c2     0x109a vmm/guest/obj/kern/libdwarf_frame.o
+ .debug_info    0x000000000000d85c      0xdef vmm/guest/obj/kern/libdwarf_lineno.o
+ .debug_info    0x000000000000e64b      0x96e vmm/guest/obj/kern/elf_rw.o
+ .debug_info    0x000000000000efb9       0x70 vmm/guest/obj/kern/mpentry.o
+ .debug_info    0x000000000000f029      0xccb vmm/guest/obj/kern/mpconfig.o
+ .debug_info    0x000000000000fcf4      0x8f0 vmm/guest/obj/kern/lapic.o
+ .debug_info    0x00000000000105e4      0xa4e vmm/guest/obj/kern/spinlock.o
+ .debug_info    0x0000000000011032      0x59c vmm/guest/obj/kern/e1000.o
+ .debug_info    0x00000000000115ce      0x70a vmm/guest/obj/kern/pci.o
+ .debug_info    0x0000000000011cd8       0xaf vmm/guest/obj/kern/time.o
+ .debug_info    0x0000000000011d87      0x825 vmm/guest/obj/vmm/ept.o
+ .debug_info    0x00000000000125ac     0x35b2 vmm/guest/obj/vmm/vmx.o
+ .debug_info    0x0000000000015b5e     0x1474 vmm/guest/obj/vmm/vmexits.o
 
 .debug_abbrev   0x0000000000000000     0x3871
  *(.debug_abbrev)
@@ -831,64 +831,64 @@ Linker script and memory map
 .debug_frame
  *(.debug_frame)
 
-.debug_str      0x0000000000000000     0x34e2
+.debug_str      0x0000000000000000     0x34e8
  *(.debug_str)
- .debug_str     0x0000000000000000      0x621 vmm/guest/obj/kern/init.o
-                                        0x6d7 (size before relaxing)
- .debug_str     0x0000000000000621      0x149 vmm/guest/obj/kern/console.o
-                                        0x2cd (size before relaxing)
- .debug_str     0x000000000000076a      0x171 vmm/guest/obj/kern/monitor.o
-                                        0x467 (size before relaxing)
- .debug_str     0x00000000000008db      0x54c vmm/guest/obj/kern/pmap.o
-                                        0xb58 (size before relaxing)
- .debug_str     0x0000000000000e27      0x334 vmm/guest/obj/kern/env.o
-                                        0xa50 (size before relaxing)
- .debug_str     0x000000000000115b       0x31 vmm/guest/obj/kern/kclock.o
-                                        0x18a (size before relaxing)
- .debug_str     0x000000000000118c       0x35 vmm/guest/obj/kern/picirq.o
-                                        0x1bd (size before relaxing)
- .debug_str     0x00000000000011c1       0x59 vmm/guest/obj/kern/printf.o
-                                        0x1bf (size before relaxing)
- .debug_str     0x000000000000121a      0x282 vmm/guest/obj/kern/trap.o
-                                        0x937 (size before relaxing)
- .debug_str     0x000000000000149c       0x29 vmm/guest/obj/kern/sched.o
-                                        0x63b (size before relaxing)
- .debug_str     0x00000000000014c5      0x363 vmm/guest/obj/kern/syscall.o
-                                        0xa65 (size before relaxing)
- .debug_str     0x0000000000001828      0x905 vmm/guest/obj/kern/kdebug.o
-                                       0x1020 (size before relaxing)
- .debug_str     0x000000000000212d       0x93 vmm/guest/obj/kern/printfmt.o
-                                        0x35f (size before relaxing)
- .debug_str     0x00000000000021c0       0x27 vmm/guest/obj/kern/readline.o
-                                        0x1fb (size before relaxing)
- .debug_str     0x00000000000021e7       0x9e vmm/guest/obj/kern/string.o
-                                        0x218 (size before relaxing)
- .debug_str     0x0000000000002285      0x25c vmm/guest/obj/kern/libdwarf_rw.o
-                                        0xc0e (size before relaxing)
- .debug_str     0x00000000000024e1      0x2dd vmm/guest/obj/kern/libdwarf_frame.o
-                                        0xb67 (size before relaxing)
- .debug_str     0x00000000000027be      0x1bd vmm/guest/obj/kern/libdwarf_lineno.o
-                                        0xbb5 (size before relaxing)
- .debug_str     0x000000000000297b      0x144 vmm/guest/obj/kern/elf_rw.o
-                                        0x472 (size before relaxing)
- .debug_str     0x0000000000002abf       0xbe vmm/guest/obj/kern/mpconfig.o
-                                        0x6a8 (size before relaxing)
- .debug_str     0x0000000000002b7d       0x52 vmm/guest/obj/kern/lapic.o
-                                        0x5f2 (size before relaxing)
- .debug_str     0x0000000000002bcf       0x4d vmm/guest/obj/kern/spinlock.o
-                                        0x6bc (size before relaxing)
- .debug_str     0x0000000000002c1c       0xd6 vmm/guest/obj/kern/e1000.o
-                                        0x38b (size before relaxing)
- .debug_str     0x0000000000002cf2      0x16f vmm/guest/obj/kern/pci.o
-                                        0x35d (size before relaxing)
- .debug_str     0x0000000000002e61       0x26 vmm/guest/obj/kern/time.o
-                                        0x119 (size before relaxing)
- .debug_str     0x0000000000002e87       0xfa vmm/guest/obj/vmm/ept.o
-                                        0x458 (size before relaxing)
- .debug_str     0x0000000000002f81      0x416 vmm/guest/obj/vmm/vmx.o
-                                        0xba9 (size before relaxing)
- .debug_str     0x0000000000003397      0x14b vmm/guest/obj/vmm/vmexits.o
-                                        0xb14 (size before relaxing)
+ .debug_str     0x0000000000000000      0x627 vmm/guest/obj/kern/init.o
+                                        0x6dd (size before relaxing)
+ .debug_str     0x0000000000000627      0x149 vmm/guest/obj/kern/console.o
+                                        0x2d3 (size before relaxing)
+ .debug_str     0x0000000000000770      0x171 vmm/guest/obj/kern/monitor.o
+                                        0x46d (size before relaxing)
+ .debug_str     0x00000000000008e1      0x54c vmm/guest/obj/kern/pmap.o
+                                        0xb5e (size before relaxing)
+ .debug_str     0x0000000000000e2d      0x334 vmm/guest/obj/kern/env.o
+                                        0xa56 (size before relaxing)
+ .debug_str     0x0000000000001161       0x31 vmm/guest/obj/kern/kclock.o
+                                        0x190 (size before relaxing)
+ .debug_str     0x0000000000001192       0x35 vmm/guest/obj/kern/picirq.o
+                                        0x1c3 (size before relaxing)
+ .debug_str     0x00000000000011c7       0x59 vmm/guest/obj/kern/printf.o
+                                        0x1c5 (size before relaxing)
+ .debug_str     0x0000000000001220      0x282 vmm/guest/obj/kern/trap.o
+                                        0x93d (size before relaxing)
+ .debug_str     0x00000000000014a2       0x29 vmm/guest/obj/kern/sched.o
+                                        0x641 (size before relaxing)
+ .debug_str     0x00000000000014cb      0x363 vmm/guest/obj/kern/syscall.o
+                                        0xa6b (size before relaxing)
+ .debug_str     0x000000000000182e      0x905 vmm/guest/obj/kern/kdebug.o
+                                       0x1026 (size before relaxing)
+ .debug_str     0x0000000000002133       0x93 vmm/guest/obj/kern/printfmt.o
+                                        0x365 (size before relaxing)
+ .debug_str     0x00000000000021c6       0x27 vmm/guest/obj/kern/readline.o
+                                        0x201 (size before relaxing)
+ .debug_str     0x00000000000021ed       0x9e vmm/guest/obj/kern/string.o
+                                        0x21e (size before relaxing)
+ .debug_str     0x000000000000228b      0x25c vmm/guest/obj/kern/libdwarf_rw.o
+                                        0xc14 (size before relaxing)
+ .debug_str     0x00000000000024e7      0x2dd vmm/guest/obj/kern/libdwarf_frame.o
+                                        0xb6d (size before relaxing)
+ .debug_str     0x00000000000027c4      0x1bd vmm/guest/obj/kern/libdwarf_lineno.o
+                                        0xbbb (size before relaxing)
+ .debug_str     0x0000000000002981      0x144 vmm/guest/obj/kern/elf_rw.o
+                                        0x478 (size before relaxing)
+ .debug_str     0x0000000000002ac5       0xbe vmm/guest/obj/kern/mpconfig.o
+                                        0x6ae (size before relaxing)
+ .debug_str     0x0000000000002b83       0x52 vmm/guest/obj/kern/lapic.o
+                                        0x5f8 (size before relaxing)
+ .debug_str     0x0000000000002bd5       0x4d vmm/guest/obj/kern/spinlock.o
+                                        0x6c2 (size before relaxing)
+ .debug_str     0x0000000000002c22       0xd6 vmm/guest/obj/kern/e1000.o
+                                        0x391 (size before relaxing)
+ .debug_str     0x0000000000002cf8      0x16f vmm/guest/obj/kern/pci.o
+                                        0x363 (size before relaxing)
+ .debug_str     0x0000000000002e67       0x26 vmm/guest/obj/kern/time.o
+                                        0x11f (size before relaxing)
+ .debug_str     0x0000000000002e8d       0xfa vmm/guest/obj/vmm/ept.o
+                                        0x45e (size before relaxing)
+ .debug_str     0x0000000000002f87      0x416 vmm/guest/obj/vmm/vmx.o
+                                        0xbaf (size before relaxing)
+ .debug_str     0x000000000000339d      0x14b vmm/guest/obj/vmm/vmexits.o
+                                        0xb1a (size before relaxing)
 
 .debug_loc      0x0000000000000000     0x7018
  *(.debug_loc)

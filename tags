@@ -127,7 +127,6 @@ AUTOIP_STATE_PROBING	net/lwip/include/ipv4/lwip/autoip.h	74;"	d
 AUTOIP_TICKS_PER_SECOND	net/lwip/include/ipv4/lwip/autoip.h	58;"	d
 AUTOIP_TMR_INTERVAL	net/lwip/include/ipv4/lwip/autoip.h	57;"	d
 Argstate	inc/args.h	/^struct Argstate {$/;"	s
-BACKTRACE_RE	grade-lab1	/^BACKTRACE_RE = r"^ *rbp +00000080042[0-9a-z]{5} +rip +000000800420[0-1][0-9a-z]{3}"$/;"	v
 BCAST	kern/lapic.c	29;"	d	file:
 BCMP	net/lwip/netif/ppp/ppp.h	211;"	d
 BCOPY	net/lwip/netif/ppp/ppp.h	212;"	d
@@ -254,7 +253,6 @@ CMDBYTE	inc/kbdreg.h	60;"	d
 CODENAME	net/lwip/netif/ppp/ipcp.c	116;"	d	file:
 CODENAME	net/lwip/netif/ppp/lcp.c	131;"	d	file:
 CODEREJ	net/lwip/netif/ppp/fsm.h	76;"	d
-COLORS	gradelib.py	/^COLORS = {"default": "\\033[0m", "red": "\\033[31m", "green": "\\033[32m"}$/;"	v
 COM1	kern/console.c	32;"	d	file:
 COM_DLL	kern/console.c	36;"	d	file:
 COM_DLM	kern/console.c	37;"	d	file:
@@ -308,7 +306,6 @@ CRT_COLS	kern/console.h	17;"	d
 CRT_ROWS	kern/console.h	16;"	d
 CRT_SIZE	kern/console.h	18;"	d
 CTL	kern/console.c	235;"	d	file:
-CURRENT_TEST	gradelib.py	/^CURRENT_TEST = None$/;"	v
 ChallengeResponse	net/lwip/netif/ppp/chpms.c	/^ChallengeResponse( u_char *challenge, \/* IN   8 octets *\/$/;"	f	file:
 ChapAuthPeer	net/lwip/netif/ppp/chap.c	/^ChapAuthPeer(int unit, char *our_name, int digest)$/;"	f
 ChapAuthWithPeer	net/lwip/netif/ppp/chap.c	/^ChapAuthWithPeer(int unit, char *our_name, int digest)$/;"	f
@@ -1077,6 +1074,7 @@ Disassembly	obj/user/testtime.asm	/^Disassembly of section .text:$/;"	l
 Disassembly	obj/user/vmm.asm	/^Disassembly of section .text:$/;"	l
 Disassembly	obj/user/vmmanager.asm	/^Disassembly of section .text:$/;"	l
 Disassembly	obj/user/writemotd.asm	/^Disassembly of section .text:$/;"	l
+Disassembly	vmm/guest/obj/boot/boot.asm	/^Disassembly of section .text:$/;"	l
 Disassembly	vmm/guest/obj/fs/fs.asm	/^Disassembly of section .text:$/;"	l
 Disassembly	vmm/guest/obj/kern/kernel.asm	/^Disassembly of section .bootstrap:$/;"	l
 Disassembly	vmm/guest/obj/kern/kernel.asm	/^Disassembly of section .text:$/;"	l
@@ -1145,7 +1143,6 @@ Dwarf_Unsigned	kern/dwarf.h	/^typedef uint64_t        Dwarf_Unsigned;$/;"	t
 Dwarf_Unsigned	kern/libdwarf_rw.c	259;"	d	file:
 Dwarf_Unsigned	obj/kern/kernel.asm	/^#define Dwarf_Unsigned uint64_t$/;"	d
 Dwarf_Unsigned	vmm/guest/obj/kern/kernel.asm	/^#define Dwarf_Unsigned uint64_t$/;"	d
-E	grade-lab4	/^def E(s, trim=False):$/;"	f
 E0ESC	kern/console.c	242;"	d	file:
 E1000_EERD	kern/e1000.c	13;"	d	file:
 E1000_EERD_DONE	kern/e1000.c	16;"	d	file:
@@ -1641,7 +1638,6 @@ Fsret_stat	inc/fs.h	/^	struct Fsret_stat {$/;"	s	union:Fsipc
 G	net/lwip/netif/ppp/md5.c	73;"	d	file:
 GCCPREFIX	GNUmakefile	/^GCCPREFIX := $(shell if i386-jos-elf-objdump -i 2>&1 | grep '^elf64-x86-64$$' >\/dev\/null 2>&1; \\$/;"	m
 GCC_LIB	GNUmakefile	/^GCC_LIB := $(shell $(CC) $(CFLAGS) -print-libgcc-file-name)$/;"	m
-GDBClient	gradelib.py	/^class GDBClient(object):$/;"	c
 GDBPORT	GNUmakefile	/^GDBPORT	:= $(shell expr `id -u` % 5000 + 25000)$/;"	m
 GD_KD	inc/memlayout.h	18;"	d
 GD_KT	inc/memlayout.h	17;"	d
@@ -2288,7 +2284,6 @@ LinkPhase	net/lwip/netif/ppp/lcp.h	/^} LinkPhase;$/;"	t	typeref:enum:__anon17
 LogCodes	net/lwip/netif/ppp/pppdebug.h	/^} LogCodes;$/;"	t	typeref:enum:__anon21
 MAGIC_H	net/lwip/netif/ppp/magic.h	56;"	d
 MAKEHEADER	net/lwip/netif/ppp/ppp.h	224;"	d
-MAKE_TIMESTAMP	gradelib.py	/^MAKE_TIMESTAMP = 0$/;"	v
 MASK	net/ns.h	6;"	d
 MASKED	kern/lapic.c	41;"	d	file:
 MAX	inc/types.h	49;"	d
@@ -3260,7 +3255,6 @@ Proghdr64	kern/dwarf_elf.h	/^}Proghdr64;$/;"	t	typeref:struct:_Proghdr64
 Pseudodesc	inc/mmu.h	/^struct Pseudodesc {$/;"	s
 PushRegs	inc/trap.h	/^struct PushRegs {$/;"	s
 QEMU	GNUmakefile	/^QEMU := $(shell if which qemu-system-x86_64 > \/dev\/null; \\$/;"	m
-QEMU	gradelib.py	/^class QEMU(object):$/;"	c
 QEMUOPTS	GNUmakefile	/^QEMUOPTS = -cpu qemu64,+vmx -enable-kvm -m 256 -hda $(OBJDIR)\/kern\/kernel.img -serial mon:stdio -gdb tcp::$(GDBPORT)$/;"	m
 QUEUE_SIZE	net/ns.h	12;"	d
 RANDM_H	net/lwip/netif/ppp/randm.h	36;"	d
@@ -3293,7 +3287,6 @@ ROUTER_ALERT	net/lwip/include/ipv4/lwip/igmp.h	56;"	d
 ROUTER_ALERTLEN	net/lwip/include/ipv4/lwip/igmp.h	57;"	d
 RX_RING_SIZE	kern/e1000.c	135;"	d	file:
 Ripdebuginfo	kern/kdebug.h	/^struct Ripdebuginfo {$/;"	s
-Runner	gradelib.py	/^class Runner():$/;"	c
 S11	net/lwip/netif/ppp/md5.c	224;"	d	file:
 S12	net/lwip/netif/ppp/md5.c	225;"	d	file:
 S13	net/lwip/netif/ppp/md5.c	226;"	d	file:
@@ -3661,7 +3654,6 @@ TEMP_ADDR_CHILD	user/sendpage.c	10;"	d	file:
 TERMACK	net/lwip/netif/ppp/fsm.h	75;"	d
 TERMREQ	net/lwip/netif/ppp/fsm.h	74;"	d
 TESTOUTPUT_COUNT	net/testoutput.c	5;"	d	file:
-TESTS	gradelib.py	/^TESTS = []$/;"	v
 TF_ACK_DELAY	net/lwip/include/lwip/tcp.h	284;"	d
 TF_ACK_NOW	net/lwip/include/lwip/tcp.h	285;"	d
 TF_CLOSED	net/lwip/include/lwip/tcp.h	259;"	d
@@ -3733,7 +3725,6 @@ T_STACK	inc/trap.h	19;"	d
 T_SYSCALL	inc/trap.h	30;"	d
 T_TSS	inc/trap.h	17;"	d
 Taskstate	inc/mmu.h	/^struct Taskstate {$/;"	s
-TerminateTest	gradelib.py	/^class TerminateTest(Exception):$/;"	c
 Transform	net/lwip/netif/ppp/md5.c	/^Transform (u32_t *buf, u32_t *in)$/;"	f	file:
 Trapframe	inc/trap.h	/^struct Trapframe {$/;"	s
 U16_F	net/lwip/jos/arch/cc.h	28;"	d
@@ -4231,7 +4222,6 @@ _Dwarf_Line_	kern/dwarf.h	/^typedef struct _Dwarf_Line_ {$/;"	s
 _Dwarf_Section	kern/dwarf.h	/^typedef struct _Dwarf_Section {$/;"	s
 _Elf32	kern/dwarf_elf.h	/^typedef struct _Elf32 {$/;"	s
 _Elf64	kern/dwarf_elf.h	/^typedef struct _Elf64 {$/;"	s
-_GDBPORT	gradelib.py	/^    _GDBPORT = None$/;"	v	class:QEMU
 _IO	net/lwip/include/lwip/sockets.h	244;"	d
 _IOR	net/lwip/include/lwip/sockets.h	246;"	d
 _IOW	net/lwip/include/lwip/sockets.h	248;"	d
@@ -4290,14 +4280,6 @@ __NETIF_ETHARP_H__	net/lwip/include/netif/etharp.h	37;"	d
 __NETIF_LOOPIF_H__	net/lwip/include/netif/loopif.h	34;"	d
 __NETIF_SLIPIF_H__	net/lwip/include/netif/slipif.h	36;"	d
 __SIO_H__	net/lwip/include/lwip/sio.h	37;"	d
-__all__	gradelib.py	/^__all__ = []$/;"	v
-__init__	gradelib.py	/^    def __init__(self, *default_monitors):$/;"	m	class:Runner
-__init__	gradelib.py	/^    def __init__(self, *make_args):$/;"	m	class:QEMU
-__init__	gradelib.py	/^    def __init__(self, port, timeout=15):$/;"	m	class:GDBClient
-__monitor_start	gradelib.py	/^    def __monitor_start(self, output):$/;"	m	class:Runner	file:
-__react	gradelib.py	/^    def __react(self, reactors, timeout):$/;"	m	class:Runner	file:
-__send	gradelib.py	/^    def __send(self, cmd):$/;"	m	class:GDBClient	file:
-__send_break	gradelib.py	/^    def __send_break(self):$/;"	m	class:GDBClient	file:
 __spin_initlock	kern/spinlock.c	/^__spin_initlock(struct spinlock *lk, char *name)$/;"	f
 _alltraps	kern/trapentry.S	/^_alltraps:$/;"	l
 _alltraps	obj/kern/kernel.asm	/^_alltraps:$/;"	l
@@ -4852,13 +4834,9 @@ argvalue	lib/args.c	/^argvalue(struct Argstate *args)$/;"	f
 arp_table	net/lwip/netif/etharp.c	/^static struct etharp_entry arp_table[ARP_TABLE_SIZE];$/;"	v	typeref:struct:etharp_entry	file:
 arp_timer	net/lwip/api/tcpip.c	/^arp_timer(void *arg)$/;"	f	file:
 arptree_root	net/lwip/core/snmp/mib2.c	/^struct mib_list_rootnode arptree_root = {$/;"	v	typeref:struct:mib_list_rootnode
-ascii_to_bytes	grade-lab6	/^def ascii_to_bytes(s):$/;"	f
 asm_vmrun	vmm/vmx.c	/^void asm_vmrun(struct Trapframe *tf) {$/;"	f
 asn_type	net/lwip/include/lwip/snmp_structs.h	/^  u8_t asn_type;$/;"	m	struct:obj_def
 assert	inc/assert.h	14;"	d
-assert_equal	gradelib.py	/^def assert_equal(got, expect, msg=""):$/;"	f
-assert_lines_match	gradelib.py	/^def assert_lines_match(text, *regexps, **kw):$/;"	f
-assert_lines_match_kw	gradelib.py	/^    def assert_lines_match_kw(no=[]):$/;"	f	function:assert_lines_match
 asyncmap	net/lwip/netif/ppp/lcp.h	/^    u32_t asyncmap;              \/* Value of async map *\/$/;"	m	struct:lcp_options
 at	net/lwip/core/snmp/mib2.c	/^struct mib_ram_array_node at = {$/;"	v	typeref:struct:mib_ram_array_node
 at_attrib	kern/dwarf.h	/^	uint64_t        at_attrib;  \/* DW_AT_XXX *\/$/;"	m	struct:_Dwarf_Attribute
@@ -5402,7 +5380,6 @@ bootcpu	vmm/guest/obj/kern/kernel.asm	/^	bootcpu = &cpus[0];$/;"	d
 bootmain	boot/main.c	/^bootmain(void)$/;"	f
 bootstack	kern/entry.S	/^bootstack:$/;"	l
 bootstacktop	kern/entry.S	/^bootstacktop:$/;"	l
-breakpoint	gradelib.py	/^    def breakpoint(self, addr):$/;"	m	class:GDBClient
 breakpoint	inc/x86.h	/^breakpoint(void)$/;"	f
 bss	user/init.c	/^char bss[6000];$/;"	v
 bss_end_addr	kern/multiboot.h	/^   uint32_t bss_end_addr;$/;"	m	struct:multiboot_header
@@ -5709,7 +5686,6 @@ call	vmm/guest/obj/user/testpiperace.asm	/^call *%rax$/;"	l
 call	vmm/guest/obj/user/testpiperace2.asm	/^call *%rax$/;"	l
 call	vmm/guest/obj/user/testpteshare.asm	/^call *%rax$/;"	l
 call	vmm/guest/obj/user/testshell.asm	/^call *%rax$/;"	l
-call_on_line	gradelib.py	/^def call_on_line(regexp, callback):$/;"	f
 callback	net/lwip/include/lwip/api.h	/^  netconn_callback callback;$/;"	m	struct:netconn
 callbacks	net/lwip/netif/ppp/fsm.h	/^  struct fsm_callbacks* callbacks; \/* Callback routines *\/$/;"	m	struct:fsm	typeref:struct:fsm::fsm_callbacks
 cat	user/cat.c	/^cat(int f, char *s)$/;"	f
@@ -6018,13 +5994,14 @@ class	net/lwip/core/dns.c	/^  u16_t class;$/;"	m	struct:dns_query	file:
 class	obj/kern/kernel.asm	/^		class = pci_class[PCI_CLASS(f->dev_class)];$/;"	d
 class	vmm/guest/obj/kern/kernel.asm	/^		class = pci_class[PCI_CLASS(f->dev_class)];$/;"	d
 cld	guest_boot/boot.S	/^cld                         # String operations increment$/;"	l
+cld	vmm/guest/obj/boot/boot.asm	/^cld                         # String operations increment$/;"	l
 cld	vmm/jos_boot.S	/^cld                         # String operations increment$/;"	l
 clen	obj/net/ns.asm	/^  clen = pbuf_clen(p);$/;"	d
 clen	vmm/guest/obj/net/ns.asm	/^  clen = pbuf_clen(p);$/;"	d
 cli	guest_boot/boot.S	/^cli                         # Disable interrupts$/;"	l
+cli	vmm/guest/obj/boot/boot.asm	/^cli                         # Disable interrupts$/;"	l
 cli	vmm/jos_boot.S	/^cli                         # Disable interrupts$/;"	l
 clientstate	net/lwip/netif/ppp/chap.h	/^  int clientstate;                        \/* Client state *\/$/;"	m	struct:chap_state
-close	gradelib.py	/^    def close(self):$/;"	m	class:GDBClient
 close	inc/ns.h	/^	} close;$/;"	m	union:Nsipc	typeref:struct:Nsipc::Nsreq_close
 close	lib/fd.c	/^close(int fdnum)$/;"	f
 close	net/lwip/include/lwip/sockets.h	348;"	d
@@ -6122,7 +6099,6 @@ code	user/httpd.c	/^	int code;$/;"	m	struct:error_messages	file:
 code	user/httpd.c	/^	int code;$/;"	m	struct:responce_header	file:
 code	vmm/guest/obj/kern/kernel.asm	/^	code = KADDR(MPENTRY_PADDR);$/;"	d
 code	vmm/guest/obj/net/ns.asm	/^  code = *(((u8_t *)p->payload)+1);$/;"	d
-color	gradelib.py	/^def color(name, text):$/;"	f
 column	obj/kern/kernel.asm	/^				column = _dwarf_decode_uleb128(&p);$/;"	d
 column	vmm/guest/obj/kern/kernel.asm	/^				column = _dwarf_decode_uleb128(&p);$/;"	d
 com_strlen	net/lwip/include/lwip/snmp_msg.h	/^  u8_t com_strlen;$/;"	m	struct:snmp_msg_pstat
@@ -6290,7 +6266,6 @@ const	vmm/guest/obj/user/vmm.asm	/^const char *binaryname = "<unknown>";$/;"	l
 const	vmm/guest/obj/user/vmm.asm	/^const volatile struct Env *thisenv;$/;"	l
 const	vmm/guest/obj/user/writemotd.asm	/^const char *binaryname = "<unknown>";$/;"	l
 const	vmm/guest/obj/user/writemotd.asm	/^const volatile struct Env *thisenv;$/;"	l
-cont	gradelib.py	/^    def cont(self):$/;"	m	class:GDBClient
 cont	obj/net/ns.asm	/^		cont = (i + PGSIZE < n + 4) ? PTE_CONTINUED : 0;$/;"	d
 cont	obj/user/httpd.asm	/^		cont = (i + PGSIZE < n + 4) ? PTE_CONTINUED : 0;$/;"	d
 cont	obj/user/vmm.asm	/^		cont = (i + PGSIZE < n + 4) ? PTE_CONTINUED : 0;$/;"	d
@@ -6936,8 +6911,6 @@ do_netifapi_netif_common	net/lwip/api/netifapi.c	/^do_netifapi_netif_common( str
 do_newconn	net/lwip/api/api_msg.c	/^do_newconn(struct api_msg_msg *msg)$/;"	f
 do_recv	net/lwip/api/api_msg.c	/^do_recv(struct api_msg_msg *msg)$/;"	f
 do_send	net/lwip/api/api_msg.c	/^do_send(struct api_msg_msg *msg)$/;"	f
-do_test	grade-lab5	/^    def do_test():$/;"	f	function:matchtest
-do_test	grade-lab8	/^    def do_test():$/;"	f	function:matchtest
 do_write	net/lwip/api/api_msg.c	/^do_write(struct api_msg_msg *msg)$/;"	f
 do_writemore	net/lwip/api/api_msg.c	/^do_writemore(struct netconn *conn)$/;"	f	file:
 done	boot/boot.S	/^done:$/;"	l
@@ -7124,7 +7097,6 @@ eaten	vmm/guest/obj/net/ns.asm	/^          eaten = 1;$/;"	d
 eax	obj/kern/kernel.asm	/^	eax = (uint32_t) val;$/;"	d
 eax	vmm/guest/obj/kern/kernel.asm	/^	eax = (uint32_t) val;$/;"	d
 ebuf	lib/printfmt.c	/^	char *ebuf;$/;"	m	struct:sprintbuf	file:
-echo_port	grade-lab6	/^echo_port = QEMU.get_gdb_port() + 1$/;"	v
 echocmds	obj/user/sh.asm	/^			echocmds = 1;$/;"	d
 echocmds	obj/user/sh.asm	/^	echocmds = 0;$/;"	d
 echocmds	vmm/guest/obj/user/sh.asm	/^			echocmds = 1;$/;"	d
@@ -7182,7 +7154,6 @@ end_debug	vmm/guest/obj/kern/kernel.asm	/^	end_debug = read_section_headers((0x1
 end_pa	obj/boot/boot.asm	/^    end_pa = pa + count;$/;"	d
 end_pa	obj/kern/kernel.asm	/^	end_pa = pa + count;$/;"	d
 end_pa	vmm/guest/obj/kern/kernel.asm	/^	end_pa = pa + count;$/;"	d
-end_part	gradelib.py	/^def end_part(name):$/;"	f
 end_sequence	obj/kern/kernel.asm	/^				end_sequence = 1;$/;"	d
 end_sequence	vmm/guest/obj/kern/kernel.asm	/^				end_sequence = 1;$/;"	d
 endofargs	obj/user/ls.asm	/^endofargs:$/;"	l
@@ -7353,6 +7324,7 @@ ept_gpa2hva	vmm/ept.c	/^void ept_gpa2hva(epte_t* eptrt, void *gpa, void **hva) {
 ept_lookup_gpa	vmm/ept.c	/^static int ept_lookup_gpa(epte_t* eptrt, void *gpa, $/;"	f	file:
 ept_map_hva2gpa	vmm/ept.c	/^int ept_map_hva2gpa(epte_t* eptrt, void* hva, void* gpa, int perm, $/;"	f
 ept_page_insert	vmm/ept.c	/^int ept_page_insert(epte_t* eptrt, struct PageInfo* pp, void* gpa, int perm) {$/;"	f
+ept_pml4e	inc/env.h	/^    pml4e_t *ept_pml4e;$/;"	m	struct:Env
 epte_addr	vmm/ept.c	/^static inline uintptr_t epte_addr(epte_t epte)$/;"	f	file:
 epte_flags	vmm/ept.c	/^static inline epte_t epte_flags(epte_t epte)$/;"	f	file:
 epte_page_vaddr	vmm/ept.c	/^static inline uintptr_t epte_page_vaddr(epte_t epte)$/;"	f	file:
@@ -7802,9 +7774,10 @@ erridxlen	net/lwip/include/lwip/snmp_msg.h	/^  u16_t erridxlen;$/;"	m	struct:snm
 erridxlenlen	net/lwip/include/lwip/snmp_msg.h	/^  u8_t erridxlenlen;$/;"	m	struct:snmp_resp_header_lengths
 errno	net/serv.c	/^int errno;$/;"	v
 error	lib/fprintf.c	/^	int error;	\/\/ first error that occurred$/;"	m	struct:printbuf	file:
-error	obj/kern/kernel.asm	/^		error = vmclear(vmcs_phy_addr);$/;"	d
 error	obj/kern/kernel.asm	/^		error = vmptrld(PADDR(e->env_vmxinfo.vmcs));$/;"	d
 error	obj/kern/kernel.asm	/^		error = vmptrld(vmcs_phy_addr);$/;"	d
+error	obj/kern/kernel.asm	/^        error = vmclear(vmcs_phy_addr);$/;"	d
+error	obj/kern/kernel.asm	/^    error = vmclear(PADDR(hva));$/;"	d
 error	obj/user/icode.asm	/^error:$/;"	l
 error	obj/user/init.asm	/^error:$/;"	l
 error	obj/user/sh.asm	/^error:$/;"	l
@@ -7812,9 +7785,10 @@ error	obj/user/spawnhello.asm	/^error:$/;"	l
 error	obj/user/testpteshare.asm	/^error:$/;"	l
 error	obj/user/testshell.asm	/^error:$/;"	l
 error	obj/user/vmmanager.asm	/^error:		cprintf("Please enter a correct vm number\\n");$/;"	l
-error	vmm/guest/obj/kern/kernel.asm	/^		error = vmclear(vmcs_phy_addr);$/;"	d
 error	vmm/guest/obj/kern/kernel.asm	/^		error = vmptrld(PADDR(e->env_vmxinfo.vmcs));$/;"	d
 error	vmm/guest/obj/kern/kernel.asm	/^		error = vmptrld(vmcs_phy_addr);$/;"	d
+error	vmm/guest/obj/kern/kernel.asm	/^        error = vmclear(vmcs_phy_addr);$/;"	d
+error	vmm/guest/obj/kern/kernel.asm	/^    error = vmclear(PADDR(hva));$/;"	d
 error	vmm/guest/obj/user/icode.asm	/^error:$/;"	l
 error	vmm/guest/obj/user/init.asm	/^error:$/;"	l
 error	vmm/guest/obj/user/sh.asm	/^error:$/;"	l
@@ -7878,19 +7852,21 @@ exit_handled	obj/kern/kernel.asm	/^		exit_handled = handle_eptviolation(curenv->
 exit_handled	obj/kern/kernel.asm	/^		exit_handled = handle_ioinstr(&curenv->env_tf, &curenv->env_vmxinfo);$/;"	d
 exit_handled	obj/kern/kernel.asm	/^		exit_handled = handle_rdmsr(&curenv->env_tf, &curenv->env_vmxinfo);$/;"	d
 exit_handled	obj/kern/kernel.asm	/^		exit_handled = handle_vmcall(&curenv->env_tf, &curenv->env_vmxinfo,$/;"	d
-exit_handled	obj/kern/kernel.asm	/^		exit_handled = handle_wrmsr(&curenv->env_tf, &curenv->env_vmxinfo);$/;"	d
 exit_handled	obj/kern/kernel.asm	/^		exit_handled = true;$/;"	d
-exit_handled	obj/kern/kernel.asm	/^    		exit_handled = handle_interrupt_window(&curenv->env_tf, &curenv->env_vmxinfo, host_vector);$/;"	d
-exit_handled	obj/kern/kernel.asm	/^    		exit_handled = handle_interrupts(&curenv->env_tf, &curenv->env_vmxinfo, host_vector);$/;"	d
+exit_handled	obj/kern/kernel.asm	/^	    exit_handled = handle_wrmsr(&curenv->env_tf, &curenv->env_vmxinfo);$/;"	d
+exit_handled	obj/kern/kernel.asm	/^    	exit_handled = handle_interrupt_window(&curenv->env_tf, &curenv->env_vmxinfo, host_vector);$/;"	d
+exit_handled	obj/kern/kernel.asm	/^    	exit_handled = handle_interrupts(&curenv->env_tf, &curenv->env_vmxinfo, host_vector);$/;"	d
+exit_handled	obj/kern/kernel.asm	/^        exit_handled = handle_vmclear(&curenv->env_tf, &curenv->env_vmxinfo);$/;"	d
 exit_handled	vmm/guest/obj/kern/kernel.asm	/^		exit_handled = handle_cpuid(&curenv->env_tf, &curenv->env_vmxinfo);$/;"	d
 exit_handled	vmm/guest/obj/kern/kernel.asm	/^		exit_handled = handle_eptviolation(curenv->env_pml4e, &curenv->env_vmxinfo);$/;"	d
 exit_handled	vmm/guest/obj/kern/kernel.asm	/^		exit_handled = handle_ioinstr(&curenv->env_tf, &curenv->env_vmxinfo);$/;"	d
 exit_handled	vmm/guest/obj/kern/kernel.asm	/^		exit_handled = handle_rdmsr(&curenv->env_tf, &curenv->env_vmxinfo);$/;"	d
 exit_handled	vmm/guest/obj/kern/kernel.asm	/^		exit_handled = handle_vmcall(&curenv->env_tf, &curenv->env_vmxinfo,$/;"	d
-exit_handled	vmm/guest/obj/kern/kernel.asm	/^		exit_handled = handle_wrmsr(&curenv->env_tf, &curenv->env_vmxinfo);$/;"	d
 exit_handled	vmm/guest/obj/kern/kernel.asm	/^		exit_handled = true;$/;"	d
-exit_handled	vmm/guest/obj/kern/kernel.asm	/^    		exit_handled = handle_interrupt_window(&curenv->env_tf, &curenv->env_vmxinfo, host_vector);$/;"	d
-exit_handled	vmm/guest/obj/kern/kernel.asm	/^    		exit_handled = handle_interrupts(&curenv->env_tf, &curenv->env_vmxinfo, host_vector);$/;"	d
+exit_handled	vmm/guest/obj/kern/kernel.asm	/^	    exit_handled = handle_wrmsr(&curenv->env_tf, &curenv->env_vmxinfo);$/;"	d
+exit_handled	vmm/guest/obj/kern/kernel.asm	/^    	exit_handled = handle_interrupt_window(&curenv->env_tf, &curenv->env_vmxinfo, host_vector);$/;"	d
+exit_handled	vmm/guest/obj/kern/kernel.asm	/^    	exit_handled = handle_interrupts(&curenv->env_tf, &curenv->env_vmxinfo, host_vector);$/;"	d
+exit_handled	vmm/guest/obj/kern/kernel.asm	/^        exit_handled = handle_vmclear(&curenv->env_tf, &curenv->env_vmxinfo);$/;"	d
 exit_reason	obj/kern/kernel.asm	/^	exit_reason = vmcs_read32(VMCS_32BIT_VMEXIT_REASON);$/;"	d
 exit_reason	vmm/guest/obj/kern/kernel.asm	/^	exit_reason = vmcs_read32(VMCS_32BIT_VMEXIT_REASON);$/;"	d
 explicit_remote	net/lwip/netif/ppp/ppp.h	/^  u_int  explicit_remote   : 1;       \/* remote_name specified with remotename opt *\/$/;"	m	struct:ppp_settings
@@ -8263,8 +8239,6 @@ file_truncate_blocks	fs/fs.c	/^file_truncate_blocks(struct File *f, off_t newsiz
 file_write	fs/fs.c	/^file_write(struct File *f, const void *buf, size_t count, off_t offset)$/;"	f
 fileid	obj/fs/fs.asm	/^	fileid = r;$/;"	d
 fileid	vmm/guest/obj/fs/fs.asm	/^	fileid = r;$/;"	d
-fileno	gradelib.py	/^    def fileno(self):$/;"	f
-fileno	gradelib.py	/^    def fileno(self):$/;"	m	class:GDBClient
 find_debug_sections	kern/elf_rw.c	/^void find_debug_sections(uintptr_t elf) $/;"	f
 find_done	obj/kern/kernel.asm	/^find_done:$/;"	l
 find_done	vmm/guest/obj/kern/kernel.asm	/^find_done:$/;"	l
@@ -8435,6 +8409,7 @@ function	net/lwip/include/lwip/api_msg.h	/^  void (* function)(struct api_msg_ms
 function	net/lwip/include/lwip/netifapi.h	/^  void (* function)(struct netifapi_msg_msg *msg);$/;"	m	struct:netifapi_msg
 fw	net/lwip/include/lwip/stats.h	/^  STAT_COUNTER fw;               \/* Forwarded packets. *\/$/;"	m	struct:stats_proto
 gboot_start	guest_boot/boot.S	/^gboot_start:$/;"	l
+gboot_start	vmm/guest/obj/boot/boot.asm	/^gboot_start:$/;"	l
 gboot_start	vmm/jos_boot.S	/^gboot_start:$/;"	l
 gd_dpl	inc/mmu.h	/^	unsigned gd_dpl : 2;         \/\/ descriptor(meaning new) privilege level$/;"	m	struct:Gatedesc
 gd_ist	inc/mmu.h	/^	unsigned gd_ist : 3;        \/\/ # args, 0 for interrupt\/trap gates$/;"	m	struct:Gatedesc
@@ -8463,7 +8438,6 @@ gdtdesc	vmm/jos_boot.S	/^gdtdesc:$/;"	l
 gdtdesc_64	kern/bootstrap.S	/^gdtdesc_64:$/;"	l
 gdtdesc_64	kern/entry.S	/^gdtdesc_64:$/;"	l
 gen	net/lwip/jos/arch/sys_arch.c	/^    int gen;$/;"	m	struct:sys_sem_entry	file:
-gen_primes	grade-lab5	/^def gen_primes(n):$/;"	f
 gen_trap	net/lwip/include/lwip/snmp_msg.h	/^  u32_t gen_trap;$/;"	m	struct:snmp_msg_trap
 generation	obj/kern/kernel.asm	/^		generation = 1 << ENVGENSHIFT;$/;"	d
 generation	obj/kern/kernel.asm	/^	generation = (e->env_id + (1 << ENVGENSHIFT)) & ~(NENV - 1);$/;"	d
@@ -8471,8 +8445,6 @@ generation	vmm/guest/obj/kern/kernel.asm	/^		generation = 1 << ENVGENSHIFT;$/;"	
 generation	vmm/guest/obj/kern/kernel.asm	/^	generation = (e->env_id + (1 << ENVGENSHIFT)) & ~(NENV - 1);$/;"	d
 get_buffer	net/serv.c	/^get_buffer(void) {$/;"	f	file:
 get_caller_pcs	kern/spinlock.c	/^get_caller_pcs(uint64_t pcs[])$/;"	f	file:
-get_current_test	gradelib.py	/^def get_current_test():$/;"	f
-get_gdb_port	gradelib.py	/^    def get_gdb_port():$/;"	f
 get_host_fd	fs/vmx_host.c	/^get_host_fd()$/;"	f
 get_idle_time	net/lwip/netif/ppp/ppp.c	/^get_idle_time(int u, struct ppp_idle *ip)$/;"	f
 get_object_def	net/lwip/include/lwip/snmp_structs.h	/^  void (* const get_object_def)(u8_t ident_len, s32_t *ident, struct obj_def *od);$/;"	m	struct:mib_array_node
@@ -8548,11 +8520,9 @@ handle_eptviolation	vmm/vmexits.c	/^handle_eptviolation(uint64_t *eptrt, struct 
 handle_interrupt_window	vmm/vmexits.c	/^handle_interrupt_window(struct Trapframe *tf, struct VmxGuestInfo *ginfo, uint32_t host_vector) {$/;"	f
 handle_interrupts	vmm/vmexits.c	/^handle_interrupts(struct Trapframe *tf, struct VmxGuestInfo *ginfo, uint32_t host_vector) {$/;"	f
 handle_ioinstr	vmm/vmexits.c	/^handle_ioinstr(struct Trapframe *tf, struct VmxGuestInfo *ginfo) {$/;"	f
-handle_output	gradelib.py	/^        def handle_output(output):$/;"	f	function:call_on_line.setup_call_on_line
 handle_rdmsr	vmm/vmexits.c	/^handle_rdmsr(struct Trapframe *tf, struct VmxGuestInfo *ginfo) {$/;"	f
-handle_read	gradelib.py	/^    def handle_read(self):$/;"	f
-handle_read	gradelib.py	/^    def handle_read(self):$/;"	m	class:GDBClient
 handle_vmcall	vmm/vmexits.c	/^handle_vmcall(struct Trapframe *tf, struct VmxGuestInfo *gInfo, uint64_t *eptrt)$/;"	f
+handle_vmclear	vmm/vmexits.c	/^handle_vmclear(struct Trapframe *tf, struct VmxGuestInfo *gInfo)$/;"	f
 handle_wrmsr	vmm/vmexits.c	/^handle_wrmsr(struct Trapframe *tf, struct VmxGuestInfo *ginfo) {$/;"	f
 handled	obj/kern/kernel.asm	/^				handled = true;$/;"	d
 handled	obj/kern/kernel.asm	/^			handled = true;$/;"	d
@@ -8581,7 +8551,6 @@ header	vmm/guest/obj/net/ns.asm	/^    header = pbuf_alloc(PBUF_LINK, 0, PBUF_RAM
 header_addr	kern/multiboot.h	/^   uint32_t header_addr;$/;"	m	struct:multiboot_header
 headers	user/httpd.c	/^struct responce_header headers[] = {$/;"	v	typeref:struct:responce_header
 hello	user/buggyhello2.c	/^const char *hello = "hello, world\\n";$/;"	v
-hexdump	grade-lab6	/^def hexdump(data):$/;"	f
 hexdump	net/testinput.c	/^hexdump(const char *prefix, const void *data, int len)$/;"	f	file:
 high	obj/kern/kernel.asm	/^	high = _dwarf_attr_find(die, DW_AT_high_pc);$/;"	d
 high	vmm/guest/obj/kern/kernel.asm	/^	high = _dwarf_attr_find(die, DW_AT_high_pc);$/;"	d
@@ -8600,8 +8569,8 @@ host_fsipc	fs/vmx_host.c	/^host_fsipc(unsigned type, void *dstva)$/;"	f	file:
 host_fsipcbuf	fs/vmx_host.c	/^static union Fsipc host_fsipcbuf __attribute__((aligned(PGSIZE)));$/;"	v	typeref:union:Fsipc	file:
 host_ipc_init	fs/vmx_host.c	/^host_ipc_init()$/;"	f
 host_read	fs/vmx_host.c	/^host_read(uint32_t secno, void *dst, size_t nsecs)$/;"	f
-host_vector	obj/kern/kernel.asm	/^    		host_vector = vmcs_read32(VMCS_32BIT_VMEXIT_INTERRUPTION_INFO);$/;"	d
-host_vector	vmm/guest/obj/kern/kernel.asm	/^    		host_vector = vmcs_read32(VMCS_32BIT_VMEXIT_INTERRUPTION_INFO);$/;"	d
+host_vector	obj/kern/kernel.asm	/^    	host_vector = vmcs_read32(VMCS_32BIT_VMEXIT_INTERRUPTION_INFO);$/;"	d
+host_vector	vmm/guest/obj/kern/kernel.asm	/^    	host_vector = vmcs_read32(VMCS_32BIT_VMEXIT_INTERRUPTION_INFO);$/;"	d
 host_write	fs/vmx_host.c	/^host_write(uint32_t secno, const void *src, size_t nsecs)$/;"	f
 hostent	net/lwip/include/lwip/netdb.h	/^struct hostent {$/;"	s
 hostname	net/lwip/include/lwip/netif.h	/^  char*  hostname;$/;"	m	struct:netif
@@ -8615,7 +8584,6 @@ htons	net/lwip/include/ipv4/lwip/inet.h	54;"	d
 htons	net/lwip/include/ipv4/lwip/inet.h	71;"	d
 htons	net/lwip/include/ipv4/lwip/inet.h	78;"	d
 htons	net/lwip/include/ipv4/lwip/inet.h	84;"	d
-http_port	grade-lab6	/^http_port = QEMU.get_gdb_port() + 2$/;"	v
 http_request	user/httpd.c	/^struct http_request {$/;"	s	file:
 http_request_parse	user/httpd.c	/^http_request_parse(struct http_request *req, char *request)$/;"	f	file:
 hva_pg	obj/kern/kernel.asm	/^			hva_pg = page2kva(p);$/;"	d
@@ -9313,6 +9281,8 @@ jif_pkt	inc/ns.h	/^struct jif_pkt {$/;"	s
 jl	net/lwip/include/lwip/api_msg.h	/^    } jl;$/;"	m	union:api_msg_msg::__anon27	typeref:struct:api_msg_msg::__anon27::__anon33
 jmp	guest_boot/boot.S	/^jmp *%eax$/;"	l
 jmp	guest_boot/boot.S	/^jmp spin$/;"	l
+jmp	vmm/guest/obj/boot/boot.asm	/^jmp *%eax$/;"	l
+jmp	vmm/guest/obj/boot/boot.asm	/^jmp spin$/;"	l
 jmp	vmm/jos_boot.S	/^jmp *%eax$/;"	l
 jmp	vmm/jos_boot.S	/^jmp spin$/;"	l
 join_or_leave	net/lwip/include/lwip/api_msg.h	/^      enum netconn_igmp join_or_leave;$/;"	m	struct:api_msg_msg::__anon27::__anon33	typeref:enum:api_msg_msg::__anon27::__anon33::netconn_igmp
@@ -9342,7 +9312,6 @@ kid	obj/user/testpiperace.asm	/^	kid = &envs[ENVX(pid)];$/;"	d
 kid	obj/user/testpiperace2.asm	/^	kid = &envs[ENVX(r)];$/;"	d
 kid	vmm/guest/obj/user/testpiperace.asm	/^	kid = &envs[ENVX(pid)];$/;"	d
 kid	vmm/guest/obj/user/testpiperace2.asm	/^	kid = &envs[ENVX(r)];$/;"	d
-kill	gradelib.py	/^    def kill(self):$/;"	f
 kill_link	net/lwip/netif/ppp/ppp.c	/^  int  kill_link;               \/* Shut the link down. *\/$/;"	m	struct:PPPControl_s	file:
 kill_queue	net/lwip/jos/arch/thread.c	/^static struct thread_queue kill_queue;$/;"	v	typeref:struct:thread_queue	file:
 kstacktop	obj/kern/kernel.asm	/^		kstacktop = KSTACKTOP - (KSTKSIZE + KSTKGAP) * i;$/;"	d
@@ -9662,6 +9631,7 @@ lfree	vmm/guest/obj/net/ns.asm	/^    lfree = mem;$/;"	d
 lfree	vmm/guest/obj/net/ns.asm	/^  lfree = (struct mem *)ram;$/;"	d
 lgdt	guest_boot/boot.S	/^lgdt    gdtdesc$/;"	l
 lgdt	inc/x86.h	/^lgdt(void *p)$/;"	f
+lgdt	vmm/guest/obj/boot/boot.asm	/^lgdt    gdtdesc$/;"	l
 lgdt	vmm/jos_boot.S	/^lgdt    gdtdesc$/;"	l
 li	obj/kern/kernel.asm	/^	li = linfo;$/;"	d
 li	vmm/guest/obj/kern/kernel.asm	/^	li = linfo;$/;"	d
@@ -9702,6 +9672,7 @@ listen	lib/sockets.c	/^listen(int s, int backlog)$/;"	f
 listen	net/lwip/include/lwip/sockets.h	336;"	d
 listen_pcbs	net/lwip/include/lwip/tcp.h	/^  struct tcp_pcb_listen *listen_pcbs; $/;"	m	union:tcp_listen_pcbs_t	typeref:struct:tcp_listen_pcbs_t::tcp_pcb_listen
 ljmp	guest_boot/boot.S	/^ljmp    $PROT_MODE_CSEG, $protcseg$/;"	l
+ljmp	vmm/guest/obj/boot/boot.asm	/^ljmp    $PROT_MODE_CSEG, $protcseg$/;"	l
 ljmp	vmm/jos_boot.S	/^ljmp    $PROT_MODE_CSEG, $protcseg$/;"	l
 lldt	inc/x86.h	/^lldt(uint16_t sel)$/;"	f
 llipaddr	net/lwip/include/ipv4/lwip/autoip.h	/^  struct ip_addr llipaddr;  \/* the currently selected, probed, announced or used LL IP-Address *\/$/;"	m	struct:autoip	typeref:struct:autoip::ip_addr
@@ -10075,14 +10046,9 @@ magic	net/lwip/netif/ppp/magic.c	/^u32_t magic()$/;"	f
 magicInit	net/lwip/netif/ppp/magic.c	/^void magicInit()$/;"	f
 magicnumber	net/lwip/netif/ppp/lcp.h	/^    u32_t magicnumber;$/;"	m	struct:lcp_options
 main	fs/fsformat.c	/^main(int argc, char **argv)$/;"	f
-make	gradelib.py	/^def make(*target):$/;"	f
 malloc	lib/malloc.c	/^malloc(size_t n)$/;"	f
 map_in_guest	user/vmm.c	/^map_in_guest( envid_t guest, uintptr_t gpa, size_t memsz, $/;"	f	file:
 map_segment	lib/spawn.c	/^map_segment(envid_t child, uintptr_t va, size_t memsz,$/;"	f	file:
-match	gradelib.py	/^    def match(self, *args, **kwargs):$/;"	m	class:Runner
-match_packet_seq	grade-lab6	/^def match_packet_seq(got, expect):$/;"	f
-matchtest	grade-lab5	/^def matchtest(parent, name, *args, **kw):$/;"	f
-matchtest	grade-lab8	/^def matchtest(parent, name, points, *args, **kw):$/;"	f
 max	net/lwip/include/lwip/stats.h	/^  STAT_COUNTER max;$/;"	m	struct:stats_syselem
 max	net/lwip/include/lwip/stats.h	/^  mem_size_t max;$/;"	m	struct:stats_mem
 max	obj/user/testpiperace.asm	/^	max = 200;$/;"	d
@@ -10102,7 +10068,6 @@ maxlength	net/lwip/include/lwip/snmp_structs.h	/^  u16_t maxlength;$/;"	m	struct
 maxnakloops	net/lwip/netif/ppp/fsm.h	/^  int maxnakloops;                 \/* Maximum number of nak loops tolerated *\/$/;"	m	struct:fsm
 maxslotindex	net/lwip/netif/ppp/ipcp.h	/^  u_char  maxslotindex;      \/* VJ slots - 1. *\/$/;"	m	struct:ipcp_options
 maxtermtransmits	net/lwip/netif/ppp/fsm.h	/^  int maxtermtransmits;            \/* Maximum Terminate-Request transmissions *\/$/;"	m	struct:fsm
-maybe_unlink	gradelib.py	/^def maybe_unlink(*paths):$/;"	f
 mbegin	lib/malloc.c	/^static uint8_t *mbegin = (uint8_t*) 0x08000000;$/;"	v	file:
 mbinfo	obj/kern/kernel.asm	/^		mbinfo = (struct multiboot_info *)hva_pg;$/;"	d
 mbinfo	vmm/guest/obj/kern/kernel.asm	/^		mbinfo = (struct multiboot_info *)hva_pg;$/;"	d
@@ -10209,7 +10174,6 @@ mib_ram_array_node	net/lwip/include/lwip/snmp_structs.h	/^struct mib_ram_array_n
 mib_scalar_node	net/lwip/include/lwip/snmp_structs.h	/^typedef struct mib_node mib_scalar_node;$/;"	t	typeref:struct:mib_node
 microdelay	kern/lapic.c	/^microdelay(int us)$/;"	f	file:
 mime_type	user/httpd.c	/^mime_type(const char *file)$/;"	f	file:
-mk_test_httpd	grade-lab6	/^def mk_test_httpd(url, expect_code, expect_data):$/;"	f
 mm1	obj/kern/kernel.asm	/^	mm1 = (uintptr_t) mmio_map_region(0, 4097);$/;"	d
 mm1	vmm/guest/obj/kern/kernel.asm	/^	mm1 = (uintptr_t) mmio_map_region(0, 4097);$/;"	d
 mm2	obj/kern/kernel.asm	/^	mm2 = (uintptr_t) mmio_map_region(0, 4096);$/;"	d
@@ -10232,6 +10196,7 @@ mon_help	kern/monitor.c	/^mon_help(int argc, char **argv, struct Trapframe *tf)$
 mon_kerninfo	kern/monitor.c	/^mon_kerninfo(int argc, char **argv, struct Trapframe *tf)$/;"	f
 monitor	kern/monitor.c	/^monitor(struct Trapframe *tf)$/;"	f
 mov	guest_boot/boot.S	/^mov $0x100000,%eax$/;"	l
+mov	vmm/guest/obj/boot/boot.asm	/^mov $0x100000,%eax$/;"	l
 mov	vmm/jos_boot.S	/^mov $0x100000,%eax$/;"	l
 movabs	lib/pfentry.S	/^movabs _pgfault_handler, %rax$/;"	l
 movabs	obj/fs/fs.asm	/^movabs _pgfault_handler, %rax$/;"	l
@@ -10262,6 +10227,8 @@ movabs	vmm/guest/obj/user/testpteshare.asm	/^movabs _pgfault_handler, %rax$/;"	l
 movabs	vmm/guest/obj/user/testshell.asm	/^movabs _pgfault_handler, %rax$/;"	l
 movl	guest_boot/boot.S	/^movl    %cr0, %eax$/;"	l
 movl	guest_boot/boot.S	/^movl    %eax, %cr0$/;"	l
+movl	vmm/guest/obj/boot/boot.asm	/^movl    %cr0, %eax$/;"	l
+movl	vmm/guest/obj/boot/boot.asm	/^movl    %eax, %cr0$/;"	l
 movl	vmm/jos_boot.S	/^movl    %cr0, %eax$/;"	l
 movl	vmm/jos_boot.S	/^movl    %eax, %cr0$/;"	l
 movq	lib/pfentry.S	/^movq  %rsp,%rdi                \/\/ passing the function argument in rdi$/;"	l
@@ -10327,6 +10294,15 @@ movw	guest_boot/boot.S	/^movw    %ax, %ss                # -> SS: Stack Segment$
 movw	guest_boot/boot.S	/^movw    %ax,%ds             # -> Data Segment$/;"	l
 movw	guest_boot/boot.S	/^movw    %ax,%es             # -> Extra Segment$/;"	l
 movw	guest_boot/boot.S	/^movw    %ax,%ss             # -> Stack Segment$/;"	l
+movw	vmm/guest/obj/boot/boot.asm	/^movw    $PROT_MODE_DSEG, %ax    # Our data segment selector$/;"	l
+movw	vmm/guest/obj/boot/boot.asm	/^movw    %ax, %ds                # -> DS: Data Segment$/;"	l
+movw	vmm/guest/obj/boot/boot.asm	/^movw    %ax, %es                # -> ES: Extra Segment$/;"	l
+movw	vmm/guest/obj/boot/boot.asm	/^movw    %ax, %fs                # -> FS$/;"	l
+movw	vmm/guest/obj/boot/boot.asm	/^movw    %ax, %gs                # -> GS$/;"	l
+movw	vmm/guest/obj/boot/boot.asm	/^movw    %ax, %ss                # -> SS: Stack Segment$/;"	l
+movw	vmm/guest/obj/boot/boot.asm	/^movw    %ax,%ds             # -> Data Segment$/;"	l
+movw	vmm/guest/obj/boot/boot.asm	/^movw    %ax,%es             # -> Extra Segment$/;"	l
+movw	vmm/guest/obj/boot/boot.asm	/^movw    %ax,%ss             # -> Stack Segment$/;"	l
 movw	vmm/jos_boot.S	/^movw    $PROT_MODE_DSEG, %ax    # Our data segment selector$/;"	l
 movw	vmm/jos_boot.S	/^movw    %ax, %ds                # -> DS: Data Segment$/;"	l
 movw	vmm/jos_boot.S	/^movw    %ax, %es                # -> ES: Extra Segment$/;"	l
@@ -11620,6 +11596,7 @@ optval	vmm/guest/obj/net/ns.asm	/^  optval = data->optval;$/;"	d
 original_iphdr	obj/net/ns.asm	/^  original_iphdr = p->payload;$/;"	d
 original_iphdr	vmm/guest/obj/net/ns.asm	/^  original_iphdr = p->payload;$/;"	d
 orl	guest_boot/boot.S	/^orl     $CR0_PE_ON, %eax$/;"	l
+orl	vmm/guest/obj/boot/boot.asm	/^orl     $CR0_PE_ON, %eax$/;"	l
 orl	vmm/jos_boot.S	/^orl     $CR0_PE_ON, %eax$/;"	l
 other_datagrams	obj/net/ns.asm	/^    other_datagrams = 0;$/;"	d
 other_datagrams	vmm/guest/obj/net/ns.asm	/^    other_datagrams = 0;$/;"	d
@@ -12548,7 +12525,6 @@ port_iortc	obj/kern/kernel.asm	/^			port_iortc = tf->tf_regs.reg_rax;$/;"	d
 port_iortc	vmm/guest/obj/kern/kernel.asm	/^			port_iortc = tf->tf_regs.reg_rax;$/;"	d
 pos	obj/kern/kernel.asm	/^	pos = inb(addr_6845 + 1) << 8;$/;"	d
 pos	vmm/guest/obj/kern/kernel.asm	/^	pos = inb(addr_6845 + 1) << 8;$/;"	d
-post_make	gradelib.py	/^def post_make():$/;"	f
 pp	obj/kern/kernel.asm	/^			pp = page_lookup(curenv->env_pml4e, srcva, &ppte);$/;"	d
 pp	obj/kern/kernel.asm	/^		pp = pa2page(PADDR(srcva));$/;"	d
 pp	obj/kern/kernel.asm	/^		pp = page_lookup(curenv->env_pml4e, srcva, &ppte);$/;"	d
@@ -12632,7 +12608,6 @@ pppoe_timeout	net/lwip/netif/ppp/ppp_oe.c	/^pppoe_timeout(void *arg)$/;"	f	file:
 pppoe_xmit	net/lwip/netif/ppp/ppp_oe.c	/^pppoe_xmit(struct pppoe_softc *sc, struct pbuf *pb)$/;"	f
 pppoehdr	net/lwip/include/netif/ppp_oe.h	/^struct pppoehdr {$/;"	s
 pppoetag	net/lwip/include/netif/ppp_oe.h	/^struct pppoetag {$/;"	s
-pre_make	gradelib.py	/^def pre_make():$/;"	f
 precision	obj/fs/fs.asm	/^				precision = precision * 10 + ch - '0';$/;"	d
 precision	obj/fs/fs.asm	/^			precision = va_arg(aq, int);$/;"	d
 precision	obj/fs/fs.asm	/^		precision = -1;$/;"	d
@@ -12934,6 +12909,7 @@ prologue_end	vmm/guest/obj/kern/kernel.asm	/^			prologue_end = 0;$/;"	d
 protcseg	boot/boot.S	/^protcseg:$/;"	l
 protcseg	guest_boot/boot.S	/^protcseg:$/;"	l
 protcseg	obj/boot/boot.asm	/^protcseg:$/;"	l
+protcseg	vmm/guest/obj/boot/boot.asm	/^protcseg:$/;"	l
 protcseg	vmm/jos_boot.S	/^protcseg:$/;"	l
 protent	net/lwip/netif/ppp/ppp.h	/^struct protent {$/;"	s
 proterr	net/lwip/include/lwip/stats.h	/^  STAT_COUNTER proterr;          \/* Protocol error. *\/$/;"	m	struct:stats_proto
@@ -13137,13 +13113,6 @@ queue	vmm/guest/obj/net/ns.asm	/^      queue = seg;$/;"	d
 queued_msg	net/lwip/jos/arch/sys_arch.c	/^    sys_sem_t queued_msg;$/;"	m	struct:sys_mbox_entry	file:
 queuelen	obj/net/ns.asm	/^  queuelen = pcb->snd_queuelen;$/;"	d
 queuelen	vmm/guest/obj/net/ns.asm	/^  queuelen = pcb->snd_queuelen;$/;"	d
-r	grade-lab1	/^r = Runner(save("jos.out"),$/;"	v
-r	grade-lab2	/^r = Runner(save("jos.out"),$/;"	v
-r	grade-lab3	/^r = Runner(save("jos.out"),$/;"	v
-r	grade-lab4	/^r = Runner(save("jos.out"),$/;"	v
-r	grade-lab5	/^r = Runner(save("jos.out"),$/;"	v
-r	grade-lab6	/^r = Runner(save("jos.out"),$/;"	v
-r	grade-lab8	/^r = Runner(save("jos.out"),$/;"	v
 r	net/lwip/include/lwip/api_msg.h	/^    } r;$/;"	m	union:api_msg_msg::__anon27	typeref:struct:api_msg_msg::__anon27::__anon32
 r	obj/fs/fs.asm	/^			r = (*dev->dev_close)(fd);$/;"	d
 r	obj/fs/fs.asm	/^			r = -E_INVAL;$/;"	d
@@ -13308,7 +13277,6 @@ r	obj/user/testtime.asm	/^	r = fstat(fd, stat);$/;"	d
 r	obj/user/testtime.asm	/^	r = read(0, &c, 1);$/;"	d
 r	obj/user/vmm.asm	/^			r = (*dev->dev_close)(fd);$/;"	d
 r	obj/user/vmm.asm	/^			r = 0;$/;"	d
-r	obj/user/vmm.asm	/^	r = copy("vmm\/clean-fs.img", filename_buffer);$/;"	d
 r	obj/user/vmm.asm	/^	r = fstat(fd, stat);$/;"	d
 r	obj/user/vmm.asm	/^	r = read(0, &c, 1);$/;"	d
 r	obj/user/vmmanager.asm	/^			r = (*dev->dev_close)(fd);$/;"	d
@@ -13588,7 +13556,6 @@ read_idtr	inc/x86.h	/^read_idtr (uint64_t *idtbase, uint16_t *idtlimit)$/;"	f
 read_idtr	obj/kern/kernel.asm	/^read_idtr (uint64_t *idtbase, uint16_t *idtlimit)$/;"	l
 read_idtr	vmm/guest/obj/kern/kernel.asm	/^read_idtr (uint64_t *idtbase, uint16_t *idtlimit)$/;"	l
 read_msr	inc/x86.h	/^read_msr( uint32_t ecx ) {$/;"	f
-read_pcap	grade-lab6	/^def read_pcap():$/;"	f
 read_rbp	inc/x86.h	/^read_rbp(void)$/;"	f
 read_rip	inc/x86.h	264;"	d
 read_rip	obj/kern/kernel.asm	/^#define read_rip(var) __asm __volatile("leaq (%%rip), %0" : "=r" (var)::"cc","memory")$/;"	d
@@ -13605,8 +13572,6 @@ readsect	kern/elf_rw.c	/^readsect(void *dst, uint64_t offset)$/;"	f
 readseg	boot/main.c	/^readseg(uint32_t pa, uint32_t count, uint32_t offset)$/;"	f
 readseg	kern/elf_rw.c	/^readseg(uint64_t pa, uint64_t count, uint64_t offset, uint64_t* kvoffset)$/;"	f
 readset	net/lwip/api/sockets.c	/^  fd_set *readset;$/;"	m	struct:lwip_select_cb	file:
-ready	grade-lab6	/^        def ready(line):$/;"	f	function:mk_test_httpd.test_httpd_test
-ready	grade-lab6	/^    def ready(line):$/;"	f	function:test_echosrv
 reassdatagrams	net/lwip/core/ipv4/ip_frag.c	/^static struct ip_reassdata *reassdatagrams;$/;"	v	typeref:struct:ip_reassdata	file:
 reassdatagrams	obj/net/ns.asm	/^    reassdatagrams = ipr->next;$/;"	d
 reassdatagrams	obj/net/ns.asm	/^  reassdatagrams = ipr;$/;"	d
@@ -13701,7 +13666,6 @@ reg_rsi	inc/trap.h	/^	uint64_t reg_rsi;$/;"	m	struct:PushRegs
 reg_size	kern/pci.h	/^    uint32_t reg_size[6];$/;"	m	struct:pci_func
 reg_table	kern/kdebug.h	/^	Dwarf_Regtable reg_table;$/;"	m	struct:Ripdebuginfo
 region_alloc	kern/env.c	/^region_alloc(struct Env *e, void *va, size_t len)$/;"	f	file:
-register_test	gradelib.py	/^    def register_test(fn, title=title):$/;"	f	function:test
 regs	kern/e1000.c	/^static volatile uint32_t *regs;$/;"	v	file:
 regs	obj/kern/kernel.asm	/^	regs = mmio_map_region(pcif->reg_base[0], pcif->reg_size[0]);$/;"	d
 regs	user/faultregs.c	/^	struct PushRegs regs;$/;"	m	struct:regs	typeref:struct:regs::PushRegs	file:
@@ -13799,7 +13763,6 @@ reserved	kern/mpconfig.c	/^	uint8_t reserved[3];$/;"	m	struct:mp	file:
 reserved	kern/mpconfig.c	/^	uint8_t reserved[8];$/;"	m	struct:mpproc	file:
 reserved	kern/multiboot.h	/^   uint32_t reserved;$/;"	m	struct:aout_symbol_table
 reserved	kern/multiboot.h	/^   uint32_t reserved;$/;"	m	struct:module
-reset_fs	gradelib.py	/^def reset_fs():$/;"	f
 resetci	net/lwip/netif/ppp/fsm.h	/^  void (*resetci)(fsm*);                            \/* Reset our Configuration Information *\/$/;"	m	struct:fsm_callbacks
 resp_id	net/lwip/netif/ppp/chap.h	/^  u_char resp_id;                         \/* ID for response messages *\/$/;"	m	struct:chap_state
 resp_length	net/lwip/netif/ppp/chap.h	/^  u_char resp_length;                     \/* length of response *\/$/;"	m	struct:chap_state
@@ -14156,10 +14119,6 @@ rto	net/lwip/include/lwip/tcp.h	/^  s16_t rto;    \/* retransmission time-out *\
 rtseq	net/lwip/include/lwip/tcp.h	/^  u32_t rtseq;  \/* sequence number being timed *\/$/;"	m	struct:tcp_pcb
 rttest	net/lwip/include/lwip/tcp.h	/^  u32_t rttest; \/* RTT estimate in 500ms ticks *\/$/;"	m	struct:tcp_pcb
 rules	kern/dwarf.h	/^	Dwarf_Regtable_Entry rules[DW_REG_TABLE_SIZE];$/;"	m	struct:__anon52
-run_qemu	gradelib.py	/^    def run_qemu(self, *monitors, **kw):$/;"	m	class:Runner
-run_qemu_kw	gradelib.py	/^        def run_qemu_kw(target_base="qemu", make_args=[], timeout=120):$/;"	f	function:Runner.run_qemu
-run_test	gradelib.py	/^        def run_test():$/;"	f	function:test.register_test
-run_tests	gradelib.py	/^def run_tests():$/;"	f
 runcmd	kern/monitor.c	/^runcmd(char *buf, struct Trapframe *tf)$/;"	f	file:
 runcmd	user/sh.c	/^runcmd(char* s)$/;"	f
 runit	obj/user/sh.asm	/^runit:$/;"	l
@@ -14249,10 +14208,6 @@ sa	net/lwip/include/lwip/tcp.h	/^  s16_t sa, sv; \/* @todo document this *\/$/;"
 sa_data	net/lwip/include/lwip/sockets.h	/^  char sa_data[14];$/;"	m	struct:sockaddr
 sa_family	net/lwip/include/lwip/sockets.h	/^  u8_t sa_family;$/;"	m	struct:sockaddr
 sa_len	net/lwip/include/lwip/sockets.h	/^  u8_t sa_len;$/;"	m	struct:sockaddr
-save	gradelib.py	/^def save(path):$/;"	f
-save_on_finish	gradelib.py	/^    def save_on_finish(fail):$/;"	f	function:save
-save_pcap	grade-lab6	/^    def save_pcap(fail):$/;"	f	function:save_pcap_on_fail
-save_pcap_on_fail	grade-lab6	/^def save_pcap_on_fail():$/;"	f
 sc	obj/fs/fs.asm	/^			sc = *in++;$/;"	d
 sc	obj/kern/kernel.asm	/^			sc = *in++;$/;"	d
 sc	obj/net/ns.asm	/^			sc = *in++;$/;"	d
@@ -14416,7 +14371,6 @@ send_error	user/httpd.c	/^send_error(struct http_request *req, int code)$/;"	f	f
 send_file	user/httpd.c	/^send_file(struct http_request *req)$/;"	f	file:
 send_header	user/httpd.c	/^send_header(struct http_request *req, int code)$/;"	f	file:
 send_header_fin	user/httpd.c	/^send_header_fin(struct http_request *req)$/;"	f	file:
-send_packets	grade-lab6	/^    def send_packets():$/;"	f	function:test_testinput_helper
 send_size	user/httpd.c	/^send_size(struct http_request *req, off_t size)$/;"	f	file:
 sendevent	net/lwip/api/sockets.c	/^  u16_t sendevent;$/;"	m	struct:lwip_socket	file:
 sendmss	obj/net/ns.asm	/^    sendmss = LWIP_MIN(sendmss, mss_s);$/;"	d
@@ -14491,9 +14445,6 @@ set_value_a	net/lwip/include/lwip/snmp_structs.h	/^  void (*set_value_a)(u8_t ri
 set_value_pc	net/lwip/include/lwip/snmp_structs.h	/^  void (*set_value_pc)(u8_t rid, struct obj_def *od);$/;"	m	struct:mib_external_node
 set_value_q	net/lwip/include/lwip/snmp_structs.h	/^  void (*set_value_q)(u8_t rid, struct obj_def *od, u16_t len, void *value);$/;"	m	struct:mib_external_node
 setsockopt	net/lwip/include/lwip/sockets.h	334;"	d
-setup_breakpoint	gradelib.py	/^    def setup_breakpoint(runner):$/;"	f	function:stop_breakpoint
-setup_call_on_line	gradelib.py	/^    def setup_call_on_line(runner):$/;"	f	function:call_on_line
-setup_save	gradelib.py	/^    def setup_save(runner):$/;"	f	function:save
 setup_tcp	net/lwip/api/api_msg.c	/^setup_tcp(struct netconn *conn)$/;"	f	file:
 sfork	lib/fork.c	/^sfork(void)$/;"	f
 sh_addr	inc/elf.h	/^	uint64_t sh_addr;$/;"	m	struct:Secthdr
@@ -14529,8 +14480,6 @@ sh_type	kern/dwarf_elf.h	/^    uint32_t sh_type;$/;"	m	struct:Secthdr
 shiftcode	kern/console.c	/^static uint8_t shiftcode[256] =$/;"	v	file:
 shiftmap	kern/console.c	/^static uint8_t shiftmap[256] =$/;"	v	file:
 shndx	kern/multiboot.h	/^   uint32_t shndx;$/;"	m	struct:elf_section_header_table
-show_command	gradelib.py	/^def show_command(cmd):$/;"	f
-show_part	gradelib.py	/^    def show_part():$/;"	f	function:end_part
 shutdown	inc/ns.h	/^	} shutdown;$/;"	m	union:Nsipc	typeref:struct:Nsipc::Nsreq_shutdown
 shutdown	lib/sockets.c	/^shutdown(int s, int how)$/;"	f
 shutdown	net/lwip/include/lwip/sockets.h	329;"	d
@@ -15061,6 +15010,7 @@ spin	obj/boot/boot.asm	/^spin:$/;"	l
 spin	obj/kern/kernel.asm	/^spin:	jmp	spin$/;"	l
 spin	obj/kern/kernel.asm	/^spin:	jmp spin$/;"	l
 spin	obj/kern/kernel.asm	/^spin:$/;"	l
+spin	vmm/guest/obj/boot/boot.asm	/^spin:$/;"	l
 spin	vmm/guest/obj/kern/kernel.asm	/^spin:	jmp	spin$/;"	l
 spin	vmm/guest/obj/kern/kernel.asm	/^spin:	jmp spin$/;"	l
 spin	vmm/guest/obj/kern/kernel.asm	/^spin:$/;"	l
@@ -15804,15 +15754,12 @@ stats_syselem	net/lwip/include/lwip/stats.h	/^struct stats_syselem {$/;"	s
 status	kern/e1000.c	/^	uint8_t status;      \/* Descriptor status *\/$/;"	m	struct:rx_desc	file:
 status	kern/e1000.c	/^	uint8_t status;$/;"	m	struct:tx_desc	file:
 status_callback	net/lwip/include/lwip/netif.h	/^  void (* status_callback)(struct netif *netif);$/;"	m	struct:netif
-stop	gradelib.py	/^    def stop(line):$/;"	f	function:stop_on_line
 stop	obj/net/ns.asm	/^            stop = sys_time_msec() + to;$/;"	d
 stop	obj/net/testinput.asm	/^            stop = sys_time_msec() + to;$/;"	d
 stop	obj/net/testoutput.asm	/^            stop = sys_time_msec() + to;$/;"	d
 stop	vmm/guest/obj/net/ns.asm	/^            stop = sys_time_msec() + to;$/;"	d
 stop	vmm/guest/obj/net/testinput.asm	/^            stop = sys_time_msec() + to;$/;"	d
 stop	vmm/guest/obj/net/testoutput.asm	/^            stop = sys_time_msec() + to;$/;"	d
-stop_breakpoint	gradelib.py	/^def stop_breakpoint(addr):$/;"	f
-stop_on_line	gradelib.py	/^def stop_on_line(regexp):$/;"	f
 str	obj/kern/kernel.asm	/^		str = _dwarf_find_section(".debug_str");$/;"	d
 str	vmm/guest/obj/kern/kernel.asm	/^		str = _dwarf_find_section(".debug_str");$/;"	d
 str1	user/sendpage.c	/^const char *str1 = "hello child environment! how are you?";$/;"	v
@@ -16233,72 +16180,7 @@ temp	vmm/guest/obj/kern/kernel.asm	/^		temp = kvoffset;$/;"	d
 temp	vmm/guest/obj/kern/kernel.asm	/^	temp = kvoffset;$/;"	d
 term_reason	net/lwip/netif/ppp/fsm.h	/^  char* term_reason;               \/* Reason for closing protocol *\/$/;"	m	struct:fsm
 term_reason_len	net/lwip/netif/ppp/fsm.h	/^  int term_reason_len;             \/* Length of term_reason *\/$/;"	m	struct:fsm
-test	gradelib.py	/^def test(points, title=None, parent=None):$/;"	f
-test_backtrace_arguments	grade-lab1	/^def test_backtrace_arguments():$/;"	f
-test_backtrace_count	grade-lab1	/^def test_backtrace_count():$/;"	f
-test_backtrace_lines	grade-lab1	/^def test_backtrace_lines():$/;"	f
-test_backtrace_symbols	grade-lab1	/^def test_backtrace_symbols():$/;"	f
-test_badsegment	grade-lab3	/^def test_badsegment():$/;"	f
-test_breakpoint	grade-lab3	/^def test_breakpoint():$/;"	f
-test_buggyhello	grade-lab3	/^def test_buggyhello():$/;"	f
-test_buggyhello2	grade-lab3	/^def test_buggyhello2():$/;"	f
-test_check_kern_pgdir	grade-lab2	/^def test_check_kern_pgdir():$/;"	f
-test_check_page	grade-lab2	/^def test_check_page():$/;"	f
-test_check_page_alloc	grade-lab2	/^def test_check_page_alloc():$/;"	f
-test_divzero	grade-lab3	/^def test_divzero():$/;"	f
-test_dumbfork	grade-lab4	/^def test_dumbfork():$/;"	f
-test_echosrv	grade-lab6	/^def test_echosrv():$/;"	f
-test_ept	grade-lab8	/^def test_ept():$/;"	f
 test_ept_map	vmm/ept.c	/^int test_ept_map(void)$/;"	f
-test_evilhello	grade-lab3	/^def test_evilhello():$/;"	f
-test_faultalloc	grade-lab4	/^def test_faultalloc():$/;"	f
-test_faultallocbad	grade-lab4	/^def test_faultallocbad():$/;"	f
-test_faultbadhandler	grade-lab4	/^def test_faultbadhandler():$/;"	f
-test_faultdie	grade-lab4	/^def test_faultdie():$/;"	f
-test_faultevilhandler	grade-lab4	/^def test_faultevilhandler():$/;"	f
-test_faultnostack	grade-lab4	/^def test_faultnostack():$/;"	f
-test_faultread	grade-lab3	/^def test_faultread():$/;"	f
-test_faultread	grade-lab4	/^def test_faultread():$/;"	f
-test_faultreadkernel	grade-lab3	/^def test_faultreadkernel():$/;"	f
-test_faultregs	grade-lab4	/^def test_faultregs():$/;"	f
-test_faultwrite	grade-lab3	/^def test_faultwrite():$/;"	f
-test_faultwrite	grade-lab4	/^def test_faultwrite():$/;"	f
-test_faultwritekernel	grade-lab3	/^def test_faultwritekernel():$/;"	f
-test_forktree	grade-lab4	/^def test_forktree():$/;"	f
-test_fs	grade-lab5	/^def test_fs():$/;"	f
-test_hello	grade-lab3	/^def test_hello():$/;"	f
-test_httpd	grade-lab6	/^def test_httpd():$/;"	f
-test_httpd_test	grade-lab6	/^    def test_httpd_test():$/;"	f	function:mk_test_httpd
-test_icode	grade-lab5	/^def test_icode():$/;"	f
-test_jos	grade-lab1	/^def test_jos():$/;"	f
-test_jos	grade-lab2	/^def test_jos():$/;"	f
-test_pci_attach	grade-lab6	/^def test_pci_attach():$/;"	f
-test_pingpong	grade-lab4	/^def test_pingpong():$/;"	f
-test_primes	grade-lab4	/^def test_primes():$/;"	f
-test_primespipe	grade-lab5	/^def test_primespipe():$/;"	f
-test_printf	grade-lab1	/^def test_printf():$/;"	f
-test_pte_share	grade-lab5	/^def test_pte_share():$/;"	f
-test_result	grade-lab8	/^def test_result():$/;"	f
-test_sendpage	grade-lab4	/^def test_sendpage():$/;"	f
-test_softint	grade-lab3	/^def test_softint():$/;"	f
-test_spin	grade-lab4	/^def test_spin():$/;"	f
-test_stresssched	grade-lab4	/^def test_stresssched():$/;"	f
-test_testbss	grade-lab3	/^def test_testbss():$/;"	f
-test_testfile	grade-lab5	/^def test_testfile():$/;"	f
-test_testinput_100	grade-lab6	/^def test_testinput_100():$/;"	f
-test_testinput_5	grade-lab6	/^def test_testinput_5():$/;"	f
-test_testinput_helper	grade-lab6	/^def test_testinput_helper(count):$/;"	f
-test_testoutput_100	grade-lab6	/^def test_testoutput_100():$/;"	f
-test_testoutput_5	grade-lab6	/^def test_testoutput_5():$/;"	f
-test_testoutput_helper	grade-lab6	/^def test_testoutput_helper(count):$/;"	f
-test_testpipe	grade-lab5	/^def test_testpipe():$/;"	f
-test_testpiperace	grade-lab5	/^def test_testpiperace():$/;"	f
-test_testpiperace2	grade-lab5	/^def test_testpiperace2():$/;"	f
-test_testshell	grade-lab5	/^def test_testshell():$/;"	f
-test_testtime	grade-lab6	/^def test_testtime():$/;"	f
-test_vm	grade-lab8	/^def test_vm():$/;"	f
-test_writemotd1	grade-lab5	/^def test_writemotd1():$/;"	f
-test_writemotd2	grade-lab5	/^def test_writemotd2():$/;"	f
 tf	obj/kern/kernel.asm	/^		tf = &curenv->env_tf;$/;"	d
 tf	vmm/guest/obj/kern/kernel.asm	/^		tf = &curenv->env_tf;$/;"	d
 tf_cs	inc/trap.h	/^	uint16_t tf_cs;$/;"	m	struct:Trapframe
@@ -16954,7 +16836,6 @@ user_mem_check_addr	obj/kern/kernel.asm	/^			user_mem_check_addr = (uintptr_t) v
 user_mem_check_addr	obj/kern/kernel.asm	/^		user_mem_check_addr = (uintptr_t) va;$/;"	d
 user_mem_check_addr	vmm/guest/obj/kern/kernel.asm	/^			user_mem_check_addr = (uintptr_t) va;$/;"	d
 user_mem_check_addr	vmm/guest/obj/kern/kernel.asm	/^		user_mem_check_addr = (uintptr_t) va;$/;"	d
-user_test	gradelib.py	/^    def user_test(self, binary, *monitors, **kw):$/;"	m	class:Runner
 utf	obj/kern/kernel.asm	/^		utf = (struct UTrapframe*)(UXSTACKTOP$/;"	d
 utf	obj/kern/kernel.asm	/^		utf = (struct UTrapframe*)(tf->tf_rsp$/;"	d
 utf	vmm/guest/obj/kern/kernel.asm	/^		utf = (struct UTrapframe*)(UXSTACKTOP$/;"	d
@@ -17187,7 +17068,6 @@ vmcs_write16	vmm/vmx.h	/^static __inline uint8_t vmcs_write16( uint32_t field, u
 vmcs_write32	vmm/vmx.h	/^static __inline uint8_t vmcs_write32( uint32_t field, uint32_t value ) {$/;"	f
 vmcs_write64	vmm/vmx.h	/^static __inline uint8_t vmcs_write64( uint32_t field, uint64_t value ) {$/;"	f
 vmcs_writel	vmm/vmx.h	/^static __inline uint8_t vmcs_writel( uint32_t field, uint64_t value) {$/;"	f
-vmdisk_number	obj/user/vmm.asm	/^	vmdisk_number = sys_vmx_get_vmdisk_number();$/;"	d
 vmdisk_number	vmm/vmexits.c	/^static int vmdisk_number = 0;	\/\/this number assign to the vm$/;"	v	file:
 vmexit	vmm/vmx.c	/^void vmexit() {$/;"	f
 vmlaunch	vmm/vmx_asm.h	/^vmlaunch() {$/;"	f
@@ -17456,7 +17336,6 @@ vpdres_len_msb	kern/pcireg.h	/^	uint8_t		vpdres_len_msb;$/;"	m	struct:pci_vpd_la
 vprintfmt	lib/printfmt.c	/^vprintfmt(void (*putch)(int, void*), void *putdat, const char *fmt, va_list ap)$/;"	f
 vsnprintf	lib/printfmt.c	/^vsnprintf(char *buf, int n, const char *fmt, va_list ap)$/;"	f
 w	net/lwip/include/lwip/api_msg.h	/^    } w;$/;"	m	union:api_msg_msg::__anon27	typeref:struct:api_msg_msg::__anon27::__anon31
-wait	gradelib.py	/^    def wait(self):$/;"	f
 wait	lib/wait.c	/^wait(envid_t envid)$/;"	f
 waitdisk	boot/main.c	/^waitdisk(void)$/;"	f
 waitdisk	kern/elf_rw.c	/^waitdisk(void)$/;"	f
@@ -17752,5 +17631,6 @@ xmit_idle	net/lwip/netif/ppp/ppp.h	/^  u_short xmit_idle;      \/* seconds since
 xopen	user/testfile.c	/^xopen(const char *path, int mode)$/;"	f	file:
 xopen	user/testfilero.c	/^xopen(const char *path, int mode)$/;"	f	file:
 xorw	guest_boot/boot.S	/^xorw    %ax,%ax             # Segment number zero$/;"	l
+xorw	vmm/guest/obj/boot/boot.asm	/^xorw    %ax,%ax             # Segment number zero$/;"	l
 xorw	vmm/jos_boot.S	/^xorw    %ax,%ax             # Segment number zero$/;"	l
 zero	user/divzero.c	/^int zero;$/;"	v

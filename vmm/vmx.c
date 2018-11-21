@@ -600,31 +600,30 @@ void vmexit() {
 	
 	// Get the reason for VMEXIT from the VMCS.
 	exit_reason = vmcs_read32(VMCS_32BIT_VMEXIT_REASON);
-	cprintf( "---VMEXIT Reason: %x---\n", exit_reason ); 
-
+	//cprintf( "---VMEXIT Reason: %x---\n", exit_reason ); 
 	//print_trapframe(&curenv->env_tf);
 
 	switch(exit_reason & EXIT_REASON_MASK) {
-    	case EXIT_REASON_EXTERNAL_INT:
-    		host_vector = vmcs_read32(VMCS_32BIT_VMEXIT_INTERRUPTION_INFO);
-    		exit_handled = handle_interrupts(&curenv->env_tf, &curenv->env_vmxinfo, host_vector);
-    		break;
-    	case EXIT_REASON_INTERRUPT_WINDOW:
-    		exit_handled = handle_interrupt_window(&curenv->env_tf, &curenv->env_vmxinfo, host_vector);
-    		break;
-        case EXIT_REASON_RDMSR:
+    case EXIT_REASON_EXTERNAL_INT:
+    	host_vector = vmcs_read32(VMCS_32BIT_VMEXIT_INTERRUPTION_INFO);
+    	exit_handled = handle_interrupts(&curenv->env_tf, &curenv->env_vmxinfo, host_vector);
+    	break;
+    case EXIT_REASON_INTERRUPT_WINDOW:
+    	exit_handled = handle_interrupt_window(&curenv->env_tf, &curenv->env_vmxinfo, host_vector);
+    	break;
+    case EXIT_REASON_RDMSR:
 		exit_handled = handle_rdmsr(&curenv->env_tf, &curenv->env_vmxinfo);
 		break;
-        case EXIT_REASON_WRMSR:
-		exit_handled = handle_wrmsr(&curenv->env_tf, &curenv->env_vmxinfo);
+    case EXIT_REASON_WRMSR:
+	    exit_handled = handle_wrmsr(&curenv->env_tf, &curenv->env_vmxinfo);
 		break;
-        case EXIT_REASON_EPT_VIOLATION:
+    case EXIT_REASON_EPT_VIOLATION:
 		exit_handled = handle_eptviolation(curenv->env_pml4e, &curenv->env_vmxinfo);
 		break;
-        case EXIT_REASON_IO_INSTRUCTION:
+    case EXIT_REASON_IO_INSTRUCTION:
 		exit_handled = handle_ioinstr(&curenv->env_tf, &curenv->env_vmxinfo);
 		break;
-        case EXIT_REASON_CPUID:
+    case EXIT_REASON_CPUID:
 		exit_handled = handle_cpuid(&curenv->env_tf, &curenv->env_vmxinfo);
 		break;
 	case EXIT_REASON_VMCALL:
@@ -636,11 +635,15 @@ void vmexit() {
 		env_destroy(curenv);
 		exit_handled = true;
 		break;
-	}
+	case EXIT_REASON_VMCLEAR:
+        cprintf("VMEXIT due to VMCLEAR\n");
+        exit_handled = handle_vmclear(&curenv->env_tf, &curenv->env_vmxinfo);
+        break;
+    }
 	if(!exit_handled) {
 		cprintf( "Unhandled VMEXIT, aborting guest.\n" );
 		vmcs_dump_cpu();
-		env_destroy(curenv);
+        env_destroy(curenv);
 	}
 	sched_yield();
 }
@@ -835,9 +838,11 @@ int vmx_vmrun( struct Env *e ) {
 		physaddr_t vmcs_phy_addr = PADDR(e->env_vmxinfo.vmcs);
         
 		// Call VMCLEAR on the VMCS region.
-		error = vmclear(vmcs_phy_addr);
+		cprintf("vmcs phy addr %x\n", vmcs_phy_addr);
+        error = vmclear(vmcs_phy_addr);
 		// Check if VMCLEAR succeeded. ( RFLAGS.CF = 0 and RFLAGS.ZF = 0 )
-		if ( error )
+		cprintf("error %d\n", error);
+        if ( error )
 			return -E_VMCS_INIT; 
 
 		// Make this VMCS working VMCS.

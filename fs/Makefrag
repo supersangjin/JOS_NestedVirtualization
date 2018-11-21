@@ -18,7 +18,6 @@ else
 FSIMGTXTFILES :=	fs/motd_guest
 endif
 
-
 ifndef GUEST_KERN
 USERAPPS :=		$(USERAPPS) \
 			$(OBJDIR)/user/cat \
@@ -59,6 +58,7 @@ GUESTKERNELS += $(GUESTDIR)/$(OBJDIR)/fs/clean-fs.img
 else
 GUESTKERNELS = $(OBJDIR)/kern/kernel
 GUESTKERNELS += boot/boot
+GUESTKERNELS += L2-fs.img
 endif
 USERAPPS += $(OBJDIR)/user/vmm
 

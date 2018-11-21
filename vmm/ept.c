@@ -49,17 +49,22 @@ static inline int epte_present(epte_t epte)
 static int ept_lookup_gpa(epte_t* eptrt, void *gpa, 
 			  int create, epte_t **epte_out) {
     	/* Your code here */
-	
-	if (eptrt == NULL) 
-		return -E_INVAL;
 
+	if (eptrt == NULL) {
+        cprintf("eptrt null\n");
+		return -E_INVAL;
+    }
 	epte_t *epte = pml4e_walk(eptrt, gpa, create);
 	
-	if (epte == NULL && create)
+    if (epte == NULL && create) {
+        cprintf("no mem\n");
 		return -E_NO_MEM;
+    }
 
-	if (epte == NULL && create == 0)
+    if (epte == NULL && create == 0){
+        cprintf("no ent\n");
 		return -E_NO_ENT;
+    }
 
 	if (epte_out)
 		*epte_out = epte;
@@ -72,9 +77,11 @@ void ept_gpa2hva(epte_t* eptrt, void *gpa, void **hva) {
     int ret = ept_lookup_gpa(eptrt, gpa, 0, &pte);
     if(ret < 0) {
         *hva = NULL;
+        cprintf("ret < 0\n");
     } else {
         if(!epte_present(*pte)) {
            *hva = NULL;
+           cprintf("hva null\n");
         } else {
            *hva = KADDR(epte_addr(*pte));
         }

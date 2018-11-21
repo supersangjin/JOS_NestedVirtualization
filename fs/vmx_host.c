@@ -82,7 +82,7 @@ host_ipc_init()
 	if ((r = fd_alloc(&host_fd)) < 0)
 		panic("Couldn't allocate an fd!");
 	asm("vmcall":"=a"(vmdisk_number): "0"(VMX_VMCALL_GETDISKIMGNUM));
-	snprintf(path_string, 50, "/vmm/fs%d.img", vmdisk_number);
+	snprintf(path_string, 50, "/vmm/clean-fs.img");
 	strcpy(host_fsipcbuf.open.req_path, path_string);
 	host_fsipcbuf.open.req_omode = O_RDWR;
 

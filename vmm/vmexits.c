@@ -3,6 +3,7 @@
 #include <inc/error.h>
 #include <vmm/vmexits.h>
 #include <vmm/ept.h>
+#include <vmm/vmx_asm.h>
 #include <inc/x86.h>
 #include <inc/assert.h>
 #include <kern/pmap.h>
@@ -154,7 +155,7 @@ handle_eptviolation(uint64_t *eptrt, struct VmxGuestInfo *ginfo) {
 				    page2kva(p), (void *)ROUNDDOWN(gpa, PGSIZE), __EPTE_FULL, 0);
 		assert(r >= 0);
 
-		//cprintf("EPT violation for gpa:%x mapped KVA:%x\n", gpa, page2kva(p));
+	//	cprintf("EPT violation for gpa:%x mapped KVA:%x\n", gpa, page2kva(p));
 		return true;
 	} else if (gpa >= CGA_BUF && gpa < CGA_BUF + PGSIZE) {
 		// FIXME: This give direct access to VGA MMIO region.
@@ -390,4 +391,21 @@ handle_vmcall(struct Trapframe *tf, struct VmxGuestInfo *gInfo, uint64_t *eptrt)
 	return handled;
 }
 
+bool
+handle_vmclear(struct Trapframe *tf, struct VmxGuestInfo *gInfo)
+{
+    physaddr_t L1_gpa = tf->tf_regs.reg_rax;
+    pml4e_t *ept_pml4e = L0_env->ept_pml4e;   
+    void *hva;
+    uint8_t error;
+    ept_gpa2hva(ept_pml4e, (void *)L1_gpa, &hva);
+   
+    cprintf("%x\n", hva);
+    if (hva == NULL)
+        return false;
+    error = vmclear(PADDR(hva));
+    tf->tf_regs.reg_rbx = error;    
 
+    cprintf("error %d\n", error);
+    return true;
+}

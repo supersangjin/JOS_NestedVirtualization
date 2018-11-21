@@ -27,6 +27,7 @@ int vcpu_count = 0;
 
 
 struct Env *envs = NULL;		// All environments
+struct Env *L0_env = NULL;
 
 static struct Env *env_free_list;	// Free environment list
 // (linked by Env->env_link)
@@ -146,7 +147,6 @@ env_init(void)
 	envs[NENV-1].env_link = NULL;
 	env_free_list = &envs[0];
 
-
 	// Per-CPU part of the initialization
 	env_init_percpu();
 }
@@ -251,7 +251,9 @@ env_guest_alloc(struct Env **newenv_store, envid_t parent_id)
 	p->pp_ref       += 1;
 	e->env_pml4e    = page2kva(p);
 	e->env_cr3      = page2pa(p);
-
+    cprintf("curenv %x", curenv);
+    L0_env->ept_pml4e = e->env_pml4e;
+    cprintf("afe\n");
 	// Allocate a VMCS.
 	struct PageInfo *q = vmx_init_vmcs();
 	if (!q) {
@@ -260,7 +262,7 @@ env_guest_alloc(struct Env **newenv_store, envid_t parent_id)
 	}
 	q->pp_ref += 1;
 	e->env_vmxinfo.vmcs = page2kva(q);
-
+    
 	// Allocate a page for msr load/store area.
 	struct PageInfo *r = NULL;
 	if (!(r = page_alloc(ALLOC_ZERO))) {

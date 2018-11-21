@@ -11,6 +11,7 @@
 #define JOS_ENTRY 0x7000
 
 size_t gpa_idx = 0;
+extern struct Env *L0_env;
 
 // The region to map in the guest should be memsz.  The region can span multiple pages.
 //
@@ -100,7 +101,8 @@ umain(int argc, char **argv) {
 	char filename_buffer[50];	//buffer to save the path 
 	int vmdisk_number;
 	int r;
-	if ((ret = sys_env_mkguest( GUEST_MEM_SZ * 10, JOS_ENTRY )) < 0) {
+    cprintf("asd\n");	
+    if ((ret = sys_env_mkguest( GUEST_MEM_SZ * 10, JOS_ENTRY )) < 0) {
 		cprintf("Error creating a guest OS env: %e\n", ret );
 		exit();
 	}
@@ -123,7 +125,7 @@ umain(int argc, char **argv) {
 	}
     
 #ifndef VMM_GUEST	
-	sys_vmx_incr_vmdisk_number();	//increase the vmdisk number
+    /*	sys_vmx_incr_vmdisk_number();	//increase the vmdisk number
 	//create a new guest disk image
 
 	vmdisk_number = sys_vmx_get_vmdisk_number();
@@ -136,7 +138,7 @@ umain(int argc, char **argv) {
 		cprintf("Create new virtual HDD failed: %e\n", r);
 		exit();
 	}
-
+*/
 	cprintf("Create VHD finished\n");
 #endif
 

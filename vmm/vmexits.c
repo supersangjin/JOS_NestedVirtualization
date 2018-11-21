@@ -400,12 +400,45 @@ handle_vmclear(struct Trapframe *tf, struct VmxGuestInfo *gInfo)
     uint8_t error;
     ept_gpa2hva(ept_pml4e, (void *)L1_gpa, &hva);
    
-    cprintf("%x\n", hva);
     if (hva == NULL)
         return false;
+    
     error = vmclear(PADDR(hva));
+	/*TODO handover error to L1*/
     tf->tf_regs.reg_rbx = error;    
-
-    cprintf("error %d\n", error);
+    if (error)
+        panic("E_VMCS_INIT");
+	tf->tf_rip += vmcs_read32(VMCS_32BIT_VMEXIT_INSTRUCTION_LENGTH);
+    
     return true;
+}
+
+bool
+handle_vmptrld(struct Trapframe *tf, struct VmxGuestInfo *gInfo)
+{
+
+    physaddr_t L1_gpa = tf->tf_regs.reg_rax;
+    pml4e_t *ept_pml4e = L0_env->ept_pml4e;   
+    void *hva;
+    uint8_t error;
+    ept_gpa2hva(ept_pml4e, (void *)L1_gpa, &hva);
+   
+    if (hva == NULL)
+        return false;
+
+    // TODO handover error to L1
+    error = vmptrld(PADDR(hva));
+    print_trapframe(tf);
+    /*if (error)
+        panic("E_VMCS_INIT");
+    */
+    tf->tf_rip += vmcs_read32(VMCS_32BIT_VMEXIT_INSTRUCTION_LENGTH);
+    
+    return true;
+}
+
+bool
+handle_vmwrite(struct Trapframe *tf, struct VmxGuestInfo *gInfo)
+{
+    panic("vmwrite");
 }

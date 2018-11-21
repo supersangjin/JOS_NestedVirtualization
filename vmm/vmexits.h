@@ -10,3 +10,5 @@ bool handle_ioinstr(struct Trapframe *tf, struct VmxGuestInfo *ginfo);
 bool handle_cpuid(struct Trapframe *tf, struct VmxGuestInfo *ginfo);
 bool handle_vmcall(struct Trapframe *tf, struct VmxGuestInfo *gInfo, uint64_t *eptrt );
 bool handle_vmclear(struct Trapframe *tf, struct VmxGuestInfo *gInfo);
+bool handle_vmptrld(struct Trapframe *tf, struct VmxGuestInfo *gInfo);
+bool handle_vmwrite(struct Trapframe *tf, struct VmxGuestInfo *gInfo);

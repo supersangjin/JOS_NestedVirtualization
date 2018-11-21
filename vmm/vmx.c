@@ -639,7 +639,15 @@ void vmexit() {
         cprintf("VMEXIT due to VMCLEAR\n");
         exit_handled = handle_vmclear(&curenv->env_tf, &curenv->env_vmxinfo);
         break;
-    }
+	case EXIT_REASON_VMPTRLD:
+        cprintf("VMEXIT due to VMPTRLD\n");
+        exit_handled = handle_vmptrld(&curenv->env_tf, &curenv->env_vmxinfo);
+        break;
+    case EXIT_REASON_VMWRITE:
+        cprintf("VMEXIT due to VMWRITE\n");
+        exit_handled = handle_vmwrite(&curenv->env_tf, &curenv->env_vmxinfo);
+        break;
+    }   
 	if(!exit_handled) {
 		cprintf( "Unhandled VMEXIT, aborting guest.\n" );
 		vmcs_dump_cpu();
@@ -651,7 +659,7 @@ void vmexit() {
 void asm_vmrun(struct Trapframe *tf) {
 	// NOTE: Since we re-use Trapframe structure, tf.tf_err contains the value
 	// of cr2 of the guest.
-	//cprintf("asm_run %x\n",curenv->env_runs);
+    //cprintf("asm_run %x\n",curenv->env_runs);
 	tf->tf_ds = curenv->env_runs;
 	tf->tf_es = 0;
 	unlock_kernel();
@@ -780,6 +788,7 @@ void asm_vmrun(struct Trapframe *tf) {
 	);
 	lock_kernel();
 	if(tf->tf_es) {
+        cprintf("error %d\n",tf->tf_es);
 		cprintf("Error during VMLAUNCH/VMRESUME\n");
 	} else {
 		curenv->env_tf.tf_rsp = vmcs_read64(VMCS_GUEST_RSP);
@@ -841,16 +850,16 @@ int vmx_vmrun( struct Env *e ) {
 		cprintf("vmcs phy addr %x\n", vmcs_phy_addr);
         error = vmclear(vmcs_phy_addr);
 		// Check if VMCLEAR succeeded. ( RFLAGS.CF = 0 and RFLAGS.ZF = 0 )
-		cprintf("error %d\n", error);
         if ( error )
 			return -E_VMCS_INIT; 
-
-		// Make this VMCS working VMCS.
+		
+        // Make this VMCS working VMCS.
 		error = vmptrld(vmcs_phy_addr);
-		if ( error )
+        cprintf("error %d\n", error);
+        if ( error )
 			return -E_VMCS_INIT; 
-
-		vmcs_host_init();
+		
+        vmcs_host_init();
 		vmcs_guest_init();
 		// Setup IO and exception bitmaps.
 		bitmap_setup(&e->env_vmxinfo);

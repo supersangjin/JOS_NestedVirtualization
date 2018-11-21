@@ -101,7 +101,6 @@ umain(int argc, char **argv) {
 	char filename_buffer[50];	//buffer to save the path 
 	int vmdisk_number;
 	int r;
-    cprintf("asd\n");	
     if ((ret = sys_env_mkguest( GUEST_MEM_SZ * 10, JOS_ENTRY )) < 0) {
 		cprintf("Error creating a guest OS env: %e\n", ret );
 		exit();

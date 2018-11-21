@@ -1372,7 +1372,7 @@ ENSRREFUSED	net/lwip/include/lwip/arch.h	205;"	d
 ENSRSERVFAIL	net/lwip/include/lwip/arch.h	202;"	d
 ENSRTIMEOUT	net/lwip/include/lwip/arch.h	211;"	d
 ENTRY	net/lwip/jos/arch/longjmp.S	/^#define ENTRY(x) \\$/;"	d
-ENVGENSHIFT	kern/env.c	34;"	d	file:
+ENVGENSHIFT	kern/env.c	35;"	d	file:
 ENVX	inc/env.h	35;"	d
 ENV_CREATE	kern/env.h	40;"	d
 ENV_CREATE	kern/env.h	47;"	d
@@ -2058,6 +2058,9 @@ KSTKGAP	inc/memlayout.h	102;"	d
 KSTKSIZE	inc/memlayout.h	101;"	d
 K_LDCMDBYTE	inc/kbdreg.h	51;"	d
 K_RDCMDBYTE	inc/kbdreg.h	50;"	d
+L0_env	kern/env.c	/^struct Env *L0_env = NULL;$/;"	v	typeref:struct:Env
+L0_env	obj/kern/kernel.asm	/^            L0_env = e;$/;"	d
+L0_env	vmm/guest/obj/kern/kernel.asm	/^            L0_env = e;$/;"	d
 LABSETUP	GNUmakefile	/^LABSETUP ?= .\/$/;"	m
 LANManResp	net/lwip/netif/ppp/chpms.c	/^    u_char LANManResp[24];$/;"	m	struct:__anon19	file:
 LAST_ACK	net/lwip/include/lwip/tcp.h	/^  LAST_ACK    = 9,$/;"	e	enum:tcp_state
@@ -7778,6 +7781,7 @@ error	obj/kern/kernel.asm	/^		error = vmptrld(PADDR(e->env_vmxinfo.vmcs));$/;"	d
 error	obj/kern/kernel.asm	/^		error = vmptrld(vmcs_phy_addr);$/;"	d
 error	obj/kern/kernel.asm	/^        error = vmclear(vmcs_phy_addr);$/;"	d
 error	obj/kern/kernel.asm	/^    error = vmclear(PADDR(hva));$/;"	d
+error	obj/kern/kernel.asm	/^    error = vmptrld(PADDR(hva));$/;"	d
 error	obj/user/icode.asm	/^error:$/;"	l
 error	obj/user/init.asm	/^error:$/;"	l
 error	obj/user/sh.asm	/^error:$/;"	l
@@ -7789,6 +7793,7 @@ error	vmm/guest/obj/kern/kernel.asm	/^		error = vmptrld(PADDR(e->env_vmxinfo.vmc
 error	vmm/guest/obj/kern/kernel.asm	/^		error = vmptrld(vmcs_phy_addr);$/;"	d
 error	vmm/guest/obj/kern/kernel.asm	/^        error = vmclear(vmcs_phy_addr);$/;"	d
 error	vmm/guest/obj/kern/kernel.asm	/^    error = vmclear(PADDR(hva));$/;"	d
+error	vmm/guest/obj/kern/kernel.asm	/^    error = vmptrld(PADDR(hva));$/;"	d
 error	vmm/guest/obj/user/icode.asm	/^error:$/;"	l
 error	vmm/guest/obj/user/init.asm	/^error:$/;"	l
 error	vmm/guest/obj/user/sh.asm	/^error:$/;"	l
@@ -7857,6 +7862,7 @@ exit_handled	obj/kern/kernel.asm	/^	    exit_handled = handle_wrmsr(&curenv->env
 exit_handled	obj/kern/kernel.asm	/^    	exit_handled = handle_interrupt_window(&curenv->env_tf, &curenv->env_vmxinfo, host_vector);$/;"	d
 exit_handled	obj/kern/kernel.asm	/^    	exit_handled = handle_interrupts(&curenv->env_tf, &curenv->env_vmxinfo, host_vector);$/;"	d
 exit_handled	obj/kern/kernel.asm	/^        exit_handled = handle_vmclear(&curenv->env_tf, &curenv->env_vmxinfo);$/;"	d
+exit_handled	obj/kern/kernel.asm	/^        exit_handled = handle_vmptrld(&curenv->env_tf, &curenv->env_vmxinfo);$/;"	d
 exit_handled	vmm/guest/obj/kern/kernel.asm	/^		exit_handled = handle_cpuid(&curenv->env_tf, &curenv->env_vmxinfo);$/;"	d
 exit_handled	vmm/guest/obj/kern/kernel.asm	/^		exit_handled = handle_eptviolation(curenv->env_pml4e, &curenv->env_vmxinfo);$/;"	d
 exit_handled	vmm/guest/obj/kern/kernel.asm	/^		exit_handled = handle_ioinstr(&curenv->env_tf, &curenv->env_vmxinfo);$/;"	d
@@ -7867,6 +7873,7 @@ exit_handled	vmm/guest/obj/kern/kernel.asm	/^	    exit_handled = handle_wrmsr(&c
 exit_handled	vmm/guest/obj/kern/kernel.asm	/^    	exit_handled = handle_interrupt_window(&curenv->env_tf, &curenv->env_vmxinfo, host_vector);$/;"	d
 exit_handled	vmm/guest/obj/kern/kernel.asm	/^    	exit_handled = handle_interrupts(&curenv->env_tf, &curenv->env_vmxinfo, host_vector);$/;"	d
 exit_handled	vmm/guest/obj/kern/kernel.asm	/^        exit_handled = handle_vmclear(&curenv->env_tf, &curenv->env_vmxinfo);$/;"	d
+exit_handled	vmm/guest/obj/kern/kernel.asm	/^        exit_handled = handle_vmptrld(&curenv->env_tf, &curenv->env_vmxinfo);$/;"	d
 exit_reason	obj/kern/kernel.asm	/^	exit_reason = vmcs_read32(VMCS_32BIT_VMEXIT_REASON);$/;"	d
 exit_reason	vmm/guest/obj/kern/kernel.asm	/^	exit_reason = vmcs_read32(VMCS_32BIT_VMEXIT_REASON);$/;"	d
 explicit_remote	net/lwip/netif/ppp/ppp.h	/^  u_int  explicit_remote   : 1;       \/* remote_name specified with remotename opt *\/$/;"	m	struct:ppp_settings
@@ -8523,6 +8530,7 @@ handle_ioinstr	vmm/vmexits.c	/^handle_ioinstr(struct Trapframe *tf, struct VmxGu
 handle_rdmsr	vmm/vmexits.c	/^handle_rdmsr(struct Trapframe *tf, struct VmxGuestInfo *ginfo) {$/;"	f
 handle_vmcall	vmm/vmexits.c	/^handle_vmcall(struct Trapframe *tf, struct VmxGuestInfo *gInfo, uint64_t *eptrt)$/;"	f
 handle_vmclear	vmm/vmexits.c	/^handle_vmclear(struct Trapframe *tf, struct VmxGuestInfo *gInfo)$/;"	f
+handle_vmptrld	vmm/vmexits.c	/^handle_vmptrld(struct Trapframe *tf, struct VmxGuestInfo *gInfo)$/;"	f
 handle_wrmsr	vmm/vmexits.c	/^handle_wrmsr(struct Trapframe *tf, struct VmxGuestInfo *ginfo) {$/;"	f
 handled	obj/kern/kernel.asm	/^				handled = true;$/;"	d
 handled	obj/kern/kernel.asm	/^			handled = true;$/;"	d

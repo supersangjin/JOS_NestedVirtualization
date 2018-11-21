@@ -251,9 +251,7 @@ env_guest_alloc(struct Env **newenv_store, envid_t parent_id)
 	p->pp_ref       += 1;
 	e->env_pml4e    = page2kva(p);
 	e->env_cr3      = page2pa(p);
-    cprintf("curenv %x", curenv);
     L0_env->ept_pml4e = e->env_pml4e;
-    cprintf("afe\n");
 	// Allocate a VMCS.
 	struct PageInfo *q = vmx_init_vmcs();
 	if (!q) {
@@ -707,8 +705,7 @@ env_pop_tf(struct Trapframe *tf)
 void
 env_run(struct Env *e)
 {
-
-	// Is this a context switch or just a return?
+    // Is this a context switch or just a return?
 	if (curenv != e) {
 		if (curenv && curenv->env_status == ENV_RUNNING)
 			curenv->env_status = ENV_RUNNABLE;
@@ -716,7 +713,11 @@ env_run(struct Env *e)
 		//cprintf("cpu %d switch from env %d to env %d\n",
 		//	cpunum(), curenv ? curenv - envs : -1, e - envs);
 
-		// keep track of which environment we're currently
+		
+        if (curenv == NULL)
+            L0_env = e;
+        
+        // keep track of which environment we're currently
 		// running
 		curenv = e;
 		e->env_status = ENV_RUNNING;

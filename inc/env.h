@@ -88,7 +88,7 @@ struct Env {
 	uint8_t *elf;
 
 	struct VmxGuestInfo env_vmxinfo;
-
+	uintptr_t *L2_vmcs;
 };
 
 #endif // !JOS_INC_ENV_H

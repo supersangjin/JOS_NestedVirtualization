@@ -40,6 +40,15 @@ vmptrld( physaddr_t vmcs_region ) {
 }
 
 static __inline uint8_t
+vmptrst() {
+    physaddr_t vmcs_region;
+
+    __asm __volatile("clc; vmptrst %0"
+            : "=m"( vmcs_region ) : : "cc");
+    return vmcs_region;
+}
+
+static __inline uint8_t
 vmlaunch() {
 	uint8_t error = 0;
 

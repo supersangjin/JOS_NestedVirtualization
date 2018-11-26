@@ -28,6 +28,8 @@ int vcpu_count = 0;
 
 struct Env *envs = NULL;		// All environments
 struct Env *L0_env = NULL;
+struct Env *L1_env = NULL;
+struct Env *L2_env = NULL;
 
 static struct Env *env_free_list;	// Free environment list
 // (linked by Env->env_link)
@@ -252,6 +254,7 @@ env_guest_alloc(struct Env **newenv_store, envid_t parent_id)
 	e->env_pml4e    = page2kva(p);
 	e->env_cr3      = page2pa(p);
     L0_env->ept_pml4e = e->env_pml4e;
+    cprintf("#######: %lx, %lx\n", e->env_cr3, e->env_pml4e);
 	// Allocate a VMCS.
 	struct PageInfo *q = vmx_init_vmcs();
 	if (!q) {
@@ -260,7 +263,6 @@ env_guest_alloc(struct Env **newenv_store, envid_t parent_id)
 	}
 	q->pp_ref += 1;
 	e->env_vmxinfo.vmcs = page2kva(q);
-    
 	// Allocate a page for msr load/store area.
 	struct PageInfo *r = NULL;
 	if (!(r = page_alloc(ALLOC_ZERO))) {
@@ -306,7 +308,7 @@ env_guest_alloc(struct Env **newenv_store, envid_t parent_id)
 	e->env_status = ENV_RUNNABLE;
 	e->env_runs = 0;
 	e->env_vmxinfo.vcpunum = vcpu_count++;
-    	cprintf("VCPUNUM allocated: %d\n", e->env_vmxinfo.vcpunum);
+    cprintf("VCPUNUM allocated: %d\n", e->env_vmxinfo.vcpunum);
 
 	memset(&e->env_tf, 0, sizeof(e->env_tf));
 
@@ -733,7 +735,12 @@ env_run(struct Env *e)
 	assert(e->env_status == ENV_RUNNING);
     
 	if(e->env_type == ENV_TYPE_GUEST) {
-		vmx_vmrun(e);
+        #ifndef VMM_GUEST
+        L1_env = e;
+        #else
+        L2_env = e;
+        #endif
+        vmx_vmrun(e);
 		panic ("vmx_run never returns\n");
 	}
 	else {

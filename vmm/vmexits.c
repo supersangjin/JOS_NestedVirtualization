@@ -109,6 +109,7 @@ handle_rdmsr(struct Trapframe *tf, struct VmxGuestInfo *ginfo) {
 bool 
 handle_wrmsr(struct Trapframe *tf, struct VmxGuestInfo *ginfo) {
 	uint64_t msr = tf->tf_regs.reg_rcx;
+	msr = EFER_MSR;
 	if(msr == EFER_MSR) {
 
 		uint64_t cur_val, new_val;
@@ -404,11 +405,10 @@ handle_vmclear(struct Trapframe *tf, struct VmxGuestInfo *gInfo)
         return false;
     
     error = vmclear(PADDR(hva));
-	/*TODO handover error to L1*/
-    tf->tf_regs.reg_rbx = error;    
-    if (error)
-        panic("E_VMCS_INIT");
-	tf->tf_rip += vmcs_read32(VMCS_32BIT_VMEXIT_INSTRUCTION_LENGTH);
+	if (error)
+        panic("-E_VMCS_INIT");
+
+    tf->tf_rip += vmcs_read32(VMCS_32BIT_VMEXIT_INSTRUCTION_LENGTH);
     
     return true;
 }
@@ -416,29 +416,70 @@ handle_vmclear(struct Trapframe *tf, struct VmxGuestInfo *gInfo)
 bool
 handle_vmptrld(struct Trapframe *tf, struct VmxGuestInfo *gInfo)
 {
-
     physaddr_t L1_gpa = tf->tf_regs.reg_rax;
-    pml4e_t *ept_pml4e = L0_env->ept_pml4e;   
+    pml4e_t *ept_pml4e = L0_env->ept_pml4e;
     void *hva;
     uint8_t error;
     ept_gpa2hva(ept_pml4e, (void *)L1_gpa, &hva);
-   
+
     if (hva == NULL)
         return false;
-
-    // TODO handover error to L1
-    error = vmptrld(PADDR(hva));
-    print_trapframe(tf);
-    /*if (error)
-        panic("E_VMCS_INIT");
-    */
-    tf->tf_rip += vmcs_read32(VMCS_32BIT_VMEXIT_INSTRUCTION_LENGTH);
     
+    /* save L2 vmcs region */
+    L1_env->L2_vmcs = hva; 
+    
+    /* Noting to do with vmptrld just change rip */
+	tf->tf_rip += vmcs_read32(VMCS_32BIT_VMEXIT_INSTRUCTION_LENGTH);
     return true;
 }
 
 bool
 handle_vmwrite(struct Trapframe *tf, struct VmxGuestInfo *gInfo)
 {
-    panic("vmwrite");
+    // change to L2 vmcs region 
+    vmptrld(PADDR(L1_env->L2_vmcs));
+   
+    vmcs_writel(tf->tf_regs.reg_rdx, tf->tf_regs.reg_rax);
+
+    // change back to L1 vmcs region
+    vmptrld(PADDR(L1_env->env_vmxinfo.vmcs));
+    
+	tf->tf_rip += vmcs_read32(VMCS_32BIT_VMEXIT_INSTRUCTION_LENGTH);
+    return true;
 }
+
+bool
+handle_vmlaunch(struct Trapframe *tf, struct VmxGuestInfo *gInfo)
+{
+    // construct EPT 0->2 
+    pml4e_t *ept_0_1 = L0_env->ept_pml4e; // EPT 0->1
+    pml4e_t *ept_1_2 = L1_env->env_pml4e; // EPT 1->2
+    void *hva;
+
+    cprintf("ept L1 01 %x\n", PADDR(ept_0_1));
+    cprintf("host cr3 %lx\n", vmcs_read64(VMCS_HOST_CR3));
+    cprintf("guest cr3 %lx\n", vmcs_read64(VMCS_GUEST_CR3));
+    cprintf("ept %lx\n", vmcs_read64(VMCS_64BIT_CONTROL_EPTPTR));
+    vmptrld(PADDR(L1_env->L2_vmcs));
+    cprintf("host cr3 %lx\n", vmcs_read64(VMCS_HOST_CR3));
+    cprintf("guest cr3 %lx\n", vmcs_read64(VMCS_GUEST_CR3));
+    cprintf("ept %lx\n", vmcs_read64(VMCS_64BIT_CONTROL_EPTPTR));
+    vmptrld(PADDR(L1_env->env_vmxinfo.vmcs));
+    cprintf("host cr3 %lx\n", vmcs_read64(VMCS_HOST_CR3));
+    cprintf("guest cr3 %lx\n", vmcs_read64(VMCS_GUEST_CR3));
+    
+    
+    panic("done");
+
+    // construct VMCS 0->2
+    
+
+
+
+
+    // vmlaunch to L2
+    vmlaunch(); 
+    panic("vmlaunch should never return^^");
+}
+
+

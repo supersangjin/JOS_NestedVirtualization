@@ -16,7 +16,7 @@ static int
 vmxon() {
 	int r;
 	if(!thiscpu->is_vmx_root) {
-		r = vmx_init_vmxon();
+        r = vmx_init_vmxon();
 		if(r < 0) {
 			cprintf("Error executing VMXON: %e\n", r);
 			return r;

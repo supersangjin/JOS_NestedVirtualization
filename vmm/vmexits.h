@@ -12,3 +12,6 @@ bool handle_vmcall(struct Trapframe *tf, struct VmxGuestInfo *gInfo, uint64_t *e
 bool handle_vmclear(struct Trapframe *tf, struct VmxGuestInfo *gInfo);
 bool handle_vmptrld(struct Trapframe *tf, struct VmxGuestInfo *gInfo);
 bool handle_vmwrite(struct Trapframe *tf, struct VmxGuestInfo *gInfo);
+bool handle_vmlaunch(struct Trapframe *tf, struct VmxGuestInfo *gInfo);
+extern struct Env *L1_env;
+extern struct Env *L2_env;

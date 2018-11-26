@@ -20,6 +20,7 @@
 #include <kern/macro.h>
 
 
+
 void vmx_list_vms() {
 	//findout how many VMs there
 	int i;
@@ -130,9 +131,12 @@ bool check_fixed_bits( uint64_t curr_val, uint64_t fixed0, uint64_t fixed1 ) {
 struct PageInfo * vmx_init_vmcs() {
 	// Read the VMX_BASIC MSR.
 	uint64_t vmx_basic_msr =  read_msr( IA32_VMX_BASIC );
-	uint32_t vmcs_rev_id = (uint32_t) vmx_basic_msr; // Bits 30:0, Bit 31 is always 0.
-
-	uint32_t vmcs_num_bytes =  ( vmx_basic_msr >> 32 ) & 0xfff; // Bits 44:32.
+#ifndef VMM_GUEST
+    uint32_t vmcs_rev_id = (uint32_t) vmx_basic_msr; // Bits 30:0, Bit 31 is always 0.
+#else
+    uint32_t vmcs_rev_id = 0x11e57ed0; //TODO hard code fix
+#endif
+    uint32_t vmcs_num_bytes =  ( vmx_basic_msr >> 32 ) & 0xfff; // Bits 44:32.
 	assert( vmcs_num_bytes <= 4096 ); // VMCS can have a max size of 4096.
 
 	//Alocate mem for VMCS region.
@@ -153,13 +157,13 @@ struct PageInfo * vmx_init_vmcs() {
  * operation. Returns a >=0 value if VMX root operation is achieved.
  */
 int vmx_init_vmxon() {
-    
+    uint8_t error; 
 	//Alocate mem and init the VMXON region.
 	struct PageInfo *p_vmxon_region = vmx_init_vmcs();
 	if(!p_vmxon_region)
 		return -E_NO_MEM;
-
-	uint64_t cr0 = rcr0();
+	
+    uint64_t cr0 = rcr0();
 	uint64_t cr4 = rcr4();
 	// Paging and protected mode are enabled in JOS.
     
@@ -167,6 +171,7 @@ int vmx_init_vmxon() {
 	cr0 = cr0 | CR0_NE;
 	lcr0( cr0 );
 
+    
 	bool ret =  check_fixed_bits( cr0,
 				      read_msr( IA32_VMX_CR0_FIXED0 ), 
 				      read_msr( IA32_VMX_CR0_FIXED1 ) );
@@ -174,16 +179,20 @@ int vmx_init_vmxon() {
 		page_decref( p_vmxon_region );
 		return -E_VMX_ON;
 	}
+    
 	// Enable VMX in CR4.
 	cr4 = cr4 | CR4_VMXE;
 	lcr4( cr4 );
-	ret =  check_fixed_bits( cr4,
+	
+    ret =  check_fixed_bits( cr4,
 				 read_msr( IA32_VMX_CR4_FIXED0 ), 
 				 read_msr( IA32_VMX_CR4_FIXED1 ) );
-	if ( !ret ) {
+	
+    if ( !ret ) {
 		page_decref( p_vmxon_region );
 		return -E_VMX_ON;
 	}
+
 	// Ensure that IA32_FEATURE_CONTROL MSR has been properly programmed and 
 	// and that it's lock bit has been set.
 	uint64_t feature_control = read_msr( IA32_FEATURE_CONTROL );
@@ -208,7 +217,7 @@ int vmx_init_vmxon() {
 		write_msr( IA32_FEATURE_CONTROL, feature_control );   
 	}
     
-	uint8_t error = vmxon( (physaddr_t) page2pa( p_vmxon_region ) );
+	error = vmxon( (physaddr_t) page2pa( p_vmxon_region ) );
 	if ( error ) { 
 		page_decref( p_vmxon_region );
 		return -E_VMX_ON; 
@@ -297,7 +306,7 @@ void vmcs_guest_init() {
 	vmcs_write32( VMCS_32BIT_GUEST_ACTIVITY_STATE, 0 );
 	vmcs_write32( VMCS_32BIT_GUEST_INTERRUPTIBILITY_STATE, 0 );
 
-	vmcs_write64( VMCS_GUEST_CR3, 0 );
+	vmcs_write64( VMCS_GUEST_CR3, 0);
 	vmcs_write64( VMCS_GUEST_CR0, CR0_NE );
 
 	vmcs_write64( VMCS_GUEST_CR4, CR4_VMXE );
@@ -332,7 +341,7 @@ vmcs_ctls_init( struct Env* e ) {
 	vmx_read_capability_msr( IA32_VMX_PROCBASED_CTLS, 
 				 &procbased_ctls_and, &procbased_ctls_or );
 	// Make sure there are secondary controls.
-	assert( BIT( procbased_ctls_and, 31 ) == 0x1 ); 
+	//assert( BIT( procbased_ctls_and, 31 ) == 0x1 ); 
    
 	procbased_ctls_or |= VMCS_PROC_BASED_VMEXEC_CTL_ACTIVESECCTL; 
 	procbased_ctls_or |= VMCS_PROC_BASED_VMEXEC_CTL_HLTEXIT;
@@ -644,8 +653,12 @@ void vmexit() {
         exit_handled = handle_vmptrld(&curenv->env_tf, &curenv->env_vmxinfo);
         break;
     case EXIT_REASON_VMWRITE:
-        cprintf("VMEXIT due to VMWRITE\n");
+        //cprintf("VMEXIT due to VMWRITE\n");
         exit_handled = handle_vmwrite(&curenv->env_tf, &curenv->env_vmxinfo);
+        break;
+    case EXIT_REASON_VMLAUNCH:
+        cprintf("VMEXIT due to VMLAUNCH\n");
+        exit_handled = handle_vmlaunch(&curenv->env_tf, &curenv->env_vmxinfo);
         break;
     }   
 	if(!exit_handled) {
@@ -847,21 +860,25 @@ int vmx_vmrun( struct Env *e ) {
 		physaddr_t vmcs_phy_addr = PADDR(e->env_vmxinfo.vmcs);
         
 		// Call VMCLEAR on the VMCS region.
-		cprintf("vmcs phy addr %x\n", vmcs_phy_addr);
+		//cprintf("vmcs phy addr %x\n", vmcs_phy_addr);
         error = vmclear(vmcs_phy_addr);
 		// Check if VMCLEAR succeeded. ( RFLAGS.CF = 0 and RFLAGS.ZF = 0 )
+#ifndef VMM_GUEST
         if ( error )
 			return -E_VMCS_INIT; 
-		
+#endif
         // Make this VMCS working VMCS.
 		error = vmptrld(vmcs_phy_addr);
-        cprintf("error %d\n", error);
+       
+#ifndef VMM_GUEST
         if ( error )
-			return -E_VMCS_INIT; 
-		
+			return -E_VMCS_INIT;
+#endif
+
         vmcs_host_init();
 		vmcs_guest_init();
-		// Setup IO and exception bitmaps.
+        
+        // Setup IO and exception bitmaps.
 		bitmap_setup(&e->env_vmxinfo);
 		// Setup the msr load/store area
 		msr_setup(&e->env_vmxinfo);

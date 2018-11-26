@@ -101,155 +101,249 @@ static __inline uint64_t vmcs_read64(uint32_t field)
 }
 
 struct Vmcs {
-    // HOST STATE
-    uint64_t vmcs_host_cr0;
-    uint64_t vmcs_host_cr3;
-    uint64_t vmcs_host_cr4;
-    uint16_t vmcs_16bit_host_es_selector;
-    uint16_t vmcs_16bit_host_ss_selector;
-    uint16_t vmcs_16bit_host_ds_selector;
-    uint16_t vmcs_16bit_host_fs_selector;
-    uint16_t vmcs_16bit_host_gs_selector;
-    uint16_t vmcs_16bit_host_cs_selector;
-    uint16_t vmcs_16bit_host_tr_selector;
-    uint64_t vmcs_host_idtr_base;
-    uint64_t vmcs_host_gdtr_base;
-    uint64_t vmcs_host_fs_hase;
-    uint64_t vmcs_host_gs_base;
-    uint64_t vmcs_host_tr_base;
-    uint64_t vmcs_host_rip;
-    uint64_t vmcs_64bit_host_ia32_pat;
-    uint64_t vmcs_64bit_host_ia32_pat_hi;
-    uint64_t vmcs_64bit_host_ia32_efer;
-    uint64_t vmcs_64bit_host_ia32_efer_hi;
-    uint64_t vmcs_64bit_host_ia32_perf_global_ctrl;
-    uint64_t vmcs_64bit_host_ia32_perf_global_ctrl_hi;
+	// 16bit control
+	uint16_t vmcs_16bit_control_vpid;
+	uint16_t vmcs_16bit_control_posted_interrupt_vector;
+	uint16_t vmcs_16bit_control_eptp_index;
 
-    // GUEST STATE
-    uint16_t vmcs_16bit_guest_cs_selector;
-    uint16_t vmcs_16bit_guest_es_selector;
-    uint16_t vmcs_16bit_guest_ss_selector;
-    uint16_t vmcs_16bit_guest_ds_selector;
-    uint16_t vmcs_16bit_guest_fs_selector;
-    uint16_t vmcs_16bit_guest_gs_selector;
-    uint16_t vmcs_16bit_guest_tr_selector;
-    uint16_t vmcs_16bit_guest_ldtr_selector;
-    uint16_t vmcs_16bit_guest_interrupt_status;
-    uint64_t vmcs_guest_cs_base;
-    uint64_t vmcs_guest_es_base;
-    uint64_t vmcs_guest_ss_base;
-    uint64_t vmcs_guest_ds_base;
-    uint64_t vmcm_guest_fs_base;
-    uint64_t vmcs_guest_gs_base;
-    uint64_t vmcs_guest_ldtr_base;
-    uint64_t vmcs_guest_gdtr_base;
-    uint64_t vmcs_guest_idtr_base;
-    uint64_t vmcs_guest_tr_base;
-    uint32_t vmcs_guest_cs_limit;
-    uint32_t vmcs_guest_es_limit;
-    uint32_t vmcs_guest_ss_limit;
-    uint32_t vmcs_guest_ds_limit;
-    uint32_t vmcs_guest_fs_limit;
-    uint32_t vmcs_guest_gs_limit;
-    uint32_t vmcs_guest_ldtr_limit;
-    uint32_t vmcs_guest_tr_limit;
-    uint32_t vmcs_guest_gdtr_limit;
-    uint32_t vmcs_guest_idtr_limit;
-    uint32_t vmcs_32bit_guest_cs_access_rights;
-    uint32_t vmcs_32bit_guest_es_access_rights;
-    uint32_t vmcs_32bit_guest_ss_access_rights;
-    uint32_t vmcs_32bit_guest_ds_access_rights;
-    uint32_t vmcs_32bit_guest_fs_access_rights;
-    uint32_t vmcs_32bit_guest_gs_access_rights;
-    uint32_t vmcs_32bit_guest_ldtr_access_rights;
-    uint32_t vmcs_32bit_guest_tr_access_rights;
-    uint32_t vmcs_32bit_guest_activity_state;
-    uint32_t vmcs_32bit_guest_interruptibility_state;
-    uint64_t vmcs_guest_cr3;
-    uint64_t vmcs_guest_cr0;
-    uint64_t vmcs_guest_cr4;
-    uint64_t vmcs_64bit_guest_link_pointer;
-    uint64_t vmcs_64bit_guest_link_pointer_hi;
-    uint64_t vmcs_guest_dr7;
-    uint64_t vmcs_guest_rflags;
-    uint64_t vmcs_64bit_guest_physical_addr;
-    uint64_t vmcs_64bit_guest_physcial_addr_hi;
-    uint64_t vmcs_64bit_guest_ia32_debugctl;
-    uint64_t vmcs_64bit_guest_ia32_debugctl_hi;
-    uint64_t vmcs_64bit_guest_ia32_pat;
-    uint64_t vmcs_64bit_guest_ia32_pat_hi;
-    uint64_t vmcs_64bit_guest_ia32_efer;
-    uint64_t vmcs_64bit_guest_ia32_efer_hi;
-    uint64_t vmcs_64bit_guest_ia32_perf_global_ctrl;
-    uint64_t vmcs_64bit_guest_ia32_perf_global_ctrl_hi;
-    uint64_t vmcs_64bit_guest_ia32_pdpte0;
-    uint64_t vmcs_64bit_guest_ia32_pdpte0_hi;
-    uint64_t vmcs_64bit_guest_ia32_pdpte1;
-    uint64_t vmcs_64bit_guest_ia32_pdpte1_hi;
-    uint64_t vmcs_64bit_guest_ia32_pdpte2;
-    uint64_t vmcs_64bit_guest_ia32_pdpte2_hi;
-    uint64_t vmcs_64bit_guest_ia32_pdpte3;
-    uint64_t vmcs_64bit_guest_ia32_pdpte3_hi;
+	// 16bit guest
+	uint16_t vmcs_16bit_guest_es_selector;
+	uint16_t vmcs_16bit_guest_cs_selector;
+	uint16_t vmcs_16bit_guest_ss_selector;
+	uint16_t vmcs_16bit_guest_ds_selector;
+	uint16_t vmcs_16bit_guest_fs_selector;
+	uint16_t vmcs_16bit_guest_gs_selector;
+	uint16_t vmcs_16bit_guest_ldtr_selector;
+	uint16_t vmcs_16bit_guest_tr_selector;
+	uint16_t vmcs_16bit_guest_interrupt_status;
 
-    // CONTROL STATE
-    uint16_t vmcs_16bit_control_vpid;
-    uint16_t vmcs_16bit_control_posted_interrupt_vector;
-    uint16_t vmcs_16bit_control_eptp_index;
-    uint32_t vmcs_32bit_control_pin_based_exec_controls;
-    uint32_t vmcs_32bit_control_processor_based_vmexec_controls;
-    uint32_t vmcs_32bit_control_secondary_vmexec_controls;
-    uint32_t vmcs_32bit_control_vmexit_controls;
-    // VMEXIT CONTROL
-    uint64_t vmcs_64bit_control_vmexit_msr_store_addr;
-    uint64_t vmcs_64bit_control_vmexit_msr_store_addr_hi;
-    uint32_t vmcs_32bit_control_vmexit_msr_store_count;
-    uint64_t vmcs_64bit_control_vmexit_msr_load_addr;
-    uint64_t vmcs_64bit_control_vmexit_msr_load_addr_hi;
-    uint32_t vmcs_32bit_control_vmexit_msr_load_count;
-    //VMENTRY CONTROL
-    uint64_t vmcs_64bit_control_vmentry_msr_load_addr;
-    uint64_t vmcs_64bit_control_vmentry_msr_load_addr_hi;
-    uint32_t vmcs_32bit_control_vmentry_msr_load_count;
-    uint32_t vmcs_32bit_control_vmentry_controls;
+	// 16bit host
+	uint16_t vmcs_16bit_host_es_selector;
+	uint16_t vmcs_16bit_host_cs_selector;
+	uint16_t vmcs_16bit_host_ss_selector;
+	uint16_t vmcs_16bit_host_ds_selector;
+	uint16_t vmcs_16bit_host_fs_selector;
+	uint16_t vmcs_16bit_host_gs_selector;
+	uint16_t vmcs_16bit_host_tr_selector;
 
-    uint32_t vmcs_32bit_control_exception_bitmap;
-    uint64_t vmcs_64bit_control_io_bitmap_a;
-    uint64_t vmcs_64bit_control_io_bitmap_a_hi;
-    uint64_t vmcs_64bit_control_io_bitmap_b;
-    uint64_t vmcs_64bit_control_io_bitmap_b_hi;
-    uint64_t vmcs_64bit_control_msr_bitmaps;
-    uint64_t vmcs_64bit_control_msr_bitmaps_hi;
-    uint64_t vmcs_64bit_control_executive_vmcs_ptr;
-    uint64_t vmcs_64bit_control_executive_vmcs_ptr_hi;
-    uint64_t vmcs_64bit_control_tsc_offset;
-    uint64_t vmcs_64bit_control_tsc_offset_hi;
-    uint64_t vmcs_64bit_control_virtual_apic_page_addr;
-    uint64_t vmcs_64bit_control_virtual_apic_page_addr_hi;
-    uint64_t vmcs_64bit_control_apic_access_addr;
-    uint64_t vmcs_64bit_control_apic_access_addr_hi;
-    uint64_t vmcs_64bit_control_posted_interrupt_desc_addr;
-    uint64_t vmcs_64bit_control_vmfunc_ctrls;
-    uint64_t vmcs_64bit_control_vmfunc_ctrls_hi;
-    uint64_t vmcs_64bit_control_eptptr;
-    uint64_t vmcs_64bit_control_eptptr_hi;
-    uint64_t vmcs_64bit_control_eoi_exit_bitmap0;
-    uint64_t vmcs_64bit_control_eoi_exit_bitmap0_hi;
-    uint64_t vmcs_64bit_control_eoi_exit_bitmap1;
-    uint64_t vmcs_64bit_control_eoi_exit_bitmap1_hi;
-    uint64_t vmcs_64bit_control_eoi_exit_bitmap2;
-    uint64_t vmcs_64bit_control_eoi_exit_bitmap2_hi;
-    uint64_t vmcs_64bit_control_eoi_exit_bitmap3;
-    uint64_t vmcs_64bit_control_eoi_exit_bitmap3_hi;
-    uint64_t vmcs_64bit_control_eptp_list_address;
-    uint64_t vmcs_64bit_control_eptp_list_address_hi;
-    uint64_t vmcs_64bit_control_vmread_bitmap_addr;
-    uint64_t vmcs_64bit_control_vmread_bitmap_addr_hi;
-    uint64_t vmcs_64bit_control_vmwrite_bitmap_addr;
-    uint64_t vmcs_64bit_control_vmwrite_bitmap_addr_hi;
-    uint64_t vmcs_64bit_control_ve_exception_info_addr;
-    uint64_t vmcs_64bit_control_ve_exception_info_addr_hi;
+	// 64bit control
+	uint64_t vmcs_64bit_control_io_bitmap_a;
+	uint64_t vmcs_64bit_control_io_bitmap_a_hi;
+	uint64_t vmcs_64bit_control_io_bitmap_b;
+	uint64_t vmcs_64bit_control_io_bitmap_b_hi;
+	uint64_t vmcs_64bit_control_msr_bitmaps;
+	uint64_t vmcs_64bit_control_msr_bitmaps_hi;
+	uint64_t vmcs_64bit_control_vmexit_msr_store_addr;
+	uint64_t vmcs_64bit_control_vmexit_msr_store_addr_hi;
+	uint64_t vmcs_64bit_control_vmexit_msr_load_addr;
+	uint64_t vmcs_64bit_control_vmexit_msr_load_addr_hi;
+	uint64_t vmcs_64bit_control_vmentry_msr_load_addr;
+	uint64_t vmcs_64bit_control_vmentry_msr_load_addr_hi;
+	uint64_t vmcs_64bit_control_executive_vmcs_ptr;
+	uint64_t vmcs_64bit_control_executive_vmcs_ptr_hi;
+	uint64_t vmcs_64bit_control_tsc_offset;
+	uint64_t vmcs_64bit_control_tsc_offset_hi;
+	uint64_t vmcs_64bit_control_virtual_apic_page_addr;
+	uint64_t vmcs_64bit_control_virtual_apic_page_addr_hi;
+	uint64_t vmcs_64bit_control_apic_access_addr;
+	uint64_t vmcs_64bit_control_apic_access_addr_hi;
+	uint64_t vmcs_64bit_control_posted_interrupt_desc_addr;
+	uint64_t vmcs_64bit_control_posted_interrupt_desc_addr_hi;
+	uint64_t vmcs_64bit_control_vmfunc_ctrls;
+	uint64_t vmcs_64bit_control_vmfunc_ctrls_hi;
+	uint64_t vmcs_64bit_control_eptptr;
+	uint64_t vmcs_64bit_control_eptptr_hi;
+	uint64_t vmcs_64bit_control_eoi_exit_bitmap0;
+	uint64_t vmcs_64bit_control_eoi_exit_bitmap0_hi;
+	uint64_t vmcs_64bit_control_eoi_exit_bitmap1;
+	uint64_t vmcs_64bit_control_eoi_exit_bitmap1_hi;
+	uint64_t vmcs_64bit_control_eoi_exit_bitmap2;
+	uint64_t vmcs_64bit_control_eoi_exit_bitmap2_hi;
+	uint64_t vmcs_64bit_control_eoi_exit_bitmap3;
+	uint64_t vmcs_64bit_control_eoi_exit_bitmap3_hi;
+	uint64_t vmcs_64bit_control_eptp_list_address;
+	uint64_t vmcs_64bit_control_eptp_list_address_hi;
+	uint64_t vmcs_64bit_control_vmread_bitmap_addr;
+	uint64_t vmcs_64bit_control_vmread_bitmap_addr_hi;
+	uint64_t vmcs_64bit_control_vmwrite_bitmap_addr;
+	uint64_t vmcs_64bit_control_vmwrite_bitmap_addr_hi;
+	uint64_t vmcs_64bit_control_ve_exception_info_addr;
+	uint64_t vmcs_64bit_control_ve_exception_info_addr_hi;
 
-}
+	// 64bit read only guest
+	uint64_t vmcs_64bit_guest_physical_addr;
+	uint64_t vmcs_64bit_guest_physical_addr_hi;
+
+	// 64bit guest
+	uint64_t vmcs_64bit_guest_link_pointer;
+	uint64_t vmcs_64bit_guest_link_pointer_hi;
+	uint64_t vmcs_64bit_guest_ia32_debugctl;
+	uint64_t vmcs_64bit_guest_ia32_debugctl_hi;
+	uint64_t vmcs_64bit_guest_ia32_pat;
+	uint64_t vmcs_64bit_guest_ia32_pat_hi;
+	uint64_t vmcs_64bit_guest_ia32_efer;
+	uint64_t vmcs_64bit_guest_ia32_efer_hi;
+	uint64_t vmcs_64bit_guest_ia32_perf_global_ctrl;
+	uint64_t vmcs_64bit_guest_ia32_perf_global_ctrl_hi;
+	uint64_t vmcs_64bit_guest_ia32_pdpte0;
+	uint64_t vmcs_64bit_guest_ia32_pdpte0_hi;
+	uint64_t vmcs_64bit_guest_ia32_pdpte1;
+	uint64_t vmcs_64bit_guest_ia32_pdpte1_hi;
+	uint64_t vmcs_64bit_guest_ia32_pdpte2;
+	uint64_t vmcs_64bit_guest_ia32_pdpte2_hi;
+	uint64_t vmcs_64bit_guest_ia32_pdpte3;
+	uint64_t vmcs_64bit_guest_ia32_pdpte3_hi;	
+
+	// 64bit host
+	uint64_t vmcs_64bit_host_ia32_pat;
+	uint64_t vmcs_64bit_host_ia32_pat_hi;
+	uint64_t vmcs_64bit_host_ia32_efer;
+	uint64_t vmcs_64bit_host_ia32_efer_hi;
+	uint64_t vmcs_64bit_host_ia32_perf_global_ctrl;
+	uint64_t vmcs_64bit_host_ia32_perf_global_ctrl_hi;
+
+	// 32bit control
+	uint32_t vmcs_32bit_control_pin_base_exec_controls;
+	uint32_t vmcs_32bit_control_processor_based_vmexec_controls;
+	uint32_t vmcs_32bit_control_exception_bitmap;
+	uint32_t vmcs_32bit_control_page_fault_err_code_mask;
+	uint32_t vmcs_32bit_control_page_fault_err_code_match;
+	uint32_t vmcs_32bit_control_cr3_target_count;
+	uint32_t vmcs_32bit_control_vmexit_controls;
+	uint32_t vmcs_32bit_control_vmexit_msr_store_count;
+	uint32_t vmcs_32bit_control_vmexit_msr_load_count;
+	uint32_t vmcs_32bit_control_vmentry_controls;
+	uint32_t vmcs_32bit_control_vmentry_msr_load_count;
+	uint32_t vmcs_32bit_control_vmentry_interruption_info;
+	uint32_t vmcs_32bit_control_vmentry_exception_err_code;
+	uint32_t vmcs_32bit_control_vmentry_instruction_length;
+	uint32_t vmcs_32bit_control_tpr_threshold;
+	uint32_t vmcs_32bit_control_secondary_vmexec_controls;
+	uint32_t vmcs_32bit_control_pause_loop_exiting_gap;
+	uint32_t vmcs_32bit_control_pause_loop_exiting_window;
+
+	// 32bit read only data field
+	uint32_t vmcs_32bit_instruction_error;
+	uint32_t vmcs_32bit_vmexit_reason;
+	uint32_t vmcs_32bit_vmexit_interruption_info;
+	uint32_t vmcs_32bit_vmexit_interruption_err_code;
+	uint32_t vmcs_32bit_idt_vectoring_info;
+	uint32_t vmcs_32bit_idt_vectoring_err_code;
+	uint32_t vmcs_32bit_vmexit_instruction_length;
+	uint32_t vmcs_32bit_vmexit_instruction_info;
+
+	// 32bit guest
+	uint32_t vmcs_32bit_guest_es_limit;
+	uint32_t vmcs_32bit_guest_cs_limit;
+	uint32_t vmcs_32bit_guest_ss_limit;
+	uint32_t vmcs_32bit_guest_ds_limit;
+	uint32_t vmcs_32bit_guest_fs_limit;
+	uint32_t vmcs_32bit_guest_gs_limit;
+	uint32_t vmcs_32bit_guest_ldtr_limit;
+	uint32_t vmcs_32bit_guest_tr_limit;
+	uint32_t vmcs_32bit_guest_gdtr_limit;
+	uint32_t vmcs_32bit_guest_idtr_limit;
+	uint32_t vmcs_32bit_guest_es_access_rights;
+	uint32_t vmcs_32bit_guest_cs_access_rights;
+	uint32_t vmcs_32bit_guest_ss_access_rights;
+	uint32_t vmcs_32bit_guest_ds_access_rights;
+	uint32_t vmcs_32bit_guest_fs_access_rights;
+	uint32_t vmcs_32bit_guest_gs_access_rights;
+	uint32_t vmcs_32bit_guest_ldtr_access_rights;
+	uint32_t vmcs_32bit_guest_tf_access_rights;
+	uint32_t vmcs_32bit_guest_interruptibility_state;
+	uint32_t vmcs_32bit_guest_activity_state;
+	uint32_t vmcs_32bit_guest_smbase;
+	uint32_t vmcs_32bit_guest_ia32_sysenter_cs_msr;
+	uint32_t vmcs_32bit_guest_preemption_timer_value;
+
+	// 32bit host
+	uint32_t vmcs_32bit_host_ia32_sysnter_cs_msr;
+
+	// natural width control
+	uint64_t vmcs_control_cr0_guest_host_mask;
+	uint64_t vmcs_control_cr4_guest_host_mask;
+	uint64_t vmcs_control_cr0_read_shadow;
+	uint64_t vmcs_control_cr4_read_shadow;
+	uint64_t vmcs_cr3_target0;
+	uint64_t vmcs_cr3_target1;
+	uint64_t vmcs_cr3_target2;
+	uint64_t vmcs_cr3_target3;
+
+	// natural width read only data field
+	uint64_t vmcs_vmexit_qualification;
+	uint64_t vmcs_io_rcx;
+	uint64_t vmcs_io_rsi;
+	uint64_t vmcs_io_rdi;
+	uint64_t vmcs_io_rip;
+	uint64_t vmcs_guest_linear_addr;
+
+	// natural width guest
+	uint64_t vmcs_guest_cr0;
+	uint64_t vmcs_guest_cr3;
+	uint64_t vmcs_guest_es_base;
+	uint64_t vmcs_guest_cs_base;
+	uint64_t vmcs_guest_ss_base;
+	uint64_t vmcs_guest_ds_base;
+	uint64_t vmcs_guest_fs_base;
+	uint64_t vmcs_guest_gs_base;
+	uint64_t vmcs_guest_ldtr_base;
+	uint64_t vmcs_guest_tr_base;
+	uint64_t vmcs_guest_gdtr_base;
+	uint64_t vmcs_guest_idtr_base;
+	uint64_t vmcs_guest_dr7;
+	uint64_t vmcs_guest_rsp;
+	uint64_t vmcs_guest_rip;
+	uint64_t vmcs_guest_rflags;
+	uint64_t vmcs_guest_pending_dbg_exceptions;
+	uint64_t vmcs_guest_ia32_sysenter_esp_msr;
+	uint64_t vmcs_guest_ia32_sysenter_eip_msr;
+
+	// natural width host
+	uint64_t vmcs_host_cr0;
+	uint64_t vmcs_host_cr3;
+	uint64_t vmcs_host_cr4;
+	uint64_t vmcs_host_fs_base;
+	uint64_t vmcs_host_gs_base;
+	uint64_t vmcs_host_tr_base;
+	uint64_t vmcs_host_gdtr_base;
+	uint64_t vmcs_host_idtr_base;
+	uint64_t vmcs_host_ia32_sysenter_esp_msr;
+	uint64_t vmcs_host_ia32_sysenter_eip_msr;
+	uint64_t vmcs_host_rsp;
+	uint64_t vmcs_host_rip;
+
+	// natural width control
+	uint64_t vmcs_pin_based_vmexec_ctl_exintexit;
+	uint64_t vmcs_pin_based_vmexec_ctl_nmiexit;
+	uint64_t vmcs_pin_based_vmexec_ctl_virtnmis;
+	uint64_t vmcs_proc_based_vmexec_ctl_intrwinexit;
+	uint64_t vmcs_proc_based_vmexec_ctl_usetscoff;
+	uint64_t vmcs_proc_based_vmexec_ctl_hltexit;
+	uint64_t vmcs_proc_based_vmexec_ctl_invlpgexit;
+	uint64_t vmcs_proc_based_vmexec_ctl_nwaitexit;
+	uint64_t vmcs_proc_based_vmexec_ctl_rdpmcexit;
+	uint64_t vmcs_proc_based_vmexec_ctl_rdtscexit;
+	uint64_t vmcs_proc_based_vmexec_ctl_cr3loadexit;
+	uint64_t vmcs_proc_based_vmexec_ctl_cr3storexit;
+	uint64_t vmcs_proc_based_vmexec_ctl_cr8loadexit;
+	uint64_t vmcs_proc_based_vmexec_ctl_cr8storeexit;
+	uint64_t vmcs_proc_based_vmexec_ctl_usetprshadow;
+	uint64_t vmcs_proc_based_vmexec_ctl_nmiwinexit;
+	uint64_t vmcs_proc_based_vmexec_ctl_movdrexit;
+	uint64_t vmcs_proc_based_vmexec_ctl_uncondioexit;
+	uint64_t vmcs_proc_based_vmexec_ctl_useiobmp;
+	uint64_t vmcs_proc_based_vmexec_ctl_mtf;
+	uint64_t vmcs_proc_based_vmexec_ctl_usemsrbmp;
+	uint64_t vmcs_proc_based_vmexec_ctl_monitorexit;
+	uint64_t vmcs_proc_based_vmexec_ctl_pauseexit;
+	uint64_t vmcs_proc_based_vmexec_ctl_activesecctl;
+	uint64_t vmcs_proc_based_vmexec_ctl_enable_ept;
+	uint64_t vmcs_proc_based_vmexec_ctl_unrestricted_guest;
+	uint64_t vmcs_vmexit_host_addr_size;
+	uint64_t vmcs_vmexit_guest_ack_intr_on_exit;
+	uint64_t vmcs_vmentry_x64_guest;
+};
 
 // =============
 //  VMCS fields

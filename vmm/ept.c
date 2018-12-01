@@ -168,10 +168,15 @@ int ept_map_hva2gpa(epte_t* eptrt, void* hva, void* gpa, int perm,
 		if (epte_present(*epte) && overwrite == 0)
 			return -E_INVAL;
 		*epte = PADDR(hva)|perm|__EPTE_IPAT|__EPTE_TYPE(EPTE_TYPE_WB);
+/*#ifndef VMM_GUEST
+		cprintf("L0 : hva : %x gpa : %x epte : %x *epte : %x\n",hva, gpa, epte, *epte);
+#else
+		cprintf("L1 : hva : %x gpa : %x epte : %x *epte: %x\n",hva, gpa, PADDR(epte), *epte);
+#endif*/
 	} else 
 		return -E_NO_MEM;
 
-    	return 0;
+    return 0;
 }
 
 int ept_alloc_static(epte_t *eptrt, struct VmxGuestInfo *ginfo) {

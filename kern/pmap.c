@@ -12,9 +12,9 @@
 #include <kern/multiboot.h>
 
 #include <kern/env.h>
-
 #include <kern/cpu.h>
 
+#include <vmm/ept.h>
 
 extern uint64_t pml4phys;
 #define BOOT_PAGE_TABLE_START ((uint64_t) KADDR((uint64_t) &pml4phys))
@@ -586,6 +586,24 @@ pml4e_walk(pml4e_t *pml4e, const void *va, int create)
 
 }
 
+	
+pte_t *
+pml4e_walk_L1(pml4e_t *ept01, pml4e_t *ept12,  const void *va, int create)
+{
+
+	if (ept01 && ept12) {			
+		pdpe_t *pdpe  = (pdpe_t *)ept12 [PML4(va)];
+		if ((uint64_t)pdpe & PTE_P) {
+			// change pdpe from L1 gpa to L0 gpa
+			pdpe_t *pdpe_L0 = NULL;
+			ept_gpa2hva(ept01, (void *)pdpe, (void **)&pdpe_L0);
+			return pdpe_walk_L1(ept01, (pdpe_t *)PTE_ADDR(pdpe_L0), va, create);
+		}
+	}
+	return NULL;
+}
+
+
 
 // Given a pdpe i.e page directory pointer pdpe_walk returns the pointer to page table entry
 // The programming logic in this function is similar to pml4e_walk.
@@ -593,7 +611,6 @@ pml4e_walk(pml4e_t *pml4e, const void *va, int create)
 // Hints are the same as in pml4e_walk
 pte_t *
 pdpe_walk(pdpe_t *pdpe,const void *va,int create){
-
 
 	if (pdpe){
 		pde_t * pdp = (pde_t *)pdpe[PDPE(va)];
@@ -618,6 +635,23 @@ pdpe_walk(pdpe_t *pdpe,const void *va,int create){
 	return NULL;
 
 }
+
+pte_t *
+pdpe_walk_L1(pml4e_t *ept01, pdpe_t *pdpe, const void *va,int create)
+{
+	if (ept01 && pdpe){
+		pde_t * pdp = (pde_t *)pdpe[PDPE(va)];
+		if((uint64_t)pdp & PTE_P){
+			// change pdp from L1 gpa to L0 gpa
+			pde_t *pdp_L0 = NULL;
+			ept_gpa2hva(ept01, (void *)pdp, (void **)&pdp_L0);
+			return pgdir_walk_L1(ept01, (pde_t *)PTE_ADDR(pdp_L0), va, create);
+		}
+	}
+	return NULL;
+}
+
+
 // Given 'pgdir', a pointer to a page directory, pgdir_walk returns
 // a pointer to the page table entry (PTE). 
 // The programming logic and the hints are the same as pml4e_walk
@@ -646,6 +680,21 @@ pgdir_walk(pde_t *pgdir, const void *va, int create)
 
 }
 
+pte_t *
+pgdir_walk_L1(pml4e_t *ept01, pde_t *pgdir, const void *va, int create)
+{
+	if (ept01 && pgdir) {
+		pte_t *pte  = (pte_t *)pgdir [PDX(va)];
+		if ((uint64_t)pte & PTE_P) {
+			// change pte from L1 gpa to L0 gpa
+			pte_t *pte_L0 = NULL;
+			ept_gpa2hva(ept01, (void *)(uintptr_t)((pte_t *)pte), (void **)&pte_L0);
+			return pte_L0 + PTX(va);
+		}
+	}
+	return NULL;
+
+}
 //
 // Map [va, va+size) of virtual address space to physical [pa, pa+size)
 // in the page table rooted at pml4e.  Size is a multiple of PGSIZE.

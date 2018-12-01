@@ -57,4 +57,13 @@ vmlaunch() {
     return error;
 }
 
+static __inline uint8_t
+vmresume() {
+	uint8_t error = 0;
+
+	__asm __volatile("clc; vmresume; setna %0"
+			: "=q"( error ) :: "cc");
+	return error;
+}
+
 #endif

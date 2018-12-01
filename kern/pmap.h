@@ -99,8 +99,12 @@ page2kva(struct PageInfo *pp)
 
 pte_t *pgdir_walk(pde_t *pgdir, const void *va, int create);
 
+pte_t *pgdir_walk_L1(pml4e_t *ept01, pde_t *pgdir, const void *va, int create);
+
 pte_t *pml4e_walk(pml4e_t *pml4e, const void *va, int create);
+pte_t *pml4e_walk_L1(pml4e_t *ept01, pml4e_t *ept12, const void *va, int create);
 
 pde_t *pdpe_walk(pdpe_t *pdpe,const void *va,int create);
 
+pde_t *pdpe_walk_L1(pml4e_t *ept01, pdpe_t *pdpe,const void *va,int create);
 #endif /* !JOS_KERN_PMAP_H */

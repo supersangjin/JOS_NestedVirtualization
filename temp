@@ -1,0 +1,31 @@
+// 32bit control
+cache->vmcs_32bit_control_pin_base_exec_controls = vmcs_read32(VMCS_32BIT_CONTROL_PIN_BASE_EXEC_CONTROLS);
+cache->vmcs_32bit_control_processor_based_vmexec_controls = vmcs_read32(VMCS_32BIT_CONTROL_PROCESSOR_BASED_VMEXEC_CONTROLS); 
+cache->vmcs_32bit_control_exception_bitmap = vmcs_read32(VMCS_32BIT_CONTROL_EXCEPTION_BITMAP); 
+cache->vmcs_32bit_control_page_fault_err_code_mask = vmcs_read32(VMCS_32BIT_CONTROL_PAGE_FAULT_ERR_CODE_MASK); 
+cache->vmcs_32bit_control_page_fault_err_code_match = vmcs_read32(VMCS_32BIT_CONTROL_PAGE_FAULT_ERR_CODE_MATCH);
+cache->vmcs_32bit_control_cr3_target_count = vmcs_read32(VMCS_32BIT_CONTROL_CR3_TARGET_COUNT); 
+cache->vmcs_32bit_control_vmexit_controls = vmcs_read32(VMCS_32BIT_CONTROL_VMEXIT_CONTROLS); 
+cache->vmcs_32bit_control_vmexit_msr_store_count vmcs_read32(VMCS_32BIT_CONTROL_VMEXIT_MSR_STORE_COUNT); 
+cache->vmcs_32bit_control_vmexit_msr_load_count = vmcs_read32(VMCS_32BIT_CONTROL_VMEXIT_MSR_LOAD_COUNT); 
+cache->vmcs_32bit_control_vmentry_controls = vmcs_read32(VMCS_32BIT_CONTROL_VMENTRY_CONTROLS); 
+cache->vmcs_32bit_control_vmentry_msr_load_count = vmcs_read32(VMCS_32BIT_CONTROL_VMENTRY_MSR_LOAD_COUNT); 
+cache->vmcs_32bit_control_vmentry_interruption_info = vmcs_read32(VMCS_32BIT_CONTROL_VMENTRY_INTERRUPTION_INFO); 
+cache->vmcs_32bit_control_vmentry_exception_err_code vmcs_read32(VMCS_32BIT_CONTROL_VMENTRY_EXCEPTION_ERR_CODE); 
+cache->vmcs_32bit_control_vmentry_instruction_length = vmcs_read32(VMCS_32BIT_CONTROL_VMENTRY_INSTRUCTION_LENGTH);  
+cache->vmcs_32bit_control_tpr_threshold = vmcs_read32(VMCS_32BIT_CONTROL_TPR_THRESHOLD); 
+cache->vmcs_32bit_control_secondary_vmexec_controls = vmcs_read32(VMCS_32BIT_CONTROL_SECONDARY_VMEXEC_CONTROLS);
+cache->vmcs_32bit_control_pause_loop_exiting_gap = vmcs_read32(VMCS_32BIT_CONTROL_PAUSE_LOOP_EXITING_GAP); 
+cache->vmcs_32bit_control_pause_loop_exiting_window = vmcs_read32(VMCS_32BIT_CONTROL_PAUSE_LOOP_EXITING_WINDOW); 
+
+// 32bit read only data field
+cache->vmcs_32bit_instruction_error = vmcs_read32(
+cache->vmcs_32bit_vmexit_reason;
+cache->vmcs_32bit_vmexit_interruption_info;
+cache->vmcs_32bit_vmexit_interruption_err_code;
+cache->vmcs_32bit_idt_vectoring_info;
+cache->vmcs_32bit_idt_vectoring_err_code;
+cache->vmcs_32bit_vmexit_instruction_length;
+cache->vmcs_32bit_vmexit_instruction_info;
+
+

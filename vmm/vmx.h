@@ -36,8 +36,12 @@ void vmx_list_vms();
 bool vmx_sel_resume(int num);
 struct PageInfo * vmx_init_vmcs();
 void vmcs_dump_cpu();
+void vmcs_dump_cpu_1();
 void vmcs_host_init();
 void vmcs_guest_init();
+void vmcs_init();
+void asm_vmrun(struct Trapframe *tf);
+void asm_vmrun_L2(struct Trapframe *tf);
 
 /* VMX Capalibility MSRs */
 #define IA32_VMX_BASIC 0X480
@@ -203,7 +207,7 @@ struct Vmcs {
 	uint64_t vmcs_64bit_host_ia32_perf_global_ctrl_hi;
 
 	// 32bit control
-	uint32_t vmcs_32bit_control_pin_base_exec_controls;
+	uint32_t vmcs_32bit_control_pin_based_exec_controls;
 	uint32_t vmcs_32bit_control_processor_based_vmexec_controls;
 	uint32_t vmcs_32bit_control_exception_bitmap;
 	uint32_t vmcs_32bit_control_page_fault_err_code_mask;
@@ -250,7 +254,7 @@ struct Vmcs {
 	uint32_t vmcs_32bit_guest_fs_access_rights;
 	uint32_t vmcs_32bit_guest_gs_access_rights;
 	uint32_t vmcs_32bit_guest_ldtr_access_rights;
-	uint32_t vmcs_32bit_guest_tf_access_rights;
+	uint32_t vmcs_32bit_guest_tr_access_rights;
 	uint32_t vmcs_32bit_guest_interruptibility_state;
 	uint32_t vmcs_32bit_guest_activity_state;
 	uint32_t vmcs_32bit_guest_smbase;
@@ -258,7 +262,7 @@ struct Vmcs {
 	uint32_t vmcs_32bit_guest_preemption_timer_value;
 
 	// 32bit host
-	uint32_t vmcs_32bit_host_ia32_sysnter_cs_msr;
+	uint32_t vmcs_32bit_host_ia32_sysenter_cs_msr;
 
 	// natural width control
 	uint64_t vmcs_control_cr0_guest_host_mask;
@@ -321,11 +325,11 @@ struct Vmcs {
 	uint64_t vmcs_proc_based_vmexec_ctl_usetscoff;
 	uint64_t vmcs_proc_based_vmexec_ctl_hltexit;
 	uint64_t vmcs_proc_based_vmexec_ctl_invlpgexit;
-	uint64_t vmcs_proc_based_vmexec_ctl_nwaitexit;
+	uint64_t vmcs_proc_based_vmexec_ctl_mwaitexit;
 	uint64_t vmcs_proc_based_vmexec_ctl_rdpmcexit;
 	uint64_t vmcs_proc_based_vmexec_ctl_rdtscexit;
 	uint64_t vmcs_proc_based_vmexec_ctl_cr3loadexit;
-	uint64_t vmcs_proc_based_vmexec_ctl_cr3storexit;
+	uint64_t vmcs_proc_based_vmexec_ctl_cr3storeexit;
 	uint64_t vmcs_proc_based_vmexec_ctl_cr8loadexit;
 	uint64_t vmcs_proc_based_vmexec_ctl_cr8storeexit;
 	uint64_t vmcs_proc_based_vmexec_ctl_usetprshadow;
@@ -338,12 +342,13 @@ struct Vmcs {
 	uint64_t vmcs_proc_based_vmexec_ctl_monitorexit;
 	uint64_t vmcs_proc_based_vmexec_ctl_pauseexit;
 	uint64_t vmcs_proc_based_vmexec_ctl_activesecctl;
-	uint64_t vmcs_proc_based_vmexec_ctl_enable_ept;
-	uint64_t vmcs_proc_based_vmexec_ctl_unrestricted_guest;
+	uint64_t vmcs_secondary_vmexec_ctl_enable_ept;
+	uint64_t vmcs_secondary_vmexec_ctl_unrestricted_guest;
 	uint64_t vmcs_vmexit_host_addr_size;
 	uint64_t vmcs_vmexit_guest_ack_intr_on_exit;
 	uint64_t vmcs_vmentry_x64_guest;
 };
+
 
 // =============
 //  VMCS fields
@@ -591,7 +596,7 @@ struct Vmcs {
 #define VMCS_PROC_BASED_VMEXEC_CTL_RDPMCEXIT	0x800
 #define VMCS_PROC_BASED_VMEXEC_CTL_RDTSCEXIT	0x1000
 #define VMCS_PROC_BASED_VMEXEC_CTL_CR3LOADEXIT	0x8000
-#define VMCS_PROC_BASED_VMEXEC_CTL_CR3STOREXIT	0x10000
+#define VMCS_PROC_BASED_VMEXEC_CTL_CR3STOREEXIT	0x10000
 #define VMCS_PROC_BASED_VMEXEC_CTL_CR8LOADEXIT	0x80000
 #define VMCS_PROC_BASED_VMEXEC_CTL_CR8STOREEXIT	0x100000
 #define VMCS_PROC_BASED_VMEXEC_CTL_USETPRSHADOW	0x200000

@@ -24,6 +24,8 @@
 #include <kern/time.h>
 #include <kern/pci.h>
 
+#include <vmm/vmx.h>
+
 #if defined(TEST_EPT_MAP)
 int test_ept_map(void);
 #endif
@@ -143,7 +145,9 @@ i386_init(void)
 
 #endif // TEST*
 
-
+#ifndef VMM_GUEST
+	vmcs_init();
+#endif
 	// Should not be necessary - drains keyboard because interrupt has given up.
 	kbd_intr();
 

@@ -254,7 +254,7 @@ env_guest_alloc(struct Env **newenv_store, envid_t parent_id)
 	e->env_pml4e    = page2kva(p);
 	e->env_cr3      = page2pa(p);
     L0_env->ept_pml4e = e->env_pml4e;
-    cprintf("#######: %lx, %lx\n", e->env_cr3, e->env_pml4e);
+	
 	// Allocate a VMCS.
 	struct PageInfo *q = vmx_init_vmcs();
 	if (!q) {

@@ -56,7 +56,7 @@ GUESTKERNELS = $(GUESTDIR)/$(OBJDIR)/kern/kernel
 GUESTKERNELS += $(GUESTDIR)/$(OBJDIR)/boot/boot
 GUESTKERNELS += $(GUESTDIR)/$(OBJDIR)/fs/clean-fs.img
 else
-GUESTKERNELS = $(OBJDIR)/kern/kernel
+GUESTKERNELS = kernel
 GUESTKERNELS += boot/boot
 GUESTKERNELS += L2-fs.img
 endif

@@ -26,6 +26,7 @@ map_in_guest( envid_t guest, uintptr_t gpa, size_t memsz,
 	void* hva;	
 	envid_t host_env_id;
 	
+cprintf(" map in guest %x\n", gpa);	
     if (seek(fd, fileoffset) < 0)
 		return -E_NO_SYS;
 	
@@ -37,7 +38,6 @@ map_in_guest( envid_t guest, uintptr_t gpa, size_t memsz,
 
 		if ((result = read(fd, hva, PGSIZE)) < 0)
 			return result;
-
 		if ((result = sys_ept_map(host_env_id, ROUNDDOWN(hva, PGSIZE), guest, ROUNDDOWN((void *)gpa + i, PGSIZE), __EPTE_FULL)) < 0){
 			return result;
 		}
@@ -101,7 +101,7 @@ umain(int argc, char **argv) {
 	char filename_buffer[50];	//buffer to save the path 
 	int vmdisk_number;
 	int r;
-    if ((ret = sys_env_mkguest( GUEST_MEM_SZ * 10, JOS_ENTRY )) < 0) {
+    if ((ret = sys_env_mkguest( GUEST_MEM_SZ * 2, JOS_ENTRY )) < 0) {
 		cprintf("Error creating a guest OS env: %e\n", ret );
 		exit();
 	}

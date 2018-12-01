@@ -28,7 +28,7 @@ ADDRESS	kern/libdwarf_lineno.c	91;"	d	file:
 ADDR_TO_IDX	vmm/ept.h	28;"	d
 AF_INET	net/lwip/include/lwip/sockets.h	119;"	d
 AF_UNSPEC	net/lwip/include/lwip/sockets.h	118;"	d
-ALLOC_ZERO	kern/pmap.h	/^	ALLOC_ZERO = 1<<0,$/;"	e	enum:__anon58
+ALLOC_ZERO	kern/pmap.h	/^	ALLOC_ZERO = 1<<0,$/;"	e	enum:__anon10
 ALT	kern/console.c	236;"	d	file:
 ANNOUNCE_INTERVAL	net/lwip/include/ipv4/lwip/autoip.h	66;"	d
 ANNOUNCE_NUM	net/lwip/include/ipv4/lwip/autoip.h	65;"	d
@@ -133,7 +133,7 @@ BCOPY	net/lwip/netif/ppp/ppp.h	212;"	d
 BIG_ENDIAN	net/lwip/include/lwip/arch.h	41;"	d
 BIT	obj/kern/kernel.asm	/^#define BIT( val, x ) ( ( val >> x ) & 0x1 )$/;"	d
 BIT	vmm/guest/obj/kern/kernel.asm	/^#define BIT( val, x ) ( ( val >> x ) & 0x1 )$/;"	d
-BIT	vmm/vmx.h	58;"	d
+BIT	vmm/vmx.h	62;"	d
 BLKBITSIZE	inc/fs.h	14;"	d
 BLKFILES	inc/fs.h	46;"	d
 BLKSECTS	fs/fs.h	6;"	d
@@ -279,9 +279,9 @@ CONFREJ	net/lwip/netif/ppp/fsm.h	73;"	d
 CONFREQ	net/lwip/netif/ppp/fsm.h	70;"	d
 CONSBUFSIZE	kern/console.c	412;"	d	file:
 CPUS	GNUmakefile	/^CPUS ?= 1$/;"	m
-CPU_HALTED	kern/cpu.h	/^	CPU_HALTED,$/;"	e	enum:__anon43
-CPU_STARTED	kern/cpu.h	/^	CPU_STARTED,$/;"	e	enum:__anon43
-CPU_UNUSED	kern/cpu.h	/^	CPU_UNUSED = 0,$/;"	e	enum:__anon43
+CPU_HALTED	kern/cpu.h	/^	CPU_HALTED,$/;"	e	enum:__anon13
+CPU_STARTED	kern/cpu.h	/^	CPU_STARTED,$/;"	e	enum:__anon13
+CPU_UNUSED	kern/cpu.h	/^	CPU_UNUSED = 0,$/;"	e	enum:__anon13
 CR0_AM	inc/mmu.h	102;"	d
 CR0_CD	inc/mmu.h	104;"	d
 CR0_EM	inc/mmu.h	97;"	d
@@ -334,12 +334,12 @@ CpuInfo	kern/cpu.h	/^struct CpuInfo {$/;"	s
 DATA_MAX	kern/e1000.c	94;"	d	file:
 DBG_MIN_LEVEL	net/lwip/jos/lwipopts.h	58;"	d
 DEASSERT	kern/lapic.c	27;"	d	file:
-DEBUG_ABBREV	kern/elf_rw.c	/^	DEBUG_ABBREV,$/;"	e	enum:__anon47	file:
-DEBUG_FRAME	kern/elf_rw.c	/^	DEBUG_FRAME,$/;"	e	enum:__anon47	file:
-DEBUG_INFO	kern/elf_rw.c	/^	DEBUG_INFO,$/;"	e	enum:__anon47	file:
-DEBUG_LINE	kern/elf_rw.c	/^	DEBUG_LINE,$/;"	e	enum:__anon47	file:
+DEBUG_ABBREV	kern/elf_rw.c	/^	DEBUG_ABBREV,$/;"	e	enum:__anon24	file:
+DEBUG_FRAME	kern/elf_rw.c	/^	DEBUG_FRAME,$/;"	e	enum:__anon24	file:
+DEBUG_INFO	kern/elf_rw.c	/^	DEBUG_INFO,$/;"	e	enum:__anon24	file:
+DEBUG_LINE	kern/elf_rw.c	/^	DEBUG_LINE,$/;"	e	enum:__anon24	file:
 DEBUG_SPINLOCK	kern/spinlock.h	8;"	d
-DEBUG_STR	kern/elf_rw.c	/^	DEBUG_STR,$/;"	e	enum:__anon47	file:
+DEBUG_STR	kern/elf_rw.c	/^	DEBUG_STR,$/;"	e	enum:__anon24	file:
 DECODEL	net/lwip/netif/ppp/vj.c	108;"	d	file:
 DECODES	net/lwip/netif/ppp/vj.c	119;"	d	file:
 DECODEU	net/lwip/netif/ppp/vj.c	130;"	d	file:
@@ -654,36 +654,36 @@ DW_CFA_val_offset	kern/dwarf_define.h	518;"	d
 DW_CFA_val_offset_sf	kern/dwarf_define.h	519;"	d
 DW_CHILDREN_no	kern/dwarf_define.h	96;"	d
 DW_CHILDREN_yes	kern/dwarf_define.h	97;"	d
-DW_DLE_ARANGE_OFFSET_BAD	kern/dwarf_error.h	/^        DW_DLE_ARANGE_OFFSET_BAD,       \/* Invalid arange offset. *\/$/;"	e	enum:__anon45
-DW_DLE_ARGUMENT	kern/dwarf_error.h	/^        DW_DLE_ARGUMENT,                \/* Invalid argument. *\/$/;"	e	enum:__anon45
-DW_DLE_ATTR_FORM_BAD	kern/dwarf_error.h	/^        DW_DLE_ATTR_FORM_BAD,           \/* Invalid attribute form. *\/$/;"	e	enum:__anon45
-DW_DLE_CU_LENGTH_ERROR	kern/dwarf_error.h	/^        DW_DLE_CU_LENGTH_ERROR,         \/* Invalid compilation unit data. *\/$/;"	e	enum:__anon45
-DW_DLE_DEBUG_ABBREV_NULL	kern/dwarf_error.h	/^        DW_DLE_DEBUG_ABBREV_NULL,       \/* Abbrev not found. *\/$/;"	e	enum:__anon45
-DW_DLE_DEBUG_FRAME_LENGTH_BAD	kern/dwarf_error.h	/^        DW_DLE_DEBUG_FRAME_LENGTH_BAD,  \/* Frame section too short. *\/$/;"	e	enum:__anon45
-DW_DLE_DEBUG_INFO_NULL	kern/dwarf_error.h	/^        DW_DLE_DEBUG_INFO_NULL,         \/* Debug info NULL. *\/$/;"	e	enum:__anon45
-DW_DLE_DEBUG_LINE_LENGTH_BAD	kern/dwarf_error.h	/^        DW_DLE_DEBUG_LINE_LENGTH_BAD,   \/* Line info section too short. *\/$/;"	e	enum:__anon45
-DW_DLE_DEBUG_LOC_SECTION_SHORT	kern/dwarf_error.h	/^        DW_DLE_DEBUG_LOC_SECTION_SHORT, \/* Loclist section too short. *\/$/;"	e	enum:__anon45
-DW_DLE_DEBUG_MACRO_INCONSISTENT	kern/dwarf_error.h	/^        DW_DLE_DEBUG_MACRO_INCONSISTENT,\/* Invalid macinfo data. *\/$/;"	e	enum:__anon45
-DW_DLE_DF_REG_NUM_TOO_HIGH	kern/dwarf_error.h	/^        DW_DLE_DF_REG_NUM_TOO_HIGH,     \/* Insufficient regtable space. *\/$/;"	e	enum:__anon45
-DW_DLE_DIE_NO_CU_CONTEXT	kern/dwarf_error.h	/^        DW_DLE_DIE_NO_CU_CONTEXT,       \/* No current compilation unit. *\/$/;"	e	enum:__anon45
-DW_DLE_DIR_INDEX_BAD	kern/dwarf_error.h	/^        DW_DLE_DIR_INDEX_BAD,           \/* Invalid dir index. *\/$/;"	e	enum:__anon45
-DW_DLE_ELF	kern/dwarf_error.h	/^        DW_DLE_ELF,                     \/* ELF error. *\/$/;"	e	enum:__anon45
-DW_DLE_ELF_SECT_ERR	kern/dwarf_error.h	/^        DW_DLE_ELF_SECT_ERR,            \/* Application callback failed. *\/$/;"	e	enum:__anon45
-DW_DLE_ERROR	kern/dwarf_error.h	/^        DW_DLE_ERROR,                   \/* An error! *\/$/;"	e	enum:__anon45
-DW_DLE_EXPR_LENGTH_BAD	kern/dwarf_error.h	/^        DW_DLE_EXPR_LENGTH_BAD,         \/* Invalid DWARF expression. *\/$/;"	e	enum:__anon45
-DW_DLE_FRAME_AUGMENTATION_UNKNOWN	kern/dwarf_error.h	/^        DW_DLE_FRAME_AUGMENTATION_UNKNOWN, \/* Unknown CIE augmentation. *\/$/;"	e	enum:__anon45
-DW_DLE_FRAME_INSTR_EXEC_ERROR	kern/dwarf_error.h	/^        DW_DLE_FRAME_INSTR_EXEC_ERROR,  \/* Frame instruction exec error. *\/$/;"	e	enum:__anon45
-DW_DLE_FRAME_TABLE_COL_BAD	kern/dwarf_error.h	/^        DW_DLE_FRAME_TABLE_COL_BAD,     \/* Invalid table column. *\/$/;"	e	enum:__anon45
-DW_DLE_FRAME_VERSION_BAD	kern/dwarf_error.h	/^        DW_DLE_FRAME_VERSION_BAD,       \/* Invalid frame section version. *\/$/;"	e	enum:__anon45
-DW_DLE_LINE_FILE_NUM_BAD	kern/dwarf_error.h	/^        DW_DLE_LINE_FILE_NUM_BAD,       \/* Invalid file number. *\/$/;"	e	enum:__anon45
-DW_DLE_LOC_EXPR_BAD	kern/dwarf_error.h	/^        DW_DLE_LOC_EXPR_BAD,            \/* Invalid location expression. *\/$/;"	e	enum:__anon45
-DW_DLE_MEMORY	kern/dwarf_error.h	/^        DW_DLE_MEMORY,                  \/* Insufficient memory. *\/$/;"	e	enum:__anon45
-DW_DLE_NONE	kern/dwarf_error.h	/^        DW_DLE_NONE,                    \/* No error. *\/$/;"	e	enum:__anon45
-DW_DLE_NO_CIE_FOR_FDE	kern/dwarf_error.h	/^        DW_DLE_NO_CIE_FOR_FDE,          \/* CIE not found for certain FDE. *\/$/;"	e	enum:__anon45
-DW_DLE_NO_ENTRY	kern/dwarf_error.h	/^        DW_DLE_NO_ENTRY,                \/* No entry. *\/$/;"	e	enum:__anon45
-DW_DLE_NUM	kern/dwarf_error.h	/^        DW_DLE_NUM                      \/* Max error number. *\/$/;"	e	enum:__anon45
-DW_DLE_PC_NOT_IN_FDE_RANGE	kern/dwarf_error.h	/^        DW_DLE_PC_NOT_IN_FDE_RANGE,     \/* PC requested not in the FDE range. *\/$/;"	e	enum:__anon45
-DW_DLE_VERSION_STAMP_ERROR	kern/dwarf_error.h	/^        DW_DLE_VERSION_STAMP_ERROR,     \/* Invalid version. *\/$/;"	e	enum:__anon45
+DW_DLE_ARANGE_OFFSET_BAD	kern/dwarf_error.h	/^        DW_DLE_ARANGE_OFFSET_BAD,       \/* Invalid arange offset. *\/$/;"	e	enum:__anon9
+DW_DLE_ARGUMENT	kern/dwarf_error.h	/^        DW_DLE_ARGUMENT,                \/* Invalid argument. *\/$/;"	e	enum:__anon9
+DW_DLE_ATTR_FORM_BAD	kern/dwarf_error.h	/^        DW_DLE_ATTR_FORM_BAD,           \/* Invalid attribute form. *\/$/;"	e	enum:__anon9
+DW_DLE_CU_LENGTH_ERROR	kern/dwarf_error.h	/^        DW_DLE_CU_LENGTH_ERROR,         \/* Invalid compilation unit data. *\/$/;"	e	enum:__anon9
+DW_DLE_DEBUG_ABBREV_NULL	kern/dwarf_error.h	/^        DW_DLE_DEBUG_ABBREV_NULL,       \/* Abbrev not found. *\/$/;"	e	enum:__anon9
+DW_DLE_DEBUG_FRAME_LENGTH_BAD	kern/dwarf_error.h	/^        DW_DLE_DEBUG_FRAME_LENGTH_BAD,  \/* Frame section too short. *\/$/;"	e	enum:__anon9
+DW_DLE_DEBUG_INFO_NULL	kern/dwarf_error.h	/^        DW_DLE_DEBUG_INFO_NULL,         \/* Debug info NULL. *\/$/;"	e	enum:__anon9
+DW_DLE_DEBUG_LINE_LENGTH_BAD	kern/dwarf_error.h	/^        DW_DLE_DEBUG_LINE_LENGTH_BAD,   \/* Line info section too short. *\/$/;"	e	enum:__anon9
+DW_DLE_DEBUG_LOC_SECTION_SHORT	kern/dwarf_error.h	/^        DW_DLE_DEBUG_LOC_SECTION_SHORT, \/* Loclist section too short. *\/$/;"	e	enum:__anon9
+DW_DLE_DEBUG_MACRO_INCONSISTENT	kern/dwarf_error.h	/^        DW_DLE_DEBUG_MACRO_INCONSISTENT,\/* Invalid macinfo data. *\/$/;"	e	enum:__anon9
+DW_DLE_DF_REG_NUM_TOO_HIGH	kern/dwarf_error.h	/^        DW_DLE_DF_REG_NUM_TOO_HIGH,     \/* Insufficient regtable space. *\/$/;"	e	enum:__anon9
+DW_DLE_DIE_NO_CU_CONTEXT	kern/dwarf_error.h	/^        DW_DLE_DIE_NO_CU_CONTEXT,       \/* No current compilation unit. *\/$/;"	e	enum:__anon9
+DW_DLE_DIR_INDEX_BAD	kern/dwarf_error.h	/^        DW_DLE_DIR_INDEX_BAD,           \/* Invalid dir index. *\/$/;"	e	enum:__anon9
+DW_DLE_ELF	kern/dwarf_error.h	/^        DW_DLE_ELF,                     \/* ELF error. *\/$/;"	e	enum:__anon9
+DW_DLE_ELF_SECT_ERR	kern/dwarf_error.h	/^        DW_DLE_ELF_SECT_ERR,            \/* Application callback failed. *\/$/;"	e	enum:__anon9
+DW_DLE_ERROR	kern/dwarf_error.h	/^        DW_DLE_ERROR,                   \/* An error! *\/$/;"	e	enum:__anon9
+DW_DLE_EXPR_LENGTH_BAD	kern/dwarf_error.h	/^        DW_DLE_EXPR_LENGTH_BAD,         \/* Invalid DWARF expression. *\/$/;"	e	enum:__anon9
+DW_DLE_FRAME_AUGMENTATION_UNKNOWN	kern/dwarf_error.h	/^        DW_DLE_FRAME_AUGMENTATION_UNKNOWN, \/* Unknown CIE augmentation. *\/$/;"	e	enum:__anon9
+DW_DLE_FRAME_INSTR_EXEC_ERROR	kern/dwarf_error.h	/^        DW_DLE_FRAME_INSTR_EXEC_ERROR,  \/* Frame instruction exec error. *\/$/;"	e	enum:__anon9
+DW_DLE_FRAME_TABLE_COL_BAD	kern/dwarf_error.h	/^        DW_DLE_FRAME_TABLE_COL_BAD,     \/* Invalid table column. *\/$/;"	e	enum:__anon9
+DW_DLE_FRAME_VERSION_BAD	kern/dwarf_error.h	/^        DW_DLE_FRAME_VERSION_BAD,       \/* Invalid frame section version. *\/$/;"	e	enum:__anon9
+DW_DLE_LINE_FILE_NUM_BAD	kern/dwarf_error.h	/^        DW_DLE_LINE_FILE_NUM_BAD,       \/* Invalid file number. *\/$/;"	e	enum:__anon9
+DW_DLE_LOC_EXPR_BAD	kern/dwarf_error.h	/^        DW_DLE_LOC_EXPR_BAD,            \/* Invalid location expression. *\/$/;"	e	enum:__anon9
+DW_DLE_MEMORY	kern/dwarf_error.h	/^        DW_DLE_MEMORY,                  \/* Insufficient memory. *\/$/;"	e	enum:__anon9
+DW_DLE_NONE	kern/dwarf_error.h	/^        DW_DLE_NONE,                    \/* No error. *\/$/;"	e	enum:__anon9
+DW_DLE_NO_CIE_FOR_FDE	kern/dwarf_error.h	/^        DW_DLE_NO_CIE_FOR_FDE,          \/* CIE not found for certain FDE. *\/$/;"	e	enum:__anon9
+DW_DLE_NO_ENTRY	kern/dwarf_error.h	/^        DW_DLE_NO_ENTRY,                \/* No entry. *\/$/;"	e	enum:__anon9
+DW_DLE_NUM	kern/dwarf_error.h	/^        DW_DLE_NUM                      \/* Max error number. *\/$/;"	e	enum:__anon9
+DW_DLE_PC_NOT_IN_FDE_RANGE	kern/dwarf_error.h	/^        DW_DLE_PC_NOT_IN_FDE_RANGE,     \/* PC requested not in the FDE range. *\/$/;"	e	enum:__anon9
+DW_DLE_VERSION_STAMP_ERROR	kern/dwarf_error.h	/^        DW_DLE_VERSION_STAMP_ERROR,     \/* Invalid version. *\/$/;"	e	enum:__anon9
 DW_DLV_ERROR	kern/dwarf_error.h	6;"	d
 DW_DLV_NO_ENTRY	kern/dwarf_error.h	4;"	d
 DW_DLV_OK	kern/dwarf_error.h	5;"	d
@@ -803,8 +803,8 @@ DW_MACINFO_end_file	kern/dwarf_define.h	490;"	d
 DW_MACINFO_start_file	kern/dwarf_define.h	489;"	d
 DW_MACINFO_undef	kern/dwarf_define.h	488;"	d
 DW_MACINFO_vendor_ext	kern/dwarf_define.h	491;"	d
-DW_OBJECT_LSB	kern/dwarf.h	/^	DW_OBJECT_LSB$/;"	e	enum:__anon57
-DW_OBJECT_MSB	kern/dwarf.h	/^	DW_OBJECT_MSB,$/;"	e	enum:__anon57
+DW_OBJECT_LSB	kern/dwarf.h	/^	DW_OBJECT_LSB$/;"	e	enum:__anon22
+DW_OBJECT_MSB	kern/dwarf.h	/^	DW_OBJECT_MSB,$/;"	e	enum:__anon22
 DW_OP_GNU_push_tls_address	kern/dwarf_define.h	379;"	d
 DW_OP_abs	kern/dwarf_define.h	243;"	d
 DW_OP_addr	kern/dwarf_define.h	224;"	d
@@ -1107,13 +1107,13 @@ Dwarf_Abbrev	kern/dwarf.h	/^}Dwarf_Abbrev;$/;"	t	typeref:struct:_Dwarf_Abbrev
 Dwarf_Addr	kern/dwarf.h	/^typedef uint64_t        Dwarf_Addr;$/;"	t
 Dwarf_AttrDef	kern/dwarf.h	/^}Dwarf_AttrDef;$/;"	t	typeref:struct:_Dwarf_AttrDef
 Dwarf_Attribute	kern/dwarf.h	/^}Dwarf_Attribute;$/;"	t	typeref:struct:_Dwarf_Attribute
-Dwarf_Block	kern/dwarf.h	/^} Dwarf_Block;$/;"	t	typeref:struct:__anon55
+Dwarf_Block	kern/dwarf.h	/^} Dwarf_Block;$/;"	t	typeref:struct:__anon20
 Dwarf_Bool	kern/dwarf.h	/^typedef int             Dwarf_Bool;$/;"	t
 Dwarf_CU	kern/dwarf.h	/^}Dwarf_CU;$/;"	t	typeref:struct:_Dwarf_CU
 Dwarf_Cie	kern/dwarf.h	/^typedef struct _Dwarf_Cie       *Dwarf_Cie;$/;"	t	typeref:struct:_Dwarf_Cie
 Dwarf_Debug	kern/dwarf.h	/^typedef struct _Dwarf_Debug     *Dwarf_Debug;$/;"	t	typeref:struct:_Dwarf_Debug
 Dwarf_Die	kern/dwarf.h	/^}Dwarf_Die;$/;"	t	typeref:struct:_Dwarf_Die
-Dwarf_Endianness	kern/dwarf.h	/^} Dwarf_Endianness;$/;"	t	typeref:enum:__anon57
+Dwarf_Endianness	kern/dwarf.h	/^} Dwarf_Endianness;$/;"	t	typeref:enum:__anon22
 Dwarf_Endianness	obj/kern/kernel.asm	/^Dwarf_Endianness$/;"	l
 Dwarf_Endianness	vmm/guest/obj/kern/kernel.asm	/^Dwarf_Endianness$/;"	l
 Dwarf_Error	kern/dwarf.h	/^} Dwarf_Error;$/;"	t	typeref:struct:_Dwarf_Error
@@ -1123,15 +1123,15 @@ Dwarf_Half	obj/kern/kernel.asm	/^Dwarf_Half$/;"	l
 Dwarf_Half	vmm/guest/obj/kern/kernel.asm	/^Dwarf_Half$/;"	l
 Dwarf_Line	kern/dwarf.h	/^typedef _Dwarf_Line     *Dwarf_Line;$/;"	t
 Dwarf_LineInfo	kern/dwarf.h	/^typedef _Dwarf_LineInfo  *Dwarf_LineInfo;$/;"	t
-Dwarf_Loc	kern/dwarf.h	/^} Dwarf_Loc;$/;"	t	typeref:struct:__anon53
-Dwarf_Locdesc	kern/dwarf.h	/^} Dwarf_Locdesc;$/;"	t	typeref:struct:__anon54
+Dwarf_Loc	kern/dwarf.h	/^} Dwarf_Loc;$/;"	t	typeref:struct:__anon18
+Dwarf_Locdesc	kern/dwarf.h	/^} Dwarf_Locdesc;$/;"	t	typeref:struct:__anon19
 Dwarf_Off	kern/dwarf.h	/^typedef off_t           Dwarf_Off;$/;"	t
 Dwarf_P_Fde	kern/dwarf.h	/^typedef struct _Dwarf_Fde       *Dwarf_P_Fde;$/;"	t	typeref:struct:_Dwarf_Fde
 Dwarf_Ptr	kern/dwarf.h	/^typedef void            *Dwarf_Ptr;$/;"	t
-Dwarf_Regtable	kern/dwarf.h	/^} Dwarf_Regtable;$/;"	t	typeref:struct:__anon52
-Dwarf_Regtable3	kern/dwarf.h	/^} Dwarf_Regtable3;$/;"	t	typeref:struct:__anon50
-Dwarf_Regtable_Entry	kern/dwarf.h	/^} Dwarf_Regtable_Entry;$/;"	t	typeref:struct:__anon51
-Dwarf_Regtable_Entry3	kern/dwarf.h	/^} Dwarf_Regtable_Entry3;$/;"	t	typeref:struct:__anon49
+Dwarf_Regtable	kern/dwarf.h	/^} Dwarf_Regtable;$/;"	t	typeref:struct:__anon17
+Dwarf_Regtable3	kern/dwarf.h	/^} Dwarf_Regtable3;$/;"	t	typeref:struct:__anon15
+Dwarf_Regtable_Entry	kern/dwarf.h	/^} Dwarf_Regtable_Entry;$/;"	t	typeref:struct:__anon16
+Dwarf_Regtable_Entry3	kern/dwarf.h	/^} Dwarf_Regtable_Entry3;$/;"	t	typeref:struct:__anon14
 Dwarf_Section	kern/dwarf.h	/^} Dwarf_Section;$/;"	t	typeref:struct:_Dwarf_Section
 Dwarf_Section	obj/kern/kernel.asm	/^Dwarf_Section *$/;"	l
 Dwarf_Section	vmm/guest/obj/kern/kernel.asm	/^Dwarf_Section *$/;"	l
@@ -1374,14 +1374,14 @@ ENSRTIMEOUT	net/lwip/include/lwip/arch.h	211;"	d
 ENTRY	net/lwip/jos/arch/longjmp.S	/^#define ENTRY(x) \\$/;"	d
 ENVGENSHIFT	kern/env.c	37;"	d	file:
 ENVX	inc/env.h	35;"	d
-ENV_CREATE	kern/env.h	40;"	d
-ENV_CREATE	kern/env.h	47;"	d
-ENV_DYING	inc/env.h	/^	ENV_DYING,$/;"	e	enum:__anon3
-ENV_FREE	inc/env.h	/^	ENV_FREE = 0,$/;"	e	enum:__anon3
-ENV_NOT_RUNNABLE	inc/env.h	/^	ENV_NOT_RUNNABLE$/;"	e	enum:__anon3
-ENV_PASTE3	kern/env.h	36;"	d
-ENV_RUNNABLE	inc/env.h	/^	ENV_RUNNABLE,$/;"	e	enum:__anon3
-ENV_RUNNING	inc/env.h	/^	ENV_RUNNING,$/;"	e	enum:__anon3
+ENV_CREATE	kern/env.h	39;"	d
+ENV_CREATE	kern/env.h	46;"	d
+ENV_DYING	inc/env.h	/^	ENV_DYING,$/;"	e	enum:__anon8
+ENV_FREE	inc/env.h	/^	ENV_FREE = 0,$/;"	e	enum:__anon8
+ENV_NOT_RUNNABLE	inc/env.h	/^	ENV_NOT_RUNNABLE$/;"	e	enum:__anon8
+ENV_PASTE3	kern/env.h	35;"	d
+ENV_RUNNABLE	inc/env.h	/^	ENV_RUNNABLE,$/;"	e	enum:__anon8
+ENV_RUNNING	inc/env.h	/^	ENV_RUNNING,$/;"	e	enum:__anon8
 ENV_TYPE_FS	inc/env.h	/^	ENV_TYPE_FS,		\/\/ File system server$/;"	e	enum:EnvType
 ENV_TYPE_GUEST	inc/env.h	/^	ENV_TYPE_GUEST,     \/\/ A VMM guest OS$/;"	e	enum:EnvType
 ENV_TYPE_IDLE	inc/env.h	/^	ENV_TYPE_IDLE,$/;"	e	enum:EnvType
@@ -1399,11 +1399,11 @@ EPROTONOSUPPORT	net/lwip/include/lwip/arch.h	164;"	d
 EPROTOTYPE	net/lwip/include/lwip/arch.h	162;"	d
 EPTE_ADDR	vmm/ept.h	25;"	d
 EPTE_FLAGS	vmm/ept.h	26;"	d
-EPTE_TYPE_UC	inc/ept.h	/^	 EPTE_TYPE_UC = 0, \/* uncachable *\/$/;"	e	enum:__anon5
-EPTE_TYPE_WB	inc/ept.h	/^	 EPTE_TYPE_WB = 6, \/* write back *\/$/;"	e	enum:__anon5
-EPTE_TYPE_WC	inc/ept.h	/^	 EPTE_TYPE_WC = 1, \/* write combining *\/$/;"	e	enum:__anon5
-EPTE_TYPE_WP	inc/ept.h	/^	 EPTE_TYPE_WP = 5, \/* write protected *\/$/;"	e	enum:__anon5
-EPTE_TYPE_WT	inc/ept.h	/^	 EPTE_TYPE_WT = 4, \/* write through *\/$/;"	e	enum:__anon5
+EPTE_TYPE_UC	inc/ept.h	/^	 EPTE_TYPE_UC = 0, \/* uncachable *\/$/;"	e	enum:__anon3
+EPTE_TYPE_WB	inc/ept.h	/^	 EPTE_TYPE_WB = 6, \/* write back *\/$/;"	e	enum:__anon3
+EPTE_TYPE_WC	inc/ept.h	/^	 EPTE_TYPE_WC = 1, \/* write combining *\/$/;"	e	enum:__anon3
+EPTE_TYPE_WP	inc/ept.h	/^	 EPTE_TYPE_WP = 5, \/* write protected *\/$/;"	e	enum:__anon3
+EPTE_TYPE_WT	inc/ept.h	/^	 EPTE_TYPE_WT = 4, \/* write through *\/$/;"	e	enum:__anon3
 EPT_LEVELS	vmm/ept.h	18;"	d
 ERANGE	net/lwip/include/lwip/arch.h	103;"	d
 EREMCHG	net/lwip/include/lwip/arch.h	149;"	d
@@ -1469,82 +1469,82 @@ EUSERS	net/lwip/include/lwip/arch.h	158;"	d
 EWOULDBLOCK	net/lwip/include/lwip/arch.h	110;"	d
 EXDEV	net/lwip/include/lwip/arch.h	87;"	d
 EXFULL	net/lwip/include/lwip/arch.h	123;"	d
-EXIT_REASON_ACCESS_GDTR_OR_IDTR	vmm/vmx.h	417;"	d
-EXIT_REASON_ACCESS_LDTR_OR_TR	vmm/vmx.h	418;"	d
-EXIT_REASON_APIC_ACCESS	vmm/vmx.h	416;"	d
-EXIT_REASON_CPUID	vmm/vmx.h	384;"	d
-EXIT_REASON_ENTFAIL_GUEST_STATE	vmm/vmx.h	406;"	d
-EXIT_REASON_ENTFAIL_MACHINE_CHK	vmm/vmx.h	412;"	d
-EXIT_REASON_ENTFAIL_MSR_LOADING	vmm/vmx.h	407;"	d
-EXIT_REASON_EPT_MISCONFIG	vmm/vmx.h	420;"	d
-EXIT_REASON_EPT_VIOLATION	vmm/vmx.h	419;"	d
-EXIT_REASON_EXCEPTION_OR_NMI	vmm/vmx.h	375;"	d
-EXIT_REASON_EXTERNAL_INT	vmm/vmx.h	376;"	d
-EXIT_REASON_HLT	vmm/vmx.h	385;"	d
-EXIT_REASON_INIT_SIGNAL	vmm/vmx.h	378;"	d
-EXIT_REASON_INTERRUPT_WINDOW	vmm/vmx.h	382;"	d
-EXIT_REASON_INVD	vmm/vmx.h	386;"	d
-EXIT_REASON_INVEPT	vmm/vmx.h	421;"	d
-EXIT_REASON_INVLPG	vmm/vmx.h	387;"	d
-EXIT_REASON_INVVPID	vmm/vmx.h	424;"	d
-EXIT_REASON_IO_INSTRUCTION	vmm/vmx.h	403;"	d
-EXIT_REASON_IO_SMI	vmm/vmx.h	380;"	d
-EXIT_REASON_MASK	vmm/vmx.h	373;"	d
-EXIT_REASON_MONITOR	vmm/vmx.h	410;"	d
-EXIT_REASON_MOV_CR	vmm/vmx.h	401;"	d
-EXIT_REASON_MOV_DR	vmm/vmx.h	402;"	d
-EXIT_REASON_MTF	vmm/vmx.h	409;"	d
-EXIT_REASON_MWAIT	vmm/vmx.h	408;"	d
-EXIT_REASON_OTHER_SMI	vmm/vmx.h	381;"	d
-EXIT_REASON_PAUSE	vmm/vmx.h	411;"	d
-EXIT_REASON_RDMSR	vmm/vmx.h	404;"	d
-EXIT_REASON_RDPMC	vmm/vmx.h	388;"	d
-EXIT_REASON_RDTSC	vmm/vmx.h	389;"	d
-EXIT_REASON_RDTSCP	vmm/vmx.h	422;"	d
-EXIT_REASON_RSM	vmm/vmx.h	390;"	d
-EXIT_REASON_STARTUP_IPI	vmm/vmx.h	379;"	d
-EXIT_REASON_TASK_SWITCH	vmm/vmx.h	383;"	d
-EXIT_REASON_TPR_BELOW_THRESHOLD	vmm/vmx.h	413;"	d
-EXIT_REASON_TRIPLE_FAULT	vmm/vmx.h	377;"	d
-EXIT_REASON_VMCALL	vmm/vmx.h	391;"	d
-EXIT_REASON_VMCLEAR	vmm/vmx.h	392;"	d
-EXIT_REASON_VMENTRY_FAILURE_BIT	vmm/vmx.h	415;"	d
-EXIT_REASON_VMEXIT_FROM_VMX_ROOT_OPERATION_BIT	vmm/vmx.h	414;"	d
-EXIT_REASON_VMLAUNCH	vmm/vmx.h	393;"	d
-EXIT_REASON_VMPTRLD	vmm/vmx.h	394;"	d
-EXIT_REASON_VMPTRST	vmm/vmx.h	395;"	d
-EXIT_REASON_VMREAD	vmm/vmx.h	396;"	d
-EXIT_REASON_VMRESUME	vmm/vmx.h	397;"	d
-EXIT_REASON_VMWRITE	vmm/vmx.h	398;"	d
-EXIT_REASON_VMXOFF	vmm/vmx.h	399;"	d
-EXIT_REASON_VMXON	vmm/vmx.h	400;"	d
-EXIT_REASON_VMX_PREEMPT_TIMER	vmm/vmx.h	423;"	d
-EXIT_REASON_WBINVD	vmm/vmx.h	425;"	d
-EXIT_REASON_WRMSR	vmm/vmx.h	405;"	d
-EXIT_REASON_XSETBV	vmm/vmx.h	426;"	d
+EXIT_REASON_ACCESS_GDTR_OR_IDTR	vmm/vmx.h	666;"	d
+EXIT_REASON_ACCESS_LDTR_OR_TR	vmm/vmx.h	667;"	d
+EXIT_REASON_APIC_ACCESS	vmm/vmx.h	665;"	d
+EXIT_REASON_CPUID	vmm/vmx.h	633;"	d
+EXIT_REASON_ENTFAIL_GUEST_STATE	vmm/vmx.h	655;"	d
+EXIT_REASON_ENTFAIL_MACHINE_CHK	vmm/vmx.h	661;"	d
+EXIT_REASON_ENTFAIL_MSR_LOADING	vmm/vmx.h	656;"	d
+EXIT_REASON_EPT_MISCONFIG	vmm/vmx.h	669;"	d
+EXIT_REASON_EPT_VIOLATION	vmm/vmx.h	668;"	d
+EXIT_REASON_EXCEPTION_OR_NMI	vmm/vmx.h	624;"	d
+EXIT_REASON_EXTERNAL_INT	vmm/vmx.h	625;"	d
+EXIT_REASON_HLT	vmm/vmx.h	634;"	d
+EXIT_REASON_INIT_SIGNAL	vmm/vmx.h	627;"	d
+EXIT_REASON_INTERRUPT_WINDOW	vmm/vmx.h	631;"	d
+EXIT_REASON_INVD	vmm/vmx.h	635;"	d
+EXIT_REASON_INVEPT	vmm/vmx.h	670;"	d
+EXIT_REASON_INVLPG	vmm/vmx.h	636;"	d
+EXIT_REASON_INVVPID	vmm/vmx.h	673;"	d
+EXIT_REASON_IO_INSTRUCTION	vmm/vmx.h	652;"	d
+EXIT_REASON_IO_SMI	vmm/vmx.h	629;"	d
+EXIT_REASON_MASK	vmm/vmx.h	622;"	d
+EXIT_REASON_MONITOR	vmm/vmx.h	659;"	d
+EXIT_REASON_MOV_CR	vmm/vmx.h	650;"	d
+EXIT_REASON_MOV_DR	vmm/vmx.h	651;"	d
+EXIT_REASON_MTF	vmm/vmx.h	658;"	d
+EXIT_REASON_MWAIT	vmm/vmx.h	657;"	d
+EXIT_REASON_OTHER_SMI	vmm/vmx.h	630;"	d
+EXIT_REASON_PAUSE	vmm/vmx.h	660;"	d
+EXIT_REASON_RDMSR	vmm/vmx.h	653;"	d
+EXIT_REASON_RDPMC	vmm/vmx.h	637;"	d
+EXIT_REASON_RDTSC	vmm/vmx.h	638;"	d
+EXIT_REASON_RDTSCP	vmm/vmx.h	671;"	d
+EXIT_REASON_RSM	vmm/vmx.h	639;"	d
+EXIT_REASON_STARTUP_IPI	vmm/vmx.h	628;"	d
+EXIT_REASON_TASK_SWITCH	vmm/vmx.h	632;"	d
+EXIT_REASON_TPR_BELOW_THRESHOLD	vmm/vmx.h	662;"	d
+EXIT_REASON_TRIPLE_FAULT	vmm/vmx.h	626;"	d
+EXIT_REASON_VMCALL	vmm/vmx.h	640;"	d
+EXIT_REASON_VMCLEAR	vmm/vmx.h	641;"	d
+EXIT_REASON_VMENTRY_FAILURE_BIT	vmm/vmx.h	664;"	d
+EXIT_REASON_VMEXIT_FROM_VMX_ROOT_OPERATION_BIT	vmm/vmx.h	663;"	d
+EXIT_REASON_VMLAUNCH	vmm/vmx.h	642;"	d
+EXIT_REASON_VMPTRLD	vmm/vmx.h	643;"	d
+EXIT_REASON_VMPTRST	vmm/vmx.h	644;"	d
+EXIT_REASON_VMREAD	vmm/vmx.h	645;"	d
+EXIT_REASON_VMRESUME	vmm/vmx.h	646;"	d
+EXIT_REASON_VMWRITE	vmm/vmx.h	647;"	d
+EXIT_REASON_VMXOFF	vmm/vmx.h	648;"	d
+EXIT_REASON_VMXON	vmm/vmx.h	649;"	d
+EXIT_REASON_VMX_PREEMPT_TIMER	vmm/vmx.h	672;"	d
+EXIT_REASON_WBINVD	vmm/vmx.h	674;"	d
+EXIT_REASON_WRMSR	vmm/vmx.h	654;"	d
+EXIT_REASON_XSETBV	vmm/vmx.h	675;"	d
 EXTPHYSMEM	inc/memlayout.h	97;"	d
-E_BAD_ENV	inc/error.h	/^	E_BAD_ENV	= 2,	\/\/ Environment doesn't exist or otherwise$/;"	e	enum:__anon6
-E_BAD_PATH	inc/error.h	/^	E_BAD_PATH	= 13,	\/\/ Bad path$/;"	e	enum:__anon6
+E_BAD_ENV	inc/error.h	/^	E_BAD_ENV	= 2,	\/\/ Environment doesn't exist or otherwise$/;"	e	enum:__anon5
+E_BAD_PATH	inc/error.h	/^	E_BAD_PATH	= 13,	\/\/ Bad path$/;"	e	enum:__anon5
 E_BAD_REQ	user/httpd.c	10;"	d	file:
-E_EOF	inc/error.h	/^	E_EOF		= 9,	\/\/ Unexpected end of file$/;"	e	enum:__anon6
-E_FAULT	inc/error.h	/^	E_FAULT		= 6,	\/\/ Memory fault$/;"	e	enum:__anon6
-E_FILE_EXISTS	inc/error.h	/^	E_FILE_EXISTS	= 14,	\/\/ File already exists$/;"	e	enum:__anon6
-E_INVAL	inc/error.h	/^	E_INVAL		= 3,	\/\/ Invalid parameter$/;"	e	enum:__anon6
-E_IPC_NOT_RECV	inc/error.h	/^	E_IPC_NOT_RECV	= 8,	\/\/ Attempt to send to env that is not recving$/;"	e	enum:__anon6
-E_MAX_OPEN	inc/error.h	/^	E_MAX_OPEN	= 11,	\/\/ Too many files are open$/;"	e	enum:__anon6
-E_NOT_EXEC	inc/error.h	/^	E_NOT_EXEC	= 15,	\/\/ File not a valid executable$/;"	e	enum:__anon6
-E_NOT_FOUND	inc/error.h	/^	E_NOT_FOUND	= 12, 	\/\/ File or block not found$/;"	e	enum:__anon6
-E_NOT_SUPP	inc/error.h	/^	E_NOT_SUPP	= 16,	\/\/ Operation not supported$/;"	e	enum:__anon6
-E_NO_DISK	inc/error.h	/^	E_NO_DISK	= 10,	\/\/ No free space left on disk$/;"	e	enum:__anon6
-E_NO_ENT	inc/error.h	/^	E_NO_ENT = 21,$/;"	e	enum:__anon6
-E_NO_EPT	inc/error.h	/^	E_NO_EPT = 18,$/;"	e	enum:__anon6
-E_NO_FREE_ENV	inc/error.h	/^	E_NO_FREE_ENV	= 5,	\/\/ Attempt to create a new environment beyond$/;"	e	enum:__anon6
-E_NO_MEM	inc/error.h	/^	E_NO_MEM	= 4,	\/\/ Request failed due to memory shortage$/;"	e	enum:__anon6
-E_NO_SYS	inc/error.h	/^	E_NO_SYS	= 7,	\/\/ Unimplemented system call$/;"	e	enum:__anon6
-E_NO_VMX	inc/error.h	/^	E_NO_VMX = 17,    \/\/ The processor doesn't support VMX or $/;"	e	enum:__anon6
-E_UNSPECIFIED	inc/error.h	/^	E_UNSPECIFIED	= 1,	\/\/ Unspecified or unknown problem$/;"	e	enum:__anon6
-E_VMCS_INIT	inc/error.h	/^	E_VMCS_INIT = 20, \/\/ Couldn't init the VMCS region$/;"	e	enum:__anon6
-E_VMX_ON	inc/error.h	/^	E_VMX_ON = 19,    \/\/ Couldn't transition the cpu to VMX root mode$/;"	e	enum:__anon6
+E_EOF	inc/error.h	/^	E_EOF		= 9,	\/\/ Unexpected end of file$/;"	e	enum:__anon5
+E_FAULT	inc/error.h	/^	E_FAULT		= 6,	\/\/ Memory fault$/;"	e	enum:__anon5
+E_FILE_EXISTS	inc/error.h	/^	E_FILE_EXISTS	= 14,	\/\/ File already exists$/;"	e	enum:__anon5
+E_INVAL	inc/error.h	/^	E_INVAL		= 3,	\/\/ Invalid parameter$/;"	e	enum:__anon5
+E_IPC_NOT_RECV	inc/error.h	/^	E_IPC_NOT_RECV	= 8,	\/\/ Attempt to send to env that is not recving$/;"	e	enum:__anon5
+E_MAX_OPEN	inc/error.h	/^	E_MAX_OPEN	= 11,	\/\/ Too many files are open$/;"	e	enum:__anon5
+E_NOT_EXEC	inc/error.h	/^	E_NOT_EXEC	= 15,	\/\/ File not a valid executable$/;"	e	enum:__anon5
+E_NOT_FOUND	inc/error.h	/^	E_NOT_FOUND	= 12, 	\/\/ File or block not found$/;"	e	enum:__anon5
+E_NOT_SUPP	inc/error.h	/^	E_NOT_SUPP	= 16,	\/\/ Operation not supported$/;"	e	enum:__anon5
+E_NO_DISK	inc/error.h	/^	E_NO_DISK	= 10,	\/\/ No free space left on disk$/;"	e	enum:__anon5
+E_NO_ENT	inc/error.h	/^	E_NO_ENT = 21,$/;"	e	enum:__anon5
+E_NO_EPT	inc/error.h	/^	E_NO_EPT = 18,$/;"	e	enum:__anon5
+E_NO_FREE_ENV	inc/error.h	/^	E_NO_FREE_ENV	= 5,	\/\/ Attempt to create a new environment beyond$/;"	e	enum:__anon5
+E_NO_MEM	inc/error.h	/^	E_NO_MEM	= 4,	\/\/ Request failed due to memory shortage$/;"	e	enum:__anon5
+E_NO_SYS	inc/error.h	/^	E_NO_SYS	= 7,	\/\/ Unimplemented system call$/;"	e	enum:__anon5
+E_NO_VMX	inc/error.h	/^	E_NO_VMX = 17,    \/\/ The processor doesn't support VMX or $/;"	e	enum:__anon5
+E_UNSPECIFIED	inc/error.h	/^	E_UNSPECIFIED	= 1,	\/\/ Unspecified or unknown problem$/;"	e	enum:__anon5
+E_VMCS_INIT	inc/error.h	/^	E_VMCS_INIT = 20, \/\/ Couldn't init the VMCS region$/;"	e	enum:__anon5
+E_VMX_ON	inc/error.h	/^	E_VMX_ON = 19,    \/\/ Couldn't transition the cpu to VMX root mode$/;"	e	enum:__anon5
 Elf	inc/elf.h	/^struct Elf {$/;"	s
 Elf	kern/dwarf_elf.h	113;"	d
 Elf	kern/dwarf_elf.h	66;"	d
@@ -1606,14 +1606,14 @@ FSM_DEFMAXNAKLOOPS	net/lwip/include/lwip/opt.h	1343;"	d
 FSM_DEFMAXTERMREQS	net/lwip/include/lwip/opt.h	1335;"	d
 FSM_DEFTIMEOUT	net/lwip/include/lwip/opt.h	1331;"	d
 FSM_H	net/lwip/netif/ppp/fsm.h	56;"	d
-FSREQ_FLUSH	inc/fs.h	/^	FSREQ_FLUSH,$/;"	e	enum:__anon8
-FSREQ_OPEN	inc/fs.h	/^	FSREQ_OPEN = 1,$/;"	e	enum:__anon8
-FSREQ_READ	inc/fs.h	/^	FSREQ_READ,$/;"	e	enum:__anon8
-FSREQ_REMOVE	inc/fs.h	/^	FSREQ_REMOVE,$/;"	e	enum:__anon8
-FSREQ_SET_SIZE	inc/fs.h	/^	FSREQ_SET_SIZE,$/;"	e	enum:__anon8
-FSREQ_STAT	inc/fs.h	/^	FSREQ_STAT,$/;"	e	enum:__anon8
-FSREQ_SYNC	inc/fs.h	/^	FSREQ_SYNC$/;"	e	enum:__anon8
-FSREQ_WRITE	inc/fs.h	/^	FSREQ_WRITE,$/;"	e	enum:__anon8
+FSREQ_FLUSH	inc/fs.h	/^	FSREQ_FLUSH,$/;"	e	enum:__anon2
+FSREQ_OPEN	inc/fs.h	/^	FSREQ_OPEN = 1,$/;"	e	enum:__anon2
+FSREQ_READ	inc/fs.h	/^	FSREQ_READ,$/;"	e	enum:__anon2
+FSREQ_REMOVE	inc/fs.h	/^	FSREQ_REMOVE,$/;"	e	enum:__anon2
+FSREQ_SET_SIZE	inc/fs.h	/^	FSREQ_SET_SIZE,$/;"	e	enum:__anon2
+FSREQ_STAT	inc/fs.h	/^	FSREQ_STAT,$/;"	e	enum:__anon2
+FSREQ_SYNC	inc/fs.h	/^	FSREQ_SYNC$/;"	e	enum:__anon2
+FSREQ_WRITE	inc/fs.h	/^	FSREQ_WRITE,$/;"	e	enum:__anon2
 FS_MAGIC	inc/fs.h	55;"	d
 FTYPE_DIR	inc/fs.h	50;"	d
 FTYPE_REG	inc/fs.h	49;"	d
@@ -1668,22 +1668,22 @@ HWTYPE_ETHERNET	net/lwip/netif/etharp.c	80;"	d	file:
 I	net/lwip/netif/ppp/md5.c	75;"	d	file:
 IA32_FEATURE_CONTROL	obj/kern/kernel.asm	/^#define IA32_FEATURE_CONTROL 0x03A$/;"	d
 IA32_FEATURE_CONTROL	vmm/guest/obj/kern/kernel.asm	/^#define IA32_FEATURE_CONTROL 0x03A$/;"	d
-IA32_FEATURE_CONTROL	vmm/vmx.h	56;"	d
-IA32_VMX_BASIC	vmm/vmx.h	43;"	d
-IA32_VMX_CR0_FIXED0	vmm/vmx.h	50;"	d
-IA32_VMX_CR0_FIXED1	vmm/vmx.h	51;"	d
-IA32_VMX_CR4_FIXED0	vmm/vmx.h	52;"	d
-IA32_VMX_CR4_FIXED1	vmm/vmx.h	53;"	d
-IA32_VMX_ENTRY_CTLS	vmm/vmx.h	48;"	d
+IA32_FEATURE_CONTROL	vmm/vmx.h	60;"	d
+IA32_VMX_BASIC	vmm/vmx.h	47;"	d
+IA32_VMX_CR0_FIXED0	vmm/vmx.h	54;"	d
+IA32_VMX_CR0_FIXED1	vmm/vmx.h	55;"	d
+IA32_VMX_CR4_FIXED0	vmm/vmx.h	56;"	d
+IA32_VMX_CR4_FIXED1	vmm/vmx.h	57;"	d
+IA32_VMX_ENTRY_CTLS	vmm/vmx.h	52;"	d
 IA32_VMX_EPT_VPID_CAP	obj/kern/kernel.asm	/^#define IA32_VMX_EPT_VPID_CAP 0x48C$/;"	d
 IA32_VMX_EPT_VPID_CAP	vmm/guest/obj/kern/kernel.asm	/^#define IA32_VMX_EPT_VPID_CAP 0x48C$/;"	d
-IA32_VMX_EPT_VPID_CAP	vmm/vmx.h	55;"	d
-IA32_VMX_EXIT_CTLS	vmm/vmx.h	47;"	d
-IA32_VMX_MISC	vmm/vmx.h	49;"	d
-IA32_VMX_PINBASED_CTLS	vmm/vmx.h	44;"	d
-IA32_VMX_PROCBASED_CTLS	vmm/vmx.h	45;"	d
-IA32_VMX_PROCBASED_CTLS2	vmm/vmx.h	46;"	d
-IA32_VMX_VMCS_ENUM	vmm/vmx.h	54;"	d
+IA32_VMX_EPT_VPID_CAP	vmm/vmx.h	59;"	d
+IA32_VMX_EXIT_CTLS	vmm/vmx.h	51;"	d
+IA32_VMX_MISC	vmm/vmx.h	53;"	d
+IA32_VMX_PINBASED_CTLS	vmm/vmx.h	48;"	d
+IA32_VMX_PROCBASED_CTLS	vmm/vmx.h	49;"	d
+IA32_VMX_PROCBASED_CTLS2	vmm/vmx.h	50;"	d
+IA32_VMX_VMCS_ENUM	vmm/vmx.h	58;"	d
 ICMP6_DUR	net/lwip/include/ipv6/lwip/icmp.h	47;"	d
 ICMP6_ECHO	net/lwip/include/ipv6/lwip/icmp.h	49;"	d
 ICMP6_ER	net/lwip/include/ipv6/lwip/icmp.h	50;"	d
@@ -1937,7 +1937,10 @@ IRQ_SERIAL	inc/trap.h	38;"	d
 IRQ_SLAVE	kern/picirq.h	16;"	d
 IRQ_SPURIOUS	inc/trap.h	39;"	d
 IRQ_TIMER	inc/trap.h	36;"	d
+JOS_ENTRY	obj/kern/kernel.asm	/^#define JOS_ENTRY 0x7000$/;"	d
 JOS_ENTRY	user/vmm.c	11;"	d	file:
+JOS_ENTRY	vmm/guest/obj/kern/kernel.asm	/^#define JOS_ENTRY 0x7000$/;"	d
+JOS_ENTRY	vmm/vmexits.c	20;"	d	file:
 JOS_INC_ARGS_H	inc/args.h	3;"	d
 JOS_INC_ASSERT_H	inc/assert.h	4;"	d
 JOS_INC_CPU_H	kern/cpu.h	4;"	d
@@ -2069,7 +2072,7 @@ L2_env	obj/kern/kernel.asm	/^        L2_env = e;$/;"	d
 L2_env	vmm/guest/obj/kern/kernel.asm	/^        L2_env = e;$/;"	d
 L2_vmcs	inc/env.h	/^	uintptr_t *L2_vmcs;$/;"	m	struct:Env
 LABSETUP	GNUmakefile	/^LABSETUP ?= .\/$/;"	m
-LANManResp	net/lwip/netif/ppp/chpms.c	/^    u_char LANManResp[24];$/;"	m	struct:__anon19	file:
+LANManResp	net/lwip/netif/ppp/chpms.c	/^    u_char LANManResp[24];$/;"	m	struct:__anon35	file:
 LAST_ACK	net/lwip/include/lwip/tcp.h	/^  LAST_ACK    = 9,$/;"	e	enum:tcp_state
 LCPDEBUG	net/lwip/netif/ppp/pppdebug.h	70;"	d
 LCPDEBUG	net/lwip/netif/ppp/pppdebug.h	80;"	d
@@ -2140,13 +2143,13 @@ LOAD_REGS	user/faultregs.c	31;"	d	file:
 LOCK_TCPIP_CORE	net/lwip/include/lwip/tcpip.h	53;"	d
 LOCK_TCPIP_CORE	net/lwip/include/lwip/tcpip.h	60;"	d
 LOG2NENV	inc/env.h	33;"	d
-LOG_CRITICAL	net/lwip/netif/ppp/pppdebug.h	/^LOG_CRITICAL = 0,$/;"	e	enum:__anon21
-LOG_DEBUG	net/lwip/netif/ppp/pppdebug.h	/^LOG_DEBUG    = 7$/;"	e	enum:__anon21
-LOG_DETAIL	net/lwip/netif/ppp/pppdebug.h	/^LOG_DETAIL   = 6,$/;"	e	enum:__anon21
-LOG_ERR	net/lwip/netif/ppp/pppdebug.h	/^LOG_ERR      = 1,$/;"	e	enum:__anon21
-LOG_INFO	net/lwip/netif/ppp/pppdebug.h	/^LOG_INFO     = 5,$/;"	e	enum:__anon21
-LOG_NOTICE	net/lwip/netif/ppp/pppdebug.h	/^LOG_NOTICE   = 2,$/;"	e	enum:__anon21
-LOG_WARNING	net/lwip/netif/ppp/pppdebug.h	/^LOG_WARNING  = 3,$/;"	e	enum:__anon21
+LOG_CRITICAL	net/lwip/netif/ppp/pppdebug.h	/^LOG_CRITICAL = 0,$/;"	e	enum:__anon36
+LOG_DEBUG	net/lwip/netif/ppp/pppdebug.h	/^LOG_DEBUG    = 7$/;"	e	enum:__anon36
+LOG_DETAIL	net/lwip/netif/ppp/pppdebug.h	/^LOG_DETAIL   = 6,$/;"	e	enum:__anon36
+LOG_ERR	net/lwip/netif/ppp/pppdebug.h	/^LOG_ERR      = 1,$/;"	e	enum:__anon36
+LOG_INFO	net/lwip/netif/ppp/pppdebug.h	/^LOG_INFO     = 5,$/;"	e	enum:__anon36
+LOG_NOTICE	net/lwip/netif/ppp/pppdebug.h	/^LOG_NOTICE   = 2,$/;"	e	enum:__anon36
+LOG_WARNING	net/lwip/netif/ppp/pppdebug.h	/^LOG_WARNING  = 3,$/;"	e	enum:__anon36
 LS_ACKRCVD	net/lwip/netif/ppp/fsm.h	88;"	d
 LS_ACKSENT	net/lwip/netif/ppp/fsm.h	89;"	d
 LS_CLOSED	net/lwip/netif/ppp/fsm.h	83;"	d
@@ -2290,8 +2293,8 @@ LcpEchoCheck	net/lwip/netif/ppp/lcp.c	/^LcpEchoCheck (fsm *f)$/;"	f	file:
 LcpEchoTimeout	net/lwip/netif/ppp/lcp.c	/^LcpEchoTimeout (void *arg)$/;"	f	file:
 LcpLinkFailure	net/lwip/netif/ppp/lcp.c	/^LcpLinkFailure (fsm *f)$/;"	f	file:
 LcpSendEchoRequest	net/lwip/netif/ppp/lcp.c	/^LcpSendEchoRequest (fsm *f)$/;"	f	file:
-LinkPhase	net/lwip/netif/ppp/lcp.h	/^} LinkPhase;$/;"	t	typeref:enum:__anon17
-LogCodes	net/lwip/netif/ppp/pppdebug.h	/^} LogCodes;$/;"	t	typeref:enum:__anon21
+LinkPhase	net/lwip/netif/ppp/lcp.h	/^} LinkPhase;$/;"	t	typeref:enum:__anon33
+LogCodes	net/lwip/netif/ppp/pppdebug.h	/^} LogCodes;$/;"	t	typeref:enum:__anon36
 MAGIC_H	net/lwip/netif/ppp/magic.h	56;"	d
 MAKEHEADER	net/lwip/netif/ppp/ppp.h	224;"	d
 MASK	net/ns.h	6;"	d
@@ -2303,10 +2306,10 @@ MAXARGS	obj/user/sh.asm	/^#define MAXARGS 16$/;"	d
 MAXARGS	user/sh.c	26;"	d	file:
 MAXARGS	vmm/guest/obj/kern/kernel.asm	/^#define MAXARGS 16$/;"	d
 MAXARGS	vmm/guest/obj/user/sh.asm	/^#define MAXARGS 16$/;"	d
-MAXERROR	inc/error.h	/^	MAXERROR$/;"	e	enum:__anon6
+MAXERROR	inc/error.h	/^	MAXERROR$/;"	e	enum:__anon5
 MAXFD	lib/fd.c	11;"	d	file:
 MAXFILESIZE	inc/fs.h	28;"	d
-MAXMALLOC	lib/malloc.c	/^	MAXMALLOC = 1024*1024	\/* max size of one allocated chunk *\/$/;"	e	enum:__anon1	file:
+MAXMALLOC	lib/malloc.c	/^	MAXMALLOC = 1024*1024	\/* max size of one allocated chunk *\/$/;"	e	enum:__anon58	file:
 MAXNAMELEN	inc/fs.h	18;"	d
 MAXNAMELEN	net/lwip/include/lwip/opt.h	1399;"	d
 MAXOPEN	fs/serv.c	41;"	d	file:
@@ -2338,7 +2341,7 @@ MC_NVRAM_START	kern/kclock.h	12;"	d
 MD5Final	net/lwip/netif/ppp/md5.c	/^MD5Final (unsigned char hash[], MD5_CTX *mdContext)$/;"	f
 MD5Init	net/lwip/netif/ppp/md5.c	/^MD5Init (MD5_CTX *mdContext)$/;"	f
 MD5Update	net/lwip/netif/ppp/md5.c	/^MD5Update(MD5_CTX *mdContext, unsigned char *inBuf, unsigned int inLen)$/;"	f
-MD5_CTX	net/lwip/netif/ppp/md5.h	/^} MD5_CTX;$/;"	t	typeref:struct:__anon20
+MD5_CTX	net/lwip/netif/ppp/md5.h	/^} MD5_CTX;$/;"	t	typeref:struct:__anon32
 MD5_H	net/lwip/netif/ppp/md5.h	42;"	d
 MD5_SIGNATURE_SIZE	net/lwip/netif/ppp/chap.h	84;"	d
 MD5_SUPPORT	net/lwip/include/lwip/opt.h	1324;"	d
@@ -2346,7 +2349,7 @@ MEMCPY	net/lwip/include/lwip/opt.h	77;"	d
 MEMP_ALIGN_SIZE	net/lwip/core/memp.c	105;"	d	file:
 MEMP_ALIGN_SIZE	net/lwip/core/memp.c	96;"	d	file:
 MEMP_DEBUG	net/lwip/include/lwip/opt.h	1568;"	d
-MEMP_MAX	net/lwip/include/lwip/memp.h	/^  MEMP_MAX$/;"	e	enum:__anon22
+MEMP_MAX	net/lwip/include/lwip/memp.h	/^  MEMP_MAX$/;"	e	enum:__anon49
 MEMP_NUM_ARP_QUEUE	net/lwip/include/lwip/opt.h	251;"	d
 MEMP_NUM_IGMP_GROUP	net/lwip/include/lwip/opt.h	261;"	d
 MEMP_NUM_NETBUF	net/lwip/include/lwip/opt.h	277;"	d
@@ -2371,8 +2374,8 @@ MEMP_NUM_UDP_PCB	net/lwip/include/lwip/opt.h	209;"	d
 MEMP_NUM_UDP_PCB	net/lwip/jos/lwipopts.h	27;"	d
 MEMP_OVERFLOW_CHECK	net/lwip/include/lwip/opt.h	129;"	d
 MEMP_POOL_FIRST	net/lwip/include/lwip/memp.h	75;"	d
-MEMP_POOL_HELPER_FIRST	net/lwip/include/lwip/memp.h	/^    MEMP_POOL_HELPER_FIRST = ((u8_t)$/;"	e	enum:__anon23
-MEMP_POOL_HELPER_LAST	net/lwip/include/lwip/memp.h	/^    MEMP_POOL_HELPER_LAST = ((u8_t)$/;"	e	enum:__anon23
+MEMP_POOL_HELPER_FIRST	net/lwip/include/lwip/memp.h	/^    MEMP_POOL_HELPER_FIRST = ((u8_t)$/;"	e	enum:__anon50
+MEMP_POOL_HELPER_LAST	net/lwip/include/lwip/memp.h	/^    MEMP_POOL_HELPER_LAST = ((u8_t)$/;"	e	enum:__anon50
 MEMP_POOL_LAST	net/lwip/include/lwip/memp.h	76;"	d
 MEMP_SANITY_CHECK	net/lwip/include/lwip/opt.h	137;"	d
 MEMP_SANITY_CHECK	net/lwip/jos/lwipopts.h	60;"	d
@@ -2461,7 +2464,7 @@ MSG_OOB	net/lwip/include/lwip/sockets.h	134;"	d
 MSG_PEEK	net/lwip/include/lwip/sockets.h	132;"	d
 MSG_WAITALL	net/lwip/include/lwip/sockets.h	133;"	d
 MS_CHAP_RESPONSE_LEN	net/lwip/netif/ppp/chap.h	86;"	d
-MS_ChapResponse	net/lwip/netif/ppp/chpms.c	/^} MS_ChapResponse;$/;"	t	typeref:struct:__anon19	file:
+MS_ChapResponse	net/lwip/netif/ppp/chpms.c	/^} MS_ChapResponse;$/;"	t	typeref:struct:__anon35	file:
 MULTIBOOT_HEADER_FLAGS	kern/entry.S	/^#define MULTIBOOT_HEADER_FLAGS (0)$/;"	d
 MULTIBOOT_HEADER_MAGIC	kern/entry.S	/^#define MULTIBOOT_HEADER_MAGIC (0x1BADB002)$/;"	d
 MakeKey	net/lwip/netif/ppp/chpms.c	/^MakeKey( u_char *key,    \/* IN  56 bit DES key missing parity bits *\/$/;"	f	file:
@@ -2480,7 +2483,7 @@ NATTRVAL	kern/dwarf.h	5;"	d
 NCC	GNUmakefile	/^NCC	:= gcc $(CC_VER) -pipe$/;"	m
 NCOMMANDS	kern/monitor.c	45;"	d	file:
 NCPU	kern/cpu.h	12;"	d
-NDEBUG_SECT	kern/elf_rw.c	/^	NDEBUG_SECT,$/;"	e	enum:__anon47	file:
+NDEBUG_SECT	kern/elf_rw.c	/^	NDEBUG_SECT,$/;"	e	enum:__anon24	file:
 NDIRECT	inc/fs.h	24;"	d
 NENV	inc/env.h	34;"	d
 NETCONNTYPE_DATAGRAM	net/lwip/include/lwip/api.h	61;"	d
@@ -2549,20 +2552,20 @@ NPMODE_QUEUE	net/lwip/netif/ppp/ppp.h	/^  NPMODE_QUEUE        \/* save it up for
 NPTENTRIES	inc/mmu.h	57;"	d
 NPmode	net/lwip/netif/ppp/ppp.h	/^enum NPmode {$/;"	g
 NSEM	net/lwip/jos/arch/sys_arch.c	13;"	d	file:
-NSREQ_ACCEPT	inc/ns.h	/^	NSREQ_ACCEPT = 1,$/;"	e	enum:__anon9
-NSREQ_BIND	inc/ns.h	/^	NSREQ_BIND,$/;"	e	enum:__anon9
-NSREQ_CLOSE	inc/ns.h	/^	NSREQ_CLOSE,$/;"	e	enum:__anon9
-NSREQ_CONNECT	inc/ns.h	/^	NSREQ_CONNECT,$/;"	e	enum:__anon9
-NSREQ_INPUT	inc/ns.h	/^	NSREQ_INPUT,$/;"	e	enum:__anon9
-NSREQ_LISTEN	inc/ns.h	/^	NSREQ_LISTEN,$/;"	e	enum:__anon9
-NSREQ_OUTPUT	inc/ns.h	/^	NSREQ_OUTPUT,$/;"	e	enum:__anon9
-NSREQ_RECV	inc/ns.h	/^	NSREQ_RECV,$/;"	e	enum:__anon9
-NSREQ_SEND	inc/ns.h	/^	NSREQ_SEND,$/;"	e	enum:__anon9
-NSREQ_SHUTDOWN	inc/ns.h	/^	NSREQ_SHUTDOWN,$/;"	e	enum:__anon9
-NSREQ_SOCKET	inc/ns.h	/^	NSREQ_SOCKET,$/;"	e	enum:__anon9
-NSREQ_TIMER	inc/ns.h	/^	NSREQ_TIMER,$/;"	e	enum:__anon9
-NSYSCALLS	inc/syscall.h	/^	NSYSCALLS$/;"	e	enum:__anon7
-NTResp	net/lwip/netif/ppp/chpms.c	/^    u_char NTResp[24];$/;"	m	struct:__anon19	file:
+NSREQ_ACCEPT	inc/ns.h	/^	NSREQ_ACCEPT = 1,$/;"	e	enum:__anon1
+NSREQ_BIND	inc/ns.h	/^	NSREQ_BIND,$/;"	e	enum:__anon1
+NSREQ_CLOSE	inc/ns.h	/^	NSREQ_CLOSE,$/;"	e	enum:__anon1
+NSREQ_CONNECT	inc/ns.h	/^	NSREQ_CONNECT,$/;"	e	enum:__anon1
+NSREQ_INPUT	inc/ns.h	/^	NSREQ_INPUT,$/;"	e	enum:__anon1
+NSREQ_LISTEN	inc/ns.h	/^	NSREQ_LISTEN,$/;"	e	enum:__anon1
+NSREQ_OUTPUT	inc/ns.h	/^	NSREQ_OUTPUT,$/;"	e	enum:__anon1
+NSREQ_RECV	inc/ns.h	/^	NSREQ_RECV,$/;"	e	enum:__anon1
+NSREQ_SEND	inc/ns.h	/^	NSREQ_SEND,$/;"	e	enum:__anon1
+NSREQ_SHUTDOWN	inc/ns.h	/^	NSREQ_SHUTDOWN,$/;"	e	enum:__anon1
+NSREQ_SOCKET	inc/ns.h	/^	NSREQ_SOCKET,$/;"	e	enum:__anon1
+NSREQ_TIMER	inc/ns.h	/^	NSREQ_TIMER,$/;"	e	enum:__anon1
+NSYSCALLS	inc/syscall.h	/^	NSYSCALLS$/;"	e	enum:__anon6
+NTResp	net/lwip/netif/ppp/chpms.c	/^    u_char NTResp[24];$/;"	m	struct:__anon35	file:
 NULL	inc/stdio.h	7;"	d
 NULL	inc/types.h	5;"	d
 NULL	net/lwip/include/lwip/def.h	43;"	d
@@ -2673,21 +2676,21 @@ PAP_WITHPEER	net/lwip/netif/ppp/auth.c	91;"	d	file:
 PATH	user/sh.c	/^char* PATH[] = {"\/bin\/","\/"};$/;"	v
 PBUF_DEBUG	net/lwip/include/lwip/opt.h	1491;"	d
 PBUF_FLAG_PUSH	net/lwip/include/lwip/pbuf.h	63;"	d
-PBUF_IP	net/lwip/include/lwip/pbuf.h	/^  PBUF_IP,$/;"	e	enum:__anon36
+PBUF_IP	net/lwip/include/lwip/pbuf.h	/^  PBUF_IP,$/;"	e	enum:__anon55
 PBUF_IP_HLEN	net/lwip/include/lwip/pbuf.h	45;"	d
-PBUF_LINK	net/lwip/include/lwip/pbuf.h	/^  PBUF_LINK,$/;"	e	enum:__anon36
+PBUF_LINK	net/lwip/include/lwip/pbuf.h	/^  PBUF_LINK,$/;"	e	enum:__anon55
 PBUF_LINK_HLEN	net/lwip/include/lwip/opt.h	781;"	d
-PBUF_POOL	net/lwip/include/lwip/pbuf.h	/^  PBUF_POOL \/* pbuf payload refers to RAM *\/$/;"	e	enum:__anon37
+PBUF_POOL	net/lwip/include/lwip/pbuf.h	/^  PBUF_POOL \/* pbuf payload refers to RAM *\/$/;"	e	enum:__anon56
 PBUF_POOL_BUFSIZE	net/lwip/include/lwip/opt.h	790;"	d
 PBUF_POOL_BUFSIZE	net/lwip/jos/lwipopts.h	39;"	d
 PBUF_POOL_BUFSIZE_ALIGNED	net/lwip/core/pbuf.c	80;"	d	file:
 PBUF_POOL_SIZE	net/lwip/include/lwip/opt.h	310;"	d
 PBUF_POOL_SIZE	net/lwip/jos/lwipopts.h	38;"	d
-PBUF_RAM	net/lwip/include/lwip/pbuf.h	/^  PBUF_RAM, \/* pbuf data is stored in RAM *\/$/;"	e	enum:__anon37
-PBUF_RAW	net/lwip/include/lwip/pbuf.h	/^  PBUF_RAW$/;"	e	enum:__anon36
-PBUF_REF	net/lwip/include/lwip/pbuf.h	/^  PBUF_REF, \/* pbuf comes from the pbuf pool *\/$/;"	e	enum:__anon37
-PBUF_ROM	net/lwip/include/lwip/pbuf.h	/^  PBUF_ROM, \/* pbuf data is stored in ROM *\/$/;"	e	enum:__anon37
-PBUF_TRANSPORT	net/lwip/include/lwip/pbuf.h	/^  PBUF_TRANSPORT,$/;"	e	enum:__anon36
+PBUF_RAM	net/lwip/include/lwip/pbuf.h	/^  PBUF_RAM, \/* pbuf data is stored in RAM *\/$/;"	e	enum:__anon56
+PBUF_RAW	net/lwip/include/lwip/pbuf.h	/^  PBUF_RAW$/;"	e	enum:__anon55
+PBUF_REF	net/lwip/include/lwip/pbuf.h	/^  PBUF_REF, \/* pbuf comes from the pbuf pool *\/$/;"	e	enum:__anon56
+PBUF_ROM	net/lwip/include/lwip/pbuf.h	/^  PBUF_ROM, \/* pbuf data is stored in ROM *\/$/;"	e	enum:__anon56
+PBUF_TRANSPORT	net/lwip/include/lwip/pbuf.h	/^  PBUF_TRANSPORT,$/;"	e	enum:__anon55
 PBUF_TRANSPORT_HLEN	net/lwip/include/lwip/pbuf.h	44;"	d
 PCI32_DMA_BOUNCE_THRESHOLD	kern/pcireg.h	709;"	d
 PCINT	kern/lapic.c	37;"	d	file:
@@ -3080,15 +3083,15 @@ PCI_VPD_ADDRESS_MASK	kern/pcireg.h	442;"	d
 PCI_VPD_ADDRESS_SHIFT	kern/pcireg.h	443;"	d
 PCI_VPD_DATAREG	kern/pcireg.h	446;"	d
 PCI_VPD_OPFLAG	kern/pcireg.h	447;"	d
-PDADDRESS	net/lwip/netif/ppp/ppp.c	/^  PDADDRESS,   \/* Process address field. *\/$/;"	e	enum:__anon16	file:
-PDCONTROL	net/lwip/netif/ppp/ppp.c	/^  PDCONTROL,   \/* Process control field. *\/$/;"	e	enum:__anon16	file:
-PDDATA	net/lwip/netif/ppp/ppp.c	/^  PDDATA       \/* Process data byte. *\/$/;"	e	enum:__anon16	file:
-PDIDLE	net/lwip/netif/ppp/ppp.c	/^  PDIDLE = 0,  \/* Idle state - waiting. *\/$/;"	e	enum:__anon16	file:
+PDADDRESS	net/lwip/netif/ppp/ppp.c	/^  PDADDRESS,   \/* Process address field. *\/$/;"	e	enum:__anon34	file:
+PDCONTROL	net/lwip/netif/ppp/ppp.c	/^  PDCONTROL,   \/* Process control field. *\/$/;"	e	enum:__anon34	file:
+PDDATA	net/lwip/netif/ppp/ppp.c	/^  PDDATA       \/* Process data byte. *\/$/;"	e	enum:__anon34	file:
+PDIDLE	net/lwip/netif/ppp/ppp.c	/^  PDIDLE = 0,  \/* Idle state - waiting. *\/$/;"	e	enum:__anon34	file:
 PDPE	inc/mmu.h	44;"	d
 PDPESHIFT	inc/mmu.h	67;"	d
-PDPROTOCOL1	net/lwip/netif/ppp/ppp.c	/^  PDPROTOCOL1, \/* Process protocol field 1. *\/$/;"	e	enum:__anon16	file:
-PDPROTOCOL2	net/lwip/netif/ppp/ppp.c	/^  PDPROTOCOL2, \/* Process protocol field 2. *\/$/;"	e	enum:__anon16	file:
-PDSTART	net/lwip/netif/ppp/ppp.c	/^  PDSTART,     \/* Process start flag. *\/$/;"	e	enum:__anon16	file:
+PDPROTOCOL1	net/lwip/netif/ppp/ppp.c	/^  PDPROTOCOL1, \/* Process protocol field 1. *\/$/;"	e	enum:__anon34	file:
+PDPROTOCOL2	net/lwip/netif/ppp/ppp.c	/^  PDPROTOCOL2, \/* Process protocol field 2. *\/$/;"	e	enum:__anon34	file:
+PDSTART	net/lwip/netif/ppp/ppp.c	/^  PDSTART,     \/* Process start flag. *\/$/;"	e	enum:__anon34	file:
 PDX	inc/mmu.h	35;"	d
 PDXSHIFT	inc/mmu.h	66;"	d
 PERF_START	net/lwip/jos/arch/perf.h	5;"	d
@@ -3104,13 +3107,13 @@ PGNUM	inc/mmu.h	32;"	d
 PGOFF	inc/mmu.h	48;"	d
 PGSHIFT	inc/mmu.h	60;"	d
 PGSIZE	inc/mmu.h	59;"	d
-PHASE_AUTHENTICATE	net/lwip/netif/ppp/lcp.h	/^  PHASE_AUTHENTICATE,$/;"	e	enum:__anon17
-PHASE_CALLBACK	net/lwip/netif/ppp/lcp.h	/^  PHASE_CALLBACK,$/;"	e	enum:__anon17
-PHASE_DEAD	net/lwip/netif/ppp/lcp.h	/^  PHASE_DEAD = 0,$/;"	e	enum:__anon17
-PHASE_ESTABLISH	net/lwip/netif/ppp/lcp.h	/^  PHASE_ESTABLISH,$/;"	e	enum:__anon17
-PHASE_INITIALIZE	net/lwip/netif/ppp/lcp.h	/^  PHASE_INITIALIZE,$/;"	e	enum:__anon17
-PHASE_NETWORK	net/lwip/netif/ppp/lcp.h	/^  PHASE_NETWORK,$/;"	e	enum:__anon17
-PHASE_TERMINATE	net/lwip/netif/ppp/lcp.h	/^  PHASE_TERMINATE$/;"	e	enum:__anon17
+PHASE_AUTHENTICATE	net/lwip/netif/ppp/lcp.h	/^  PHASE_AUTHENTICATE,$/;"	e	enum:__anon33
+PHASE_CALLBACK	net/lwip/netif/ppp/lcp.h	/^  PHASE_CALLBACK,$/;"	e	enum:__anon33
+PHASE_DEAD	net/lwip/netif/ppp/lcp.h	/^  PHASE_DEAD = 0,$/;"	e	enum:__anon33
+PHASE_ESTABLISH	net/lwip/netif/ppp/lcp.h	/^  PHASE_ESTABLISH,$/;"	e	enum:__anon33
+PHASE_INITIALIZE	net/lwip/netif/ppp/lcp.h	/^  PHASE_INITIALIZE,$/;"	e	enum:__anon33
+PHASE_NETWORK	net/lwip/netif/ppp/lcp.h	/^  PHASE_NETWORK,$/;"	e	enum:__anon33
+PHASE_TERMINATE	net/lwip/netif/ppp/lcp.h	/^  PHASE_TERMINATE$/;"	e	enum:__anon33
 PIPEBUFSIZ	lib/pipe.c	25;"	d	file:
 PKTMAP	net/lwip/jos/jif/jif.c	48;"	d	file:
 PML4	inc/mmu.h	40;"	d
@@ -3136,7 +3139,7 @@ PPPControl_s	net/lwip/netif/ppp/ppp.c	/^typedef struct PPPControl_s {$/;"	s	file
 PPPDEBUG	net/lwip/netif/ppp/pppdebug.h	73;"	d
 PPPDEBUG	net/lwip/netif/ppp/pppdebug.h	83;"	d
 PPPDEBUG_H	net/lwip/netif/ppp/pppdebug.h	38;"	d
-PPPDevStates	net/lwip/netif/ppp/ppp.c	/^} PPPDevStates;$/;"	t	typeref:enum:__anon16	file:
+PPPDevStates	net/lwip/netif/ppp/ppp.c	/^} PPPDevStates;$/;"	t	typeref:enum:__anon34	file:
 PPPERR_ALLOC	net/lwip/netif/ppp/ppp.h	238;"	d
 PPPERR_AUTHFAIL	net/lwip/netif/ppp/ppp.h	241;"	d
 PPPERR_CONNECT	net/lwip/netif/ppp/ppp.h	240;"	d
@@ -3505,35 +3508,35 @@ SYS_STATS_DISPLAY	net/lwip/include/lwip/stats.h	256;"	d
 SYS_STATS_DISPLAY	net/lwip/include/lwip/stats.h	260;"	d
 SYS_STATS_INC	net/lwip/include/lwip/stats.h	254;"	d
 SYS_STATS_INC	net/lwip/include/lwip/stats.h	258;"	d
-SYS_cgetc	inc/syscall.h	/^	SYS_cgetc,$/;"	e	enum:__anon7
-SYS_cputs	inc/syscall.h	/^	SYS_cputs = 0,$/;"	e	enum:__anon7
-SYS_env_destroy	inc/syscall.h	/^	SYS_env_destroy,$/;"	e	enum:__anon7
-SYS_env_mkguest	inc/syscall.h	/^	SYS_env_mkguest,$/;"	e	enum:__anon7
-SYS_env_set_pgfault_upcall	inc/syscall.h	/^	SYS_env_set_pgfault_upcall,$/;"	e	enum:__anon7
-SYS_env_set_status	inc/syscall.h	/^	SYS_env_set_status,$/;"	e	enum:__anon7
-SYS_env_set_trapframe	inc/syscall.h	/^	SYS_env_set_trapframe,$/;"	e	enum:__anon7
-SYS_ept_map	inc/syscall.h	/^	SYS_ept_map,$/;"	e	enum:__anon7
-SYS_exofork	inc/syscall.h	/^	SYS_exofork,$/;"	e	enum:__anon7
-SYS_getenvid	inc/syscall.h	/^	SYS_getenvid,$/;"	e	enum:__anon7
-SYS_ipc_recv	inc/syscall.h	/^	SYS_ipc_recv,$/;"	e	enum:__anon7
-SYS_ipc_try_send	inc/syscall.h	/^	SYS_ipc_try_send,$/;"	e	enum:__anon7
-SYS_net_receive	inc/syscall.h	/^	SYS_net_receive,$/;"	e	enum:__anon7
-SYS_net_transmit	inc/syscall.h	/^	SYS_net_transmit,$/;"	e	enum:__anon7
-SYS_page_alloc	inc/syscall.h	/^	SYS_page_alloc,$/;"	e	enum:__anon7
-SYS_page_map	inc/syscall.h	/^	SYS_page_map,$/;"	e	enum:__anon7
-SYS_page_unmap	inc/syscall.h	/^	SYS_page_unmap,$/;"	e	enum:__anon7
-SYS_time_msec	inc/syscall.h	/^	SYS_time_msec,$/;"	e	enum:__anon7
-SYS_vmx_get_vmdisk_number	inc/syscall.h	/^	SYS_vmx_get_vmdisk_number,$/;"	e	enum:__anon7
-SYS_vmx_incr_vmdisk_number	inc/syscall.h	/^	SYS_vmx_incr_vmdisk_number,$/;"	e	enum:__anon7
-SYS_vmx_list_vms	inc/syscall.h	/^	SYS_vmx_list_vms,$/;"	e	enum:__anon7
-SYS_vmx_sel_resume	inc/syscall.h	/^	SYS_vmx_sel_resume,$/;"	e	enum:__anon7
-SYS_yield	inc/syscall.h	/^	SYS_yield,$/;"	e	enum:__anon7
+SYS_cgetc	inc/syscall.h	/^	SYS_cgetc,$/;"	e	enum:__anon6
+SYS_cputs	inc/syscall.h	/^	SYS_cputs = 0,$/;"	e	enum:__anon6
+SYS_env_destroy	inc/syscall.h	/^	SYS_env_destroy,$/;"	e	enum:__anon6
+SYS_env_mkguest	inc/syscall.h	/^	SYS_env_mkguest,$/;"	e	enum:__anon6
+SYS_env_set_pgfault_upcall	inc/syscall.h	/^	SYS_env_set_pgfault_upcall,$/;"	e	enum:__anon6
+SYS_env_set_status	inc/syscall.h	/^	SYS_env_set_status,$/;"	e	enum:__anon6
+SYS_env_set_trapframe	inc/syscall.h	/^	SYS_env_set_trapframe,$/;"	e	enum:__anon6
+SYS_ept_map	inc/syscall.h	/^	SYS_ept_map,$/;"	e	enum:__anon6
+SYS_exofork	inc/syscall.h	/^	SYS_exofork,$/;"	e	enum:__anon6
+SYS_getenvid	inc/syscall.h	/^	SYS_getenvid,$/;"	e	enum:__anon6
+SYS_ipc_recv	inc/syscall.h	/^	SYS_ipc_recv,$/;"	e	enum:__anon6
+SYS_ipc_try_send	inc/syscall.h	/^	SYS_ipc_try_send,$/;"	e	enum:__anon6
+SYS_net_receive	inc/syscall.h	/^	SYS_net_receive,$/;"	e	enum:__anon6
+SYS_net_transmit	inc/syscall.h	/^	SYS_net_transmit,$/;"	e	enum:__anon6
+SYS_page_alloc	inc/syscall.h	/^	SYS_page_alloc,$/;"	e	enum:__anon6
+SYS_page_map	inc/syscall.h	/^	SYS_page_map,$/;"	e	enum:__anon6
+SYS_page_unmap	inc/syscall.h	/^	SYS_page_unmap,$/;"	e	enum:__anon6
+SYS_time_msec	inc/syscall.h	/^	SYS_time_msec,$/;"	e	enum:__anon6
+SYS_vmx_get_vmdisk_number	inc/syscall.h	/^	SYS_vmx_get_vmdisk_number,$/;"	e	enum:__anon6
+SYS_vmx_incr_vmdisk_number	inc/syscall.h	/^	SYS_vmx_incr_vmdisk_number,$/;"	e	enum:__anon6
+SYS_vmx_list_vms	inc/syscall.h	/^	SYS_vmx_list_vms,$/;"	e	enum:__anon6
+SYS_vmx_sel_resume	inc/syscall.h	/^	SYS_vmx_sel_resume,$/;"	e	enum:__anon6
+SYS_yield	inc/syscall.h	/^	SYS_yield,$/;"	e	enum:__anon6
 Secthdr	inc/elf.h	/^struct Secthdr {$/;"	s
 Secthdr	kern/dwarf_elf.h	/^typedef struct Secthdr {$/;"	s
 Secthdr	kern/dwarf_elf.h	115;"	d
 Secthdr	kern/dwarf_elf.h	68;"	d
 Secthdr32	kern/dwarf_elf.h	/^}Secthdr32;$/;"	t	typeref:struct:Secthdr
-Secthdr64	kern/dwarf_elf.h	/^} Secthdr64;$/;"	t	typeref:struct:__anon46
+Secthdr64	kern/dwarf_elf.h	/^} Secthdr64;$/;"	t	typeref:struct:__anon25
 Segdesc	inc/mmu.h	/^struct Segdesc {$/;"	s
 Stab	inc/stab.h	/^struct Stab {$/;"	s
 Stat	inc/fd.h	/^struct Stat {$/;"	s
@@ -3803,7 +3806,7 @@ UTOP	inc/memlayout.h	128;"	d
 UTrapframe	inc/trap.h	/^struct UTrapframe {$/;"	s
 UVPT	inc/memlayout.h	117;"	d
 UXSTACKTOP	inc/memlayout.h	131;"	d
-UseNT	net/lwip/netif/ppp/chpms.c	/^    u_char UseNT; \/* If 1, ignore the LANMan response field *\/$/;"	m	struct:__anon19	file:
+UseNT	net/lwip/netif/ppp/chpms.c	/^    u_char UseNT; \/* If 1, ignore the LANMan response field *\/$/;"	m	struct:__anon35	file:
 UserStabData	kern/kdebug.c	/^struct UserStabData {$/;"	s	file:
 V	conf/env.mk	/^V = @$/;"	m
 VA	user/testptelibrary.c	4;"	d	file:
@@ -3814,379 +3817,379 @@ VJBSDHDR_H	net/lwip/netif/ppp/vjbsdhdr.h	3;"	d
 VJF_TOSS	net/lwip/netif/ppp/vj.h	148;"	d
 VJ_H	net/lwip/netif/ppp/vj.h	27;"	d
 VJ_SUPPORT	net/lwip/include/lwip/opt.h	1317;"	d
-VMCS_16BIT_CONTROL_EPTP_INDEX	vmm/vmx.h	112;"	d
-VMCS_16BIT_CONTROL_POSTED_INTERRUPT_VECTOR	vmm/vmx.h	111;"	d
-VMCS_16BIT_CONTROL_VPID	vmm/vmx.h	110;"	d
-VMCS_16BIT_GUEST_CS_SELECTOR	vmm/vmx.h	117;"	d
-VMCS_16BIT_GUEST_DS_SELECTOR	vmm/vmx.h	119;"	d
-VMCS_16BIT_GUEST_ES_SELECTOR	vmm/vmx.h	116;"	d
-VMCS_16BIT_GUEST_FS_SELECTOR	vmm/vmx.h	120;"	d
-VMCS_16BIT_GUEST_GS_SELECTOR	vmm/vmx.h	121;"	d
-VMCS_16BIT_GUEST_INTERRUPT_STATUS	vmm/vmx.h	124;"	d
-VMCS_16BIT_GUEST_LDTR_SELECTOR	vmm/vmx.h	122;"	d
-VMCS_16BIT_GUEST_SS_SELECTOR	vmm/vmx.h	118;"	d
-VMCS_16BIT_GUEST_TR_SELECTOR	vmm/vmx.h	123;"	d
-VMCS_16BIT_HOST_CS_SELECTOR	vmm/vmx.h	129;"	d
-VMCS_16BIT_HOST_DS_SELECTOR	vmm/vmx.h	131;"	d
-VMCS_16BIT_HOST_ES_SELECTOR	vmm/vmx.h	128;"	d
-VMCS_16BIT_HOST_FS_SELECTOR	vmm/vmx.h	132;"	d
-VMCS_16BIT_HOST_GS_SELECTOR	vmm/vmx.h	133;"	d
-VMCS_16BIT_HOST_SS_SELECTOR	vmm/vmx.h	130;"	d
-VMCS_16BIT_HOST_TR_SELECTOR	vmm/vmx.h	134;"	d
-VMCS_32BIT_CONTROL_CR3_TARGET_COUNT	vmm/vmx.h	223;"	d
-VMCS_32BIT_CONTROL_EXCEPTION_BITMAP	vmm/vmx.h	220;"	d
-VMCS_32BIT_CONTROL_PAGE_FAULT_ERR_CODE_MASK	vmm/vmx.h	221;"	d
-VMCS_32BIT_CONTROL_PAGE_FAULT_ERR_CODE_MATCH	vmm/vmx.h	222;"	d
-VMCS_32BIT_CONTROL_PAUSE_LOOP_EXITING_GAP	vmm/vmx.h	234;"	d
-VMCS_32BIT_CONTROL_PAUSE_LOOP_EXITING_WINDOW	vmm/vmx.h	235;"	d
-VMCS_32BIT_CONTROL_PIN_BASED_EXEC_CONTROLS	vmm/vmx.h	218;"	d
-VMCS_32BIT_CONTROL_PROCESSOR_BASED_VMEXEC_CONTROLS	vmm/vmx.h	219;"	d
-VMCS_32BIT_CONTROL_SECONDARY_VMEXEC_CONTROLS	vmm/vmx.h	233;"	d
-VMCS_32BIT_CONTROL_TPR_THRESHOLD	vmm/vmx.h	232;"	d
-VMCS_32BIT_CONTROL_VMENTRY_CONTROLS	vmm/vmx.h	227;"	d
-VMCS_32BIT_CONTROL_VMENTRY_EXCEPTION_ERR_CODE	vmm/vmx.h	230;"	d
-VMCS_32BIT_CONTROL_VMENTRY_INSTRUCTION_LENGTH	vmm/vmx.h	231;"	d
-VMCS_32BIT_CONTROL_VMENTRY_INTERRUPTION_INFO	vmm/vmx.h	229;"	d
-VMCS_32BIT_CONTROL_VMENTRY_MSR_LOAD_COUNT	vmm/vmx.h	228;"	d
-VMCS_32BIT_CONTROL_VMEXIT_CONTROLS	vmm/vmx.h	224;"	d
-VMCS_32BIT_CONTROL_VMEXIT_MSR_LOAD_COUNT	vmm/vmx.h	226;"	d
-VMCS_32BIT_CONTROL_VMEXIT_MSR_STORE_COUNT	vmm/vmx.h	225;"	d
-VMCS_32BIT_GUEST_ACTIVITY_STATE	vmm/vmx.h	269;"	d
-VMCS_32BIT_GUEST_CS_ACCESS_RIGHTS	vmm/vmx.h	261;"	d
-VMCS_32BIT_GUEST_CS_LIMIT	vmm/vmx.h	251;"	d
-VMCS_32BIT_GUEST_DS_ACCESS_RIGHTS	vmm/vmx.h	263;"	d
-VMCS_32BIT_GUEST_DS_LIMIT	vmm/vmx.h	253;"	d
-VMCS_32BIT_GUEST_ES_ACCESS_RIGHTS	vmm/vmx.h	260;"	d
-VMCS_32BIT_GUEST_ES_LIMIT	vmm/vmx.h	250;"	d
-VMCS_32BIT_GUEST_FS_ACCESS_RIGHTS	vmm/vmx.h	264;"	d
-VMCS_32BIT_GUEST_FS_LIMIT	vmm/vmx.h	254;"	d
-VMCS_32BIT_GUEST_GDTR_LIMIT	vmm/vmx.h	258;"	d
-VMCS_32BIT_GUEST_GS_ACCESS_RIGHTS	vmm/vmx.h	265;"	d
-VMCS_32BIT_GUEST_GS_LIMIT	vmm/vmx.h	255;"	d
-VMCS_32BIT_GUEST_IA32_SYSENTER_CS_MSR	vmm/vmx.h	271;"	d
-VMCS_32BIT_GUEST_IDTR_LIMIT	vmm/vmx.h	259;"	d
-VMCS_32BIT_GUEST_INTERRUPTIBILITY_STATE	vmm/vmx.h	268;"	d
-VMCS_32BIT_GUEST_LDTR_ACCESS_RIGHTS	vmm/vmx.h	266;"	d
-VMCS_32BIT_GUEST_LDTR_LIMIT	vmm/vmx.h	256;"	d
-VMCS_32BIT_GUEST_PREEMPTION_TIMER_VALUE	vmm/vmx.h	272;"	d
-VMCS_32BIT_GUEST_SMBASE	vmm/vmx.h	270;"	d
-VMCS_32BIT_GUEST_SS_ACCESS_RIGHTS	vmm/vmx.h	262;"	d
-VMCS_32BIT_GUEST_SS_LIMIT	vmm/vmx.h	252;"	d
-VMCS_32BIT_GUEST_TR_ACCESS_RIGHTS	vmm/vmx.h	267;"	d
-VMCS_32BIT_GUEST_TR_LIMIT	vmm/vmx.h	257;"	d
-VMCS_32BIT_HOST_IA32_SYSENTER_CS_MSR	vmm/vmx.h	276;"	d
-VMCS_32BIT_IDT_VECTORING_ERR_CODE	vmm/vmx.h	244;"	d
-VMCS_32BIT_IDT_VECTORING_INFO	vmm/vmx.h	243;"	d
-VMCS_32BIT_INSTRUCTION_ERROR	vmm/vmx.h	239;"	d
-VMCS_32BIT_VMEXIT_INSTRUCTION_INFO	vmm/vmx.h	246;"	d
-VMCS_32BIT_VMEXIT_INSTRUCTION_LENGTH	vmm/vmx.h	245;"	d
-VMCS_32BIT_VMEXIT_INTERRUPTION_ERR_CODE	vmm/vmx.h	242;"	d
-VMCS_32BIT_VMEXIT_INTERRUPTION_INFO	vmm/vmx.h	241;"	d
-VMCS_32BIT_VMEXIT_REASON	vmm/vmx.h	240;"	d
-VMCS_64BIT_CONTROL_APIC_ACCESS_ADDR	vmm/vmx.h	156;"	d
-VMCS_64BIT_CONTROL_APIC_ACCESS_ADDR_HI	vmm/vmx.h	157;"	d
-VMCS_64BIT_CONTROL_EOI_EXIT_BITMAP0	vmm/vmx.h	164;"	d
-VMCS_64BIT_CONTROL_EOI_EXIT_BITMAP0_HI	vmm/vmx.h	165;"	d
-VMCS_64BIT_CONTROL_EOI_EXIT_BITMAP1	vmm/vmx.h	166;"	d
-VMCS_64BIT_CONTROL_EOI_EXIT_BITMAP1_HI	vmm/vmx.h	167;"	d
-VMCS_64BIT_CONTROL_EOI_EXIT_BITMAP2	vmm/vmx.h	168;"	d
-VMCS_64BIT_CONTROL_EOI_EXIT_BITMAP2_HI	vmm/vmx.h	169;"	d
-VMCS_64BIT_CONTROL_EOI_EXIT_BITMAP3	vmm/vmx.h	170;"	d
-VMCS_64BIT_CONTROL_EOI_EXIT_BITMAP3_HI	vmm/vmx.h	171;"	d
-VMCS_64BIT_CONTROL_EPTPTR	vmm/vmx.h	162;"	d
-VMCS_64BIT_CONTROL_EPTPTR_HI	vmm/vmx.h	163;"	d
-VMCS_64BIT_CONTROL_EPTP_LIST_ADDRESS	vmm/vmx.h	172;"	d
-VMCS_64BIT_CONTROL_EPTP_LIST_ADDRESS_HI	vmm/vmx.h	173;"	d
-VMCS_64BIT_CONTROL_EXECUTIVE_VMCS_PTR	vmm/vmx.h	150;"	d
-VMCS_64BIT_CONTROL_EXECUTIVE_VMCS_PTR_HI	vmm/vmx.h	151;"	d
-VMCS_64BIT_CONTROL_IO_BITMAP_A	vmm/vmx.h	138;"	d
-VMCS_64BIT_CONTROL_IO_BITMAP_A_HI	vmm/vmx.h	139;"	d
-VMCS_64BIT_CONTROL_IO_BITMAP_B	vmm/vmx.h	140;"	d
-VMCS_64BIT_CONTROL_IO_BITMAP_B_HI	vmm/vmx.h	141;"	d
-VMCS_64BIT_CONTROL_MSR_BITMAPS	vmm/vmx.h	142;"	d
-VMCS_64BIT_CONTROL_MSR_BITMAPS_HI	vmm/vmx.h	143;"	d
-VMCS_64BIT_CONTROL_POSTED_INTERRUPT_DESC_ADDR	vmm/vmx.h	158;"	d
-VMCS_64BIT_CONTROL_POSTED_INTERRUPT_DESC_ADDR_HI	vmm/vmx.h	159;"	d
-VMCS_64BIT_CONTROL_TSC_OFFSET	vmm/vmx.h	152;"	d
-VMCS_64BIT_CONTROL_TSC_OFFSET_HI	vmm/vmx.h	153;"	d
-VMCS_64BIT_CONTROL_VE_EXCEPTION_INFO_ADDR	vmm/vmx.h	178;"	d
-VMCS_64BIT_CONTROL_VE_EXCEPTION_INFO_ADDR_HI	vmm/vmx.h	179;"	d
-VMCS_64BIT_CONTROL_VIRTUAL_APIC_PAGE_ADDR	vmm/vmx.h	154;"	d
-VMCS_64BIT_CONTROL_VIRTUAL_APIC_PAGE_ADDR_HI	vmm/vmx.h	155;"	d
-VMCS_64BIT_CONTROL_VMENTRY_MSR_LOAD_ADDR	vmm/vmx.h	148;"	d
-VMCS_64BIT_CONTROL_VMENTRY_MSR_LOAD_ADDR_HI	vmm/vmx.h	149;"	d
-VMCS_64BIT_CONTROL_VMEXIT_MSR_LOAD_ADDR	vmm/vmx.h	146;"	d
-VMCS_64BIT_CONTROL_VMEXIT_MSR_LOAD_ADDR_HI	vmm/vmx.h	147;"	d
-VMCS_64BIT_CONTROL_VMEXIT_MSR_STORE_ADDR	vmm/vmx.h	144;"	d
-VMCS_64BIT_CONTROL_VMEXIT_MSR_STORE_ADDR_HI	vmm/vmx.h	145;"	d
-VMCS_64BIT_CONTROL_VMFUNC_CTRLS	vmm/vmx.h	160;"	d
-VMCS_64BIT_CONTROL_VMFUNC_CTRLS_HI	vmm/vmx.h	161;"	d
-VMCS_64BIT_CONTROL_VMREAD_BITMAP_ADDR	vmm/vmx.h	174;"	d
-VMCS_64BIT_CONTROL_VMREAD_BITMAP_ADDR_HI	vmm/vmx.h	175;"	d
-VMCS_64BIT_CONTROL_VMWRITE_BITMAP_ADDR	vmm/vmx.h	176;"	d
-VMCS_64BIT_CONTROL_VMWRITE_BITMAP_ADDR_HI	vmm/vmx.h	177;"	d
-VMCS_64BIT_GUEST_IA32_DEBUGCTL	vmm/vmx.h	190;"	d
-VMCS_64BIT_GUEST_IA32_DEBUGCTL_HI	vmm/vmx.h	191;"	d
-VMCS_64BIT_GUEST_IA32_EFER	vmm/vmx.h	194;"	d
-VMCS_64BIT_GUEST_IA32_EFER_HI	vmm/vmx.h	195;"	d
-VMCS_64BIT_GUEST_IA32_PAT	vmm/vmx.h	192;"	d
-VMCS_64BIT_GUEST_IA32_PAT_HI	vmm/vmx.h	193;"	d
-VMCS_64BIT_GUEST_IA32_PDPTE0	vmm/vmx.h	198;"	d
-VMCS_64BIT_GUEST_IA32_PDPTE0_HI	vmm/vmx.h	199;"	d
-VMCS_64BIT_GUEST_IA32_PDPTE1	vmm/vmx.h	200;"	d
-VMCS_64BIT_GUEST_IA32_PDPTE1_HI	vmm/vmx.h	201;"	d
-VMCS_64BIT_GUEST_IA32_PDPTE2	vmm/vmx.h	202;"	d
-VMCS_64BIT_GUEST_IA32_PDPTE2_HI	vmm/vmx.h	203;"	d
-VMCS_64BIT_GUEST_IA32_PDPTE3	vmm/vmx.h	204;"	d
-VMCS_64BIT_GUEST_IA32_PDPTE3_HI	vmm/vmx.h	205;"	d
-VMCS_64BIT_GUEST_IA32_PERF_GLOBAL_CTRL	vmm/vmx.h	196;"	d
-VMCS_64BIT_GUEST_IA32_PERF_GLOBAL_CTRL_HI	vmm/vmx.h	197;"	d
-VMCS_64BIT_GUEST_LINK_POINTER	vmm/vmx.h	188;"	d
-VMCS_64BIT_GUEST_LINK_POINTER_HI	vmm/vmx.h	189;"	d
-VMCS_64BIT_GUEST_PHYSICAL_ADDR	vmm/vmx.h	183;"	d
-VMCS_64BIT_GUEST_PHYSICAL_ADDR_HI	vmm/vmx.h	184;"	d
-VMCS_64BIT_HOST_IA32_EFER	vmm/vmx.h	211;"	d
-VMCS_64BIT_HOST_IA32_EFER_HI	vmm/vmx.h	212;"	d
-VMCS_64BIT_HOST_IA32_PAT	vmm/vmx.h	209;"	d
-VMCS_64BIT_HOST_IA32_PAT_HI	vmm/vmx.h	210;"	d
-VMCS_64BIT_HOST_IA32_PERF_GLOBAL_CTRL	vmm/vmx.h	213;"	d
-VMCS_64BIT_HOST_IA32_PERF_GLOBAL_CTRL_HI	vmm/vmx.h	214;"	d
-VMCS_CONTROL_CR0_GUEST_HOST_MASK	vmm/vmx.h	280;"	d
-VMCS_CONTROL_CR0_READ_SHADOW	vmm/vmx.h	282;"	d
-VMCS_CONTROL_CR4_GUEST_HOST_MASK	vmm/vmx.h	281;"	d
-VMCS_CONTROL_CR4_READ_SHADOW	vmm/vmx.h	283;"	d
-VMCS_CR3_TARGET0	vmm/vmx.h	284;"	d
-VMCS_CR3_TARGET1	vmm/vmx.h	285;"	d
-VMCS_CR3_TARGET2	vmm/vmx.h	286;"	d
-VMCS_CR3_TARGET3	vmm/vmx.h	287;"	d
-VMCS_GUEST_CR0	vmm/vmx.h	300;"	d
-VMCS_GUEST_CR3	vmm/vmx.h	301;"	d
-VMCS_GUEST_CR4	vmm/vmx.h	302;"	d
-VMCS_GUEST_CS_BASE	vmm/vmx.h	304;"	d
-VMCS_GUEST_DR7	vmm/vmx.h	313;"	d
-VMCS_GUEST_DS_BASE	vmm/vmx.h	306;"	d
-VMCS_GUEST_ES_BASE	vmm/vmx.h	303;"	d
-VMCS_GUEST_FS_BASE	vmm/vmx.h	307;"	d
-VMCS_GUEST_GDTR_BASE	vmm/vmx.h	311;"	d
-VMCS_GUEST_GS_BASE	vmm/vmx.h	308;"	d
-VMCS_GUEST_IA32_SYSENTER_EIP_MSR	vmm/vmx.h	319;"	d
-VMCS_GUEST_IA32_SYSENTER_ESP_MSR	vmm/vmx.h	318;"	d
-VMCS_GUEST_IDTR_BASE	vmm/vmx.h	312;"	d
-VMCS_GUEST_LDTR_BASE	vmm/vmx.h	309;"	d
-VMCS_GUEST_LINEAR_ADDR	vmm/vmx.h	296;"	d
-VMCS_GUEST_PENDING_DBG_EXCEPTIONS	vmm/vmx.h	317;"	d
-VMCS_GUEST_RFLAGS	vmm/vmx.h	316;"	d
-VMCS_GUEST_RIP	vmm/vmx.h	315;"	d
-VMCS_GUEST_RSP	vmm/vmx.h	314;"	d
-VMCS_GUEST_SS_BASE	vmm/vmx.h	305;"	d
-VMCS_GUEST_TR_BASE	vmm/vmx.h	310;"	d
-VMCS_HOST_CR0	vmm/vmx.h	323;"	d
-VMCS_HOST_CR3	vmm/vmx.h	324;"	d
-VMCS_HOST_CR4	vmm/vmx.h	325;"	d
-VMCS_HOST_FS_BASE	vmm/vmx.h	326;"	d
-VMCS_HOST_GDTR_BASE	vmm/vmx.h	329;"	d
-VMCS_HOST_GS_BASE	vmm/vmx.h	327;"	d
-VMCS_HOST_IA32_SYSENTER_EIP_MSR	vmm/vmx.h	332;"	d
-VMCS_HOST_IA32_SYSENTER_ESP_MSR	vmm/vmx.h	331;"	d
-VMCS_HOST_IDTR_BASE	vmm/vmx.h	330;"	d
-VMCS_HOST_RIP	vmm/vmx.h	334;"	d
-VMCS_HOST_RSP	vmm/vmx.h	333;"	d
-VMCS_HOST_TR_BASE	vmm/vmx.h	328;"	d
-VMCS_IO_RCX	vmm/vmx.h	292;"	d
-VMCS_IO_RDI	vmm/vmx.h	294;"	d
-VMCS_IO_RIP	vmm/vmx.h	295;"	d
-VMCS_IO_RSI	vmm/vmx.h	293;"	d
-VMCS_PIN_BASED_VMEXEC_CTL_EXINTEXIT	vmm/vmx.h	338;"	d
-VMCS_PIN_BASED_VMEXEC_CTL_NMIEXIT	vmm/vmx.h	339;"	d
-VMCS_PIN_BASED_VMEXEC_CTL_VIRTNMIS	vmm/vmx.h	340;"	d
-VMCS_PROC_BASED_VMEXEC_CTL_ACTIVESECCTL	vmm/vmx.h	362;"	d
-VMCS_PROC_BASED_VMEXEC_CTL_CR3LOADEXIT	vmm/vmx.h	349;"	d
-VMCS_PROC_BASED_VMEXEC_CTL_CR3STOREXIT	vmm/vmx.h	350;"	d
-VMCS_PROC_BASED_VMEXEC_CTL_CR8LOADEXIT	vmm/vmx.h	351;"	d
-VMCS_PROC_BASED_VMEXEC_CTL_CR8STOREEXIT	vmm/vmx.h	352;"	d
-VMCS_PROC_BASED_VMEXEC_CTL_HLTEXIT	vmm/vmx.h	344;"	d
-VMCS_PROC_BASED_VMEXEC_CTL_INTRWINEXIT	vmm/vmx.h	342;"	d
-VMCS_PROC_BASED_VMEXEC_CTL_INVLPGEXIT	vmm/vmx.h	345;"	d
-VMCS_PROC_BASED_VMEXEC_CTL_MONITOREXIT	vmm/vmx.h	360;"	d
-VMCS_PROC_BASED_VMEXEC_CTL_MOVDREXIT	vmm/vmx.h	355;"	d
-VMCS_PROC_BASED_VMEXEC_CTL_MTF	vmm/vmx.h	358;"	d
-VMCS_PROC_BASED_VMEXEC_CTL_MWAITEXIT	vmm/vmx.h	346;"	d
-VMCS_PROC_BASED_VMEXEC_CTL_NMIWINEXIT	vmm/vmx.h	354;"	d
-VMCS_PROC_BASED_VMEXEC_CTL_PAUSEEXIT	vmm/vmx.h	361;"	d
-VMCS_PROC_BASED_VMEXEC_CTL_RDPMCEXIT	vmm/vmx.h	347;"	d
-VMCS_PROC_BASED_VMEXEC_CTL_RDTSCEXIT	vmm/vmx.h	348;"	d
-VMCS_PROC_BASED_VMEXEC_CTL_UNCONDIOEXIT	vmm/vmx.h	356;"	d
-VMCS_PROC_BASED_VMEXEC_CTL_USEIOBMP	vmm/vmx.h	357;"	d
-VMCS_PROC_BASED_VMEXEC_CTL_USEMSRBMP	vmm/vmx.h	359;"	d
-VMCS_PROC_BASED_VMEXEC_CTL_USETPRSHADOW	vmm/vmx.h	353;"	d
-VMCS_PROC_BASED_VMEXEC_CTL_USETSCOFF	vmm/vmx.h	343;"	d
-VMCS_SECONDARY_VMEXEC_CTL_ENABLE_EPT	vmm/vmx.h	364;"	d
-VMCS_SECONDARY_VMEXEC_CTL_UNRESTRICTED_GUEST	vmm/vmx.h	365;"	d
-VMCS_VMENTRY_x64_GUEST	vmm/vmx.h	370;"	d
-VMCS_VMEXIT_GUEST_ACK_INTR_ON_EXIT	vmm/vmx.h	368;"	d
-VMCS_VMEXIT_HOST_ADDR_SIZE	vmm/vmx.h	367;"	d
-VMCS_VMEXIT_QUALIFICATION	vmm/vmx.h	291;"	d
-VMEXIT_CLGI	vmm/vmx.h	561;"	d
-VMEXIT_CPUID	vmm/vmx.h	542;"	d
-VMEXIT_CR0_READ	vmm/vmx.h	428;"	d
-VMEXIT_CR0_SEL_WRITE	vmm/vmx.h	529;"	d
-VMEXIT_CR0_WRITE	vmm/vmx.h	444;"	d
-VMEXIT_CR10_READ	vmm/vmx.h	438;"	d
-VMEXIT_CR10_WRITE	vmm/vmx.h	454;"	d
-VMEXIT_CR11_READ	vmm/vmx.h	439;"	d
-VMEXIT_CR11_WRITE	vmm/vmx.h	455;"	d
-VMEXIT_CR12_READ	vmm/vmx.h	440;"	d
-VMEXIT_CR12_WRITE	vmm/vmx.h	456;"	d
-VMEXIT_CR13_READ	vmm/vmx.h	441;"	d
-VMEXIT_CR13_WRITE	vmm/vmx.h	457;"	d
-VMEXIT_CR14_READ	vmm/vmx.h	442;"	d
-VMEXIT_CR14_WRITE	vmm/vmx.h	458;"	d
-VMEXIT_CR15_READ	vmm/vmx.h	443;"	d
-VMEXIT_CR15_WRITE	vmm/vmx.h	459;"	d
-VMEXIT_CR1_READ	vmm/vmx.h	429;"	d
-VMEXIT_CR1_WRITE	vmm/vmx.h	445;"	d
-VMEXIT_CR2_READ	vmm/vmx.h	430;"	d
-VMEXIT_CR2_WRITE	vmm/vmx.h	446;"	d
-VMEXIT_CR3_READ	vmm/vmx.h	431;"	d
-VMEXIT_CR3_WRITE	vmm/vmx.h	447;"	d
-VMEXIT_CR4_READ	vmm/vmx.h	432;"	d
-VMEXIT_CR4_WRITE	vmm/vmx.h	448;"	d
-VMEXIT_CR5_READ	vmm/vmx.h	433;"	d
-VMEXIT_CR5_WRITE	vmm/vmx.h	449;"	d
-VMEXIT_CR6_READ	vmm/vmx.h	434;"	d
-VMEXIT_CR6_WRITE	vmm/vmx.h	450;"	d
-VMEXIT_CR7_READ	vmm/vmx.h	435;"	d
-VMEXIT_CR7_WRITE	vmm/vmx.h	451;"	d
-VMEXIT_CR8_READ	vmm/vmx.h	436;"	d
-VMEXIT_CR8_WRITE	vmm/vmx.h	452;"	d
-VMEXIT_CR9_READ	vmm/vmx.h	437;"	d
-VMEXIT_CR9_WRITE	vmm/vmx.h	453;"	d
-VMEXIT_DR0_READ	vmm/vmx.h	460;"	d
-VMEXIT_DR0_WRITE	vmm/vmx.h	476;"	d
-VMEXIT_DR10_READ	vmm/vmx.h	470;"	d
-VMEXIT_DR10_WRITE	vmm/vmx.h	486;"	d
-VMEXIT_DR11_READ	vmm/vmx.h	471;"	d
-VMEXIT_DR11_WRITE	vmm/vmx.h	487;"	d
-VMEXIT_DR12_READ	vmm/vmx.h	472;"	d
-VMEXIT_DR12_WRITE	vmm/vmx.h	488;"	d
-VMEXIT_DR13_READ	vmm/vmx.h	473;"	d
-VMEXIT_DR13_WRITE	vmm/vmx.h	489;"	d
-VMEXIT_DR14_READ	vmm/vmx.h	474;"	d
-VMEXIT_DR14_WRITE	vmm/vmx.h	490;"	d
-VMEXIT_DR15_READ	vmm/vmx.h	475;"	d
-VMEXIT_DR15_WRITE	vmm/vmx.h	491;"	d
-VMEXIT_DR1_READ	vmm/vmx.h	461;"	d
-VMEXIT_DR1_WRITE	vmm/vmx.h	477;"	d
-VMEXIT_DR2_READ	vmm/vmx.h	462;"	d
-VMEXIT_DR2_WRITE	vmm/vmx.h	478;"	d
-VMEXIT_DR3_READ	vmm/vmx.h	463;"	d
-VMEXIT_DR3_WRITE	vmm/vmx.h	479;"	d
-VMEXIT_DR4_READ	vmm/vmx.h	464;"	d
-VMEXIT_DR4_WRITE	vmm/vmx.h	480;"	d
-VMEXIT_DR5_READ	vmm/vmx.h	465;"	d
-VMEXIT_DR5_WRITE	vmm/vmx.h	481;"	d
-VMEXIT_DR6_READ	vmm/vmx.h	466;"	d
-VMEXIT_DR6_WRITE	vmm/vmx.h	482;"	d
-VMEXIT_DR7_READ	vmm/vmx.h	467;"	d
-VMEXIT_DR7_WRITE	vmm/vmx.h	483;"	d
-VMEXIT_DR8_READ	vmm/vmx.h	468;"	d
-VMEXIT_DR8_WRITE	vmm/vmx.h	484;"	d
-VMEXIT_DR9_READ	vmm/vmx.h	469;"	d
-VMEXIT_DR9_WRITE	vmm/vmx.h	485;"	d
-VMEXIT_EXCP0	vmm/vmx.h	492;"	d
-VMEXIT_EXCP1	vmm/vmx.h	493;"	d
-VMEXIT_EXCP10	vmm/vmx.h	502;"	d
-VMEXIT_EXCP11	vmm/vmx.h	503;"	d
-VMEXIT_EXCP12	vmm/vmx.h	504;"	d
-VMEXIT_EXCP13	vmm/vmx.h	505;"	d
-VMEXIT_EXCP14	vmm/vmx.h	506;"	d
-VMEXIT_EXCP15	vmm/vmx.h	507;"	d
-VMEXIT_EXCP16	vmm/vmx.h	508;"	d
-VMEXIT_EXCP17	vmm/vmx.h	509;"	d
-VMEXIT_EXCP18	vmm/vmx.h	510;"	d
-VMEXIT_EXCP19	vmm/vmx.h	511;"	d
-VMEXIT_EXCP2	vmm/vmx.h	494;"	d
-VMEXIT_EXCP20	vmm/vmx.h	512;"	d
-VMEXIT_EXCP21	vmm/vmx.h	513;"	d
-VMEXIT_EXCP22	vmm/vmx.h	514;"	d
-VMEXIT_EXCP23	vmm/vmx.h	515;"	d
-VMEXIT_EXCP24	vmm/vmx.h	516;"	d
-VMEXIT_EXCP25	vmm/vmx.h	517;"	d
-VMEXIT_EXCP26	vmm/vmx.h	518;"	d
-VMEXIT_EXCP27	vmm/vmx.h	519;"	d
-VMEXIT_EXCP28	vmm/vmx.h	520;"	d
-VMEXIT_EXCP29	vmm/vmx.h	521;"	d
-VMEXIT_EXCP3	vmm/vmx.h	495;"	d
-VMEXIT_EXCP30	vmm/vmx.h	522;"	d
-VMEXIT_EXCP31	vmm/vmx.h	523;"	d
-VMEXIT_EXCP4	vmm/vmx.h	496;"	d
-VMEXIT_EXCP5	vmm/vmx.h	497;"	d
-VMEXIT_EXCP6	vmm/vmx.h	498;"	d
-VMEXIT_EXCP7	vmm/vmx.h	499;"	d
-VMEXIT_EXCP8	vmm/vmx.h	500;"	d
-VMEXIT_EXCP9	vmm/vmx.h	501;"	d
-VMEXIT_FERR_FREEZE	vmm/vmx.h	554;"	d
-VMEXIT_GDTR_READ	vmm/vmx.h	531;"	d
-VMEXIT_GDTR_WRITE	vmm/vmx.h	535;"	d
-VMEXIT_HLT	vmm/vmx.h	548;"	d
-VMEXIT_ICEBP	vmm/vmx.h	564;"	d
-VMEXIT_IDTR_READ	vmm/vmx.h	530;"	d
-VMEXIT_IDTR_WRITE	vmm/vmx.h	534;"	d
-VMEXIT_INIT	vmm/vmx.h	527;"	d
-VMEXIT_INTR	vmm/vmx.h	524;"	d
-VMEXIT_INVALID	vmm/vmx.h	570;"	d
-VMEXIT_INVD	vmm/vmx.h	546;"	d
-VMEXIT_INVLPG	vmm/vmx.h	549;"	d
-VMEXIT_INVLPGA	vmm/vmx.h	550;"	d
-VMEXIT_IOIO	vmm/vmx.h	551;"	d
-VMEXIT_IRET	vmm/vmx.h	544;"	d
-VMEXIT_LDTR_READ	vmm/vmx.h	532;"	d
-VMEXIT_LDTR_WRITE	vmm/vmx.h	536;"	d
-VMEXIT_MONITOR	vmm/vmx.h	566;"	d
-VMEXIT_MSR	vmm/vmx.h	552;"	d
-VMEXIT_MWAIT	vmm/vmx.h	567;"	d
-VMEXIT_MWAIT_CONDITIONAL	vmm/vmx.h	568;"	d
-VMEXIT_NMI	vmm/vmx.h	525;"	d
-VMEXIT_NPF	vmm/vmx.h	569;"	d
-VMEXIT_PAUSE	vmm/vmx.h	547;"	d
-VMEXIT_POPF	vmm/vmx.h	541;"	d
-VMEXIT_PUSHF	vmm/vmx.h	540;"	d
-VMEXIT_RDPMC	vmm/vmx.h	539;"	d
-VMEXIT_RDTSC	vmm/vmx.h	538;"	d
-VMEXIT_RDTSCP	vmm/vmx.h	563;"	d
-VMEXIT_RSM	vmm/vmx.h	543;"	d
-VMEXIT_SHUTDOWN	vmm/vmx.h	555;"	d
-VMEXIT_SKINIT	vmm/vmx.h	562;"	d
-VMEXIT_SMI	vmm/vmx.h	526;"	d
-VMEXIT_STGI	vmm/vmx.h	560;"	d
-VMEXIT_SWINT	vmm/vmx.h	545;"	d
-VMEXIT_TASK_SWITCH	vmm/vmx.h	553;"	d
-VMEXIT_TR_READ	vmm/vmx.h	533;"	d
-VMEXIT_TR_WRITE	vmm/vmx.h	537;"	d
-VMEXIT_VINTR	vmm/vmx.h	528;"	d
-VMEXIT_VMLOAD	vmm/vmx.h	558;"	d
-VMEXIT_VMMCALL	vmm/vmx.h	557;"	d
-VMEXIT_VMRUN	vmm/vmx.h	556;"	d
-VMEXIT_VMSAVE	vmm/vmx.h	559;"	d
-VMEXIT_WBINVD	vmm/vmx.h	565;"	d
-VMX_EPT_ACCESS_BIT	vmm/vmx.h	582;"	d
-VMX_EPT_AD_ENABLE_BIT	vmm/vmx.h	576;"	d
-VMX_EPT_DEFAULT_GAW	vmm/vmx.h	572;"	d
-VMX_EPT_DEFAULT_MT	vmm/vmx.h	577;"	d
-VMX_EPT_DIRTY_BIT	vmm/vmx.h	583;"	d
-VMX_EPT_EXECUTABLE_MASK	vmm/vmx.h	580;"	d
+VMCS_16BIT_CONTROL_EPTP_INDEX	vmm/vmx.h	361;"	d
+VMCS_16BIT_CONTROL_POSTED_INTERRUPT_VECTOR	vmm/vmx.h	360;"	d
+VMCS_16BIT_CONTROL_VPID	vmm/vmx.h	359;"	d
+VMCS_16BIT_GUEST_CS_SELECTOR	vmm/vmx.h	366;"	d
+VMCS_16BIT_GUEST_DS_SELECTOR	vmm/vmx.h	368;"	d
+VMCS_16BIT_GUEST_ES_SELECTOR	vmm/vmx.h	365;"	d
+VMCS_16BIT_GUEST_FS_SELECTOR	vmm/vmx.h	369;"	d
+VMCS_16BIT_GUEST_GS_SELECTOR	vmm/vmx.h	370;"	d
+VMCS_16BIT_GUEST_INTERRUPT_STATUS	vmm/vmx.h	373;"	d
+VMCS_16BIT_GUEST_LDTR_SELECTOR	vmm/vmx.h	371;"	d
+VMCS_16BIT_GUEST_SS_SELECTOR	vmm/vmx.h	367;"	d
+VMCS_16BIT_GUEST_TR_SELECTOR	vmm/vmx.h	372;"	d
+VMCS_16BIT_HOST_CS_SELECTOR	vmm/vmx.h	378;"	d
+VMCS_16BIT_HOST_DS_SELECTOR	vmm/vmx.h	380;"	d
+VMCS_16BIT_HOST_ES_SELECTOR	vmm/vmx.h	377;"	d
+VMCS_16BIT_HOST_FS_SELECTOR	vmm/vmx.h	381;"	d
+VMCS_16BIT_HOST_GS_SELECTOR	vmm/vmx.h	382;"	d
+VMCS_16BIT_HOST_SS_SELECTOR	vmm/vmx.h	379;"	d
+VMCS_16BIT_HOST_TR_SELECTOR	vmm/vmx.h	383;"	d
+VMCS_32BIT_CONTROL_CR3_TARGET_COUNT	vmm/vmx.h	472;"	d
+VMCS_32BIT_CONTROL_EXCEPTION_BITMAP	vmm/vmx.h	469;"	d
+VMCS_32BIT_CONTROL_PAGE_FAULT_ERR_CODE_MASK	vmm/vmx.h	470;"	d
+VMCS_32BIT_CONTROL_PAGE_FAULT_ERR_CODE_MATCH	vmm/vmx.h	471;"	d
+VMCS_32BIT_CONTROL_PAUSE_LOOP_EXITING_GAP	vmm/vmx.h	483;"	d
+VMCS_32BIT_CONTROL_PAUSE_LOOP_EXITING_WINDOW	vmm/vmx.h	484;"	d
+VMCS_32BIT_CONTROL_PIN_BASED_EXEC_CONTROLS	vmm/vmx.h	467;"	d
+VMCS_32BIT_CONTROL_PROCESSOR_BASED_VMEXEC_CONTROLS	vmm/vmx.h	468;"	d
+VMCS_32BIT_CONTROL_SECONDARY_VMEXEC_CONTROLS	vmm/vmx.h	482;"	d
+VMCS_32BIT_CONTROL_TPR_THRESHOLD	vmm/vmx.h	481;"	d
+VMCS_32BIT_CONTROL_VMENTRY_CONTROLS	vmm/vmx.h	476;"	d
+VMCS_32BIT_CONTROL_VMENTRY_EXCEPTION_ERR_CODE	vmm/vmx.h	479;"	d
+VMCS_32BIT_CONTROL_VMENTRY_INSTRUCTION_LENGTH	vmm/vmx.h	480;"	d
+VMCS_32BIT_CONTROL_VMENTRY_INTERRUPTION_INFO	vmm/vmx.h	478;"	d
+VMCS_32BIT_CONTROL_VMENTRY_MSR_LOAD_COUNT	vmm/vmx.h	477;"	d
+VMCS_32BIT_CONTROL_VMEXIT_CONTROLS	vmm/vmx.h	473;"	d
+VMCS_32BIT_CONTROL_VMEXIT_MSR_LOAD_COUNT	vmm/vmx.h	475;"	d
+VMCS_32BIT_CONTROL_VMEXIT_MSR_STORE_COUNT	vmm/vmx.h	474;"	d
+VMCS_32BIT_GUEST_ACTIVITY_STATE	vmm/vmx.h	518;"	d
+VMCS_32BIT_GUEST_CS_ACCESS_RIGHTS	vmm/vmx.h	510;"	d
+VMCS_32BIT_GUEST_CS_LIMIT	vmm/vmx.h	500;"	d
+VMCS_32BIT_GUEST_DS_ACCESS_RIGHTS	vmm/vmx.h	512;"	d
+VMCS_32BIT_GUEST_DS_LIMIT	vmm/vmx.h	502;"	d
+VMCS_32BIT_GUEST_ES_ACCESS_RIGHTS	vmm/vmx.h	509;"	d
+VMCS_32BIT_GUEST_ES_LIMIT	vmm/vmx.h	499;"	d
+VMCS_32BIT_GUEST_FS_ACCESS_RIGHTS	vmm/vmx.h	513;"	d
+VMCS_32BIT_GUEST_FS_LIMIT	vmm/vmx.h	503;"	d
+VMCS_32BIT_GUEST_GDTR_LIMIT	vmm/vmx.h	507;"	d
+VMCS_32BIT_GUEST_GS_ACCESS_RIGHTS	vmm/vmx.h	514;"	d
+VMCS_32BIT_GUEST_GS_LIMIT	vmm/vmx.h	504;"	d
+VMCS_32BIT_GUEST_IA32_SYSENTER_CS_MSR	vmm/vmx.h	520;"	d
+VMCS_32BIT_GUEST_IDTR_LIMIT	vmm/vmx.h	508;"	d
+VMCS_32BIT_GUEST_INTERRUPTIBILITY_STATE	vmm/vmx.h	517;"	d
+VMCS_32BIT_GUEST_LDTR_ACCESS_RIGHTS	vmm/vmx.h	515;"	d
+VMCS_32BIT_GUEST_LDTR_LIMIT	vmm/vmx.h	505;"	d
+VMCS_32BIT_GUEST_PREEMPTION_TIMER_VALUE	vmm/vmx.h	521;"	d
+VMCS_32BIT_GUEST_SMBASE	vmm/vmx.h	519;"	d
+VMCS_32BIT_GUEST_SS_ACCESS_RIGHTS	vmm/vmx.h	511;"	d
+VMCS_32BIT_GUEST_SS_LIMIT	vmm/vmx.h	501;"	d
+VMCS_32BIT_GUEST_TR_ACCESS_RIGHTS	vmm/vmx.h	516;"	d
+VMCS_32BIT_GUEST_TR_LIMIT	vmm/vmx.h	506;"	d
+VMCS_32BIT_HOST_IA32_SYSENTER_CS_MSR	vmm/vmx.h	525;"	d
+VMCS_32BIT_IDT_VECTORING_ERR_CODE	vmm/vmx.h	493;"	d
+VMCS_32BIT_IDT_VECTORING_INFO	vmm/vmx.h	492;"	d
+VMCS_32BIT_INSTRUCTION_ERROR	vmm/vmx.h	488;"	d
+VMCS_32BIT_VMEXIT_INSTRUCTION_INFO	vmm/vmx.h	495;"	d
+VMCS_32BIT_VMEXIT_INSTRUCTION_LENGTH	vmm/vmx.h	494;"	d
+VMCS_32BIT_VMEXIT_INTERRUPTION_ERR_CODE	vmm/vmx.h	491;"	d
+VMCS_32BIT_VMEXIT_INTERRUPTION_INFO	vmm/vmx.h	490;"	d
+VMCS_32BIT_VMEXIT_REASON	vmm/vmx.h	489;"	d
+VMCS_64BIT_CONTROL_APIC_ACCESS_ADDR	vmm/vmx.h	405;"	d
+VMCS_64BIT_CONTROL_APIC_ACCESS_ADDR_HI	vmm/vmx.h	406;"	d
+VMCS_64BIT_CONTROL_EOI_EXIT_BITMAP0	vmm/vmx.h	413;"	d
+VMCS_64BIT_CONTROL_EOI_EXIT_BITMAP0_HI	vmm/vmx.h	414;"	d
+VMCS_64BIT_CONTROL_EOI_EXIT_BITMAP1	vmm/vmx.h	415;"	d
+VMCS_64BIT_CONTROL_EOI_EXIT_BITMAP1_HI	vmm/vmx.h	416;"	d
+VMCS_64BIT_CONTROL_EOI_EXIT_BITMAP2	vmm/vmx.h	417;"	d
+VMCS_64BIT_CONTROL_EOI_EXIT_BITMAP2_HI	vmm/vmx.h	418;"	d
+VMCS_64BIT_CONTROL_EOI_EXIT_BITMAP3	vmm/vmx.h	419;"	d
+VMCS_64BIT_CONTROL_EOI_EXIT_BITMAP3_HI	vmm/vmx.h	420;"	d
+VMCS_64BIT_CONTROL_EPTPTR	vmm/vmx.h	411;"	d
+VMCS_64BIT_CONTROL_EPTPTR_HI	vmm/vmx.h	412;"	d
+VMCS_64BIT_CONTROL_EPTP_LIST_ADDRESS	vmm/vmx.h	421;"	d
+VMCS_64BIT_CONTROL_EPTP_LIST_ADDRESS_HI	vmm/vmx.h	422;"	d
+VMCS_64BIT_CONTROL_EXECUTIVE_VMCS_PTR	vmm/vmx.h	399;"	d
+VMCS_64BIT_CONTROL_EXECUTIVE_VMCS_PTR_HI	vmm/vmx.h	400;"	d
+VMCS_64BIT_CONTROL_IO_BITMAP_A	vmm/vmx.h	387;"	d
+VMCS_64BIT_CONTROL_IO_BITMAP_A_HI	vmm/vmx.h	388;"	d
+VMCS_64BIT_CONTROL_IO_BITMAP_B	vmm/vmx.h	389;"	d
+VMCS_64BIT_CONTROL_IO_BITMAP_B_HI	vmm/vmx.h	390;"	d
+VMCS_64BIT_CONTROL_MSR_BITMAPS	vmm/vmx.h	391;"	d
+VMCS_64BIT_CONTROL_MSR_BITMAPS_HI	vmm/vmx.h	392;"	d
+VMCS_64BIT_CONTROL_POSTED_INTERRUPT_DESC_ADDR	vmm/vmx.h	407;"	d
+VMCS_64BIT_CONTROL_POSTED_INTERRUPT_DESC_ADDR_HI	vmm/vmx.h	408;"	d
+VMCS_64BIT_CONTROL_TSC_OFFSET	vmm/vmx.h	401;"	d
+VMCS_64BIT_CONTROL_TSC_OFFSET_HI	vmm/vmx.h	402;"	d
+VMCS_64BIT_CONTROL_VE_EXCEPTION_INFO_ADDR	vmm/vmx.h	427;"	d
+VMCS_64BIT_CONTROL_VE_EXCEPTION_INFO_ADDR_HI	vmm/vmx.h	428;"	d
+VMCS_64BIT_CONTROL_VIRTUAL_APIC_PAGE_ADDR	vmm/vmx.h	403;"	d
+VMCS_64BIT_CONTROL_VIRTUAL_APIC_PAGE_ADDR_HI	vmm/vmx.h	404;"	d
+VMCS_64BIT_CONTROL_VMENTRY_MSR_LOAD_ADDR	vmm/vmx.h	397;"	d
+VMCS_64BIT_CONTROL_VMENTRY_MSR_LOAD_ADDR_HI	vmm/vmx.h	398;"	d
+VMCS_64BIT_CONTROL_VMEXIT_MSR_LOAD_ADDR	vmm/vmx.h	395;"	d
+VMCS_64BIT_CONTROL_VMEXIT_MSR_LOAD_ADDR_HI	vmm/vmx.h	396;"	d
+VMCS_64BIT_CONTROL_VMEXIT_MSR_STORE_ADDR	vmm/vmx.h	393;"	d
+VMCS_64BIT_CONTROL_VMEXIT_MSR_STORE_ADDR_HI	vmm/vmx.h	394;"	d
+VMCS_64BIT_CONTROL_VMFUNC_CTRLS	vmm/vmx.h	409;"	d
+VMCS_64BIT_CONTROL_VMFUNC_CTRLS_HI	vmm/vmx.h	410;"	d
+VMCS_64BIT_CONTROL_VMREAD_BITMAP_ADDR	vmm/vmx.h	423;"	d
+VMCS_64BIT_CONTROL_VMREAD_BITMAP_ADDR_HI	vmm/vmx.h	424;"	d
+VMCS_64BIT_CONTROL_VMWRITE_BITMAP_ADDR	vmm/vmx.h	425;"	d
+VMCS_64BIT_CONTROL_VMWRITE_BITMAP_ADDR_HI	vmm/vmx.h	426;"	d
+VMCS_64BIT_GUEST_IA32_DEBUGCTL	vmm/vmx.h	439;"	d
+VMCS_64BIT_GUEST_IA32_DEBUGCTL_HI	vmm/vmx.h	440;"	d
+VMCS_64BIT_GUEST_IA32_EFER	vmm/vmx.h	443;"	d
+VMCS_64BIT_GUEST_IA32_EFER_HI	vmm/vmx.h	444;"	d
+VMCS_64BIT_GUEST_IA32_PAT	vmm/vmx.h	441;"	d
+VMCS_64BIT_GUEST_IA32_PAT_HI	vmm/vmx.h	442;"	d
+VMCS_64BIT_GUEST_IA32_PDPTE0	vmm/vmx.h	447;"	d
+VMCS_64BIT_GUEST_IA32_PDPTE0_HI	vmm/vmx.h	448;"	d
+VMCS_64BIT_GUEST_IA32_PDPTE1	vmm/vmx.h	449;"	d
+VMCS_64BIT_GUEST_IA32_PDPTE1_HI	vmm/vmx.h	450;"	d
+VMCS_64BIT_GUEST_IA32_PDPTE2	vmm/vmx.h	451;"	d
+VMCS_64BIT_GUEST_IA32_PDPTE2_HI	vmm/vmx.h	452;"	d
+VMCS_64BIT_GUEST_IA32_PDPTE3	vmm/vmx.h	453;"	d
+VMCS_64BIT_GUEST_IA32_PDPTE3_HI	vmm/vmx.h	454;"	d
+VMCS_64BIT_GUEST_IA32_PERF_GLOBAL_CTRL	vmm/vmx.h	445;"	d
+VMCS_64BIT_GUEST_IA32_PERF_GLOBAL_CTRL_HI	vmm/vmx.h	446;"	d
+VMCS_64BIT_GUEST_LINK_POINTER	vmm/vmx.h	437;"	d
+VMCS_64BIT_GUEST_LINK_POINTER_HI	vmm/vmx.h	438;"	d
+VMCS_64BIT_GUEST_PHYSICAL_ADDR	vmm/vmx.h	432;"	d
+VMCS_64BIT_GUEST_PHYSICAL_ADDR_HI	vmm/vmx.h	433;"	d
+VMCS_64BIT_HOST_IA32_EFER	vmm/vmx.h	460;"	d
+VMCS_64BIT_HOST_IA32_EFER_HI	vmm/vmx.h	461;"	d
+VMCS_64BIT_HOST_IA32_PAT	vmm/vmx.h	458;"	d
+VMCS_64BIT_HOST_IA32_PAT_HI	vmm/vmx.h	459;"	d
+VMCS_64BIT_HOST_IA32_PERF_GLOBAL_CTRL	vmm/vmx.h	462;"	d
+VMCS_64BIT_HOST_IA32_PERF_GLOBAL_CTRL_HI	vmm/vmx.h	463;"	d
+VMCS_CONTROL_CR0_GUEST_HOST_MASK	vmm/vmx.h	529;"	d
+VMCS_CONTROL_CR0_READ_SHADOW	vmm/vmx.h	531;"	d
+VMCS_CONTROL_CR4_GUEST_HOST_MASK	vmm/vmx.h	530;"	d
+VMCS_CONTROL_CR4_READ_SHADOW	vmm/vmx.h	532;"	d
+VMCS_CR3_TARGET0	vmm/vmx.h	533;"	d
+VMCS_CR3_TARGET1	vmm/vmx.h	534;"	d
+VMCS_CR3_TARGET2	vmm/vmx.h	535;"	d
+VMCS_CR3_TARGET3	vmm/vmx.h	536;"	d
+VMCS_GUEST_CR0	vmm/vmx.h	549;"	d
+VMCS_GUEST_CR3	vmm/vmx.h	550;"	d
+VMCS_GUEST_CR4	vmm/vmx.h	551;"	d
+VMCS_GUEST_CS_BASE	vmm/vmx.h	553;"	d
+VMCS_GUEST_DR7	vmm/vmx.h	562;"	d
+VMCS_GUEST_DS_BASE	vmm/vmx.h	555;"	d
+VMCS_GUEST_ES_BASE	vmm/vmx.h	552;"	d
+VMCS_GUEST_FS_BASE	vmm/vmx.h	556;"	d
+VMCS_GUEST_GDTR_BASE	vmm/vmx.h	560;"	d
+VMCS_GUEST_GS_BASE	vmm/vmx.h	557;"	d
+VMCS_GUEST_IA32_SYSENTER_EIP_MSR	vmm/vmx.h	568;"	d
+VMCS_GUEST_IA32_SYSENTER_ESP_MSR	vmm/vmx.h	567;"	d
+VMCS_GUEST_IDTR_BASE	vmm/vmx.h	561;"	d
+VMCS_GUEST_LDTR_BASE	vmm/vmx.h	558;"	d
+VMCS_GUEST_LINEAR_ADDR	vmm/vmx.h	545;"	d
+VMCS_GUEST_PENDING_DBG_EXCEPTIONS	vmm/vmx.h	566;"	d
+VMCS_GUEST_RFLAGS	vmm/vmx.h	565;"	d
+VMCS_GUEST_RIP	vmm/vmx.h	564;"	d
+VMCS_GUEST_RSP	vmm/vmx.h	563;"	d
+VMCS_GUEST_SS_BASE	vmm/vmx.h	554;"	d
+VMCS_GUEST_TR_BASE	vmm/vmx.h	559;"	d
+VMCS_HOST_CR0	vmm/vmx.h	572;"	d
+VMCS_HOST_CR3	vmm/vmx.h	573;"	d
+VMCS_HOST_CR4	vmm/vmx.h	574;"	d
+VMCS_HOST_FS_BASE	vmm/vmx.h	575;"	d
+VMCS_HOST_GDTR_BASE	vmm/vmx.h	578;"	d
+VMCS_HOST_GS_BASE	vmm/vmx.h	576;"	d
+VMCS_HOST_IA32_SYSENTER_EIP_MSR	vmm/vmx.h	581;"	d
+VMCS_HOST_IA32_SYSENTER_ESP_MSR	vmm/vmx.h	580;"	d
+VMCS_HOST_IDTR_BASE	vmm/vmx.h	579;"	d
+VMCS_HOST_RIP	vmm/vmx.h	583;"	d
+VMCS_HOST_RSP	vmm/vmx.h	582;"	d
+VMCS_HOST_TR_BASE	vmm/vmx.h	577;"	d
+VMCS_IO_RCX	vmm/vmx.h	541;"	d
+VMCS_IO_RDI	vmm/vmx.h	543;"	d
+VMCS_IO_RIP	vmm/vmx.h	544;"	d
+VMCS_IO_RSI	vmm/vmx.h	542;"	d
+VMCS_PIN_BASED_VMEXEC_CTL_EXINTEXIT	vmm/vmx.h	587;"	d
+VMCS_PIN_BASED_VMEXEC_CTL_NMIEXIT	vmm/vmx.h	588;"	d
+VMCS_PIN_BASED_VMEXEC_CTL_VIRTNMIS	vmm/vmx.h	589;"	d
+VMCS_PROC_BASED_VMEXEC_CTL_ACTIVESECCTL	vmm/vmx.h	611;"	d
+VMCS_PROC_BASED_VMEXEC_CTL_CR3LOADEXIT	vmm/vmx.h	598;"	d
+VMCS_PROC_BASED_VMEXEC_CTL_CR3STOREEXIT	vmm/vmx.h	599;"	d
+VMCS_PROC_BASED_VMEXEC_CTL_CR8LOADEXIT	vmm/vmx.h	600;"	d
+VMCS_PROC_BASED_VMEXEC_CTL_CR8STOREEXIT	vmm/vmx.h	601;"	d
+VMCS_PROC_BASED_VMEXEC_CTL_HLTEXIT	vmm/vmx.h	593;"	d
+VMCS_PROC_BASED_VMEXEC_CTL_INTRWINEXIT	vmm/vmx.h	591;"	d
+VMCS_PROC_BASED_VMEXEC_CTL_INVLPGEXIT	vmm/vmx.h	594;"	d
+VMCS_PROC_BASED_VMEXEC_CTL_MONITOREXIT	vmm/vmx.h	609;"	d
+VMCS_PROC_BASED_VMEXEC_CTL_MOVDREXIT	vmm/vmx.h	604;"	d
+VMCS_PROC_BASED_VMEXEC_CTL_MTF	vmm/vmx.h	607;"	d
+VMCS_PROC_BASED_VMEXEC_CTL_MWAITEXIT	vmm/vmx.h	595;"	d
+VMCS_PROC_BASED_VMEXEC_CTL_NMIWINEXIT	vmm/vmx.h	603;"	d
+VMCS_PROC_BASED_VMEXEC_CTL_PAUSEEXIT	vmm/vmx.h	610;"	d
+VMCS_PROC_BASED_VMEXEC_CTL_RDPMCEXIT	vmm/vmx.h	596;"	d
+VMCS_PROC_BASED_VMEXEC_CTL_RDTSCEXIT	vmm/vmx.h	597;"	d
+VMCS_PROC_BASED_VMEXEC_CTL_UNCONDIOEXIT	vmm/vmx.h	605;"	d
+VMCS_PROC_BASED_VMEXEC_CTL_USEIOBMP	vmm/vmx.h	606;"	d
+VMCS_PROC_BASED_VMEXEC_CTL_USEMSRBMP	vmm/vmx.h	608;"	d
+VMCS_PROC_BASED_VMEXEC_CTL_USETPRSHADOW	vmm/vmx.h	602;"	d
+VMCS_PROC_BASED_VMEXEC_CTL_USETSCOFF	vmm/vmx.h	592;"	d
+VMCS_SECONDARY_VMEXEC_CTL_ENABLE_EPT	vmm/vmx.h	613;"	d
+VMCS_SECONDARY_VMEXEC_CTL_UNRESTRICTED_GUEST	vmm/vmx.h	614;"	d
+VMCS_VMENTRY_x64_GUEST	vmm/vmx.h	619;"	d
+VMCS_VMEXIT_GUEST_ACK_INTR_ON_EXIT	vmm/vmx.h	617;"	d
+VMCS_VMEXIT_HOST_ADDR_SIZE	vmm/vmx.h	616;"	d
+VMCS_VMEXIT_QUALIFICATION	vmm/vmx.h	540;"	d
+VMEXIT_CLGI	vmm/vmx.h	810;"	d
+VMEXIT_CPUID	vmm/vmx.h	791;"	d
+VMEXIT_CR0_READ	vmm/vmx.h	677;"	d
+VMEXIT_CR0_SEL_WRITE	vmm/vmx.h	778;"	d
+VMEXIT_CR0_WRITE	vmm/vmx.h	693;"	d
+VMEXIT_CR10_READ	vmm/vmx.h	687;"	d
+VMEXIT_CR10_WRITE	vmm/vmx.h	703;"	d
+VMEXIT_CR11_READ	vmm/vmx.h	688;"	d
+VMEXIT_CR11_WRITE	vmm/vmx.h	704;"	d
+VMEXIT_CR12_READ	vmm/vmx.h	689;"	d
+VMEXIT_CR12_WRITE	vmm/vmx.h	705;"	d
+VMEXIT_CR13_READ	vmm/vmx.h	690;"	d
+VMEXIT_CR13_WRITE	vmm/vmx.h	706;"	d
+VMEXIT_CR14_READ	vmm/vmx.h	691;"	d
+VMEXIT_CR14_WRITE	vmm/vmx.h	707;"	d
+VMEXIT_CR15_READ	vmm/vmx.h	692;"	d
+VMEXIT_CR15_WRITE	vmm/vmx.h	708;"	d
+VMEXIT_CR1_READ	vmm/vmx.h	678;"	d
+VMEXIT_CR1_WRITE	vmm/vmx.h	694;"	d
+VMEXIT_CR2_READ	vmm/vmx.h	679;"	d
+VMEXIT_CR2_WRITE	vmm/vmx.h	695;"	d
+VMEXIT_CR3_READ	vmm/vmx.h	680;"	d
+VMEXIT_CR3_WRITE	vmm/vmx.h	696;"	d
+VMEXIT_CR4_READ	vmm/vmx.h	681;"	d
+VMEXIT_CR4_WRITE	vmm/vmx.h	697;"	d
+VMEXIT_CR5_READ	vmm/vmx.h	682;"	d
+VMEXIT_CR5_WRITE	vmm/vmx.h	698;"	d
+VMEXIT_CR6_READ	vmm/vmx.h	683;"	d
+VMEXIT_CR6_WRITE	vmm/vmx.h	699;"	d
+VMEXIT_CR7_READ	vmm/vmx.h	684;"	d
+VMEXIT_CR7_WRITE	vmm/vmx.h	700;"	d
+VMEXIT_CR8_READ	vmm/vmx.h	685;"	d
+VMEXIT_CR8_WRITE	vmm/vmx.h	701;"	d
+VMEXIT_CR9_READ	vmm/vmx.h	686;"	d
+VMEXIT_CR9_WRITE	vmm/vmx.h	702;"	d
+VMEXIT_DR0_READ	vmm/vmx.h	709;"	d
+VMEXIT_DR0_WRITE	vmm/vmx.h	725;"	d
+VMEXIT_DR10_READ	vmm/vmx.h	719;"	d
+VMEXIT_DR10_WRITE	vmm/vmx.h	735;"	d
+VMEXIT_DR11_READ	vmm/vmx.h	720;"	d
+VMEXIT_DR11_WRITE	vmm/vmx.h	736;"	d
+VMEXIT_DR12_READ	vmm/vmx.h	721;"	d
+VMEXIT_DR12_WRITE	vmm/vmx.h	737;"	d
+VMEXIT_DR13_READ	vmm/vmx.h	722;"	d
+VMEXIT_DR13_WRITE	vmm/vmx.h	738;"	d
+VMEXIT_DR14_READ	vmm/vmx.h	723;"	d
+VMEXIT_DR14_WRITE	vmm/vmx.h	739;"	d
+VMEXIT_DR15_READ	vmm/vmx.h	724;"	d
+VMEXIT_DR15_WRITE	vmm/vmx.h	740;"	d
+VMEXIT_DR1_READ	vmm/vmx.h	710;"	d
+VMEXIT_DR1_WRITE	vmm/vmx.h	726;"	d
+VMEXIT_DR2_READ	vmm/vmx.h	711;"	d
+VMEXIT_DR2_WRITE	vmm/vmx.h	727;"	d
+VMEXIT_DR3_READ	vmm/vmx.h	712;"	d
+VMEXIT_DR3_WRITE	vmm/vmx.h	728;"	d
+VMEXIT_DR4_READ	vmm/vmx.h	713;"	d
+VMEXIT_DR4_WRITE	vmm/vmx.h	729;"	d
+VMEXIT_DR5_READ	vmm/vmx.h	714;"	d
+VMEXIT_DR5_WRITE	vmm/vmx.h	730;"	d
+VMEXIT_DR6_READ	vmm/vmx.h	715;"	d
+VMEXIT_DR6_WRITE	vmm/vmx.h	731;"	d
+VMEXIT_DR7_READ	vmm/vmx.h	716;"	d
+VMEXIT_DR7_WRITE	vmm/vmx.h	732;"	d
+VMEXIT_DR8_READ	vmm/vmx.h	717;"	d
+VMEXIT_DR8_WRITE	vmm/vmx.h	733;"	d
+VMEXIT_DR9_READ	vmm/vmx.h	718;"	d
+VMEXIT_DR9_WRITE	vmm/vmx.h	734;"	d
+VMEXIT_EXCP0	vmm/vmx.h	741;"	d
+VMEXIT_EXCP1	vmm/vmx.h	742;"	d
+VMEXIT_EXCP10	vmm/vmx.h	751;"	d
+VMEXIT_EXCP11	vmm/vmx.h	752;"	d
+VMEXIT_EXCP12	vmm/vmx.h	753;"	d
+VMEXIT_EXCP13	vmm/vmx.h	754;"	d
+VMEXIT_EXCP14	vmm/vmx.h	755;"	d
+VMEXIT_EXCP15	vmm/vmx.h	756;"	d
+VMEXIT_EXCP16	vmm/vmx.h	757;"	d
+VMEXIT_EXCP17	vmm/vmx.h	758;"	d
+VMEXIT_EXCP18	vmm/vmx.h	759;"	d
+VMEXIT_EXCP19	vmm/vmx.h	760;"	d
+VMEXIT_EXCP2	vmm/vmx.h	743;"	d
+VMEXIT_EXCP20	vmm/vmx.h	761;"	d
+VMEXIT_EXCP21	vmm/vmx.h	762;"	d
+VMEXIT_EXCP22	vmm/vmx.h	763;"	d
+VMEXIT_EXCP23	vmm/vmx.h	764;"	d
+VMEXIT_EXCP24	vmm/vmx.h	765;"	d
+VMEXIT_EXCP25	vmm/vmx.h	766;"	d
+VMEXIT_EXCP26	vmm/vmx.h	767;"	d
+VMEXIT_EXCP27	vmm/vmx.h	768;"	d
+VMEXIT_EXCP28	vmm/vmx.h	769;"	d
+VMEXIT_EXCP29	vmm/vmx.h	770;"	d
+VMEXIT_EXCP3	vmm/vmx.h	744;"	d
+VMEXIT_EXCP30	vmm/vmx.h	771;"	d
+VMEXIT_EXCP31	vmm/vmx.h	772;"	d
+VMEXIT_EXCP4	vmm/vmx.h	745;"	d
+VMEXIT_EXCP5	vmm/vmx.h	746;"	d
+VMEXIT_EXCP6	vmm/vmx.h	747;"	d
+VMEXIT_EXCP7	vmm/vmx.h	748;"	d
+VMEXIT_EXCP8	vmm/vmx.h	749;"	d
+VMEXIT_EXCP9	vmm/vmx.h	750;"	d
+VMEXIT_FERR_FREEZE	vmm/vmx.h	803;"	d
+VMEXIT_GDTR_READ	vmm/vmx.h	780;"	d
+VMEXIT_GDTR_WRITE	vmm/vmx.h	784;"	d
+VMEXIT_HLT	vmm/vmx.h	797;"	d
+VMEXIT_ICEBP	vmm/vmx.h	813;"	d
+VMEXIT_IDTR_READ	vmm/vmx.h	779;"	d
+VMEXIT_IDTR_WRITE	vmm/vmx.h	783;"	d
+VMEXIT_INIT	vmm/vmx.h	776;"	d
+VMEXIT_INTR	vmm/vmx.h	773;"	d
+VMEXIT_INVALID	vmm/vmx.h	819;"	d
+VMEXIT_INVD	vmm/vmx.h	795;"	d
+VMEXIT_INVLPG	vmm/vmx.h	798;"	d
+VMEXIT_INVLPGA	vmm/vmx.h	799;"	d
+VMEXIT_IOIO	vmm/vmx.h	800;"	d
+VMEXIT_IRET	vmm/vmx.h	793;"	d
+VMEXIT_LDTR_READ	vmm/vmx.h	781;"	d
+VMEXIT_LDTR_WRITE	vmm/vmx.h	785;"	d
+VMEXIT_MONITOR	vmm/vmx.h	815;"	d
+VMEXIT_MSR	vmm/vmx.h	801;"	d
+VMEXIT_MWAIT	vmm/vmx.h	816;"	d
+VMEXIT_MWAIT_CONDITIONAL	vmm/vmx.h	817;"	d
+VMEXIT_NMI	vmm/vmx.h	774;"	d
+VMEXIT_NPF	vmm/vmx.h	818;"	d
+VMEXIT_PAUSE	vmm/vmx.h	796;"	d
+VMEXIT_POPF	vmm/vmx.h	790;"	d
+VMEXIT_PUSHF	vmm/vmx.h	789;"	d
+VMEXIT_RDPMC	vmm/vmx.h	788;"	d
+VMEXIT_RDTSC	vmm/vmx.h	787;"	d
+VMEXIT_RDTSCP	vmm/vmx.h	812;"	d
+VMEXIT_RSM	vmm/vmx.h	792;"	d
+VMEXIT_SHUTDOWN	vmm/vmx.h	804;"	d
+VMEXIT_SKINIT	vmm/vmx.h	811;"	d
+VMEXIT_SMI	vmm/vmx.h	775;"	d
+VMEXIT_STGI	vmm/vmx.h	809;"	d
+VMEXIT_SWINT	vmm/vmx.h	794;"	d
+VMEXIT_TASK_SWITCH	vmm/vmx.h	802;"	d
+VMEXIT_TR_READ	vmm/vmx.h	782;"	d
+VMEXIT_TR_WRITE	vmm/vmx.h	786;"	d
+VMEXIT_VINTR	vmm/vmx.h	777;"	d
+VMEXIT_VMLOAD	vmm/vmx.h	807;"	d
+VMEXIT_VMMCALL	vmm/vmx.h	806;"	d
+VMEXIT_VMRUN	vmm/vmx.h	805;"	d
+VMEXIT_VMSAVE	vmm/vmx.h	808;"	d
+VMEXIT_WBINVD	vmm/vmx.h	814;"	d
+VMX_EPT_ACCESS_BIT	vmm/vmx.h	831;"	d
+VMX_EPT_AD_ENABLE_BIT	vmm/vmx.h	825;"	d
+VMX_EPT_DEFAULT_GAW	vmm/vmx.h	821;"	d
+VMX_EPT_DEFAULT_MT	vmm/vmx.h	826;"	d
+VMX_EPT_DIRTY_BIT	vmm/vmx.h	832;"	d
+VMX_EPT_EXECUTABLE_MASK	vmm/vmx.h	829;"	d
 VMX_EPT_FAULT_INS	vmm/ept.h	22;"	d
 VMX_EPT_FAULT_READ	vmm/ept.h	20;"	d
 VMX_EPT_FAULT_WRITE	vmm/ept.h	21;"	d
-VMX_EPT_GAW_EPTP_SHIFT	vmm/vmx.h	575;"	d
-VMX_EPT_IPAT_BIT	vmm/vmx.h	581;"	d
-VMX_EPT_MAX_GAW	vmm/vmx.h	573;"	d
-VMX_EPT_MISCONFIG_WX_VALUE	vmm/vmx.h	590;"	d
-VMX_EPT_MT_EPTE_SHIFT	vmm/vmx.h	574;"	d
-VMX_EPT_MT_MASK	vmm/vmx.h	587;"	d
-VMX_EPT_READABLE_MASK	vmm/vmx.h	578;"	d
-VMX_EPT_RWX_MASK	vmm/vmx.h	584;"	d
-VMX_EPT_WRITABLE_MASK	vmm/vmx.h	579;"	d
+VMX_EPT_GAW_EPTP_SHIFT	vmm/vmx.h	824;"	d
+VMX_EPT_IPAT_BIT	vmm/vmx.h	830;"	d
+VMX_EPT_MAX_GAW	vmm/vmx.h	822;"	d
+VMX_EPT_MISCONFIG_WX_VALUE	vmm/vmx.h	839;"	d
+VMX_EPT_MT_EPTE_SHIFT	vmm/vmx.h	823;"	d
+VMX_EPT_MT_MASK	vmm/vmx.h	836;"	d
+VMX_EPT_READABLE_MASK	vmm/vmx.h	827;"	d
+VMX_EPT_RWX_MASK	vmm/vmx.h	833;"	d
+VMX_EPT_WRITABLE_MASK	vmm/vmx.h	828;"	d
 VMX_HOST_FS_ENV	inc/vmx.h	41;"	d
 VMX_VMCALL_ALLOC_CPU	inc/vmx.h	37;"	d
 VMX_VMCALL_BACKTOHOST	inc/vmx.h	35;"	d
@@ -4201,6 +4204,7 @@ VPD	inc/mmu.h	36;"	d
 VPDPE	inc/mmu.h	37;"	d
 VPML4E	inc/mmu.h	38;"	d
 VPN	inc/mmu.h	31;"	d
+Vmcs	vmm/vmx.h	/^struct Vmcs {$/;"	s
 VmxGuestInfo	inc/vmx.h	/^struct VmxGuestInfo {$/;"	s
 WHITESPACE	kern/monitor.c	187;"	d	file:
 WHITESPACE	obj/kern/kernel.asm	/^#define WHITESPACE "\\t\\r\\n "$/;"	d
@@ -4512,11 +4516,11 @@ ackno	obj/net/ns.asm	/^    ackno = pcb->rcv_nxt;$/;"	d
 ackno	obj/net/ns.asm	/^  ackno = tcphdr->ackno = ntohl(tcphdr->ackno);$/;"	d
 ackno	vmm/guest/obj/net/ns.asm	/^    ackno = pcb->rcv_nxt;$/;"	d
 ackno	vmm/guest/obj/net/ns.asm	/^  ackno = tcphdr->ackno = ntohl(tcphdr->ackno);$/;"	d
-ad	net/lwip/include/lwip/api_msg.h	/^    } ad;$/;"	m	union:api_msg_msg::__anon27	typeref:struct:api_msg_msg::__anon27::__anon30
+ad	net/lwip/include/lwip/api_msg.h	/^    } ad;$/;"	m	union:api_msg_msg::__anon38	typeref:struct:api_msg_msg::__anon38::__anon41
 ad_attrib	kern/dwarf.h	/^	uint64_t    ad_attrib;      \/* DW_AT_XXX *\/$/;"	m	struct:_Dwarf_AttrDef
 ad_form	kern/dwarf.h	/^	uint64_t    ad_form;        \/* DW_FORM_XXX *\/$/;"	m	struct:_Dwarf_AttrDef
 ad_offset	kern/dwarf.h	/^	uint64_t    ad_offset;      \/* Offset in abbrev section. *\/$/;"	m	struct:_Dwarf_AttrDef
-add	net/lwip/include/lwip/netifapi.h	/^    } add;$/;"	m	union:netifapi_msg_msg::__anon24	typeref:struct:netifapi_msg_msg::__anon24::__anon25
+add	net/lwip/include/lwip/netifapi.h	/^    } add;$/;"	m	union:netifapi_msg_msg::__anon46	typeref:struct:netifapi_msg_msg::__anon46::__anon47
 addci	net/lwip/netif/ppp/fsm.h	/^  void (*addci)(fsm*, u_char*, int*);               \/* Add our Configuration Information *\/$/;"	m	struct:fsm_callbacks
 addr	kern/e1000.c	/^	uint64_t addr;       \/* Address of the descriptor's data buffer *\/$/;"	m	struct:rx_desc	file:
 addr	kern/e1000.c	/^	uint64_t addr;$/;"	m	struct:tx_desc	file:
@@ -4725,7 +4729,7 @@ altflag	vmm/guest/obj/user/vmm.asm	/^		altflag = 0;$/;"	d
 altflag	vmm/guest/obj/user/writemotd.asm	/^			altflag = 1;$/;"	d
 altflag	vmm/guest/obj/user/writemotd.asm	/^		altflag = 0;$/;"	d
 announce	net/testinput.c	/^announce(void)$/;"	f	file:
-aout_sym	kern/multiboot.h	/^     aout_symbol_table_t aout_sym;$/;"	m	union:multiboot_info::__anon44
+aout_sym	kern/multiboot.h	/^     aout_symbol_table_t aout_sym;$/;"	m	union:multiboot_info::__anon12
 aout_symbol_table	kern/multiboot.h	/^ typedef struct aout_symbol_table$/;"	s
 aout_symbol_table_t	kern/multiboot.h	/^ } aout_symbol_table_t;$/;"	t	typeref:struct:aout_symbol_table
 ap	obj/net/ns.asm	/^  ap = (u8_t *)&s_addr;$/;"	d
@@ -4741,13 +4745,13 @@ ap	vmm/guest/obj/user/httpd.asm	/^  ap = (u8_t *)&s_addr;$/;"	d
 api_msg	net/lwip/include/lwip/api_msg.h	/^struct api_msg {$/;"	s
 api_msg_msg	net/lwip/include/lwip/api_msg.h	/^struct api_msg_msg {$/;"	s
 apicid	kern/mpconfig.c	/^	uint8_t apicid;                 \/\/ local APIC id$/;"	m	struct:mpproc	file:
-apiflags	net/lwip/include/lwip/api_msg.h	/^      u8_t apiflags;$/;"	m	struct:api_msg_msg::__anon27::__anon31
-apimsg	net/lwip/include/lwip/tcpip.h	/^    struct api_msg *apimsg;$/;"	m	union:tcpip_msg::__anon38	typeref:struct:tcpip_msg::__anon38::api_msg
+apiflags	net/lwip/include/lwip/api_msg.h	/^      u8_t apiflags;$/;"	m	struct:api_msg_msg::__anon38::__anon42
+apimsg	net/lwip/include/lwip/tcpip.h	/^    struct api_msg *apimsg;$/;"	m	union:tcpip_msg::__anon51	typeref:struct:tcpip_msg::__anon51::api_msg
 application	obj/kern/kernel.asm	/^	application = encode & 0xf0;$/;"	d
 application	vmm/guest/obj/kern/kernel.asm	/^	application = encode & 0xf0;$/;"	d
 arg	net/lwip/core/dns.c	/^  void *arg;$/;"	m	struct:dns_table_entry	file:
 arg	net/lwip/include/lwip/sys.h	/^  void *arg;$/;"	m	struct:sys_timeo
-arg	net/lwip/include/lwip/tcpip.h	/^      void *arg;$/;"	m	struct:tcpip_msg::__anon38::__anon41
+arg	net/lwip/include/lwip/tcpip.h	/^      void *arg;$/;"	m	struct:tcpip_msg::__anon51::__anon54
 arg	net/lwip/jos/arch/sys_arch.c	/^    void *arg;$/;"	m	struct:lwip_thread	file:
 arg	obj/net/ns.asm	/^      arg = tmptimeout->arg;$/;"	d
 arg	obj/net/ns.asm	/^  arg = arg;$/;"	d
@@ -4845,6 +4849,7 @@ arp_table	net/lwip/netif/etharp.c	/^static struct etharp_entry arp_table[ARP_TAB
 arp_timer	net/lwip/api/tcpip.c	/^arp_timer(void *arg)$/;"	f	file:
 arptree_root	net/lwip/core/snmp/mib2.c	/^struct mib_list_rootnode arptree_root = {$/;"	v	typeref:struct:mib_list_rootnode
 asm_vmrun	vmm/vmx.c	/^void asm_vmrun(struct Trapframe *tf) {$/;"	f
+asm_vmrun_1	vmm/vmx.c	/^void asm_vmrun_1(struct Trapframe *tf) {$/;"	f
 asn_type	net/lwip/include/lwip/snmp_structs.h	/^  u8_t asn_type;$/;"	m	struct:obj_def
 assert	inc/assert.h	14;"	d
 asyncmap	net/lwip/netif/ppp/lcp.h	/^    u32_t asyncmap;              \/* Value of async map *\/$/;"	m	struct:lcp_options
@@ -4926,10 +4931,10 @@ avRandomized	net/lwip/netif/ppp/randm.c	/^static int  avRandomized = 0;       \/
 avail	net/lwip/include/lwip/stats.h	/^  mem_size_t avail;$/;"	m	struct:stats_mem
 available	obj/net/ns.asm	/^  available = tcp_sndbuf(conn->pcb.tcp);$/;"	d
 available	vmm/guest/obj/net/ns.asm	/^  available = tcp_sndbuf(conn->pcb.tcp);$/;"	d
-b	net/lwip/include/lwip/api_msg.h	/^    struct netbuf *b;$/;"	m	union:api_msg_msg::__anon27	typeref:struct:api_msg_msg::__anon27::netbuf
+b	net/lwip/include/lwip/api_msg.h	/^    struct netbuf *b;$/;"	m	union:api_msg_msg::__anon38	typeref:struct:api_msg_msg::__anon38::netbuf
 b	obj/kern/kernel.asm	/^		b = *src++;$/;"	d
 b	vmm/guest/obj/kern/kernel.asm	/^		b = *src++;$/;"	d
-backlog	net/lwip/include/lwip/api_msg.h	/^      u8_t backlog;$/;"	m	struct:api_msg_msg::__anon27::__anon34
+backlog	net/lwip/include/lwip/api_msg.h	/^      u8_t backlog;$/;"	m	struct:api_msg_msg::__anon38::__anon45
 backlog	net/lwip/include/lwip/tcp.h	/^  u8_t backlog;$/;"	m	struct:tcp_pcb_listen
 backlog	obj/net/ns.asm	/^    backlog = 0;$/;"	d
 backlog	obj/net/ns.asm	/^    backlog = 0xff;$/;"	d
@@ -5228,7 +5233,7 @@ basic_block	obj/kern/kernel.asm	/^			basic_block = 0;$/;"	d
 basic_block	vmm/guest/obj/kern/kernel.asm	/^				basic_block = 0;$/;"	d
 basic_block	vmm/guest/obj/kern/kernel.asm	/^				basic_block = 1;$/;"	d
 basic_block	vmm/guest/obj/kern/kernel.asm	/^			basic_block = 0;$/;"	d
-bc	net/lwip/include/lwip/api_msg.h	/^    } bc;$/;"	m	union:api_msg_msg::__anon27	typeref:struct:api_msg_msg::__anon27::__anon29
+bc	net/lwip/include/lwip/api_msg.h	/^    } bc;$/;"	m	union:api_msg_msg::__anon38	typeref:struct:api_msg_msg::__anon38::__anon40
 bc_init	fs/bc.c	/^bc_init(void)$/;"	f
 bc_pgfault	fs/bc.c	/^bc_pgfault(struct UTrapframe *utf)$/;"	f	file:
 bda	obj/kern/kernel.asm	/^	bda = (uint8_t *) KADDR(0x40 << 4);$/;"	d
@@ -5345,8 +5350,8 @@ bitmap	vmm/guest/obj/fs/fs.asm	/^	bitmap = diskaddr(2);$/;"	d
 bitmap_setup	vmm/vmx.c	/^bitmap_setup(struct VmxGuestInfo *ginfo) {$/;"	f
 bits	obj/fs/fs.asm	/^	bits = (uint32_t*) PGSIZE;$/;"	d
 bits	vmm/guest/obj/fs/fs.asm	/^	bits = (uint32_t*) PGSIZE;$/;"	d
-bl_data	kern/dwarf.h	/^	void      *bl_data;$/;"	m	struct:__anon55
-bl_len	kern/dwarf.h	/^	uint64_t   bl_len;$/;"	m	struct:__anon55
+bl_data	kern/dwarf.h	/^	void      *bl_data;$/;"	m	struct:__anon20
+bl_len	kern/dwarf.h	/^	uint64_t   bl_len;$/;"	m	struct:__anon20
 block_is_free	fs/fs.c	/^block_is_free(uint32_t blockno)$/;"	f
 blockof	fs/fsformat.c	/^blockof(void *pos)$/;"	f
 bn	obj/fs/fs.asm	/^		bn = MIN(BLKSIZE - pos % BLKSIZE, offset + count - pos);$/;"	d
@@ -5393,13 +5398,13 @@ bootstacktop	kern/entry.S	/^bootstacktop:$/;"	l
 breakpoint	inc/x86.h	/^breakpoint(void)$/;"	f
 bss	user/init.c	/^char bss[6000];$/;"	v
 bss_end_addr	kern/multiboot.h	/^   uint32_t bss_end_addr;$/;"	m	struct:multiboot_header
-buf	kern/console.c	/^	uint8_t buf[CONSBUFSIZE];$/;"	m	struct:__anon48	file:
+buf	kern/console.c	/^	uint8_t buf[CONSBUFSIZE];$/;"	m	struct:__anon11	file:
 buf	lib/fprintf.c	/^	char buf[256];$/;"	m	struct:printbuf	file:
 buf	lib/printf.c	/^    char buf[256];$/;"	m	struct:printbuf	file:
 buf	lib/printfmt.c	/^	char *buf;$/;"	m	struct:sprintbuf	file:
 buf	lib/readline.c	/^static char buf[BUFLEN];$/;"	v	file:
 buf	net/lwip/core/ipv4/ip_frag.c	/^static u8_t buf[LWIP_MEM_ALIGN_SIZE(IP_FRAG_MAX_MTU)];$/;"	v	file:
-buf	net/lwip/netif/ppp/md5.h	/^  u32_t buf[4];             \/* scratch buffer *\/$/;"	m	struct:__anon20
+buf	net/lwip/netif/ppp/md5.h	/^  u32_t buf[4];             \/* scratch buffer *\/$/;"	m	struct:__anon32
 buf	obj/fs/fs.asm	/^	buf = vbuf;$/;"	d
 buf	obj/kern/kernel.asm	/^		buf = readline("K> ");$/;"	d
 buf	obj/net/ns.asm	/^	buf = vbuf;$/;"	d
@@ -5668,6 +5673,10 @@ c	vmm/guest/obj/user/vmm.asm	/^	c = *str++;$/;"	d
 c	vmm/guest/obj/user/vmm.asm	/^	c = ROUNDDOWN(v, PGSIZE);$/;"	d
 c	vmm/guest/obj/user/writemotd.asm	/^		c = (c<<24)|(c<<16)|(c<<8)|c;$/;"	d
 c	vmm/guest/obj/user/writemotd.asm	/^	c = *str++;$/;"	d
+cache2vmcs_ctl_guest	vmm/vmexits.c	/^cache2vmcs_ctl_guest(struct Vmcs *cache)$/;"	f
+cache2vmcs_ctl_host	vmm/vmexits.c	/^cache2vmcs_ctl_host(struct Vmcs *cache)$/;"	f
+cache2vmcs_guest	vmm/vmexits.c	/^cache2vmcs_guest(struct Vmcs *cache)$/;"	f
+cache2vmcs_host	vmm/vmexits.c	/^cache2vmcs_host(struct Vmcs *cache)$/;"	f
 cachehit	net/lwip/include/lwip/stats.h	/^  STAT_COUNTER cachehit;$/;"	m	struct:stats_proto
 call	lib/pfentry.S	/^call *%rax$/;"	l
 call	obj/fs/fs.asm	/^call *%rax$/;"	l
@@ -5699,14 +5708,14 @@ call	vmm/guest/obj/user/testshell.asm	/^call *%rax$/;"	l
 callback	net/lwip/include/lwip/api.h	/^  netconn_callback callback;$/;"	m	struct:netconn
 callbacks	net/lwip/netif/ppp/fsm.h	/^  struct fsm_callbacks* callbacks; \/* Callback routines *\/$/;"	m	struct:fsm	typeref:struct:fsm::fsm_callbacks
 cat	user/cat.c	/^cat(int f, char *s)$/;"	f
-cb	net/lwip/include/lwip/tcpip.h	/^    } cb;$/;"	m	union:tcpip_msg::__anon38	typeref:struct:tcpip_msg::__anon38::__anon40
+cb	net/lwip/include/lwip/tcpip.h	/^    } cb;$/;"	m	union:tcpip_msg::__anon51	typeref:struct:tcpip_msg::__anon51::__anon53
 cfa	obj/kern/kernel.asm	/^				cfa = (uint64_t)rbp + cfa_rule->dw_offset;$/;"	d
 cfa	obj/kern/kernel.asm	/^				cfa = rsp + cfa_rule->dw_offset;$/;"	d
 cfa	obj/kern/kernel.asm	/^	cfa = dbg->dbg_frame_cfa_value;$/;"	d
 cfa	vmm/guest/obj/kern/kernel.asm	/^				cfa = (uint64_t)rbp + cfa_rule->dw_offset;$/;"	d
 cfa	vmm/guest/obj/kern/kernel.asm	/^				cfa = rsp + cfa_rule->dw_offset;$/;"	d
 cfa	vmm/guest/obj/kern/kernel.asm	/^	cfa = dbg->dbg_frame_cfa_value;$/;"	d
-cfa_rule	kern/dwarf.h	/^	Dwarf_Regtable_Entry cfa_rule;$/;"	m	struct:__anon52
+cfa_rule	kern/dwarf.h	/^	Dwarf_Regtable_Entry cfa_rule;$/;"	m	struct:__anon17
 cflag	net/lwip/netif/ppp/ipcp.h	/^  u_char  cflag;             \/* VJ slot compression flag. *\/$/;"	m	struct:ipcp_options
 cga_init	kern/console.c	/^cga_init(void)$/;"	f	file:
 cga_putc	kern/console.c	/^cga_putc(int c)$/;"	f	file:
@@ -6117,7 +6126,7 @@ comlen	net/lwip/include/lwip/snmp_msg.h	/^  u16_t comlen;$/;"	m	struct:snmp_trap
 comlenlen	net/lwip/include/lwip/snmp_msg.h	/^  u8_t comlenlen;$/;"	m	struct:snmp_resp_header_lengths
 comlenlen	net/lwip/include/lwip/snmp_msg.h	/^  u8_t comlenlen;$/;"	m	struct:snmp_trap_header_lengths
 commands	kern/monitor.c	/^static struct Command commands[] = {$/;"	v	typeref:struct:Command	file:
-common	net/lwip/include/lwip/netifapi.h	/^    } common;$/;"	m	union:netifapi_msg_msg::__anon24	typeref:struct:netifapi_msg_msg::__anon24::__anon26
+common	net/lwip/include/lwip/netifapi.h	/^    } common;$/;"	m	union:netifapi_msg_msg::__anon46	typeref:struct:netifapi_msg_msg::__anon46::__anon48
 community	net/lwip/include/lwip/snmp_msg.h	/^  u8_t community[SNMP_COMMUNITY_STR_LEN + 1];$/;"	m	struct:snmp_msg_pstat
 compressSlot	net/lwip/netif/ppp/vj.h	/^  u_char compressSlot;             \/* Flag indicating OK to compress slot ID. *\/$/;"	m	struct:vjcompress
 conf	obj/kern/kernel.asm	/^	conf = (struct mpconf *) KADDR(mp->physaddr);$/;"	d
@@ -6143,7 +6152,7 @@ connect	lib/sockets.c	/^connect(int s, const struct sockaddr *name, socklen_t na
 connect	net/lwip/include/lwip/sockets.h	331;"	d
 connect_time_expired	net/lwip/netif/ppp/auth.c	/^connect_time_expired(void *arg)$/;"	f	file:
 connected	net/lwip/include/lwip/tcp.h	/^  err_t (* connected)(void *arg, struct tcp_pcb *pcb, err_t err);$/;"	m	struct:tcp_pcb
-cons	kern/console.c	/^} cons;$/;"	v	typeref:struct:__anon48	file:
+cons	kern/console.c	/^} cons;$/;"	v	typeref:struct:__anon11	file:
 cons_getc	kern/console.c	/^cons_getc(void)$/;"	f
 cons_init	kern/console.c	/^cons_init(void)$/;"	f
 cons_intr	kern/console.c	/^cons_intr(int (*proc)(void))$/;"	f	file:
@@ -6301,7 +6310,7 @@ count	obj/net/ns.asm	/^  count = 0;$/;"	d
 count	vmm/guest/obj/fs/fs.asm	/^	count = MIN(count, f->f_size - offset);$/;"	d
 count	vmm/guest/obj/net/ns.asm	/^      count = pbuf_free(seg->p);$/;"	d
 count	vmm/guest/obj/net/ns.asm	/^  count = 0;$/;"	d
-counter	net/lwip/jos/arch/sys_arch.c	/^	    uint16_t counter;$/;"	m	struct:sys_sem_entry::__anon11::__anon12	file:
+counter	net/lwip/jos/arch/sys_arch.c	/^	    uint16_t counter;$/;"	m	struct:sys_sem_entry::__anon26::__anon27	file:
 counter	user/stresssched.c	/^volatile int counter;$/;"	v
 cp	obj/kern/kernel.asm	/^		cp = (uint16_t*) (KERNBASE + MONO_BUF);$/;"	d
 cp	obj/kern/kernel.asm	/^	cp = (uint16_t*) (KERNBASE + CGA_BUF);$/;"	d
@@ -6346,12 +6355,12 @@ cseg	vmm/guest/obj/net/ns.asm	/^  cseg = memp_malloc(MEMP_TCP_SEG);$/;"	d
 cso	kern/e1000.c	/^	uint8_t cso;$/;"	m	struct:tx_desc	file:
 css	kern/e1000.c	/^	uint8_t css;$/;"	m	struct:tx_desc	file:
 cstate	net/lwip/netif/ppp/vj.h	/^struct cstate {$/;"	s
-csu_hdr	net/lwip/netif/ppp/vj.h	/^    char csu_hdr[MAX_HDR];$/;"	m	union:cstate::__anon18
-csu_ip	net/lwip/netif/ppp/vj.h	/^    struct ip csu_ip;     \/* ip\/tcp hdr from most recent packet *\/$/;"	m	union:cstate::__anon18	typeref:struct:cstate::__anon18::ip
+csu_hdr	net/lwip/netif/ppp/vj.h	/^    char csu_hdr[MAX_HDR];$/;"	m	union:cstate::__anon31
+csu_ip	net/lwip/netif/ppp/vj.h	/^    struct ip csu_ip;     \/* ip\/tcp hdr from most recent packet *\/$/;"	m	union:cstate::__anon31	typeref:struct:cstate::__anon31::ip
 csum	kern/e1000.c	/^	uint16_t csum;       \/* Packet checksum *\/$/;"	m	struct:rx_desc	file:
 ctime	net/lwip/netif/etharp.c	/^  u8_t ctime;$/;"	m	struct:etharp_entry	file:
 ctlmap	kern/console.c	/^static uint8_t ctlmap[256] =$/;"	v	file:
-ctx	net/lwip/include/lwip/tcpip.h	/^      void *ctx;$/;"	m	struct:tcpip_msg::__anon38::__anon40
+ctx	net/lwip/include/lwip/tcpip.h	/^      void *ctx;$/;"	m	struct:tcpip_msg::__anon51::__anon53
 cu	obj/kern/kernel.asm	/^	cu = die->cu_header;$/;"	d
 cu	vmm/guest/obj/kern/kernel.asm	/^	cu = die->cu_header;$/;"	d
 cu_die	kern/dwarf.h	/^	struct _Dwarf_Die *cu_die;$/;"	m	struct:_Dwarf_Die	typeref:struct:_Dwarf_Die::_Dwarf_Die
@@ -6370,7 +6379,7 @@ cur_tc	vmm/guest/obj/net/ns.asm	/^    cur_tc = next_tc;$/;"	d
 cur_val	obj/kern/kernel.asm	/^		cur_val = entry->msr_value;$/;"	d
 cur_val	vmm/guest/obj/kern/kernel.asm	/^		cur_val = entry->msr_value;$/;"	d
 curarg	inc/args.h	/^    const char *curarg;$/;"	m	struct:Argstate
-curenv	kern/env.h	14;"	d
+curenv	kern/env.h	13;"	d
 curenv	obj/kern/kernel.asm	/^			curenv = NULL;$/;"	d
 curenv	obj/kern/kernel.asm	/^		curenv = NULL;$/;"	d
 curenv	obj/kern/kernel.asm	/^		curenv = e;$/;"	d
@@ -6446,12 +6455,12 @@ d	vmm/guest/obj/user/writemotd.asm	/^	d = dst;$/;"	d
 data	obj/kern/kernel.asm	/^		data = (shift & E0ESC ? data : data & 0x7F);$/;"	d
 data	obj/kern/kernel.asm	/^	data = inb(KBDATAP);$/;"	d
 data	obj/net/ns.asm	/^  data = (struct lwip_setgetsockopt_data*)arg;$/;"	d
-data	user/init.c	/^} data = {$/;"	v	typeref:struct:__anon10
+data	user/init.c	/^} data = {$/;"	v	typeref:struct:__anon57
 data	vmm/guest/obj/kern/kernel.asm	/^		data = (shift & E0ESC ? data : data & 0x7F);$/;"	d
 data	vmm/guest/obj/kern/kernel.asm	/^	data = inb(KBDATAP);$/;"	d
 data	vmm/guest/obj/net/ns.asm	/^  data = (struct lwip_setgetsockopt_data*)arg;$/;"	d
 datagram_len	net/lwip/include/ipv4/lwip/ip_frag.h	/^  u16_t datagram_len;$/;"	m	struct:ip_reassdata
-dataptr	net/lwip/include/lwip/api_msg.h	/^      const void *dataptr;$/;"	m	struct:api_msg_msg::__anon27::__anon31
+dataptr	net/lwip/include/lwip/api_msg.h	/^      const void *dataptr;$/;"	m	struct:api_msg_msg::__anon38::__anon42
 dataptr	net/lwip/include/lwip/tcp.h	/^  void *dataptr;           \/* pointer to the TCP data in the pbuf *\/$/;"	m	struct:tcp_seg
 dataptr	obj/net/ns.asm	/^  dataptr = (u8_t*)conn->write_msg->msg.w.dataptr + conn->write_offset;$/;"	d
 dataptr	vmm/guest/obj/net/ns.asm	/^  dataptr = (u8_t*)conn->write_msg->msg.w.dataptr + conn->write_offset;$/;"	d
@@ -6856,7 +6865,7 @@ dig	vmm/guest/obj/user/vmm.asm	/^			dig = *s - 'a' + 10;$/;"	d
 dig	vmm/guest/obj/user/writemotd.asm	/^			dig = *s - '0';$/;"	d
 dig	vmm/guest/obj/user/writemotd.asm	/^			dig = *s - 'A' + 10;$/;"	d
 dig	vmm/guest/obj/user/writemotd.asm	/^			dig = *s - 'a' + 10;$/;"	d
-digest	net/lwip/netif/ppp/md5.h	/^  unsigned char digest[16]; \/* actual digest after MD5Final call *\/$/;"	m	struct:__anon20
+digest	net/lwip/netif/ppp/md5.h	/^  unsigned char digest[16]; \/* actual digest after MD5Final call *\/$/;"	m	struct:__anon32
 dip	net/lwip/core/snmp/msg_out.c	/^  struct ip_addr dip;$/;"	m	struct:snmp_trap_dst	typeref:struct:snmp_trap_dst::ip_addr	file:
 dip	net/lwip/include/lwip/snmp_msg.h	/^  struct ip_addr dip;$/;"	m	struct:snmp_msg_trap	typeref:struct:snmp_msg_trap::ip_addr
 dir	obj/fs/fs.asm	/^		dir = f;$/;"	d
@@ -7007,15 +7016,15 @@ dupacks	net/lwip/include/lwip/tcp.h	/^  u8_t dupacks;$/;"	m	struct:tcp_pcb
 duppage	lib/fork.c	/^duppage(envid_t envid, unsigned pn)$/;"	f	file:
 duppage	user/dumbfork.c	/^duppage(envid_t dstenv, void *addr)$/;"	f
 during	user/faultregs.c	/^static struct regs before, during, after;$/;"	v	typeref:struct:	file:
-dw_block_ptr	kern/dwarf.h	/^	Dwarf_Ptr       dw_block_ptr;$/;"	m	struct:__anon49
-dw_offset	kern/dwarf.h	/^	Dwarf_Addr      dw_offset;$/;"	m	struct:__anon51
-dw_offset_or_block_len	kern/dwarf.h	/^	Dwarf_Unsigned  dw_offset_or_block_len;$/;"	m	struct:__anon49
-dw_offset_relevant	kern/dwarf.h	/^	Dwarf_Small     dw_offset_relevant;$/;"	m	struct:__anon49
-dw_offset_relevant	kern/dwarf.h	/^	Dwarf_Small     dw_offset_relevant;$/;"	m	struct:__anon51
-dw_regnum	kern/dwarf.h	/^	Dwarf_Half      dw_regnum;$/;"	m	struct:__anon49
-dw_regnum	kern/dwarf.h	/^	Dwarf_Half      dw_regnum;$/;"	m	struct:__anon51
-dw_value_type	kern/dwarf.h	/^	Dwarf_Small     dw_value_type;$/;"	m	struct:__anon49
-dw_value_type	kern/dwarf.h	/^	Dwarf_Small     dw_value_type;$/;"	m	struct:__anon51
+dw_block_ptr	kern/dwarf.h	/^	Dwarf_Ptr       dw_block_ptr;$/;"	m	struct:__anon14
+dw_offset	kern/dwarf.h	/^	Dwarf_Addr      dw_offset;$/;"	m	struct:__anon16
+dw_offset_or_block_len	kern/dwarf.h	/^	Dwarf_Unsigned  dw_offset_or_block_len;$/;"	m	struct:__anon14
+dw_offset_relevant	kern/dwarf.h	/^	Dwarf_Small     dw_offset_relevant;$/;"	m	struct:__anon14
+dw_offset_relevant	kern/dwarf.h	/^	Dwarf_Small     dw_offset_relevant;$/;"	m	struct:__anon16
+dw_regnum	kern/dwarf.h	/^	Dwarf_Half      dw_regnum;$/;"	m	struct:__anon14
+dw_regnum	kern/dwarf.h	/^	Dwarf_Half      dw_regnum;$/;"	m	struct:__anon16
+dw_value_type	kern/dwarf.h	/^	Dwarf_Small     dw_value_type;$/;"	m	struct:__anon14
+dw_value_type	kern/dwarf.h	/^	Dwarf_Small     dw_value_type;$/;"	m	struct:__anon16
 dwarf_child	kern/libdwarf_rw.c	/^dwarf_child(Dwarf_Debug dbg, Dwarf_CU *cu, Dwarf_Die *die, Dwarf_Die *ret_die)$/;"	f
 dwarf_get_fde_at_pc	kern/libdwarf_frame.c	/^dwarf_get_fde_at_pc(Dwarf_Debug dbg, Dwarf_Addr pc,$/;"	f
 dwarf_get_fde_info_for_all_regs	kern/libdwarf_frame.c	/^dwarf_get_fde_info_for_all_regs(Dwarf_Debug dbg, Dwarf_Fde fde,$/;"	f
@@ -7147,7 +7156,7 @@ elf	vmm/guest/obj/user/spawnhello.asm	/^	elf = (struct Elf*) elf_buf;$/;"	d
 elf	vmm/guest/obj/user/testpteshare.asm	/^	elf = (struct Elf*) elf_buf;$/;"	d
 elf	vmm/guest/obj/user/testshell.asm	/^	elf = (struct Elf*) elf_buf;$/;"	d
 elf	vmm/guest/obj/user/vmm.asm	/^	elf = (struct Elf *)binary;$/;"	d
-elf_sec	kern/multiboot.h	/^     elf_section_header_table_t elf_sec;$/;"	m	union:multiboot_info::__anon44
+elf_sec	kern/multiboot.h	/^     elf_section_header_table_t elf_sec;$/;"	m	union:multiboot_info::__anon12
 elf_section_header_table	kern/multiboot.h	/^ typedef struct elf_section_header_table$/;"	s
 elf_section_header_table_t	kern/multiboot.h	/^ } elf_section_header_table_t;$/;"	t	typeref:struct:elf_section_header_table
 empty	obj/net/ns.asm	/^      empty = i;$/;"	d
@@ -7329,7 +7338,16 @@ epilogue_begin	obj/kern/kernel.asm	/^			epilogue_begin = 0;$/;"	d
 epilogue_begin	vmm/guest/obj/kern/kernel.asm	/^				epilogue_begin = 0;$/;"	d
 epilogue_begin	vmm/guest/obj/kern/kernel.asm	/^				epilogue_begin = 1;$/;"	d
 epilogue_begin	vmm/guest/obj/kern/kernel.asm	/^			epilogue_begin = 0;$/;"	d
+ept_01	obj/kern/kernel.asm	/^	ept_01 = (pml4e_t *)(~0xfff & (uint64_t)KADDR((physaddr_t)vmcs01->vmcs_64bit_control_eptptr));$/;"	d
+ept_01	vmm/guest/obj/kern/kernel.asm	/^	ept_01 = (pml4e_t *)(~0xfff & (uint64_t)KADDR((physaddr_t)vmcs01->vmcs_64bit_control_eptptr));$/;"	d
+ept_02	obj/kern/kernel.asm	/^	ept_02 = ept_construct(ept_01, ept_12);$/;"	d
+ept_02	obj/kern/kernel.asm	/^	ept_02 = page2kva(p_ept02);$/;"	d
+ept_02	vmm/guest/obj/kern/kernel.asm	/^	ept_02 = ept_construct(ept_01, ept_12);$/;"	d
+ept_02	vmm/guest/obj/kern/kernel.asm	/^	ept_02 = page2kva(p_ept02);$/;"	d
+ept_12_L1_gpa	obj/kern/kernel.asm	/^	ept_12_L1_gpa = (pml4e_t *)(~0xfff & (uint64_t)vmcs12->vmcs_64bit_control_eptptr);$/;"	d
+ept_12_L1_gpa	vmm/guest/obj/kern/kernel.asm	/^	ept_12_L1_gpa = (pml4e_t *)(~0xfff & (uint64_t)vmcs12->vmcs_64bit_control_eptptr);$/;"	d
 ept_alloc_static	vmm/ept.c	/^int ept_alloc_static(epte_t *eptrt, struct VmxGuestInfo *ginfo) {$/;"	f
+ept_construct	vmm/vmexits.c	/^ept_construct(pml4e_t *ept_01, pml4e_t *ept_12)$/;"	f
 ept_gpa2hva	vmm/ept.c	/^void ept_gpa2hva(epte_t* eptrt, void *gpa, void **hva) {$/;"	f
 ept_lookup_gpa	vmm/ept.c	/^static int ept_lookup_gpa(epte_t* eptrt, void *gpa, $/;"	f	file:
 ept_map_hva2gpa	vmm/ept.c	/^int ept_map_hva2gpa(epte_t* eptrt, void* hva, void* gpa, int perm, $/;"	f
@@ -7784,6 +7802,7 @@ erridxlen	net/lwip/include/lwip/snmp_msg.h	/^  u16_t erridxlen;$/;"	m	struct:snm
 erridxlenlen	net/lwip/include/lwip/snmp_msg.h	/^  u8_t erridxlenlen;$/;"	m	struct:snmp_resp_header_lengths
 errno	net/serv.c	/^int errno;$/;"	v
 error	lib/fprintf.c	/^	int error;	\/\/ first error that occurred$/;"	m	struct:printbuf	file:
+error	obj/kern/kernel.asm	/^		error = vmclear(PADDR(e->env_vmxinfo.vmcs));$/;"	d
 error	obj/kern/kernel.asm	/^		error = vmptrld(PADDR(e->env_vmxinfo.vmcs));$/;"	d
 error	obj/kern/kernel.asm	/^		error = vmptrld(vmcs_phy_addr);$/;"	d
 error	obj/kern/kernel.asm	/^	error = vmxon( (physaddr_t) page2pa( p_vmxon_region ) );$/;"	d
@@ -7815,7 +7834,7 @@ errors	kern/e1000.c	/^	uint8_t errors;      \/* Descriptor Errors *\/$/;"	m	stru
 errors	user/httpd.c	/^struct error_messages errors[] = {$/;"	v	typeref:struct:error_messages
 errstatlen	net/lwip/include/lwip/snmp_msg.h	/^  u16_t errstatlen;$/;"	m	struct:snmp_resp_header_lengths
 errstatlenlen	net/lwip/include/lwip/snmp_msg.h	/^  u8_t errstatlenlen;$/;"	m	struct:snmp_resp_header_lengths
-errtfunc	net/lwip/include/lwip/netifapi.h	/^      err_t (* errtfunc)(struct netif *netif);$/;"	m	struct:netifapi_msg_msg::__anon24::__anon26
+errtfunc	net/lwip/include/lwip/netifapi.h	/^      err_t (* errtfunc)(struct netif *netif);$/;"	m	struct:netifapi_msg_msg::__anon46::__anon48
 esp	user/faultregs.c	/^	uintptr_t esp;$/;"	m	struct:regs	file:
 eth_addr	net/lwip/include/netif/etharp.h	/^struct eth_addr {$/;"	s
 eth_addr_cmp	net/lwip/include/netif/etharp.h	166;"	d
@@ -7907,7 +7926,7 @@ extern	vmm/guest/obj/net/testoutput.asm	/^extern union Nsipc nsipcbuf;$/;"	l
 extmem	obj/kern/kernel.asm	/^		extmem = (nvram_read(NVRAM_EXTLO) * 1024);$/;"	d
 extmem	vmm/guest/obj/kern/kernel.asm	/^		extmem = (nvram_read(NVRAM_EXTLO) * 1024);$/;"	d
 f	fs/fsformat.c	/^	struct File *f;$/;"	m	struct:Dir	typeref:struct:Dir::File	file:
-f	net/lwip/include/lwip/tcpip.h	/^      void (*f)(void *ctx);$/;"	m	struct:tcpip_msg::__anon38::__anon40
+f	net/lwip/include/lwip/tcpip.h	/^      void (*f)(void *ctx);$/;"	m	struct:tcpip_msg::__anon51::__anon53
 f	obj/fs/fs.asm	/^		f = (struct File*) blk;$/;"	d
 f	obj/fs/fs.asm	/^	f = &super->s_root;$/;"	d
 f	obj/fs/fs.asm	/^	f = (struct File*) blk;$/;"	d
@@ -7925,7 +7944,7 @@ f_type	inc/fs.h	/^	uint32_t f_type;		\/\/ file type$/;"	m	struct:File
 fail_cleanup	obj/kern/kernel.asm	/^fail_cleanup:$/;"	l
 fail_cleanup	vmm/guest/obj/kern/kernel.asm	/^fail_cleanup:$/;"	l
 failed	boot/boot.S	/^failed:$/;"	l
-false	inc/types.h	/^enum { false, true };$/;"	e	enum:__anon4
+false	inc/types.h	/^enum { false, true };$/;"	e	enum:__anon7
 fault_va	obj/kern/kernel.asm	/^	fault_va = rcr2();$/;"	d
 fault_va	vmm/guest/obj/kern/kernel.asm	/^	fault_va = rcr2();$/;"	d
 fcstab	net/lwip/netif/ppp/ppp.c	/^static const u_short fcstab[256] = {$/;"	v	file:
@@ -8143,13 +8162,13 @@ fd_dest	vmm/guest/obj/user/testtime.asm	/^	fd_dest = open(dest, O_CREAT | O_WRON
 fd_dest	vmm/guest/obj/user/vmm.asm	/^	fd_dest = open(dest, O_CREAT | O_WRONLY);$/;"	d
 fd_dest	vmm/guest/obj/user/writemotd.asm	/^	fd_dest = open(dest, O_CREAT | O_WRONLY);$/;"	d
 fd_dev_id	inc/fd.h	/^	int fd_dev_id;$/;"	m	struct:Fd
-fd_file	inc/fd.h	/^		struct FdFile fd_file;$/;"	m	union:Fd::__anon2	typeref:struct:Fd::__anon2::FdFile
+fd_file	inc/fd.h	/^		struct FdFile fd_file;$/;"	m	union:Fd::__anon4	typeref:struct:Fd::__anon4::FdFile
 fd_lookup	lib/fd.c	/^fd_lookup(int fdnum, struct Fd **fd_store)$/;"	f
 fd_offset	inc/fd.h	/^	off_t fd_offset;$/;"	m	struct:Fd
 fd_omode	inc/fd.h	/^	int fd_omode;$/;"	m	struct:Fd
 fd_set	net/lwip/include/lwip/sockets.h	/^        } fd_set;$/;"	t	typeref:struct:fd_set
 fd_set	net/lwip/include/lwip/sockets.h	/^  typedef struct fd_set {$/;"	s
-fd_sock	inc/fd.h	/^		struct FdSock fd_sock;$/;"	m	union:Fd::__anon2	typeref:struct:Fd::__anon2::FdSock
+fd_sock	inc/fd.h	/^		struct FdSock fd_sock;$/;"	m	union:Fd::__anon4	typeref:struct:Fd::__anon4::FdSock
 fd_src	obj/fs/fs.asm	/^	fd_src = open(src, O_RDONLY);$/;"	d
 fd_src	obj/net/ns.asm	/^	fd_src = open(src, O_RDONLY);$/;"	d
 fd_src	obj/net/testinput.asm	/^	fd_src = open(src, O_RDONLY);$/;"	d
@@ -8517,9 +8536,9 @@ gtrplenlen	net/lwip/include/lwip/snmp_msg.h	/^  u8_t gtrplenlen;$/;"	m	struct:sn
 guest	obj/user/vmm.asm	/^	guest = ret;$/;"	d
 guest	vmm/guest/obj/user/vmm.asm	/^	guest = ret;$/;"	d
 gw	net/lwip/include/lwip/netif.h	/^  struct ip_addr gw;$/;"	m	struct:netif	typeref:struct:netif::ip_addr
-gw	net/lwip/include/lwip/netifapi.h	/^      struct ip_addr *gw;$/;"	m	struct:netifapi_msg_msg::__anon24::__anon25	typeref:struct:netifapi_msg_msg::__anon24::__anon25::ip_addr
+gw	net/lwip/include/lwip/netifapi.h	/^      struct ip_addr *gw;$/;"	m	struct:netifapi_msg_msg::__anon46::__anon47	typeref:struct:netifapi_msg_msg::__anon46::__anon47::ip_addr
 h	net/lwip/include/lwip/sys.h	/^  sys_timeout_handler h;$/;"	m	struct:sys_timeo
-h	net/lwip/include/lwip/tcpip.h	/^      sys_timeout_handler h;$/;"	m	struct:tcpip_msg::__anon38::__anon41
+h	net/lwip/include/lwip/tcpip.h	/^      sys_timeout_handler h;$/;"	m	struct:tcpip_msg::__anon51::__anon54
 h	obj/net/ns.asm	/^      h   = tmptimeout->h;$/;"	d
 h	obj/net/ns.asm	/^      h = tmptimeout->h;$/;"	d
 h	vmm/guest/obj/net/ns.asm	/^      h   = tmptimeout->h;$/;"	d
@@ -8611,7 +8630,7 @@ hva_pg	obj/kern/kernel.asm	/^			hva_pg = page2kva(p);$/;"	d
 hva_pg	vmm/guest/obj/kern/kernel.asm	/^			hva_pg = page2kva(p);$/;"	d
 hwaddr	net/lwip/include/lwip/netif.h	/^  u8_t hwaddr[NETIF_MAX_HWADDR_LEN];$/;"	m	struct:netif
 hwaddr_len	net/lwip/include/lwip/netif.h	/^  u8_t hwaddr_len;$/;"	m	struct:netif
-i	net/lwip/netif/ppp/md5.h	/^  u32_t i[2];               \/* number of _bits_ handled mod 2^64 *\/$/;"	m	struct:__anon20
+i	net/lwip/netif/ppp/md5.h	/^  u32_t i[2];               \/* number of _bits_ handled mod 2^64 *\/$/;"	m	struct:__anon32
 i	obj/kern/kernel.asm	/^			i = conf->entry;$/;"	d
 i	obj/kern/kernel.asm	/^		i = NENV-1;$/;"	d
 i	obj/kern/kernel.asm	/^		i = curenv-envs;$/;"	d
@@ -8795,7 +8814,7 @@ illegal	net/lwip/include/lwip/stats.h	/^  STAT_COUNTER illegal;$/;"	m	struct:sta
 imcrp	kern/mpconfig.c	/^	uint8_t imcrp;$/;"	m	struct:mp	file:
 imr_interface	net/lwip/include/lwip/sockets.h	/^    struct in_addr imr_interface; \/* local IP address of interface *\/$/;"	m	struct:ip_mreq	typeref:struct:ip_mreq::in_addr
 imr_multiaddr	net/lwip/include/lwip/sockets.h	/^    struct in_addr imr_multiaddr; \/* IP multicast address of group *\/$/;"	m	struct:ip_mreq	typeref:struct:ip_mreq::in_addr
-in	net/lwip/netif/ppp/md5.h	/^  unsigned char in[64];     \/* input buffer *\/$/;"	m	struct:__anon20
+in	net/lwip/netif/ppp/md5.h	/^  unsigned char in[64];     \/* input buffer *\/$/;"	m	struct:__anon32
 inACCM	net/lwip/netif/ppp/ppp.c	/^  ext_accm inACCM;              \/* Async-Ctl-Char-Map for input. *\/$/;"	m	struct:PPPControl_s	file:
 inEscaped	net/lwip/netif/ppp/ppp.c	/^  char inEscaped;               \/* Escape next character. *\/$/;"	m	struct:PPPControl_s	file:
 inFCS	net/lwip/netif/ppp/ppp.c	/^  u16_t inFCS;                  \/* Input Frame Check Sequence value. *\/$/;"	m	struct:PPPControl_s	file:
@@ -8829,16 +8848,16 @@ inet_chksum_pseudo	net/lwip/core/ipv6/inet6.c	/^inet_chksum_pseudo(struct pbuf *
 inet_chksum_pseudo_partial	net/lwip/core/ipv4/inet_chksum.c	/^inet_chksum_pseudo_partial(struct pbuf *p,$/;"	f
 inet_ntoa	net/lwip/core/ipv4/inet.c	/^inet_ntoa(struct in_addr addr)$/;"	f
 inet_ntoa	net/lwip/netif/ppp/ipcp.c	200;"	d	file:
-init	net/lwip/include/lwip/netifapi.h	/^      err_t (* init) (struct netif *netif);$/;"	m	struct:netifapi_msg_msg::__anon24::__anon25
+init	net/lwip/include/lwip/netifapi.h	/^      err_t (* init) (struct netif *netif);$/;"	m	struct:netifapi_msg_msg::__anon46::__anon47
 init	net/lwip/netif/ppp/ppp.h	/^    void (*init) (int unit);$/;"	m	struct:protent
 init_rt	obj/kern/kernel.asm	/^	init_rt = saved_rt = NULL;$/;"	d
 init_rt	vmm/guest/obj/kern/kernel.asm	/^	init_rt = saved_rt = NULL;$/;"	d
 init_stack	lib/spawn.c	/^init_stack(envid_t child, const char **argv, uintptr_t *init_esp)$/;"	f	file:
 inl	inc/x86.h	/^inl(int port)$/;"	f
-inp	net/lwip/include/lwip/tcpip.h	/^    } inp;$/;"	m	union:tcpip_msg::__anon38	typeref:struct:tcpip_msg::__anon38::__anon39
+inp	net/lwip/include/lwip/tcpip.h	/^    } inp;$/;"	m	union:tcpip_msg::__anon51	typeref:struct:tcpip_msg::__anon51::__anon52
 input	net/input.c	/^input(envid_t ns_envid)$/;"	f
 input	net/lwip/include/lwip/netif.h	/^  err_t (* input)(struct pbuf *p, struct netif *inp);$/;"	m	struct:netif
-input	net/lwip/include/lwip/netifapi.h	/^      err_t (* input)(struct pbuf *p, struct netif *netif);$/;"	m	struct:netifapi_msg_msg::__anon24::__anon25
+input	net/lwip/include/lwip/netifapi.h	/^      err_t (* input)(struct pbuf *p, struct netif *netif);$/;"	m	struct:netifapi_msg_msg::__anon46::__anon47
 input	net/lwip/netif/ppp/ppp.h	/^    void (*input) (int unit, u_char *pkt, int len);$/;"	m	struct:protent
 input_envid	net/serv.c	/^static envid_t input_envid;$/;"	v	file:
 input_envid	net/testinput.c	/^static envid_t input_envid;$/;"	v	file:
@@ -9013,7 +9032,7 @@ interactive	vmm/guest/obj/user/sh.asm	/^			interactive = 1;$/;"	d
 interactive	vmm/guest/obj/user/sh.asm	/^		interactive = iscons(0);$/;"	d
 interactive	vmm/guest/obj/user/sh.asm	/^	interactive = '?';$/;"	d
 interface	net/lwip/include/ipv4/lwip/igmp.h	/^  struct netif      *interface;$/;"	m	struct:igmp_group	typeref:struct:igmp_group::netif
-interface	net/lwip/include/lwip/api_msg.h	/^      struct ip_addr *interface;$/;"	m	struct:api_msg_msg::__anon27::__anon33	typeref:struct:api_msg_msg::__anon27::__anon33::ip_addr
+interface	net/lwip/include/lwip/api_msg.h	/^      struct ip_addr *interface;$/;"	m	struct:api_msg_msg::__anon38::__anon44	typeref:struct:api_msg_msg::__anon38::__anon44::ip_addr
 interfaces	net/lwip/core/snmp/mib2.c	/^const struct mib_array_node interfaces = {$/;"	v	typeref:struct:mib_array_node
 interfaces_get_object_def	net/lwip/core/snmp/mib2.c	/^interfaces_get_object_def(u8_t ident_len, s32_t *ident, struct obj_def *od)$/;"	f	file:
 interfaces_get_value	net/lwip/core/snmp/mib2.c	/^interfaces_get_value(struct obj_def *od, u16_t len, void *value)$/;"	f	file:
@@ -9038,7 +9057,7 @@ inw	inc/x86.h	/^inw(int port)$/;"	f
 io_bmap_a	inc/vmx.h	/^	uint64_t *io_bmap_a;$/;"	m	struct:VmxGuestInfo
 io_bmap_b	inc/vmx.h	/^	uint64_t *io_bmap_b;$/;"	m	struct:VmxGuestInfo
 ioctlsocket	net/lwip/include/lwip/sockets.h	343;"	d
-ip	net/lwip/include/lwip/api.h	/^    struct ip_pcb  *ip;$/;"	m	union:netconn::__anon35	typeref:struct:netconn::__anon35::ip_pcb
+ip	net/lwip/include/lwip/api.h	/^    struct ip_pcb  *ip;$/;"	m	union:netconn::__anon37	typeref:struct:netconn::__anon37::ip_pcb
 ip	net/lwip/include/lwip/stats.h	/^  struct stats_proto ip;$/;"	m	struct:stats_	typeref:struct:stats_::stats_proto
 ip	net/lwip/netif/ppp/vjbsdhdr.h	/^struct ip$/;"	s
 ip4_addr1	net/lwip/include/ipv4/lwip/ip_addr.h	157;"	d
@@ -9121,9 +9140,9 @@ ip_sum	net/lwip/netif/ppp/vjbsdhdr.h	/^  u_short ip_sum;                \/* chec
 ip_tos	net/lwip/netif/ppp/vjbsdhdr.h	/^  u_char  ip_tos;                \/* type of service *\/$/;"	m	struct:ip
 ip_ttl	net/lwip/netif/ppp/vjbsdhdr.h	/^  u_char  ip_ttl;                \/* time to live *\/$/;"	m	struct:ip
 ipaddr	net/lwip/core/dns.c	/^  struct ip_addr ipaddr;$/;"	m	struct:dns_table_entry	typeref:struct:dns_table_entry::ip_addr	file:
-ipaddr	net/lwip/include/lwip/api_msg.h	/^      struct ip_addr *ipaddr;$/;"	m	struct:api_msg_msg::__anon27::__anon29	typeref:struct:api_msg_msg::__anon27::__anon29::ip_addr
-ipaddr	net/lwip/include/lwip/api_msg.h	/^      struct ip_addr *ipaddr;$/;"	m	struct:api_msg_msg::__anon27::__anon30	typeref:struct:api_msg_msg::__anon27::__anon30::ip_addr
-ipaddr	net/lwip/include/lwip/netifapi.h	/^      struct ip_addr *ipaddr;$/;"	m	struct:netifapi_msg_msg::__anon24::__anon25	typeref:struct:netifapi_msg_msg::__anon24::__anon25::ip_addr
+ipaddr	net/lwip/include/lwip/api_msg.h	/^      struct ip_addr *ipaddr;$/;"	m	struct:api_msg_msg::__anon38::__anon40	typeref:struct:api_msg_msg::__anon38::__anon40::ip_addr
+ipaddr	net/lwip/include/lwip/api_msg.h	/^      struct ip_addr *ipaddr;$/;"	m	struct:api_msg_msg::__anon38::__anon41	typeref:struct:api_msg_msg::__anon38::__anon41::ip_addr
+ipaddr	net/lwip/include/lwip/netifapi.h	/^      struct ip_addr *ipaddr;$/;"	m	struct:netifapi_msg_msg::__anon46::__anon47	typeref:struct:netifapi_msg_msg::__anon46::__anon47::ip_addr
 ipaddr	net/lwip/netif/etharp.c	/^  struct ip_addr ipaddr;$/;"	m	struct:etharp_entry	typeref:struct:etharp_entry::ip_addr	file:
 ipaddr	obj/net/ns.asm	/^        ipaddr = &(netif->gw);$/;"	d
 ipaddr	vmm/guest/obj/net/ns.asm	/^        ipaddr = &(netif->gw);$/;"	d
@@ -9299,14 +9318,14 @@ jif_init	net/lwip/jos/jif/jif.c	/^jif_init(struct netif *netif)$/;"	f
 jif_input	net/lwip/jos/jif/jif.c	/^jif_input(struct netif *netif, void *va)$/;"	f
 jif_output	net/lwip/jos/jif/jif.c	/^jif_output(struct netif *netif, struct pbuf *p,$/;"	f	file:
 jif_pkt	inc/ns.h	/^struct jif_pkt {$/;"	s
-jl	net/lwip/include/lwip/api_msg.h	/^    } jl;$/;"	m	union:api_msg_msg::__anon27	typeref:struct:api_msg_msg::__anon27::__anon33
+jl	net/lwip/include/lwip/api_msg.h	/^    } jl;$/;"	m	union:api_msg_msg::__anon38	typeref:struct:api_msg_msg::__anon38::__anon44
 jmp	guest_boot/boot.S	/^jmp *%eax$/;"	l
 jmp	guest_boot/boot.S	/^jmp spin$/;"	l
 jmp	vmm/guest/obj/boot/boot.asm	/^jmp *%eax$/;"	l
 jmp	vmm/guest/obj/boot/boot.asm	/^jmp spin$/;"	l
 jmp	vmm/jos_boot.S	/^jmp *%eax$/;"	l
 jmp	vmm/jos_boot.S	/^jmp spin$/;"	l
-join_or_leave	net/lwip/include/lwip/api_msg.h	/^      enum netconn_igmp join_or_leave;$/;"	m	struct:api_msg_msg::__anon27::__anon33	typeref:enum:api_msg_msg::__anon27::__anon33::netconn_igmp
+join_or_leave	net/lwip/include/lwip/api_msg.h	/^      enum netconn_igmp join_or_leave;$/;"	m	struct:api_msg_msg::__anon38::__anon44	typeref:enum:api_msg_msg::__anon38::__anon44::netconn_igmp
 join_sent	net/lwip/include/lwip/stats.h	/^  STAT_COUNTER join_sent;        \/* *\/$/;"	m	struct:stats_igmp
 jos_jmp_buf	net/lwip/jos/arch/i386/setjmp.h	/^struct jos_jmp_buf {$/;"	s
 jp_data	inc/ns.h	/^	char jp_data[0];$/;"	m	struct:jif_pkt
@@ -9387,7 +9406,7 @@ lastdata	net/lwip/api/sockets.c	/^  struct netbuf *lastdata;$/;"	m	struct:lwip_s
 lastenv	obj/kern/kernel.asm	/^			lastenv = curenv;$/;"	d
 lastenv	vmm/guest/obj/kern/kernel.asm	/^			lastenv = curenv;$/;"	d
 lastoffset	net/lwip/api/sockets.c	/^  u16_t lastoffset;$/;"	m	struct:lwip_socket	file:
-lb	net/lwip/include/lwip/api_msg.h	/^    } lb;$/;"	m	union:api_msg_msg::__anon27	typeref:struct:api_msg_msg::__anon27::__anon34
+lb	net/lwip/include/lwip/api_msg.h	/^    } lb;$/;"	m	union:api_msg_msg::__anon38	typeref:struct:api_msg_msg::__anon38::__anon45
 lcp_ackci	net/lwip/netif/ppp/lcp.c	/^lcp_ackci(fsm *f, u_char *p, int len)$/;"	f	file:
 lcp_addci	net/lwip/netif/ppp/lcp.c	/^lcp_addci(fsm *f, u_char *ucp, int *lenp)$/;"	f	file:
 lcp_allowoptions	net/lwip/netif/ppp/lcp.c	/^lcp_options lcp_allowoptions[NUM_PPP]; \/* Options we allow peer to request *\/$/;"	v
@@ -9431,10 +9450,10 @@ lcp_wantoptions	net/lwip/netif/ppp/lcp.c	/^lcp_options lcp_wantoptions[NUM_PPP];
 lcr0	inc/x86.h	/^lcr0(uint64_t val)$/;"	f
 lcr3	inc/x86.h	/^lcr3(uint64_t val)$/;"	f
 lcr4	inc/x86.h	/^lcr4(uint64_t val)$/;"	f
-ld_cents	kern/dwarf.h	/^	uint16_t      ld_cents;$/;"	m	struct:__anon54
-ld_hipc	kern/dwarf.h	/^	uint64_t      ld_hipc;$/;"	m	struct:__anon54
-ld_lopc	kern/dwarf.h	/^	uint64_t      ld_lopc;$/;"	m	struct:__anon54
-ld_s	kern/dwarf.h	/^	Dwarf_Loc     ld_s;;$/;"	m	struct:__anon54
+ld_cents	kern/dwarf.h	/^	uint16_t      ld_cents;$/;"	m	struct:__anon19
+ld_hipc	kern/dwarf.h	/^	uint64_t      ld_hipc;$/;"	m	struct:__anon19
+ld_lopc	kern/dwarf.h	/^	uint64_t      ld_lopc;$/;"	m	struct:__anon19
+ld_s	kern/dwarf.h	/^	Dwarf_Loc     ld_s;;$/;"	m	struct:__anon19
 leave_sent	net/lwip/include/lwip/stats.h	/^  STAT_COUNTER leave_sent;       \/* *\/$/;"	m	struct:stats_igmp
 left	obj/net/ns.asm	/^  left = 0;$/;"	d
 left	obj/net/ns.asm	/^  left = len;$/;"	d
@@ -9444,8 +9463,8 @@ left	vmm/guest/obj/net/ns.asm	/^  left = len;$/;"	d
 left	vmm/guest/obj/net/ns.asm	/^  left = p->tot_len - IP_HLEN;$/;"	d
 len	net/lwip/core/dns.c	/^  u16_t len;$/;"	m	struct:dns_answer	file:
 len	net/lwip/include/ipv6/lwip/ip.h	/^  u16_t len;                \/* payload length *\/$/;"	m	struct:ip_hdr
-len	net/lwip/include/lwip/api_msg.h	/^      int len;$/;"	m	struct:api_msg_msg::__anon27::__anon31
-len	net/lwip/include/lwip/api_msg.h	/^      u16_t len;$/;"	m	struct:api_msg_msg::__anon27::__anon32
+len	net/lwip/include/lwip/api_msg.h	/^      int len;$/;"	m	struct:api_msg_msg::__anon38::__anon42
+len	net/lwip/include/lwip/api_msg.h	/^      u16_t len;$/;"	m	struct:api_msg_msg::__anon38::__anon43
 len	net/lwip/include/lwip/pbuf.h	/^  u16_t len;  $/;"	m	struct:pbuf
 len	net/lwip/include/lwip/snmp.h	/^  u8_t len;$/;"	m	struct:snmp_obj_id
 len	net/lwip/include/lwip/tcp.h	/^  u16_t len;               \/* the TCP length of this segment *\/$/;"	m	struct:tcp_seg
@@ -9714,7 +9733,7 @@ loc_ptr	obj/kern/kernel.asm	/^								loc_ptr = p;$/;"	d
 loc_ptr	obj/kern/kernel.asm	/^							loc_ptr = p;$/;"	d
 loc_ptr	vmm/guest/obj/kern/kernel.asm	/^								loc_ptr = p;$/;"	d
 loc_ptr	vmm/guest/obj/kern/kernel.asm	/^							loc_ptr = p;$/;"	d
-local	net/lwip/include/lwip/api_msg.h	/^      u8_t local;$/;"	m	struct:api_msg_msg::__anon27::__anon30
+local	net/lwip/include/lwip/api_msg.h	/^      u8_t local;$/;"	m	struct:api_msg_msg::__anon38::__anon41
 local_match	obj/net/ns.asm	/^        local_match = 1;$/;"	d
 local_match	obj/net/ns.asm	/^      local_match = 0;$/;"	d
 local_match	obj/net/ns.asm	/^    local_match = 0;$/;"	d
@@ -9814,10 +9833,10 @@ lpcb	obj/net/ns.asm	/^  lpcb = memp_malloc(MEMP_TCP_PCB_LISTEN);$/;"	d
 lpcb	vmm/guest/obj/net/ns.asm	/^  lpcb = memp_malloc(MEMP_TCP_PCB_LISTEN);$/;"	d
 lpt_putc	kern/console.c	/^lpt_putc(int c)$/;"	f	file:
 lqr_period	net/lwip/netif/ppp/lcp.h	/^    u32_t lqr_period;            \/* Reporting period for LQR 1\/100ths second *\/$/;"	m	struct:lcp_options
-lr_atom	kern/dwarf.h	/^	uint8_t   lr_atom;$/;"	m	struct:__anon53
-lr_number	kern/dwarf.h	/^	uint64_t  lr_number;$/;"	m	struct:__anon53
-lr_number2	kern/dwarf.h	/^	uint64_t  lr_number2;$/;"	m	struct:__anon53
-lr_offset	kern/dwarf.h	/^	uint64_t  lr_offset;$/;"	m	struct:__anon53
+lr_atom	kern/dwarf.h	/^	uint8_t   lr_atom;$/;"	m	struct:__anon18
+lr_number	kern/dwarf.h	/^	uint64_t  lr_number;$/;"	m	struct:__anon18
+lr_number2	kern/dwarf.h	/^	uint64_t  lr_number2;$/;"	m	struct:__anon18
+lr_offset	kern/dwarf.h	/^	uint64_t  lr_offset;$/;"	m	struct:__anon18
 lreadset	obj/net/ns.asm	/^      lreadset = *readset;$/;"	d
 lreadset	obj/net/ns.asm	/^    lreadset = *readset;$/;"	d
 lreadset	vmm/guest/obj/net/ns.asm	/^      lreadset = *readset;$/;"	d
@@ -10171,10 +10190,10 @@ memp_num	net/lwip/core/memp.c	/^static const u16_t memp_num[MEMP_MAX] = {$/;"	v	
 memp_overflow_check_all	net/lwip/core/memp.c	/^memp_overflow_check_all(void)$/;"	f	file:
 memp_overflow_check_element	net/lwip/core/memp.c	/^memp_overflow_check_element(struct memp *p, u16_t memp_size)$/;"	f	file:
 memp_overflow_init	net/lwip/core/memp.c	/^memp_overflow_init(void)$/;"	f	file:
-memp_pool_helper_t	net/lwip/include/lwip/memp.h	/^} memp_pool_helper_t;$/;"	t	typeref:enum:__anon23
+memp_pool_helper_t	net/lwip/include/lwip/memp.h	/^} memp_pool_helper_t;$/;"	t	typeref:enum:__anon50
 memp_sanity	net/lwip/core/memp.c	/^memp_sanity(void)$/;"	f	file:
 memp_sizes	net/lwip/core/memp.c	/^const u16_t memp_sizes[MEMP_MAX] = {$/;"	v	file:
-memp_t	net/lwip/include/lwip/memp.h	/^} memp_t;$/;"	t	typeref:enum:__anon22
+memp_t	net/lwip/include/lwip/memp.h	/^} memp_t;$/;"	t	typeref:enum:__anon49
 memp_tab	net/lwip/core/memp.c	/^static struct memp *memp_tab[MEMP_MAX];$/;"	v	typeref:struct:memp	file:
 memset	lib/string.c	/^memset(void *v, int c, size_t n)$/;"	f
 mend	lib/malloc.c	/^static uint8_t *mend   = (uint8_t*) 0x10000000;$/;"	v	file:
@@ -10376,7 +10395,7 @@ mptr	vmm/guest/obj/user/vmm.asm	/^		mptr = mbegin;$/;"	d
 mrru	net/lwip/netif/ppp/lcp.h	/^    u_short mrru;                \/* Value of MRRU, and multilink enable *\/$/;"	m	struct:lcp_options
 mru	net/lwip/netif/ppp/lcp.h	/^    u_short mru;                 \/* Value of MRU *\/$/;"	m	struct:lcp_options
 msec	net/serv.c	/^    uint32_t msec;$/;"	m	struct:timer_thread	file:
-msecs	net/lwip/include/lwip/tcpip.h	/^      u32_t msecs;$/;"	m	struct:tcpip_msg::__anon38::__anon41
+msecs	net/lwip/include/lwip/tcpip.h	/^      u32_t msecs;$/;"	m	struct:tcpip_msg::__anon51::__anon54
 msecs	obj/net/ns.asm	/^  msecs = 10*1000;$/;"	d
 msecs	obj/net/ns.asm	/^  msecs = 500;$/;"	d
 msecs	obj/net/ns.asm	/^  msecs = dhcp->tries < 10 ? dhcp->tries * 1000 : 10 * 1000;$/;"	d
@@ -10397,10 +10416,10 @@ msectimeout	vmm/guest/obj/net/ns.asm	/^      msectimeout =  ((timeout->tv_sec * 
 msectimeout	vmm/guest/obj/net/ns.asm	/^      msectimeout = 0;$/;"	d
 msg	fs/test.c	/^static char *msg = "This is the NEW message of the day!\\n\\n";$/;"	v	file:
 msg	net/lwip/include/lwip/api_msg.h	/^  struct api_msg_msg msg;$/;"	m	struct:api_msg	typeref:struct:api_msg::api_msg_msg
-msg	net/lwip/include/lwip/api_msg.h	/^  } msg;$/;"	m	struct:api_msg_msg	typeref:union:api_msg_msg::__anon27
+msg	net/lwip/include/lwip/api_msg.h	/^  } msg;$/;"	m	struct:api_msg_msg	typeref:union:api_msg_msg::__anon38
 msg	net/lwip/include/lwip/netifapi.h	/^  struct netifapi_msg_msg msg;$/;"	m	struct:netifapi_msg	typeref:struct:netifapi_msg::netifapi_msg_msg
-msg	net/lwip/include/lwip/netifapi.h	/^  } msg;$/;"	m	struct:netifapi_msg_msg	typeref:union:netifapi_msg_msg::__anon24
-msg	net/lwip/include/lwip/tcpip.h	/^  } msg;$/;"	m	struct:tcpip_msg	typeref:union:tcpip_msg::__anon38
+msg	net/lwip/include/lwip/netifapi.h	/^  } msg;$/;"	m	struct:netifapi_msg_msg	typeref:union:netifapi_msg_msg::__anon46
+msg	net/lwip/include/lwip/tcpip.h	/^  } msg;$/;"	m	struct:tcpip_msg	typeref:union:tcpip_msg::__anon51
 msg	net/lwip/jos/arch/sys_arch.c	/^    void *msg[MBOXSLOTS];$/;"	m	struct:sys_mbox_entry	file:
 msg	obj/net/ns.asm	/^    msg = memp_malloc(MEMP_TCPIP_MSG_API);$/;"	d
 msg	obj/net/ns.asm	/^    msg = memp_malloc(MEMP_TCPIP_MSG_INPKT);$/;"	d
@@ -10413,8 +10432,8 @@ msg	user/testptelibrary.c	/^const char *msg = "hello, world\\n";$/;"	v
 msg	user/testpteshare.c	/^const char *msg = "hello, world\\n";$/;"	v
 msg	vmm/guest/obj/net/ns.asm	/^    msg = memp_malloc(MEMP_TCPIP_MSG_API);$/;"	d
 msg	vmm/guest/obj/net/ns.asm	/^    msg = memp_malloc(MEMP_TCPIP_MSG_INPKT);$/;"	d
-msg1	user/init.c	/^	char msg1[5000];$/;"	m	struct:__anon10	file:
-msg2	user/init.c	/^	char msg2[1000];$/;"	m	struct:__anon10	file:
+msg1	user/init.c	/^	char msg1[5000];$/;"	m	struct:__anon57	file:
+msg2	user/init.c	/^	char msg2[1000];$/;"	m	struct:__anon57	file:
 msg2	user/testptelibrary.c	/^const char *msg2 = "goodbye, world\\n";$/;"	v
 msg2	user/testpteshare.c	/^const char *msg2 = "goodbye, world\\n";$/;"	v
 msg_in	net/lwip/include/lwip/dhcp.h	/^  struct dhcp_msg *msg_in;$/;"	m	struct:dhcp	typeref:struct:dhcp::dhcp_msg
@@ -10426,6 +10445,8 @@ msr	obj/kern/kernel.asm	/^	msr = EFER_MSR;$/;"	d
 msr	vmm/guest/obj/kern/kernel.asm	/^	msr = EFER_MSR;$/;"	d
 msr_count	inc/vmx.h	/^	int msr_count;$/;"	m	struct:VmxGuestInfo
 msr_guest_area	inc/vmx.h	/^	uintptr_t *msr_guest_area;$/;"	m	struct:VmxGuestInfo
+msr_guest_area	obj/kern/kernel.asm	/^	msr_guest_area = page2kva(r) + PGSIZE \/ 2;$/;"	d
+msr_guest_area	vmm/guest/obj/kern/kernel.asm	/^	msr_guest_area = page2kva(r) + PGSIZE \/ 2;$/;"	d
 msr_host_area	inc/vmx.h	/^	uintptr_t *msr_host_area;$/;"	m	struct:VmxGuestInfo
 msr_index	vmm/vmx.h	/^    uint32_t msr_index;$/;"	m	struct:vmx_msr_entry
 msr_setup	vmm/vmx.c	/^msr_setup(struct VmxGuestInfo *ginfo) {$/;"	f
@@ -10437,7 +10458,7 @@ mss_s	obj/net/ns.asm	/^    mss_s = outif->mtu - IP_HLEN - TCP_HLEN;$/;"	d
 mss_s	vmm/guest/obj/net/ns.asm	/^    mss_s = outif->mtu - IP_HLEN - TCP_HLEN;$/;"	d
 mtu	net/lwip/include/lwip/netif.h	/^  u16_t mtu;$/;"	m	struct:netif
 mtu	net/lwip/netif/ppp/ppp.c	/^  int  mtu;                     \/* Peer's mru *\/$/;"	m	struct:PPPControl_s	file:
-multiaddr	net/lwip/include/lwip/api_msg.h	/^      struct ip_addr *multiaddr;$/;"	m	struct:api_msg_msg::__anon27::__anon33	typeref:struct:api_msg_msg::__anon27::__anon33::ip_addr
+multiaddr	net/lwip/include/lwip/api_msg.h	/^      struct ip_addr *multiaddr;$/;"	m	struct:api_msg_msg::__anon38::__anon44	typeref:struct:api_msg_msg::__anon38::__anon44::ip_addr
 multiboot_header	kern/multiboot.h	/^ typedef struct multiboot_header$/;"	s
 multiboot_header_t	kern/multiboot.h	/^ } multiboot_header_t;$/;"	t	typeref:struct:multiboot_header
 multiboot_info	kern/bootstrap.S	/^multiboot_info:$/;"	l
@@ -10449,7 +10470,7 @@ myat	obj/kern/kernel.asm	/^			myat = &(die->die_attr[i]);$/;"	d
 myat	vmm/guest/obj/kern/kernel.asm	/^			myat = &(die->die_attr[i]);$/;"	d
 mydebug	kern/kdebug.c	/^struct _Dwarf_Debug mydebug;$/;"	v	typeref:struct:_Dwarf_Debug
 n	fs/fsformat.c	/^	int n;$/;"	m	struct:Dir	file:
-n	net/lwip/include/lwip/api_msg.h	/^    } n;$/;"	m	union:api_msg_msg::__anon27	typeref:struct:api_msg_msg::__anon27::__anon28
+n	net/lwip/include/lwip/api_msg.h	/^    } n;$/;"	m	union:api_msg_msg::__anon38	typeref:struct:api_msg_msg::__anon38::__anon39
 n	obj/fs/fs.asm	/^		n = thisenv->env_runs;$/;"	d
 n	obj/fs/fs.asm	/^	n = MIN(n, sizeof(fsipcbuf.write.req_buf));$/;"	d
 n	obj/kern/kernel.asm	/^	n   = ROUNDUP(NENV*sizeof(struct Env), PGSIZE);$/;"	d
@@ -10620,7 +10641,7 @@ name	net/lwip/netif/ppp/ppp.h	/^    char *name;         \/* Text name of protoco
 name	net/serv.c	/^    const char *name;$/;"	m	struct:timer_thread	file:
 name	obj/kern/kernel.asm	/^		name = (char *)(nametab + secthdr_ptr[i]->sh_name);$/;"	d
 name	vmm/guest/obj/kern/kernel.asm	/^		name = (char *)(nametab + secthdr_ptr[i]->sh_name);$/;"	d
-name_size	net/lwip/jos/arch/threadq.h	/^enum { name_size = 32 };$/;"	e	enum:__anon14
+name_size	net/lwip/jos/arch/threadq.h	/^enum { name_size = 32 };$/;"	e	enum:__anon29
 nametab	obj/kern/kernel.asm	/^	nametab = (char *)((char *)kvbase + temp) + OFFSET_CORRECT(sec_name->sh_offset);	$/;"	d
 nametab	vmm/guest/obj/kern/kernel.asm	/^	nametab = (char *)((char *)kvbase + temp) + OFFSET_CORRECT(sec_name->sh_offset);	$/;"	d
 nblock	obj/fs/fs.asm	/^	nblock = dir->f_size \/ BLKSIZE;$/;"	d
@@ -10698,7 +10719,7 @@ netconn_type	net/lwip/include/lwip/api.h	/^enum netconn_type {$/;"	g
 netconn_write	net/lwip/api/api_lib.c	/^netconn_write(struct netconn *conn, const void *dataptr, int size, u8_t apiflags)$/;"	f
 netif	net/lwip/include/lwip/netif.h	/^struct netif {$/;"	s
 netif	net/lwip/include/lwip/netifapi.h	/^  struct netif *netif;$/;"	m	struct:netifapi_msg_msg	typeref:struct:netifapi_msg_msg::netif
-netif	net/lwip/include/lwip/tcpip.h	/^      struct netif *netif;$/;"	m	struct:tcpip_msg::__anon38::__anon39	typeref:struct:tcpip_msg::__anon38::__anon39::netif
+netif	net/lwip/include/lwip/tcpip.h	/^      struct netif *netif;$/;"	m	struct:tcpip_msg::__anon51::__anon52	typeref:struct:tcpip_msg::__anon51::__anon52::netif
 netif	net/lwip/netif/etharp.c	/^  struct netif *netif;$/;"	m	struct:etharp_entry	typeref:struct:etharp_entry::netif	file:
 netif	net/lwip/netif/ppp/ppp.c	/^  struct netif netif;$/;"	m	struct:PPPControl_s	typeref:struct:PPPControl_s::netif	file:
 netif	obj/net/ns.asm	/^        netif = inp;$/;"	d
@@ -10757,9 +10778,9 @@ netifapi_netif_remove	net/lwip/include/lwip/netifapi.h	86;"	d
 netifapi_netif_set_default	net/lwip/include/lwip/netifapi.h	89;"	d
 netifapi_netif_set_down	net/lwip/include/lwip/netifapi.h	88;"	d
 netifapi_netif_set_up	net/lwip/include/lwip/netifapi.h	87;"	d
-netifapimsg	net/lwip/include/lwip/tcpip.h	/^    struct netifapi_msg *netifapimsg;$/;"	m	union:tcpip_msg::__anon38	typeref:struct:tcpip_msg::__anon38::netifapi_msg
+netifapimsg	net/lwip/include/lwip/tcpip.h	/^    struct netifapi_msg *netifapimsg;$/;"	m	union:tcpip_msg::__anon51	typeref:struct:tcpip_msg::__anon51::netifapi_msg
 netmask	net/lwip/include/lwip/netif.h	/^  struct ip_addr netmask;$/;"	m	struct:netif	typeref:struct:netif::ip_addr
-netmask	net/lwip/include/lwip/netifapi.h	/^      struct ip_addr *netmask;$/;"	m	struct:netifapi_msg_msg::__anon24::__anon25	typeref:struct:netifapi_msg_msg::__anon24::__anon25::ip_addr
+netmask	net/lwip/include/lwip/netifapi.h	/^      struct ip_addr *netmask;$/;"	m	struct:netifapi_msg_msg::__anon46::__anon47	typeref:struct:netifapi_msg_msg::__anon46::__anon47::ip_addr
 netmask	net/lwip/netif/ppp/ppp.h	/^  struct ip_addr our_ipaddr, his_ipaddr, netmask, dns1, dns2;$/;"	m	struct:ppp_addrs	typeref:struct:ppp_addrs::
 network_phase	net/lwip/netif/ppp/auth.c	/^network_phase(int unit)$/;"	f	file:
 new_entry	obj/net/ns.asm	/^        new_entry = memp_malloc(MEMP_ARP_QUEUE);$/;"	d
@@ -11718,7 +11739,7 @@ p	net/lwip/include/ipv4/lwip/ip_frag.h	/^  struct pbuf *p;$/;"	m	struct:ip_reass
 p	net/lwip/include/lwip/dhcp.h	/^  struct pbuf *p;$/;"	m	struct:dhcp	typeref:struct:dhcp::pbuf
 p	net/lwip/include/lwip/netbuf.h	/^  struct pbuf *p, *ptr;$/;"	m	struct:netbuf	typeref:struct:netbuf::pbuf
 p	net/lwip/include/lwip/tcp.h	/^  struct pbuf *p;          \/* buffer containing data + TCP header *\/$/;"	m	struct:tcp_seg	typeref:struct:tcp_seg::pbuf
-p	net/lwip/include/lwip/tcpip.h	/^      struct pbuf *p;$/;"	m	struct:tcpip_msg::__anon38::__anon39	typeref:struct:tcpip_msg::__anon38::__anon39::pbuf
+p	net/lwip/include/lwip/tcpip.h	/^      struct pbuf *p;$/;"	m	struct:tcpip_msg::__anon51::__anon52	typeref:struct:tcpip_msg::__anon51::__anon52::pbuf
 p	net/lwip/include/netif/etharp.h	/^  struct pbuf *p;$/;"	m	struct:etharp_q_entry	typeref:struct:etharp_q_entry::pbuf
 p	obj/fs/fs.asm	/^				p = "(null)";$/;"	d
 p	obj/fs/fs.asm	/^		p = path;$/;"	d
@@ -12254,15 +12275,15 @@ pbuf_free_callback	net/lwip/api/tcpip.c	/^pbuf_free_callback(struct pbuf *p)$/;"
 pbuf_free_int	net/lwip/api/tcpip.c	/^pbuf_free_int(void *p)$/;"	f	file:
 pbuf_header	net/lwip/core/pbuf.c	/^pbuf_header(struct pbuf *p, s16_t header_size_increment)$/;"	f
 pbuf_init	net/lwip/include/lwip/pbuf.h	100;"	d
-pbuf_layer	net/lwip/include/lwip/pbuf.h	/^} pbuf_layer;$/;"	t	typeref:enum:__anon36
+pbuf_layer	net/lwip/include/lwip/pbuf.h	/^} pbuf_layer;$/;"	t	typeref:enum:__anon55
 pbuf_realloc	net/lwip/core/pbuf.c	/^pbuf_realloc(struct pbuf *p, u16_t new_len)$/;"	f
 pbuf_ref	net/lwip/core/pbuf.c	/^pbuf_ref(struct pbuf *p)$/;"	f
-pbuf_type	net/lwip/include/lwip/pbuf.h	/^} pbuf_type;$/;"	t	typeref:enum:__anon37
+pbuf_type	net/lwip/include/lwip/pbuf.h	/^} pbuf_type;$/;"	t	typeref:enum:__anon56
 pbufs_freed_current	obj/net/ns.asm	/^      pbufs_freed_current = ip_reass_free_complete_datagram(oldest, prev);$/;"	d
 pbufs_freed_current	vmm/guest/obj/net/ns.asm	/^      pbufs_freed_current = ip_reass_free_complete_datagram(oldest, prev);$/;"	d
 pc	obj/kern/kernel.asm	/^			pc = dbg->decode(&p, dbg->dbg_pointer_size);$/;"	d
 pc	vmm/guest/obj/kern/kernel.asm	/^			pc = dbg->decode(&p, dbg->dbg_pointer_size);$/;"	d
-pcb	net/lwip/include/lwip/api.h	/^  } pcb;$/;"	m	struct:netconn	typeref:union:netconn::__anon35
+pcb	net/lwip/include/lwip/api.h	/^  } pcb;$/;"	m	struct:netconn	typeref:union:netconn::__anon37
 pcb	net/lwip/include/lwip/dhcp.h	/^  struct udp_pcb *pcb;$/;"	m	struct:dhcp	typeref:struct:dhcp::udp_pcb
 pcb	net/lwip/include/lwip/snmp_msg.h	/^  struct udp_pcb *pcb;$/;"	m	struct:snmp_msg_pstat	typeref:struct:snmp_msg_pstat::udp_pcb
 pcb	net/lwip/include/lwip/snmp_msg.h	/^  struct udp_pcb *pcb;$/;"	m	struct:snmp_msg_trap	typeref:struct:snmp_msg_trap::udp_pcb
@@ -12334,10 +12355,10 @@ pci_intr_line_t	kern/pcireg.h	/^typedef uint8_t pci_intr_line_t;$/;"	t
 pci_intr_pin_t	kern/pcireg.h	/^typedef uint8_t pci_intr_pin_t;$/;"	t
 pci_print_func	kern/pci.c	/^pci_print_func(struct pci_func *f)$/;"	f	file:
 pci_product_id_t	kern/pcireg.h	/^typedef uint16_t pci_product_id_t;$/;"	t
-pci_res_bus	kern/pci.h	/^enum { pci_res_bus, pci_res_mem, pci_res_io, pci_res_max };$/;"	e	enum:__anon42
-pci_res_io	kern/pci.h	/^enum { pci_res_bus, pci_res_mem, pci_res_io, pci_res_max };$/;"	e	enum:__anon42
-pci_res_max	kern/pci.h	/^enum { pci_res_bus, pci_res_mem, pci_res_io, pci_res_max };$/;"	e	enum:__anon42
-pci_res_mem	kern/pci.h	/^enum { pci_res_bus, pci_res_mem, pci_res_io, pci_res_max };$/;"	e	enum:__anon42
+pci_res_bus	kern/pci.h	/^enum { pci_res_bus, pci_res_mem, pci_res_io, pci_res_max };$/;"	e	enum:__anon23
+pci_res_io	kern/pci.h	/^enum { pci_res_bus, pci_res_mem, pci_res_io, pci_res_max };$/;"	e	enum:__anon23
+pci_res_max	kern/pci.h	/^enum { pci_res_bus, pci_res_mem, pci_res_io, pci_res_max };$/;"	e	enum:__anon23
+pci_res_mem	kern/pci.h	/^enum { pci_res_bus, pci_res_mem, pci_res_io, pci_res_max };$/;"	e	enum:__anon23
 pci_revision_t	kern/pcireg.h	/^typedef uint8_t pci_revision_t;$/;"	t
 pci_scan_bus	kern/pci.c	/^pci_scan_bus(struct pci_bus *bus)$/;"	f	file:
 pci_show_addrs	kern/pci.c	/^static int pci_show_addrs = 0;$/;"	v	file:
@@ -12384,6 +12405,7 @@ pdpe	vmm/guest/obj/kern/kernel.asm	/^	pdpe = KADDR(PTE_ADDR(boot_pml4e[PML4(PGSI
 pdpe	vmm/guest/obj/kern/kernel.asm	/^	pdpe = KADDR(PTE_ADDR(boot_pml4e[PML4(va)]));$/;"	d
 pdpe_t	inc/memlayout.h	/^typedef uint64_t pdpe_t;$/;"	t
 pdpe_walk	kern/pmap.c	/^pdpe_walk(pdpe_t *pdpe,const void *va,int create){$/;"	f
+pdpe_walk_L1	kern/pmap.c	/^pdpe_walk_L1(pml4e_t *ept01, pdpe_t *pdpe, const void *va,int create)$/;"	f
 pdulen	net/lwip/include/lwip/snmp_msg.h	/^  u16_t pdulen;$/;"	m	struct:snmp_resp_header_lengths
 pdulen	net/lwip/include/lwip/snmp_msg.h	/^  u16_t pdulen;$/;"	m	struct:snmp_trap_header_lengths
 pdulenlen	net/lwip/include/lwip/snmp_msg.h	/^  u8_t pdulenlen;$/;"	m	struct:snmp_resp_header_lengths
@@ -12474,6 +12496,7 @@ pg	vmm/guest/obj/user/testtime.asm	/^		pg = (void*) UTOP;$/;"	d
 pg	vmm/guest/obj/user/vmm.asm	/^		pg = (void*) UTOP;$/;"	d
 pg	vmm/guest/obj/user/writemotd.asm	/^		pg = (void*) UTOP;$/;"	d
 pgdir_walk	kern/pmap.c	/^pgdir_walk(pde_t *pgdir, const void *va, int create)$/;"	f
+pgdir_walk_L1	kern/pmap.c	/^pgdir_walk_L1(pml4e_t *ept01, pde_t *pgdir, const void *va, int create)$/;"	f
 pgfault	lib/fork.c	/^pgfault(struct UTrapframe *utf)$/;"	f	file:
 pgfault	user/faultregs.c	/^pgfault(struct UTrapframe *utf)$/;"	f	file:
 ph	obj/boot/boot.asm	/^    ph = (struct Proghdr *) ((uint8_t *) ELFHDR + ELFHDR->e_phoff);$/;"	d
@@ -12521,7 +12544,10 @@ pml4e	vmm/guest/obj/kern/kernel.asm	/^	pml4e = &pml4e[PML4(va)];$/;"	d
 pml4e	vmm/guest/obj/kern/kernel.asm	/^	pml4e = boot_alloc(PGSIZE);$/;"	d
 pml4e	vmm/guest/obj/kern/kernel.asm	/^	pml4e = boot_pml4e;$/;"	d
 pml4e_t	inc/memlayout.h	/^typedef uint64_t pml4e_t;$/;"	t
+pml4e_t	obj/kern/kernel.asm	/^pml4e_t *$/;"	l
+pml4e_t	vmm/guest/obj/kern/kernel.asm	/^pml4e_t *$/;"	l
 pml4e_walk	kern/pmap.c	/^pml4e_walk(pml4e_t *pml4e, const void *va, int create)$/;"	f
+pml4e_walk_L1	kern/pmap.c	/^pml4e_walk_L1(pml4e_t *ept01, pml4e_t *ept12,  const void *va, int create)$/;"	f
 pml4phys	kern/bootstrap.S	/^pml4phys:$/;"	l
 poff	obj/net/ns.asm	/^    poff = newpbuflen;$/;"	d
 poff	vmm/guest/obj/net/ns.asm	/^    poff = newpbuflen;$/;"	d
@@ -12531,8 +12557,8 @@ pollinterval	net/lwip/include/lwip/tcp.h	/^  u8_t polltmr, pollinterval;$/;"	m	s
 polltmr	net/lwip/include/lwip/tcp.h	/^  u8_t polltmr, pollinterval;$/;"	m	struct:tcp_pcb
 poolnr	net/lwip/core/mem.c	/^   memp_t poolnr;$/;"	m	struct:mem_helper	file:
 pop_node	net/lwip/core/snmp/mib_structs.c	/^pop_node(struct nse* node)$/;"	f	file:
-port	net/lwip/include/lwip/api_msg.h	/^      u16_t *port;$/;"	m	struct:api_msg_msg::__anon27::__anon30
-port	net/lwip/include/lwip/api_msg.h	/^      u16_t port;$/;"	m	struct:api_msg_msg::__anon27::__anon29
+port	net/lwip/include/lwip/api_msg.h	/^      u16_t *port;$/;"	m	struct:api_msg_msg::__anon38::__anon41
+port	net/lwip/include/lwip/api_msg.h	/^      u16_t port;$/;"	m	struct:api_msg_msg::__anon38::__anon40
 port	net/lwip/include/lwip/netbuf.h	/^  u16_t port;$/;"	m	struct:netbuf
 port	obj/net/ns.asm	/^      port = netbuf_fromport(buf);$/;"	d
 port	obj/net/ns.asm	/^    port = TCP_LOCAL_PORT_RANGE_START;$/;"	d
@@ -12934,7 +12960,7 @@ protcseg	vmm/guest/obj/boot/boot.asm	/^protcseg:$/;"	l
 protcseg	vmm/jos_boot.S	/^protcseg:$/;"	l
 protent	net/lwip/netif/ppp/ppp.h	/^struct protent {$/;"	s
 proterr	net/lwip/include/lwip/stats.h	/^  STAT_COUNTER proterr;          \/* Protocol error. *\/$/;"	m	struct:stats_proto
-proto	net/lwip/include/lwip/api_msg.h	/^      u8_t proto;$/;"	m	struct:api_msg_msg::__anon27::__anon28
+proto	net/lwip/include/lwip/api_msg.h	/^      u8_t proto;$/;"	m	struct:api_msg_msg::__anon38::__anon39
 proto	net/lwip/netif/ppp/ppp.c	/^  u16_t proto;$/;"	m	struct:pppInputHeader	file:
 proto	obj/net/ns.asm	/^  proto = IPH_PROTO(iphdr);$/;"	d
 proto	vmm/guest/obj/net/ns.asm	/^  proto = IPH_PROTO(iphdr);$/;"	d
@@ -13034,6 +13060,10 @@ pte	vmm/guest/obj/user/testshell.asm	/^	pte = uvpt[pn];$/;"	d
 pte	vmm/guest/obj/user/testtime.asm	/^	pte = uvpt[PGNUM(v)];$/;"	d
 pte	vmm/guest/obj/user/vmm.asm	/^	pte = uvpt[PGNUM(v)];$/;"	d
 pte	vmm/guest/obj/user/writemotd.asm	/^	pte = uvpt[PGNUM(v)];$/;"	d
+pte_L0	obj/kern/kernel.asm	/^		pte_L0 = pml4e_walk(ept_01, (void *)(*pte_L1), 0);$/;"	d
+pte_L0	vmm/guest/obj/kern/kernel.asm	/^		pte_L0 = pml4e_walk(ept_01, (void *)(*pte_L1), 0);$/;"	d
+pte_L1	obj/kern/kernel.asm	/^		pte_L1 = pml4e_walk_L1(ept_01 ,ept_12, (void *)p, 0);	$/;"	d
+pte_L1	vmm/guest/obj/kern/kernel.asm	/^		pte_L1 = pml4e_walk_L1(ept_01 ,ept_12, (void *)p, 0);	$/;"	d
 pte_t	inc/memlayout.h	/^typedef uint64_t pte_t;$/;"	t
 pte_t	obj/kern/kernel.asm	/^pte_t *$/;"	l
 pte_t	vmm/guest/obj/kern/kernel.asm	/^pte_t *$/;"	l
@@ -13134,7 +13164,7 @@ queue	vmm/guest/obj/net/ns.asm	/^      queue = seg;$/;"	d
 queued_msg	net/lwip/jos/arch/sys_arch.c	/^    sys_sem_t queued_msg;$/;"	m	struct:sys_mbox_entry	file:
 queuelen	obj/net/ns.asm	/^  queuelen = pcb->snd_queuelen;$/;"	d
 queuelen	vmm/guest/obj/net/ns.asm	/^  queuelen = pcb->snd_queuelen;$/;"	d
-r	net/lwip/include/lwip/api_msg.h	/^    } r;$/;"	m	union:api_msg_msg::__anon27	typeref:struct:api_msg_msg::__anon27::__anon32
+r	net/lwip/include/lwip/api_msg.h	/^    } r;$/;"	m	union:api_msg_msg::__anon38	typeref:struct:api_msg_msg::__anon38::__anon43
 r	obj/fs/fs.asm	/^			r = (*dev->dev_close)(fd);$/;"	d
 r	obj/fs/fs.asm	/^			r = -E_INVAL;$/;"	d
 r	obj/fs/fs.asm	/^			r = 0;$/;"	d
@@ -13465,7 +13495,7 @@ rambuf	obj/net/ns.asm	/^  rambuf = pbuf_alloc(PBUF_LINK, 0, PBUF_REF);$/;"	d
 rambuf	vmm/guest/obj/net/ns.asm	/^  rambuf = pbuf_alloc(PBUF_LINK, 0, PBUF_REF);$/;"	d
 randCount	net/lwip/netif/ppp/randm.c	/^static long randCount = 0;      \/* Pseudo-random incrementer *\/$/;"	v	file:
 randPool	net/lwip/netif/ppp/randm.c	/^static char randPool[RANDPOOLSZ];   \/* Pool of randomness. *\/$/;"	v	file:
-raw	net/lwip/include/lwip/api.h	/^    struct raw_pcb *raw;$/;"	m	union:netconn::__anon35	typeref:struct:netconn::__anon35::raw_pcb
+raw	net/lwip/include/lwip/api.h	/^    struct raw_pcb *raw;$/;"	m	union:netconn::__anon37	typeref:struct:netconn::__anon37::raw_pcb
 raw_bind	net/lwip/core/raw.c	/^raw_bind(struct raw_pcb *pcb, struct ip_addr *ipaddr)$/;"	f
 raw_connect	net/lwip/core/raw.c	/^raw_connect(struct raw_pcb *pcb, struct ip_addr *ipaddr)$/;"	f
 raw_init	net/lwip/include/lwip/raw.h	90;"	d
@@ -14118,7 +14148,7 @@ rp	vmm/guest/obj/net/testinput.asm	/^  rp = str;$/;"	d
 rp	vmm/guest/obj/user/echosrv.asm	/^  rp = str;$/;"	d
 rp	vmm/guest/obj/user/echotest.asm	/^  rp = str;$/;"	d
 rp	vmm/guest/obj/user/httpd.asm	/^  rp = str;$/;"	d
-rpos	kern/console.c	/^	uint32_t rpos;$/;"	m	struct:__anon48	file:
+rpos	kern/console.c	/^	uint32_t rpos;$/;"	m	struct:__anon11	file:
 rseg	obj/net/ns.asm	/^      rseg = pcb->unacked;$/;"	d
 rseg	vmm/guest/obj/net/ns.asm	/^      rseg = pcb->unacked;$/;"	d
 rsp	obj/kern/kernel.asm	/^			rsp = cfa;$/;"	d
@@ -14131,15 +14161,15 @@ rstate	net/lwip/netif/ppp/vj.h	/^  struct cstate rstate[MAX_SLOTS]; \/* receive 
 rt	net/lwip/include/lwip/snmp_msg.h	/^  u8_t rt;$/;"	m	struct:snmp_msg_pstat
 rt	obj/kern/kernel.asm	/^	rt = dbg->dbg_internal_reg_table;$/;"	d
 rt	vmm/guest/obj/kern/kernel.asm	/^	rt = dbg->dbg_internal_reg_table;$/;"	d
-rt3_cfa_rule	kern/dwarf.h	/^	Dwarf_Regtable_Entry3   rt3_cfa_rule;$/;"	m	struct:__anon50
-rt3_reg_table_size	kern/dwarf.h	/^	Dwarf_Half              rt3_reg_table_size;$/;"	m	struct:__anon50
-rt3_rules	kern/dwarf.h	/^	Dwarf_Regtable_Entry3   *rt3_rules;$/;"	m	struct:__anon50
+rt3_cfa_rule	kern/dwarf.h	/^	Dwarf_Regtable_Entry3   rt3_cfa_rule;$/;"	m	struct:__anon15
+rt3_reg_table_size	kern/dwarf.h	/^	Dwarf_Half              rt3_reg_table_size;$/;"	m	struct:__anon15
+rt3_rules	kern/dwarf.h	/^	Dwarf_Regtable_Entry3   *rt3_rules;$/;"	m	struct:__anon15
 rterr	net/lwip/include/lwip/stats.h	/^  STAT_COUNTER rterr;            \/* Routing error. *\/$/;"	m	struct:stats_proto
 rtime	net/lwip/include/lwip/tcp.h	/^  s16_t rtime;$/;"	m	struct:tcp_pcb
 rto	net/lwip/include/lwip/tcp.h	/^  s16_t rto;    \/* retransmission time-out *\/$/;"	m	struct:tcp_pcb
 rtseq	net/lwip/include/lwip/tcp.h	/^  u32_t rtseq;  \/* sequence number being timed *\/$/;"	m	struct:tcp_pcb
 rttest	net/lwip/include/lwip/tcp.h	/^  u32_t rttest; \/* RTT estimate in 500ms ticks *\/$/;"	m	struct:tcp_pcb
-rules	kern/dwarf.h	/^	Dwarf_Regtable_Entry rules[DW_REG_TABLE_SIZE];$/;"	m	struct:__anon52
+rules	kern/dwarf.h	/^	Dwarf_Regtable_Entry rules[DW_REG_TABLE_SIZE];$/;"	m	struct:__anon17
 runcmd	kern/monitor.c	/^runcmd(char *buf, struct Trapframe *tf)$/;"	f	file:
 runcmd	user/sh.c	/^runcmd(char* s)$/;"	f
 runit	obj/user/sh.asm	/^runit:$/;"	l
@@ -14147,7 +14177,7 @@ runit	vmm/guest/obj/user/sh.asm	/^runit:$/;"	l
 rx_data	kern/e1000.c	/^static char rx_data[RX_RING_SIZE][2048];$/;"	v	file:
 rx_desc	kern/e1000.c	/^struct rx_desc$/;"	s	file:
 rx_ring	kern/e1000.c	/^static struct rx_desc rx_ring[RX_RING_SIZE] __attribute__((aligned(16)));$/;"	v	typeref:struct:rx_desc	file:
-s	kern/dwarf.h	/^		char        *s;         \/* String. *\/$/;"	m	union:_Dwarf_Attribute::__anon56
+s	kern/dwarf.h	/^		char        *s;         \/* String. *\/$/;"	m	union:_Dwarf_Attribute::__anon21
 s	net/lwip/api/sockets.c	/^  int s;$/;"	m	struct:lwip_setgetsockopt_data	file:
 s	obj/fs/fs.asm	/^	s = src;$/;"	d
 s	obj/kern/kernel.asm	/^	s = src;$/;"	d
@@ -14216,7 +14246,7 @@ s	vmm/guest/obj/user/vmm.asm	/^	s = src;$/;"	d
 s	vmm/guest/obj/user/writemotd.asm	/^	s = src;$/;"	d
 s16_t	net/lwip/jos/arch/cc.h	/^typedef int16_t s16_t;$/;"	t
 s32_t	net/lwip/jos/arch/cc.h	/^typedef int32_t s32_t;$/;"	t
-s64	kern/dwarf.h	/^		int64_t     s64;        \/* Signed value. *\/$/;"	m	union:_Dwarf_Attribute::__anon56
+s64	kern/dwarf.h	/^		int64_t     s64;        \/* Signed value. *\/$/;"	m	union:_Dwarf_Attribute::__anon21
 s64_t	net/lwip/jos/arch/cc.h	/^typedef int64_t s64_t;$/;"	t
 s8_t	net/lwip/jos/arch/cc.h	/^typedef int8_t s8_t;$/;"	t
 s8_t	obj/net/ns.asm	/^s8_t$/;"	l
@@ -14469,34 +14499,34 @@ setsockopt	net/lwip/include/lwip/sockets.h	334;"	d
 setup_tcp	net/lwip/api/api_msg.c	/^setup_tcp(struct netconn *conn)$/;"	f	file:
 sfork	lib/fork.c	/^sfork(void)$/;"	f
 sh_addr	inc/elf.h	/^	uint64_t sh_addr;$/;"	m	struct:Secthdr
-sh_addr	kern/dwarf_elf.h	/^               uint64_t   sh_addr;$/;"	m	struct:__anon46
+sh_addr	kern/dwarf_elf.h	/^               uint64_t   sh_addr;$/;"	m	struct:__anon25
 sh_addr	kern/dwarf_elf.h	/^    uint32_t sh_addr;$/;"	m	struct:Secthdr
 sh_addralign	inc/elf.h	/^	uint64_t sh_addralign;$/;"	m	struct:Secthdr
-sh_addralign	kern/dwarf_elf.h	/^               uint64_t   sh_addralign;$/;"	m	struct:__anon46
+sh_addralign	kern/dwarf_elf.h	/^               uint64_t   sh_addralign;$/;"	m	struct:__anon25
 sh_addralign	kern/dwarf_elf.h	/^    uint32_t sh_addralign;$/;"	m	struct:Secthdr
 sh_entsize	inc/elf.h	/^	uint64_t sh_entsize;$/;"	m	struct:Secthdr
-sh_entsize	kern/dwarf_elf.h	/^               uint64_t   sh_entsize;$/;"	m	struct:__anon46
+sh_entsize	kern/dwarf_elf.h	/^               uint64_t   sh_entsize;$/;"	m	struct:__anon25
 sh_entsize	kern/dwarf_elf.h	/^    uint32_t sh_entsize;$/;"	m	struct:Secthdr
 sh_flags	inc/elf.h	/^	uint64_t sh_flags;$/;"	m	struct:Secthdr
-sh_flags	kern/dwarf_elf.h	/^               uint64_t   sh_flags;$/;"	m	struct:__anon46
+sh_flags	kern/dwarf_elf.h	/^               uint64_t   sh_flags;$/;"	m	struct:__anon25
 sh_flags	kern/dwarf_elf.h	/^    uint32_t sh_flags;$/;"	m	struct:Secthdr
 sh_info	inc/elf.h	/^	uint32_t sh_info;$/;"	m	struct:Secthdr
-sh_info	kern/dwarf_elf.h	/^               uint32_t   sh_info;$/;"	m	struct:__anon46
+sh_info	kern/dwarf_elf.h	/^               uint32_t   sh_info;$/;"	m	struct:__anon25
 sh_info	kern/dwarf_elf.h	/^    uint32_t sh_info;$/;"	m	struct:Secthdr
 sh_link	inc/elf.h	/^	uint32_t sh_link;$/;"	m	struct:Secthdr
-sh_link	kern/dwarf_elf.h	/^               uint32_t   sh_link;$/;"	m	struct:__anon46
+sh_link	kern/dwarf_elf.h	/^               uint32_t   sh_link;$/;"	m	struct:__anon25
 sh_link	kern/dwarf_elf.h	/^    uint32_t sh_link;$/;"	m	struct:Secthdr
 sh_name	inc/elf.h	/^	uint32_t sh_name;$/;"	m	struct:Secthdr
-sh_name	kern/dwarf_elf.h	/^               uint32_t   sh_name;$/;"	m	struct:__anon46
+sh_name	kern/dwarf_elf.h	/^               uint32_t   sh_name;$/;"	m	struct:__anon25
 sh_name	kern/dwarf_elf.h	/^    uint32_t sh_name;$/;"	m	struct:Secthdr
 sh_offset	inc/elf.h	/^	uint64_t sh_offset;$/;"	m	struct:Secthdr
-sh_offset	kern/dwarf_elf.h	/^               uint64_t   sh_offset;$/;"	m	struct:__anon46
+sh_offset	kern/dwarf_elf.h	/^               uint64_t   sh_offset;$/;"	m	struct:__anon25
 sh_offset	kern/dwarf_elf.h	/^    uint32_t sh_offset;$/;"	m	struct:Secthdr
 sh_size	inc/elf.h	/^	uint64_t sh_size;$/;"	m	struct:Secthdr
-sh_size	kern/dwarf_elf.h	/^               uint64_t   sh_size;$/;"	m	struct:__anon46
+sh_size	kern/dwarf_elf.h	/^               uint64_t   sh_size;$/;"	m	struct:__anon25
 sh_size	kern/dwarf_elf.h	/^    uint32_t sh_size;$/;"	m	struct:Secthdr
 sh_type	inc/elf.h	/^	uint32_t sh_type;$/;"	m	struct:Secthdr
-sh_type	kern/dwarf_elf.h	/^               uint32_t   sh_type;$/;"	m	struct:__anon46
+sh_type	kern/dwarf_elf.h	/^               uint32_t   sh_type;$/;"	m	struct:__anon25
 sh_type	kern/dwarf_elf.h	/^    uint32_t sh_type;$/;"	m	struct:Secthdr
 shiftcode	kern/console.c	/^static uint8_t shiftcode[256] =$/;"	v	file:
 shiftmap	kern/console.c	/^static uint8_t shiftmap[256] =$/;"	v	file:
@@ -15129,7 +15159,7 @@ stab_end	kern/kdebug.c	/^	const struct Stab *stab_end;$/;"	m	struct:UserStabData
 stabs	kern/kdebug.c	/^	const struct Stab *stabs;$/;"	m	struct:UserStabData	typeref:struct:UserStabData::Stab	file:
 stabstr	kern/kdebug.c	/^	const char *stabstr;$/;"	m	struct:UserStabData	file:
 stabstr_end	kern/kdebug.c	/^	const char *stabstr_end;$/;"	m	struct:UserStabData	file:
-stack_size	net/lwip/jos/arch/threadq.h	/^enum { stack_size = PGSIZE };$/;"	e	enum:__anon15
+stack_size	net/lwip/jos/arch/threadq.h	/^enum { stack_size = PGSIZE };$/;"	e	enum:__anon30
 stacktop	obj/net/ns.asm	/^    stacktop = stacktop - 8;$/;"	d
 stacktop	vmm/guest/obj/net/ns.asm	/^    stacktop = stacktop - 8;$/;"	d
 start	boot/boot.S	/^start:$/;"	l
@@ -15154,7 +15184,7 @@ state	net/lwip/include/ipv4/lwip/autoip.h	/^  u8_t state;               \/* curr
 state	net/lwip/include/lwip/api.h	/^  enum netconn_state state;$/;"	m	struct:netconn	typeref:enum:netconn::netconn_state
 state	net/lwip/include/lwip/dhcp.h	/^  u8_t state;$/;"	m	struct:dhcp
 state	net/lwip/include/lwip/netif.h	/^  void *state;$/;"	m	struct:netif
-state	net/lwip/include/lwip/netifapi.h	/^      void *state;$/;"	m	struct:netifapi_msg_msg::__anon24::__anon25
+state	net/lwip/include/lwip/netifapi.h	/^      void *state;$/;"	m	struct:netifapi_msg_msg::__anon46::__anon47
 state	net/lwip/include/lwip/snmp_msg.h	/^  u8_t state;$/;"	m	struct:snmp_msg_pstat
 state	net/lwip/netif/etharp.c	/^  enum etharp_state state;$/;"	m	struct:etharp_entry	typeref:enum:etharp_entry::etharp_state	file:
 state	net/lwip/netif/ppp/fsm.h	/^  int state;                       \/* State *\/$/;"	m	struct:fsm
@@ -16033,7 +16063,7 @@ tc_wakeup	net/lwip/jos/arch/threadq.h	/^    volatile char	tc_wakeup;$/;"	m	struc
 tclass1	net/lwip/include/ipv6/lwip/ip.h	/^  u8_t tclass1:4, v:4;$/;"	m	struct:ip_hdr
 tclass2	net/lwip/include/ipv6/lwip/ip.h	/^  u8_t flow1:4, tclass2:4;  $/;"	m	struct:ip_hdr
 tcp	net/lwip/core/snmp/mib2.c	/^const struct mib_array_node tcp = {$/;"	v	typeref:struct:mib_array_node
-tcp	net/lwip/include/lwip/api.h	/^    struct tcp_pcb *tcp;$/;"	m	union:netconn::__anon35	typeref:struct:netconn::__anon35::tcp_pcb
+tcp	net/lwip/include/lwip/api.h	/^    struct tcp_pcb *tcp;$/;"	m	union:netconn::__anon37	typeref:struct:netconn::__anon37::tcp_pcb
 tcp	net/lwip/include/lwip/stats.h	/^  struct stats_proto tcp;$/;"	m	struct:stats_	typeref:struct:stats_::stats_proto
 tcp_abort	net/lwip/core/tcp.c	/^tcp_abort(struct tcp_pcb *pcb)$/;"	f
 tcp_accept	net/lwip/core/tcp.c	/^tcp_accept(struct tcp_pcb *pcb,$/;"	f
@@ -16326,7 +16356,7 @@ thread_context	net/lwip/jos/arch/threadq.h	/^struct thread_context {$/;"	s
 thread_create	net/lwip/jos/arch/thread.c	/^thread_create(thread_id_t *tid, const char *name, $/;"	f
 thread_entry	net/lwip/jos/arch/thread.c	/^thread_entry(void) {$/;"	f	file:
 thread_halt	net/lwip/jos/arch/thread.c	/^thread_halt() {$/;"	f
-thread_hash_size	net/lwip/jos/arch/sys_arch.c	/^enum { thread_hash_size = 257 };$/;"	e	enum:__anon13	file:
+thread_hash_size	net/lwip/jos/arch/sys_arch.c	/^enum { thread_hash_size = 257 };$/;"	e	enum:__anon28	file:
 thread_id	net/lwip/jos/arch/thread.c	/^thread_id(void) {$/;"	f
 thread_id_t	net/lwip/jos/arch/thread.h	/^typedef uint32_t thread_id_t;$/;"	t
 thread_init	net/lwip/jos/arch/thread.c	/^thread_init(void) {$/;"	f
@@ -16382,7 +16412,7 @@ timeval	net/lwip/include/lwip/sockets.h	/^struct timeval {$/;"	s
 tlb_invalidate	kern/pmap.c	/^tlb_invalidate(pml4e_t *pml4e, void *va)$/;"	f
 tlbflush	inc/x86.h	/^tlbflush(void)$/;"	f
 tmain	net/serv.c	/^tmain(uint64_t arg) {$/;"	f	file:
-tmo	net/lwip/include/lwip/tcpip.h	/^    } tmo;$/;"	m	union:tcpip_msg::__anon38	typeref:struct:tcpip_msg::__anon38::__anon41
+tmo	net/lwip/include/lwip/tcpip.h	/^    } tmo;$/;"	m	union:tcpip_msg::__anon51	typeref:struct:tcpip_msg::__anon51::__anon54
 tmo	net/lwip/jos/arch/sys_arch.c	/^    struct sys_timeouts tmo;$/;"	m	struct:sys_thread	typeref:struct:sys_thread::sys_timeouts	file:
 tmp	obj/net/ns.asm	/^      tmp = r;$/;"	d
 tmp	obj/net/ns.asm	/^      tmp = tmp | IP_MF;$/;"	d
@@ -16423,7 +16453,7 @@ trapname	kern/trap.c	/^static const char *trapname(int trapno)$/;"	f	file:
 tree_levels	net/lwip/include/lwip/snmp_structs.h	/^  u8_t tree_levels;$/;"	m	struct:mib_external_node
 tried_llipaddr	net/lwip/include/ipv4/lwip/autoip.h	/^  u8_t tried_llipaddr;      \/* total number of probed\/used Link Local IP-Addresses *\/$/;"	m	struct:autoip
 tries	net/lwip/include/lwip/dhcp.h	/^  u8_t tries;$/;"	m	struct:dhcp
-true	inc/types.h	/^enum { false, true };$/;"	e	enum:__anon4
+true	inc/types.h	/^enum { false, true };$/;"	e	enum:__anon7
 try_again	obj/kern/kernel.asm	/^		try_again:$/;"	l
 try_again	vmm/guest/obj/kern/kernel.asm	/^		try_again:$/;"	l
 try_open	obj/fs/fs.asm	/^try_open:$/;"	l
@@ -16476,8 +16506,8 @@ type	vmm/guest/obj/net/ns.asm	/^      type = p->type;$/;"	d
 type	vmm/guest/obj/net/ns.asm	/^  type = *((u8_t *)p->payload);$/;"	d
 type	vmm/guest/obj/net/ns.asm	/^  type = p->type;$/;"	d
 type	vmm/guest/obj/user/httpd.asm	/^	type = mime_type(req->url);$/;"	d
-u	kern/dwarf.h	/^	} u[2];                 \/* Value. *\/$/;"	m	struct:_Dwarf_Attribute	typeref:union:_Dwarf_Attribute::__anon56
-u	kern/multiboot.h	/^   } u;$/;"	m	struct:multiboot_info	typeref:union:multiboot_info::__anon44
+u	kern/dwarf.h	/^	} u[2];                 \/* Value. *\/$/;"	m	struct:_Dwarf_Attribute	typeref:union:_Dwarf_Attribute::__anon21
+u	kern/multiboot.h	/^   } u;$/;"	m	struct:multiboot_info	typeref:union:multiboot_info::__anon12
 u16_t	net/lwip/jos/arch/cc.h	/^typedef uint16_t u16_t;$/;"	t
 u16_t	obj/net/ns.asm	/^u16_t$/;"	l
 u16_t	obj/net/testinput.asm	/^u16_t$/;"	l
@@ -16502,7 +16532,7 @@ u32_t	vmm/guest/obj/net/testinput.asm	/^u32_t$/;"	l
 u32_t	vmm/guest/obj/user/echosrv.asm	/^u32_t$/;"	l
 u32_t	vmm/guest/obj/user/echotest.asm	/^u32_t$/;"	l
 u32_t	vmm/guest/obj/user/httpd.asm	/^u32_t$/;"	l
-u64	kern/dwarf.h	/^		uint64_t    u64;        \/* Unsigned value. *\/$/;"	m	union:_Dwarf_Attribute::__anon56
+u64	kern/dwarf.h	/^		uint64_t    u64;        \/* Unsigned value. *\/$/;"	m	union:_Dwarf_Attribute::__anon21
 u64_t	net/lwip/jos/arch/cc.h	/^typedef uint64_t u64_t;$/;"	t
 u8_t	net/lwip/jos/arch/cc.h	/^typedef uint8_t u8_t;$/;"	t
 u8_t	obj/net/ns.asm	/^u8_t ip_addr_isbroadcast(struct ip_addr *addr, struct netif *netif)$/;"	l
@@ -16511,13 +16541,13 @@ u8_t	obj/net/ns.asm	/^u8_t$/;"	l
 u8_t	vmm/guest/obj/net/ns.asm	/^u8_t ip_addr_isbroadcast(struct ip_addr *addr, struct netif *netif)$/;"	l
 u8_t	vmm/guest/obj/net/ns.asm	/^u8_t netif_is_up(struct netif *netif)$/;"	l
 u8_t	vmm/guest/obj/net/ns.asm	/^u8_t$/;"	l
-u8p	kern/dwarf.h	/^		uint8_t     *u8p;       \/* Block data. *\/$/;"	m	union:_Dwarf_Attribute::__anon56
+u8p	kern/dwarf.h	/^		uint8_t     *u8p;       \/* Block data. *\/$/;"	m	union:_Dwarf_Attribute::__anon21
 u_char	net/lwip/netif/ppp/ppp.h	/^typedef unsigned char  u_char;$/;"	t
 u_int	net/lwip/netif/ppp/ppp.h	/^typedef unsigned int   u_int;$/;"	t
 u_long	net/lwip/netif/ppp/ppp.h	/^typedef unsigned long  u_long;$/;"	t
 u_short	net/lwip/netif/ppp/ppp.h	/^typedef unsigned short u_short;$/;"	t
 udp	net/lwip/core/snmp/mib2.c	/^const struct mib_array_node udp = {$/;"	v	typeref:struct:mib_array_node
-udp	net/lwip/include/lwip/api.h	/^    struct udp_pcb *udp;$/;"	m	union:netconn::__anon35	typeref:struct:netconn::__anon35::udp_pcb
+udp	net/lwip/include/lwip/api.h	/^    struct udp_pcb *udp;$/;"	m	union:netconn::__anon37	typeref:struct:netconn::__anon37::udp_pcb
 udp	net/lwip/include/lwip/stats.h	/^  struct stats_proto udp;$/;"	m	struct:stats_	typeref:struct:stats_::stats_proto
 udp_bind	net/lwip/core/udp.c	/^udp_bind(struct udp_pcb *pcb, struct ip_addr *ipaddr, u16_t port)$/;"	f
 udp_connect	net/lwip/core/udp.c	/^udp_connect(struct udp_pcb *pcb, struct ip_addr *ipaddr, u16_t port)$/;"	f
@@ -16720,6 +16750,7 @@ unknown_cfa	vmm/guest/obj/kern/kernel.asm	/^unknown_cfa:$/;"	l
 unlock_kernel	kern/spinlock.h	/^unlock_kernel(void)$/;"	f
 unsent	net/lwip/include/lwip/tcp.h	/^  struct tcp_seg *unsent;   \/* Unsent (queued) segments. *\/$/;"	m	struct:tcp_pcb	typeref:struct:tcp_pcb::tcp_seg
 unsigned	obj/fs/fs.asm	/^unsigned int$/;"	l
+unsigned	obj/kern/kernel.asm	/^unsigned char *vmcs_launch = NULL;$/;"	l
 unsigned	obj/kern/kernel.asm	/^unsigned int$/;"	l
 unsigned	obj/kern/kernel.asm	/^unsigned$/;"	l
 unsigned	obj/net/ns.asm	/^unsigned int$/;"	l
@@ -16757,6 +16788,7 @@ unsigned	obj/user/vmm.asm	/^unsigned int$/;"	l
 unsigned	obj/user/vmmanager.asm	/^unsigned int$/;"	l
 unsigned	obj/user/writemotd.asm	/^unsigned int$/;"	l
 unsigned	vmm/guest/obj/fs/fs.asm	/^unsigned int$/;"	l
+unsigned	vmm/guest/obj/kern/kernel.asm	/^unsigned char *vmcs_launch = NULL;$/;"	l
 unsigned	vmm/guest/obj/kern/kernel.asm	/^unsigned int$/;"	l
 unsigned	vmm/guest/obj/kern/kernel.asm	/^unsigned$/;"	l
 unsigned	vmm/guest/obj/net/ns.asm	/^unsigned int$/;"	l
@@ -16868,7 +16900,7 @@ utf_regs	inc/trap.h	/^	struct PushRegs utf_regs;$/;"	m	struct:UTrapframe	typeref
 utf_rip	inc/trap.h	/^	uintptr_t utf_rip;$/;"	m	struct:UTrapframe
 utf_rsp	inc/trap.h	/^	uintptr_t utf_rsp;$/;"	m	struct:UTrapframe
 v	net/lwip/include/ipv6/lwip/ip.h	/^  u8_t tclass1:4, v:4;$/;"	m	struct:ip_hdr
-v	net/lwip/jos/arch/sys_arch.c	/^	uint32_t v;$/;"	m	union:sys_sem_entry::__anon11	file:
+v	net/lwip/jos/arch/sys_arch.c	/^	uint32_t v;$/;"	m	union:sys_sem_entry::__anon26	file:
 v	obj/net/ns.asm	/^			v = mptr;$/;"	d
 v	obj/net/ns.asm	/^	v = mptr;$/;"	d
 v	obj/user/httpd.asm	/^			v = mptr;$/;"	d
@@ -17061,7 +17093,7 @@ vj_uncompress_err	net/lwip/netif/ppp/vj.c	/^vj_uncompress_err(struct vjcompress 
 vj_uncompress_tcp	net/lwip/netif/ppp/vj.c	/^vj_uncompress_tcp(struct pbuf **nb, struct vjcompress *comp)$/;"	f
 vj_uncompress_uncomp	net/lwip/netif/ppp/vj.c	/^vj_uncompress_uncomp(struct pbuf *nb, struct vjcompress *comp)$/;"	f
 vjcompress	net/lwip/netif/ppp/vj.h	/^struct vjcompress {$/;"	s
-vjcs_u	net/lwip/netif/ppp/vj.h	/^  } vjcs_u;$/;"	m	struct:cstate	typeref:union:cstate::__anon18
+vjcs_u	net/lwip/netif/ppp/vj.h	/^  } vjcs_u;$/;"	m	struct:cstate	typeref:union:cstate::__anon31
 vjs_compressed	net/lwip/netif/ppp/vj.h	/^  unsigned long vjs_compressed;     \/* outbound compressed packets *\/$/;"	m	struct:vjstat
 vjs_compressedin	net/lwip/netif/ppp/vj.h	/^  unsigned long vjs_compressedin;   \/* inbound compressed packets *\/$/;"	m	struct:vjstat
 vjs_errorin	net/lwip/netif/ppp/vj.h	/^  unsigned long vjs_errorin;        \/* inbound unknown type packets *\/$/;"	m	struct:vjstat
@@ -17076,15 +17108,240 @@ vlenlen	net/lwip/include/lwip/snmp_msg.h	/^  u8_t vlenlen;$/;"	m	struct:snmp_var
 vmcall	kern/init.c	/^int64_t vmcall(int num, int check, uint64_t a1, uint64_t a2, uint64_t a3, uint64_t a4, uint64_t a5)$/;"	f
 vmclear	vmm/vmx_asm.h	/^vmclear( physaddr_t vmcs_region ) {$/;"	f
 vmcs	inc/vmx.h	/^	uintptr_t *vmcs;$/;"	m	struct:VmxGuestInfo
+vmcs01	obj/kern/kernel.asm	/^	vmcs01 = (struct Vmcs *)page2kva(p1);$/;"	d
+vmcs01	vmm/guest/obj/kern/kernel.asm	/^	vmcs01 = (struct Vmcs *)page2kva(p1);$/;"	d
+vmcs01	vmm/vmx.c	/^struct Vmcs *vmcs01 = NULL;$/;"	v	typeref:struct:Vmcs
+vmcs02	obj/kern/kernel.asm	/^	vmcs02 = (struct Vmcs *)page2kva(p3);$/;"	d
+vmcs02	vmm/guest/obj/kern/kernel.asm	/^	vmcs02 = (struct Vmcs *)page2kva(p3);$/;"	d
+vmcs02	vmm/vmx.c	/^struct Vmcs *vmcs02 = NULL;$/;"	v	typeref:struct:Vmcs
+vmcs12	obj/kern/kernel.asm	/^	vmcs12 = (struct Vmcs *)page2kva(p2);$/;"	d
+vmcs12	vmm/guest/obj/kern/kernel.asm	/^	vmcs12 = (struct Vmcs *)page2kva(p2);$/;"	d
+vmcs12	vmm/vmx.c	/^struct Vmcs *vmcs12 = NULL;$/;"	v	typeref:struct:Vmcs
+vmcs2cache	vmm/vmexits.c	/^vmcs2cache(struct Vmcs *cache)$/;"	f
+vmcs_16bit_control_eptp_index	vmm/vmx.h	/^	uint16_t vmcs_16bit_control_eptp_index;$/;"	m	struct:Vmcs
+vmcs_16bit_control_posted_interrupt_vector	vmm/vmx.h	/^	uint16_t vmcs_16bit_control_posted_interrupt_vector;$/;"	m	struct:Vmcs
+vmcs_16bit_control_vpid	vmm/vmx.h	/^	uint16_t vmcs_16bit_control_vpid;$/;"	m	struct:Vmcs
+vmcs_16bit_guest_cs_selector	vmm/vmx.h	/^	uint16_t vmcs_16bit_guest_cs_selector;$/;"	m	struct:Vmcs
+vmcs_16bit_guest_ds_selector	vmm/vmx.h	/^	uint16_t vmcs_16bit_guest_ds_selector;$/;"	m	struct:Vmcs
+vmcs_16bit_guest_es_selector	vmm/vmx.h	/^	uint16_t vmcs_16bit_guest_es_selector;$/;"	m	struct:Vmcs
+vmcs_16bit_guest_fs_selector	vmm/vmx.h	/^	uint16_t vmcs_16bit_guest_fs_selector;$/;"	m	struct:Vmcs
+vmcs_16bit_guest_gs_selector	vmm/vmx.h	/^	uint16_t vmcs_16bit_guest_gs_selector;$/;"	m	struct:Vmcs
+vmcs_16bit_guest_interrupt_status	vmm/vmx.h	/^	uint16_t vmcs_16bit_guest_interrupt_status;$/;"	m	struct:Vmcs
+vmcs_16bit_guest_ldtr_selector	vmm/vmx.h	/^	uint16_t vmcs_16bit_guest_ldtr_selector;$/;"	m	struct:Vmcs
+vmcs_16bit_guest_ss_selector	vmm/vmx.h	/^	uint16_t vmcs_16bit_guest_ss_selector;$/;"	m	struct:Vmcs
+vmcs_16bit_guest_tr_selector	vmm/vmx.h	/^	uint16_t vmcs_16bit_guest_tr_selector;$/;"	m	struct:Vmcs
+vmcs_16bit_host_cs_selector	vmm/vmx.h	/^	uint16_t vmcs_16bit_host_cs_selector;$/;"	m	struct:Vmcs
+vmcs_16bit_host_ds_selector	vmm/vmx.h	/^	uint16_t vmcs_16bit_host_ds_selector;$/;"	m	struct:Vmcs
+vmcs_16bit_host_es_selector	vmm/vmx.h	/^	uint16_t vmcs_16bit_host_es_selector;$/;"	m	struct:Vmcs
+vmcs_16bit_host_fs_selector	vmm/vmx.h	/^	uint16_t vmcs_16bit_host_fs_selector;$/;"	m	struct:Vmcs
+vmcs_16bit_host_gs_selector	vmm/vmx.h	/^	uint16_t vmcs_16bit_host_gs_selector;$/;"	m	struct:Vmcs
+vmcs_16bit_host_ss_selector	vmm/vmx.h	/^	uint16_t vmcs_16bit_host_ss_selector;$/;"	m	struct:Vmcs
+vmcs_16bit_host_tr_selector	vmm/vmx.h	/^	uint16_t vmcs_16bit_host_tr_selector;$/;"	m	struct:Vmcs
+vmcs_32bit_control_cr3_target_count	vmm/vmx.h	/^	uint32_t vmcs_32bit_control_cr3_target_count;$/;"	m	struct:Vmcs
+vmcs_32bit_control_exception_bitmap	vmm/vmx.h	/^	uint32_t vmcs_32bit_control_exception_bitmap;$/;"	m	struct:Vmcs
+vmcs_32bit_control_page_fault_err_code_mask	vmm/vmx.h	/^	uint32_t vmcs_32bit_control_page_fault_err_code_mask;$/;"	m	struct:Vmcs
+vmcs_32bit_control_page_fault_err_code_match	vmm/vmx.h	/^	uint32_t vmcs_32bit_control_page_fault_err_code_match;$/;"	m	struct:Vmcs
+vmcs_32bit_control_pause_loop_exiting_gap	vmm/vmx.h	/^	uint32_t vmcs_32bit_control_pause_loop_exiting_gap;$/;"	m	struct:Vmcs
+vmcs_32bit_control_pause_loop_exiting_window	vmm/vmx.h	/^	uint32_t vmcs_32bit_control_pause_loop_exiting_window;$/;"	m	struct:Vmcs
+vmcs_32bit_control_pin_based_exec_controls	vmm/vmx.h	/^	uint32_t vmcs_32bit_control_pin_based_exec_controls;$/;"	m	struct:Vmcs
+vmcs_32bit_control_processor_based_vmexec_controls	vmm/vmx.h	/^	uint32_t vmcs_32bit_control_processor_based_vmexec_controls;$/;"	m	struct:Vmcs
+vmcs_32bit_control_secondary_vmexec_controls	vmm/vmx.h	/^	uint32_t vmcs_32bit_control_secondary_vmexec_controls;$/;"	m	struct:Vmcs
+vmcs_32bit_control_tpr_threshold	vmm/vmx.h	/^	uint32_t vmcs_32bit_control_tpr_threshold;$/;"	m	struct:Vmcs
+vmcs_32bit_control_vmentry_controls	vmm/vmx.h	/^	uint32_t vmcs_32bit_control_vmentry_controls;$/;"	m	struct:Vmcs
+vmcs_32bit_control_vmentry_exception_err_code	vmm/vmx.h	/^	uint32_t vmcs_32bit_control_vmentry_exception_err_code;$/;"	m	struct:Vmcs
+vmcs_32bit_control_vmentry_instruction_length	vmm/vmx.h	/^	uint32_t vmcs_32bit_control_vmentry_instruction_length;$/;"	m	struct:Vmcs
+vmcs_32bit_control_vmentry_interruption_info	vmm/vmx.h	/^	uint32_t vmcs_32bit_control_vmentry_interruption_info;$/;"	m	struct:Vmcs
+vmcs_32bit_control_vmentry_msr_load_count	vmm/vmx.h	/^	uint32_t vmcs_32bit_control_vmentry_msr_load_count;$/;"	m	struct:Vmcs
+vmcs_32bit_control_vmexit_controls	vmm/vmx.h	/^	uint32_t vmcs_32bit_control_vmexit_controls;$/;"	m	struct:Vmcs
+vmcs_32bit_control_vmexit_msr_load_count	vmm/vmx.h	/^	uint32_t vmcs_32bit_control_vmexit_msr_load_count;$/;"	m	struct:Vmcs
+vmcs_32bit_control_vmexit_msr_store_count	vmm/vmx.h	/^	uint32_t vmcs_32bit_control_vmexit_msr_store_count;$/;"	m	struct:Vmcs
+vmcs_32bit_guest_activity_state	vmm/vmx.h	/^	uint32_t vmcs_32bit_guest_activity_state;$/;"	m	struct:Vmcs
+vmcs_32bit_guest_cs_access_rights	vmm/vmx.h	/^	uint32_t vmcs_32bit_guest_cs_access_rights;$/;"	m	struct:Vmcs
+vmcs_32bit_guest_cs_limit	vmm/vmx.h	/^	uint32_t vmcs_32bit_guest_cs_limit;$/;"	m	struct:Vmcs
+vmcs_32bit_guest_ds_access_rights	vmm/vmx.h	/^	uint32_t vmcs_32bit_guest_ds_access_rights;$/;"	m	struct:Vmcs
+vmcs_32bit_guest_ds_limit	vmm/vmx.h	/^	uint32_t vmcs_32bit_guest_ds_limit;$/;"	m	struct:Vmcs
+vmcs_32bit_guest_es_access_rights	vmm/vmx.h	/^	uint32_t vmcs_32bit_guest_es_access_rights;$/;"	m	struct:Vmcs
+vmcs_32bit_guest_es_limit	vmm/vmx.h	/^	uint32_t vmcs_32bit_guest_es_limit;$/;"	m	struct:Vmcs
+vmcs_32bit_guest_fs_access_rights	vmm/vmx.h	/^	uint32_t vmcs_32bit_guest_fs_access_rights;$/;"	m	struct:Vmcs
+vmcs_32bit_guest_fs_limit	vmm/vmx.h	/^	uint32_t vmcs_32bit_guest_fs_limit;$/;"	m	struct:Vmcs
+vmcs_32bit_guest_gdtr_limit	vmm/vmx.h	/^	uint32_t vmcs_32bit_guest_gdtr_limit;$/;"	m	struct:Vmcs
+vmcs_32bit_guest_gs_access_rights	vmm/vmx.h	/^	uint32_t vmcs_32bit_guest_gs_access_rights;$/;"	m	struct:Vmcs
+vmcs_32bit_guest_gs_limit	vmm/vmx.h	/^	uint32_t vmcs_32bit_guest_gs_limit;$/;"	m	struct:Vmcs
+vmcs_32bit_guest_ia32_sysenter_cs_msr	vmm/vmx.h	/^	uint32_t vmcs_32bit_guest_ia32_sysenter_cs_msr;$/;"	m	struct:Vmcs
+vmcs_32bit_guest_idtr_limit	vmm/vmx.h	/^	uint32_t vmcs_32bit_guest_idtr_limit;$/;"	m	struct:Vmcs
+vmcs_32bit_guest_interruptibility_state	vmm/vmx.h	/^	uint32_t vmcs_32bit_guest_interruptibility_state;$/;"	m	struct:Vmcs
+vmcs_32bit_guest_ldtr_access_rights	vmm/vmx.h	/^	uint32_t vmcs_32bit_guest_ldtr_access_rights;$/;"	m	struct:Vmcs
+vmcs_32bit_guest_ldtr_limit	vmm/vmx.h	/^	uint32_t vmcs_32bit_guest_ldtr_limit;$/;"	m	struct:Vmcs
+vmcs_32bit_guest_preemption_timer_value	vmm/vmx.h	/^	uint32_t vmcs_32bit_guest_preemption_timer_value;$/;"	m	struct:Vmcs
+vmcs_32bit_guest_smbase	vmm/vmx.h	/^	uint32_t vmcs_32bit_guest_smbase;$/;"	m	struct:Vmcs
+vmcs_32bit_guest_ss_access_rights	vmm/vmx.h	/^	uint32_t vmcs_32bit_guest_ss_access_rights;$/;"	m	struct:Vmcs
+vmcs_32bit_guest_ss_limit	vmm/vmx.h	/^	uint32_t vmcs_32bit_guest_ss_limit;$/;"	m	struct:Vmcs
+vmcs_32bit_guest_tr_access_rights	vmm/vmx.h	/^	uint32_t vmcs_32bit_guest_tr_access_rights;$/;"	m	struct:Vmcs
+vmcs_32bit_guest_tr_limit	vmm/vmx.h	/^	uint32_t vmcs_32bit_guest_tr_limit;$/;"	m	struct:Vmcs
+vmcs_32bit_host_ia32_sysenter_cs_msr	vmm/vmx.h	/^	uint32_t vmcs_32bit_host_ia32_sysenter_cs_msr;$/;"	m	struct:Vmcs
+vmcs_32bit_idt_vectoring_err_code	vmm/vmx.h	/^	uint32_t vmcs_32bit_idt_vectoring_err_code;$/;"	m	struct:Vmcs
+vmcs_32bit_idt_vectoring_info	vmm/vmx.h	/^	uint32_t vmcs_32bit_idt_vectoring_info;$/;"	m	struct:Vmcs
+vmcs_32bit_instruction_error	vmm/vmx.h	/^	uint32_t vmcs_32bit_instruction_error;$/;"	m	struct:Vmcs
+vmcs_32bit_vmexit_instruction_info	vmm/vmx.h	/^	uint32_t vmcs_32bit_vmexit_instruction_info;$/;"	m	struct:Vmcs
+vmcs_32bit_vmexit_instruction_length	vmm/vmx.h	/^	uint32_t vmcs_32bit_vmexit_instruction_length;$/;"	m	struct:Vmcs
+vmcs_32bit_vmexit_interruption_err_code	vmm/vmx.h	/^	uint32_t vmcs_32bit_vmexit_interruption_err_code;$/;"	m	struct:Vmcs
+vmcs_32bit_vmexit_interruption_info	vmm/vmx.h	/^	uint32_t vmcs_32bit_vmexit_interruption_info;$/;"	m	struct:Vmcs
+vmcs_32bit_vmexit_reason	vmm/vmx.h	/^	uint32_t vmcs_32bit_vmexit_reason;$/;"	m	struct:Vmcs
+vmcs_64bit_control_apic_access_addr	vmm/vmx.h	/^	uint64_t vmcs_64bit_control_apic_access_addr;$/;"	m	struct:Vmcs
+vmcs_64bit_control_apic_access_addr_hi	vmm/vmx.h	/^	uint64_t vmcs_64bit_control_apic_access_addr_hi;$/;"	m	struct:Vmcs
+vmcs_64bit_control_eoi_exit_bitmap0	vmm/vmx.h	/^	uint64_t vmcs_64bit_control_eoi_exit_bitmap0;$/;"	m	struct:Vmcs
+vmcs_64bit_control_eoi_exit_bitmap0_hi	vmm/vmx.h	/^	uint64_t vmcs_64bit_control_eoi_exit_bitmap0_hi;$/;"	m	struct:Vmcs
+vmcs_64bit_control_eoi_exit_bitmap1	vmm/vmx.h	/^	uint64_t vmcs_64bit_control_eoi_exit_bitmap1;$/;"	m	struct:Vmcs
+vmcs_64bit_control_eoi_exit_bitmap1_hi	vmm/vmx.h	/^	uint64_t vmcs_64bit_control_eoi_exit_bitmap1_hi;$/;"	m	struct:Vmcs
+vmcs_64bit_control_eoi_exit_bitmap2	vmm/vmx.h	/^	uint64_t vmcs_64bit_control_eoi_exit_bitmap2;$/;"	m	struct:Vmcs
+vmcs_64bit_control_eoi_exit_bitmap2_hi	vmm/vmx.h	/^	uint64_t vmcs_64bit_control_eoi_exit_bitmap2_hi;$/;"	m	struct:Vmcs
+vmcs_64bit_control_eoi_exit_bitmap3	vmm/vmx.h	/^	uint64_t vmcs_64bit_control_eoi_exit_bitmap3;$/;"	m	struct:Vmcs
+vmcs_64bit_control_eoi_exit_bitmap3_hi	vmm/vmx.h	/^	uint64_t vmcs_64bit_control_eoi_exit_bitmap3_hi;$/;"	m	struct:Vmcs
+vmcs_64bit_control_eptp_list_address	vmm/vmx.h	/^	uint64_t vmcs_64bit_control_eptp_list_address;$/;"	m	struct:Vmcs
+vmcs_64bit_control_eptp_list_address_hi	vmm/vmx.h	/^	uint64_t vmcs_64bit_control_eptp_list_address_hi;$/;"	m	struct:Vmcs
+vmcs_64bit_control_eptptr	vmm/vmx.h	/^	uint64_t vmcs_64bit_control_eptptr;$/;"	m	struct:Vmcs
+vmcs_64bit_control_eptptr_hi	vmm/vmx.h	/^	uint64_t vmcs_64bit_control_eptptr_hi;$/;"	m	struct:Vmcs
+vmcs_64bit_control_executive_vmcs_ptr	vmm/vmx.h	/^	uint64_t vmcs_64bit_control_executive_vmcs_ptr;$/;"	m	struct:Vmcs
+vmcs_64bit_control_executive_vmcs_ptr_hi	vmm/vmx.h	/^	uint64_t vmcs_64bit_control_executive_vmcs_ptr_hi;$/;"	m	struct:Vmcs
+vmcs_64bit_control_io_bitmap_a	vmm/vmx.h	/^	uint64_t vmcs_64bit_control_io_bitmap_a;$/;"	m	struct:Vmcs
+vmcs_64bit_control_io_bitmap_a_hi	vmm/vmx.h	/^	uint64_t vmcs_64bit_control_io_bitmap_a_hi;$/;"	m	struct:Vmcs
+vmcs_64bit_control_io_bitmap_b	vmm/vmx.h	/^	uint64_t vmcs_64bit_control_io_bitmap_b;$/;"	m	struct:Vmcs
+vmcs_64bit_control_io_bitmap_b_hi	vmm/vmx.h	/^	uint64_t vmcs_64bit_control_io_bitmap_b_hi;$/;"	m	struct:Vmcs
+vmcs_64bit_control_msr_bitmaps	vmm/vmx.h	/^	uint64_t vmcs_64bit_control_msr_bitmaps;$/;"	m	struct:Vmcs
+vmcs_64bit_control_msr_bitmaps_hi	vmm/vmx.h	/^	uint64_t vmcs_64bit_control_msr_bitmaps_hi;$/;"	m	struct:Vmcs
+vmcs_64bit_control_posted_interrupt_desc_addr	vmm/vmx.h	/^	uint64_t vmcs_64bit_control_posted_interrupt_desc_addr;$/;"	m	struct:Vmcs
+vmcs_64bit_control_posted_interrupt_desc_addr_hi	vmm/vmx.h	/^	uint64_t vmcs_64bit_control_posted_interrupt_desc_addr_hi;$/;"	m	struct:Vmcs
+vmcs_64bit_control_tsc_offset	vmm/vmx.h	/^	uint64_t vmcs_64bit_control_tsc_offset;$/;"	m	struct:Vmcs
+vmcs_64bit_control_tsc_offset_hi	vmm/vmx.h	/^	uint64_t vmcs_64bit_control_tsc_offset_hi;$/;"	m	struct:Vmcs
+vmcs_64bit_control_ve_exception_info_addr	vmm/vmx.h	/^	uint64_t vmcs_64bit_control_ve_exception_info_addr;$/;"	m	struct:Vmcs
+vmcs_64bit_control_ve_exception_info_addr_hi	vmm/vmx.h	/^	uint64_t vmcs_64bit_control_ve_exception_info_addr_hi;$/;"	m	struct:Vmcs
+vmcs_64bit_control_virtual_apic_page_addr	vmm/vmx.h	/^	uint64_t vmcs_64bit_control_virtual_apic_page_addr;$/;"	m	struct:Vmcs
+vmcs_64bit_control_virtual_apic_page_addr_hi	vmm/vmx.h	/^	uint64_t vmcs_64bit_control_virtual_apic_page_addr_hi;$/;"	m	struct:Vmcs
+vmcs_64bit_control_vmentry_msr_load_addr	vmm/vmx.h	/^	uint64_t vmcs_64bit_control_vmentry_msr_load_addr;$/;"	m	struct:Vmcs
+vmcs_64bit_control_vmentry_msr_load_addr_hi	vmm/vmx.h	/^	uint64_t vmcs_64bit_control_vmentry_msr_load_addr_hi;$/;"	m	struct:Vmcs
+vmcs_64bit_control_vmexit_msr_load_addr	vmm/vmx.h	/^	uint64_t vmcs_64bit_control_vmexit_msr_load_addr;$/;"	m	struct:Vmcs
+vmcs_64bit_control_vmexit_msr_load_addr_hi	vmm/vmx.h	/^	uint64_t vmcs_64bit_control_vmexit_msr_load_addr_hi;$/;"	m	struct:Vmcs
+vmcs_64bit_control_vmexit_msr_store_addr	vmm/vmx.h	/^	uint64_t vmcs_64bit_control_vmexit_msr_store_addr;$/;"	m	struct:Vmcs
+vmcs_64bit_control_vmexit_msr_store_addr_hi	vmm/vmx.h	/^	uint64_t vmcs_64bit_control_vmexit_msr_store_addr_hi;$/;"	m	struct:Vmcs
+vmcs_64bit_control_vmfunc_ctrls	vmm/vmx.h	/^	uint64_t vmcs_64bit_control_vmfunc_ctrls;$/;"	m	struct:Vmcs
+vmcs_64bit_control_vmfunc_ctrls_hi	vmm/vmx.h	/^	uint64_t vmcs_64bit_control_vmfunc_ctrls_hi;$/;"	m	struct:Vmcs
+vmcs_64bit_control_vmread_bitmap_addr	vmm/vmx.h	/^	uint64_t vmcs_64bit_control_vmread_bitmap_addr;$/;"	m	struct:Vmcs
+vmcs_64bit_control_vmread_bitmap_addr_hi	vmm/vmx.h	/^	uint64_t vmcs_64bit_control_vmread_bitmap_addr_hi;$/;"	m	struct:Vmcs
+vmcs_64bit_control_vmwrite_bitmap_addr	vmm/vmx.h	/^	uint64_t vmcs_64bit_control_vmwrite_bitmap_addr;$/;"	m	struct:Vmcs
+vmcs_64bit_control_vmwrite_bitmap_addr_hi	vmm/vmx.h	/^	uint64_t vmcs_64bit_control_vmwrite_bitmap_addr_hi;$/;"	m	struct:Vmcs
+vmcs_64bit_guest_ia32_debugctl	vmm/vmx.h	/^	uint64_t vmcs_64bit_guest_ia32_debugctl;$/;"	m	struct:Vmcs
+vmcs_64bit_guest_ia32_debugctl_hi	vmm/vmx.h	/^	uint64_t vmcs_64bit_guest_ia32_debugctl_hi;$/;"	m	struct:Vmcs
+vmcs_64bit_guest_ia32_efer	vmm/vmx.h	/^	uint64_t vmcs_64bit_guest_ia32_efer;$/;"	m	struct:Vmcs
+vmcs_64bit_guest_ia32_efer_hi	vmm/vmx.h	/^	uint64_t vmcs_64bit_guest_ia32_efer_hi;$/;"	m	struct:Vmcs
+vmcs_64bit_guest_ia32_pat	vmm/vmx.h	/^	uint64_t vmcs_64bit_guest_ia32_pat;$/;"	m	struct:Vmcs
+vmcs_64bit_guest_ia32_pat_hi	vmm/vmx.h	/^	uint64_t vmcs_64bit_guest_ia32_pat_hi;$/;"	m	struct:Vmcs
+vmcs_64bit_guest_ia32_pdpte0	vmm/vmx.h	/^	uint64_t vmcs_64bit_guest_ia32_pdpte0;$/;"	m	struct:Vmcs
+vmcs_64bit_guest_ia32_pdpte0_hi	vmm/vmx.h	/^	uint64_t vmcs_64bit_guest_ia32_pdpte0_hi;$/;"	m	struct:Vmcs
+vmcs_64bit_guest_ia32_pdpte1	vmm/vmx.h	/^	uint64_t vmcs_64bit_guest_ia32_pdpte1;$/;"	m	struct:Vmcs
+vmcs_64bit_guest_ia32_pdpte1_hi	vmm/vmx.h	/^	uint64_t vmcs_64bit_guest_ia32_pdpte1_hi;$/;"	m	struct:Vmcs
+vmcs_64bit_guest_ia32_pdpte2	vmm/vmx.h	/^	uint64_t vmcs_64bit_guest_ia32_pdpte2;$/;"	m	struct:Vmcs
+vmcs_64bit_guest_ia32_pdpte2_hi	vmm/vmx.h	/^	uint64_t vmcs_64bit_guest_ia32_pdpte2_hi;$/;"	m	struct:Vmcs
+vmcs_64bit_guest_ia32_pdpte3	vmm/vmx.h	/^	uint64_t vmcs_64bit_guest_ia32_pdpte3;$/;"	m	struct:Vmcs
+vmcs_64bit_guest_ia32_pdpte3_hi	vmm/vmx.h	/^	uint64_t vmcs_64bit_guest_ia32_pdpte3_hi;	$/;"	m	struct:Vmcs
+vmcs_64bit_guest_ia32_perf_global_ctrl	vmm/vmx.h	/^	uint64_t vmcs_64bit_guest_ia32_perf_global_ctrl;$/;"	m	struct:Vmcs
+vmcs_64bit_guest_ia32_perf_global_ctrl_hi	vmm/vmx.h	/^	uint64_t vmcs_64bit_guest_ia32_perf_global_ctrl_hi;$/;"	m	struct:Vmcs
+vmcs_64bit_guest_link_pointer	vmm/vmx.h	/^	uint64_t vmcs_64bit_guest_link_pointer;$/;"	m	struct:Vmcs
+vmcs_64bit_guest_link_pointer_hi	vmm/vmx.h	/^	uint64_t vmcs_64bit_guest_link_pointer_hi;$/;"	m	struct:Vmcs
+vmcs_64bit_guest_physical_addr	vmm/vmx.h	/^	uint64_t vmcs_64bit_guest_physical_addr;$/;"	m	struct:Vmcs
+vmcs_64bit_guest_physical_addr_hi	vmm/vmx.h	/^	uint64_t vmcs_64bit_guest_physical_addr_hi;$/;"	m	struct:Vmcs
+vmcs_64bit_host_ia32_efer	vmm/vmx.h	/^	uint64_t vmcs_64bit_host_ia32_efer;$/;"	m	struct:Vmcs
+vmcs_64bit_host_ia32_efer_hi	vmm/vmx.h	/^	uint64_t vmcs_64bit_host_ia32_efer_hi;$/;"	m	struct:Vmcs
+vmcs_64bit_host_ia32_pat	vmm/vmx.h	/^	uint64_t vmcs_64bit_host_ia32_pat;$/;"	m	struct:Vmcs
+vmcs_64bit_host_ia32_pat_hi	vmm/vmx.h	/^	uint64_t vmcs_64bit_host_ia32_pat_hi;$/;"	m	struct:Vmcs
+vmcs_64bit_host_ia32_perf_global_ctrl	vmm/vmx.h	/^	uint64_t vmcs_64bit_host_ia32_perf_global_ctrl;$/;"	m	struct:Vmcs
+vmcs_64bit_host_ia32_perf_global_ctrl_hi	vmm/vmx.h	/^	uint64_t vmcs_64bit_host_ia32_perf_global_ctrl_hi;$/;"	m	struct:Vmcs
+vmcs_control_cr0_guest_host_mask	vmm/vmx.h	/^	uint64_t vmcs_control_cr0_guest_host_mask;$/;"	m	struct:Vmcs
+vmcs_control_cr0_read_shadow	vmm/vmx.h	/^	uint64_t vmcs_control_cr0_read_shadow;$/;"	m	struct:Vmcs
+vmcs_control_cr4_guest_host_mask	vmm/vmx.h	/^	uint64_t vmcs_control_cr4_guest_host_mask;$/;"	m	struct:Vmcs
+vmcs_control_cr4_read_shadow	vmm/vmx.h	/^	uint64_t vmcs_control_cr4_read_shadow;$/;"	m	struct:Vmcs
+vmcs_cr3_target0	vmm/vmx.h	/^	uint64_t vmcs_cr3_target0;$/;"	m	struct:Vmcs
+vmcs_cr3_target1	vmm/vmx.h	/^	uint64_t vmcs_cr3_target1;$/;"	m	struct:Vmcs
+vmcs_cr3_target2	vmm/vmx.h	/^	uint64_t vmcs_cr3_target2;$/;"	m	struct:Vmcs
+vmcs_cr3_target3	vmm/vmx.h	/^	uint64_t vmcs_cr3_target3;$/;"	m	struct:Vmcs
 vmcs_ctls_init	vmm/vmx.c	/^vmcs_ctls_init( struct Env* e ) {$/;"	f	file:
 vmcs_dump_cpu	vmm/vmx.c	/^void vmcs_dump_cpu() {$/;"	f
 vmcs_dump_cpu_1	vmm/vmx.c	/^void vmcs_dump_cpu_1()$/;"	f
+vmcs_guest_cr0	vmm/vmx.h	/^	uint64_t vmcs_guest_cr0;$/;"	m	struct:Vmcs
+vmcs_guest_cr3	vmm/vmx.h	/^	uint64_t vmcs_guest_cr3;$/;"	m	struct:Vmcs
+vmcs_guest_cs_base	vmm/vmx.h	/^	uint64_t vmcs_guest_cs_base;$/;"	m	struct:Vmcs
+vmcs_guest_dr7	vmm/vmx.h	/^	uint64_t vmcs_guest_dr7;$/;"	m	struct:Vmcs
+vmcs_guest_ds_base	vmm/vmx.h	/^	uint64_t vmcs_guest_ds_base;$/;"	m	struct:Vmcs
+vmcs_guest_es_base	vmm/vmx.h	/^	uint64_t vmcs_guest_es_base;$/;"	m	struct:Vmcs
+vmcs_guest_fs_base	vmm/vmx.h	/^	uint64_t vmcs_guest_fs_base;$/;"	m	struct:Vmcs
+vmcs_guest_gdtr_base	vmm/vmx.h	/^	uint64_t vmcs_guest_gdtr_base;$/;"	m	struct:Vmcs
+vmcs_guest_gs_base	vmm/vmx.h	/^	uint64_t vmcs_guest_gs_base;$/;"	m	struct:Vmcs
+vmcs_guest_ia32_sysenter_eip_msr	vmm/vmx.h	/^	uint64_t vmcs_guest_ia32_sysenter_eip_msr;$/;"	m	struct:Vmcs
+vmcs_guest_ia32_sysenter_esp_msr	vmm/vmx.h	/^	uint64_t vmcs_guest_ia32_sysenter_esp_msr;$/;"	m	struct:Vmcs
+vmcs_guest_idtr_base	vmm/vmx.h	/^	uint64_t vmcs_guest_idtr_base;$/;"	m	struct:Vmcs
 vmcs_guest_init	vmm/vmx.c	/^void vmcs_guest_init() {$/;"	f
+vmcs_guest_ldtr_base	vmm/vmx.h	/^	uint64_t vmcs_guest_ldtr_base;$/;"	m	struct:Vmcs
+vmcs_guest_linear_addr	vmm/vmx.h	/^	uint64_t vmcs_guest_linear_addr;$/;"	m	struct:Vmcs
+vmcs_guest_pending_dbg_exceptions	vmm/vmx.h	/^	uint64_t vmcs_guest_pending_dbg_exceptions;$/;"	m	struct:Vmcs
+vmcs_guest_rflags	vmm/vmx.h	/^	uint64_t vmcs_guest_rflags;$/;"	m	struct:Vmcs
+vmcs_guest_rip	vmm/vmx.h	/^	uint64_t vmcs_guest_rip;$/;"	m	struct:Vmcs
+vmcs_guest_rsp	vmm/vmx.h	/^	uint64_t vmcs_guest_rsp;$/;"	m	struct:Vmcs
+vmcs_guest_ss_base	vmm/vmx.h	/^	uint64_t vmcs_guest_ss_base;$/;"	m	struct:Vmcs
+vmcs_guest_tr_base	vmm/vmx.h	/^	uint64_t vmcs_guest_tr_base;$/;"	m	struct:Vmcs
+vmcs_host_cr0	vmm/vmx.h	/^	uint64_t vmcs_host_cr0;$/;"	m	struct:Vmcs
+vmcs_host_cr3	vmm/vmx.h	/^	uint64_t vmcs_host_cr3;$/;"	m	struct:Vmcs
+vmcs_host_cr4	vmm/vmx.h	/^	uint64_t vmcs_host_cr4;$/;"	m	struct:Vmcs
+vmcs_host_fs_base	vmm/vmx.h	/^	uint64_t vmcs_host_fs_base;$/;"	m	struct:Vmcs
+vmcs_host_gdtr_base	vmm/vmx.h	/^	uint64_t vmcs_host_gdtr_base;$/;"	m	struct:Vmcs
+vmcs_host_gs_base	vmm/vmx.h	/^	uint64_t vmcs_host_gs_base;$/;"	m	struct:Vmcs
+vmcs_host_ia32_sysenter_eip_msr	vmm/vmx.h	/^	uint64_t vmcs_host_ia32_sysenter_eip_msr;$/;"	m	struct:Vmcs
+vmcs_host_ia32_sysenter_esp_msr	vmm/vmx.h	/^	uint64_t vmcs_host_ia32_sysenter_esp_msr;$/;"	m	struct:Vmcs
+vmcs_host_idtr_base	vmm/vmx.h	/^	uint64_t vmcs_host_idtr_base;$/;"	m	struct:Vmcs
 vmcs_host_init	vmm/vmx.c	/^void vmcs_host_init() {$/;"	f
+vmcs_host_rip	vmm/vmx.h	/^	uint64_t vmcs_host_rip;$/;"	m	struct:Vmcs
+vmcs_host_rsp	vmm/vmx.h	/^	uint64_t vmcs_host_rsp;$/;"	m	struct:Vmcs
+vmcs_host_tr_base	vmm/vmx.h	/^	uint64_t vmcs_host_tr_base;$/;"	m	struct:Vmcs
+vmcs_init	vmm/vmx.c	/^void vmcs_init() {$/;"	f
+vmcs_io_rcx	vmm/vmx.h	/^	uint64_t vmcs_io_rcx;$/;"	m	struct:Vmcs
+vmcs_io_rdi	vmm/vmx.h	/^	uint64_t vmcs_io_rdi;$/;"	m	struct:Vmcs
+vmcs_io_rip	vmm/vmx.h	/^	uint64_t vmcs_io_rip;$/;"	m	struct:Vmcs
+vmcs_io_rsi	vmm/vmx.h	/^	uint64_t vmcs_io_rsi;$/;"	m	struct:Vmcs
+vmcs_launch	obj/kern/kernel.asm	/^	vmcs_launch = (unsigned char *) page2kva( p_vmxon_region );$/;"	d
+vmcs_launch	vmm/guest/obj/kern/kernel.asm	/^	vmcs_launch = (unsigned char *) page2kva( p_vmxon_region );$/;"	d
+vmcs_launch	vmm/vmx.c	/^unsigned char *vmcs_launch = NULL;$/;"	v
+vmcs_pin_based_vmexec_ctl_exintexit	vmm/vmx.h	/^	uint64_t vmcs_pin_based_vmexec_ctl_exintexit;$/;"	m	struct:Vmcs
+vmcs_pin_based_vmexec_ctl_nmiexit	vmm/vmx.h	/^	uint64_t vmcs_pin_based_vmexec_ctl_nmiexit;$/;"	m	struct:Vmcs
+vmcs_pin_based_vmexec_ctl_virtnmis	vmm/vmx.h	/^	uint64_t vmcs_pin_based_vmexec_ctl_virtnmis;$/;"	m	struct:Vmcs
+vmcs_proc_based_vmexec_ctl_activesecctl	vmm/vmx.h	/^	uint64_t vmcs_proc_based_vmexec_ctl_activesecctl;$/;"	m	struct:Vmcs
+vmcs_proc_based_vmexec_ctl_cr3loadexit	vmm/vmx.h	/^	uint64_t vmcs_proc_based_vmexec_ctl_cr3loadexit;$/;"	m	struct:Vmcs
+vmcs_proc_based_vmexec_ctl_cr3storeexit	vmm/vmx.h	/^	uint64_t vmcs_proc_based_vmexec_ctl_cr3storeexit;$/;"	m	struct:Vmcs
+vmcs_proc_based_vmexec_ctl_cr8loadexit	vmm/vmx.h	/^	uint64_t vmcs_proc_based_vmexec_ctl_cr8loadexit;$/;"	m	struct:Vmcs
+vmcs_proc_based_vmexec_ctl_cr8storeexit	vmm/vmx.h	/^	uint64_t vmcs_proc_based_vmexec_ctl_cr8storeexit;$/;"	m	struct:Vmcs
+vmcs_proc_based_vmexec_ctl_hltexit	vmm/vmx.h	/^	uint64_t vmcs_proc_based_vmexec_ctl_hltexit;$/;"	m	struct:Vmcs
+vmcs_proc_based_vmexec_ctl_intrwinexit	vmm/vmx.h	/^	uint64_t vmcs_proc_based_vmexec_ctl_intrwinexit;$/;"	m	struct:Vmcs
+vmcs_proc_based_vmexec_ctl_invlpgexit	vmm/vmx.h	/^	uint64_t vmcs_proc_based_vmexec_ctl_invlpgexit;$/;"	m	struct:Vmcs
+vmcs_proc_based_vmexec_ctl_monitorexit	vmm/vmx.h	/^	uint64_t vmcs_proc_based_vmexec_ctl_monitorexit;$/;"	m	struct:Vmcs
+vmcs_proc_based_vmexec_ctl_movdrexit	vmm/vmx.h	/^	uint64_t vmcs_proc_based_vmexec_ctl_movdrexit;$/;"	m	struct:Vmcs
+vmcs_proc_based_vmexec_ctl_mtf	vmm/vmx.h	/^	uint64_t vmcs_proc_based_vmexec_ctl_mtf;$/;"	m	struct:Vmcs
+vmcs_proc_based_vmexec_ctl_mwaitexit	vmm/vmx.h	/^	uint64_t vmcs_proc_based_vmexec_ctl_mwaitexit;$/;"	m	struct:Vmcs
+vmcs_proc_based_vmexec_ctl_nmiwinexit	vmm/vmx.h	/^	uint64_t vmcs_proc_based_vmexec_ctl_nmiwinexit;$/;"	m	struct:Vmcs
+vmcs_proc_based_vmexec_ctl_pauseexit	vmm/vmx.h	/^	uint64_t vmcs_proc_based_vmexec_ctl_pauseexit;$/;"	m	struct:Vmcs
+vmcs_proc_based_vmexec_ctl_rdpmcexit	vmm/vmx.h	/^	uint64_t vmcs_proc_based_vmexec_ctl_rdpmcexit;$/;"	m	struct:Vmcs
+vmcs_proc_based_vmexec_ctl_rdtscexit	vmm/vmx.h	/^	uint64_t vmcs_proc_based_vmexec_ctl_rdtscexit;$/;"	m	struct:Vmcs
+vmcs_proc_based_vmexec_ctl_uncondioexit	vmm/vmx.h	/^	uint64_t vmcs_proc_based_vmexec_ctl_uncondioexit;$/;"	m	struct:Vmcs
+vmcs_proc_based_vmexec_ctl_useiobmp	vmm/vmx.h	/^	uint64_t vmcs_proc_based_vmexec_ctl_useiobmp;$/;"	m	struct:Vmcs
+vmcs_proc_based_vmexec_ctl_usemsrbmp	vmm/vmx.h	/^	uint64_t vmcs_proc_based_vmexec_ctl_usemsrbmp;$/;"	m	struct:Vmcs
+vmcs_proc_based_vmexec_ctl_usetprshadow	vmm/vmx.h	/^	uint64_t vmcs_proc_based_vmexec_ctl_usetprshadow;$/;"	m	struct:Vmcs
+vmcs_proc_based_vmexec_ctl_usetscoff	vmm/vmx.h	/^	uint64_t vmcs_proc_based_vmexec_ctl_usetscoff;$/;"	m	struct:Vmcs
 vmcs_read16	vmm/vmx.h	/^static __inline uint16_t vmcs_read16(uint32_t field)$/;"	f
 vmcs_read32	vmm/vmx.h	/^static __inline uint32_t vmcs_read32(uint32_t field)$/;"	f
 vmcs_read64	vmm/vmx.h	/^static __inline uint64_t vmcs_read64(uint32_t field)$/;"	f
 vmcs_readl	vmm/vmx.h	/^static __inline uint64_t vmcs_readl(uint32_t field)$/;"	f
+vmcs_secondary_vmexec_ctl_enable_ept	vmm/vmx.h	/^	uint64_t vmcs_secondary_vmexec_ctl_enable_ept;$/;"	m	struct:Vmcs
+vmcs_secondary_vmexec_ctl_unrestricted_guest	vmm/vmx.h	/^	uint64_t vmcs_secondary_vmexec_ctl_unrestricted_guest;$/;"	m	struct:Vmcs
+vmcs_vmentry_x64_guest	vmm/vmx.h	/^	uint64_t vmcs_vmentry_x64_guest;$/;"	m	struct:Vmcs
+vmcs_vmexit_guest_ack_intr_on_exit	vmm/vmx.h	/^	uint64_t vmcs_vmexit_guest_ack_intr_on_exit;$/;"	m	struct:Vmcs
+vmcs_vmexit_host_addr_size	vmm/vmx.h	/^	uint64_t vmcs_vmexit_host_addr_size;$/;"	m	struct:Vmcs
+vmcs_vmexit_qualification	vmm/vmx.h	/^	uint64_t vmcs_vmexit_qualification;$/;"	m	struct:Vmcs
 vmcs_write16	vmm/vmx.h	/^static __inline uint8_t vmcs_write16( uint32_t field, uint16_t value) {$/;"	f
 vmcs_write32	vmm/vmx.h	/^static __inline uint8_t vmcs_write32( uint32_t field, uint32_t value ) {$/;"	f
 vmcs_write64	vmm/vmx.h	/^static __inline uint8_t vmcs_write64( uint32_t field, uint64_t value ) {$/;"	f
@@ -17094,6 +17351,7 @@ vmexit	vmm/vmx.c	/^void vmexit() {$/;"	f
 vmlaunch	vmm/vmx_asm.h	/^vmlaunch() {$/;"	f
 vmptrld	vmm/vmx_asm.h	/^vmptrld( physaddr_t vmcs_region ) {$/;"	f
 vmptrst	vmm/vmx_asm.h	/^vmptrst() {$/;"	f
+vmresume	vmm/vmx_asm.h	/^vmresume() {$/;"	f
 vmx_check_ept	vmm/vmx.c	/^bool vmx_check_ept() {$/;"	f
 vmx_check_support	vmm/vmx.c	/^bool vmx_check_support() {$/;"	f
 vmx_dump_dtsel	vmm/vmx.c	/^static void vmx_dump_dtsel(char *name, uint32_t limit)$/;"	f	file:
@@ -17115,9 +17373,11 @@ void	obj/fs/fs.asm	/^void *$/;"	l
 void	obj/fs/fs.asm	/^void printfmt(void (*putch)(int, void*), void *putdat, const char *fmt, ...);$/;"	l
 void	obj/fs/fs.asm	/^void$/;"	l
 void	obj/kern/kernel.asm	/^void	user_mem_assert(struct Env *env, const void *va, size_t len, int perm);$/;"	l
+void	obj/kern/kernel.asm	/^void $/;"	l
 void	obj/kern/kernel.asm	/^void *$/;"	l
 void	obj/kern/kernel.asm	/^void *mpentry_kstack;$/;"	l
 void	obj/kern/kernel.asm	/^void asm_vmrun(struct Trapframe *tf) {$/;"	l
+void	obj/kern/kernel.asm	/^void asm_vmrun_1(struct Trapframe *tf) {$/;"	l
 void	obj/kern/kernel.asm	/^void env_guest_free(struct Env *e) {$/;"	l
 void	obj/kern/kernel.asm	/^void ept_gpa2hva(epte_t* eptrt, void *gpa, void **hva) {$/;"	l
 void	obj/kern/kernel.asm	/^void find_debug_sections(uintptr_t elf) $/;"	l
@@ -17128,6 +17388,7 @@ void	obj/kern/kernel.asm	/^void vmcs_dump_cpu() {$/;"	l
 void	obj/kern/kernel.asm	/^void vmcs_dump_cpu_1()$/;"	l
 void	obj/kern/kernel.asm	/^void vmcs_guest_init() {$/;"	l
 void	obj/kern/kernel.asm	/^void vmcs_host_init() {$/;"	l
+void	obj/kern/kernel.asm	/^void vmcs_init() {$/;"	l
 void	obj/kern/kernel.asm	/^void vmexit() {$/;"	l
 void	obj/kern/kernel.asm	/^void vmx_list_vms() {$/;"	l
 void	obj/kern/kernel.asm	/^void vmx_read_capability_msr( uint32_t msr, uint32_t* hi, uint32_t* lo ) {$/;"	l
@@ -17243,9 +17504,11 @@ void	vmm/guest/obj/fs/fs.asm	/^void *$/;"	l
 void	vmm/guest/obj/fs/fs.asm	/^void printfmt(void (*putch)(int, void*), void *putdat, const char *fmt, ...);$/;"	l
 void	vmm/guest/obj/fs/fs.asm	/^void$/;"	l
 void	vmm/guest/obj/kern/kernel.asm	/^void	user_mem_assert(struct Env *env, const void *va, size_t len, int perm);$/;"	l
+void	vmm/guest/obj/kern/kernel.asm	/^void $/;"	l
 void	vmm/guest/obj/kern/kernel.asm	/^void *$/;"	l
 void	vmm/guest/obj/kern/kernel.asm	/^void *mpentry_kstack;$/;"	l
 void	vmm/guest/obj/kern/kernel.asm	/^void asm_vmrun(struct Trapframe *tf) {$/;"	l
+void	vmm/guest/obj/kern/kernel.asm	/^void asm_vmrun_1(struct Trapframe *tf) {$/;"	l
 void	vmm/guest/obj/kern/kernel.asm	/^void env_guest_free(struct Env *e) {$/;"	l
 void	vmm/guest/obj/kern/kernel.asm	/^void ept_gpa2hva(epte_t* eptrt, void *gpa, void **hva) {$/;"	l
 void	vmm/guest/obj/kern/kernel.asm	/^void find_debug_sections(uintptr_t elf) $/;"	l
@@ -17256,6 +17519,7 @@ void	vmm/guest/obj/kern/kernel.asm	/^void vmcs_dump_cpu() {$/;"	l
 void	vmm/guest/obj/kern/kernel.asm	/^void vmcs_dump_cpu_1()$/;"	l
 void	vmm/guest/obj/kern/kernel.asm	/^void vmcs_guest_init() {$/;"	l
 void	vmm/guest/obj/kern/kernel.asm	/^void vmcs_host_init() {$/;"	l
+void	vmm/guest/obj/kern/kernel.asm	/^void vmcs_init() {$/;"	l
 void	vmm/guest/obj/kern/kernel.asm	/^void vmexit() {$/;"	l
 void	vmm/guest/obj/kern/kernel.asm	/^void vmx_list_vms() {$/;"	l
 void	vmm/guest/obj/kern/kernel.asm	/^void vmx_read_capability_msr( uint32_t msr, uint32_t* hi, uint32_t* lo ) {$/;"	l
@@ -17345,7 +17609,7 @@ void	vmm/guest/obj/user/vmm.asm	/^void$/;"	l
 void	vmm/guest/obj/user/writemotd.asm	/^void *$/;"	l
 void	vmm/guest/obj/user/writemotd.asm	/^void printfmt(void (*putch)(int, void*), void *putdat, const char *fmt, ...);$/;"	l
 void	vmm/guest/obj/user/writemotd.asm	/^void$/;"	l
-voidfunc	net/lwip/include/lwip/netifapi.h	/^      void  (* voidfunc)(struct netif *netif);$/;"	m	struct:netifapi_msg_msg::__anon24::__anon26
+voidfunc	net/lwip/include/lwip/netifapi.h	/^      void  (* voidfunc)(struct netif *netif);$/;"	m	struct:netifapi_msg_msg::__anon46::__anon48
 volatile	obj/kern/kernel.asm	/^volatile uint32_t *lapic;$/;"	l
 volatile	vmm/guest/obj/kern/kernel.asm	/^volatile uint32_t *lapic;$/;"	l
 vpd_key0	kern/pcireg.h	/^	uint8_t		vpd_key0;$/;"	m	struct:pci_vpd
@@ -17357,11 +17621,11 @@ vpdres_len_lsb	kern/pcireg.h	/^	uint8_t		vpdres_len_lsb;		\/* length of data onl
 vpdres_len_msb	kern/pcireg.h	/^	uint8_t		vpdres_len_msb;$/;"	m	struct:pci_vpd_largeres
 vprintfmt	lib/printfmt.c	/^vprintfmt(void (*putch)(int, void*), void *putdat, const char *fmt, va_list ap)$/;"	f
 vsnprintf	lib/printfmt.c	/^vsnprintf(char *buf, int n, const char *fmt, va_list ap)$/;"	f
-w	net/lwip/include/lwip/api_msg.h	/^    } w;$/;"	m	union:api_msg_msg::__anon27	typeref:struct:api_msg_msg::__anon27::__anon31
+w	net/lwip/include/lwip/api_msg.h	/^    } w;$/;"	m	union:api_msg_msg::__anon38	typeref:struct:api_msg_msg::__anon38::__anon42
 wait	lib/wait.c	/^wait(envid_t envid)$/;"	f
 waitdisk	boot/main.c	/^waitdisk(void)$/;"	f
 waitdisk	kern/elf_rw.c	/^waitdisk(void)$/;"	f
-waiters	net/lwip/jos/arch/sys_arch.c	/^	    uint16_t waiters;$/;"	m	struct:sys_sem_entry::__anon11::__anon12	file:
+waiters	net/lwip/jos/arch/sys_arch.c	/^	    uint16_t waiters;$/;"	m	struct:sys_sem_entry::__anon26::__anon27	file:
 walk_path	fs/fs.c	/^walk_path(const char *path, struct File **pdir, struct File **pf, char *lastelem)$/;"	f	file:
 want	obj/user/init.asm	/^	want = 0xf989e;$/;"	d
 want	vmm/guest/obj/user/init.asm	/^	want = 0xf989e;$/;"	d
@@ -17563,7 +17827,7 @@ wnd	obj/net/ns.asm	/^  wnd = LWIP_MIN(pcb->snd_wnd, pcb->cwnd);$/;"	d
 wnd	vmm/guest/obj/net/ns.asm	/^  wnd = LWIP_MIN(pcb->snd_wnd, pcb->cwnd);$/;"	d
 word	net/lwip/netif/ppp/auth.c	/^  char        word[1];$/;"	m	struct:wordlist	file:
 wordlist	net/lwip/netif/ppp/auth.c	/^struct wordlist {$/;"	s	file:
-wpos	kern/console.c	/^	uint32_t wpos;$/;"	m	struct:__anon48	file:
+wpos	kern/console.c	/^	uint32_t wpos;$/;"	m	struct:__anon11	file:
 write	inc/fs.h	/^	} write;$/;"	m	union:Fsipc	typeref:struct:Fsipc::Fsreq_write
 write	lib/fd.c	/^write(int fdnum, const void *buf, size_t n)$/;"	f
 write	net/lwip/include/lwip/sockets.h	347;"	d

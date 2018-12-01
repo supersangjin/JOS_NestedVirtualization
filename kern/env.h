@@ -5,7 +5,6 @@
 #define JOS_KERN_ENV_H
 
 #include <inc/env.h>
-
 #include <kern/cpu.h>
 
 

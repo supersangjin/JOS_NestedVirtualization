@@ -42,6 +42,7 @@ void vmcs_guest_init();
 void vmcs_init();
 void asm_vmrun(struct Trapframe *tf);
 void asm_vmrun_L2(struct Trapframe *tf);
+void L1_handle_vmexit(struct Trapframe *tf);
 
 /* VMX Capalibility MSRs */
 #define IA32_VMX_BASIC 0X480

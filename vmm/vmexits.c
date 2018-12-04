@@ -142,9 +142,22 @@ bool
 handle_eptviolation(uint64_t *eptrt, struct VmxGuestInfo *ginfo) {
 	uint64_t gpa = vmcs_read64(VMCS_64BIT_GUEST_PHYSICAL_ADDR);
 	int r;
+#ifdef VMM_GUEST
+	// Allocate a new page to the guest.
+	struct PageInfo *p = page_alloc(0);
+	if(!p) {
+		cprintf("vmm: handle_eptviolation: Failed to allocate a page for guest---out of memory.\n");
+		return false;
+	}
+	p->pp_ref += 1;
+	r = ept_map_hva2gpa(eptrt, 
+				    page2kva(p), (void *)ROUNDDOWN(gpa, PGSIZE), __EPTE_FULL, 0);
+	assert(r >= 0);
+	uint64_t dummy = *(uint64_t *)page2kva(p);
 
-	cprintf("gpa %x\n", gpa);
-
+	cprintf("EPT violation for L2 gpa : %x mapped L1 gpa : %x\n", gpa, page2pa(p));
+		return true;
+#endif
 	if(gpa < 0xA0000 || (gpa >= 0x100000 && gpa < ginfo->phys_sz)) 
 
 	{
@@ -158,8 +171,7 @@ handle_eptviolation(uint64_t *eptrt, struct VmxGuestInfo *ginfo) {
 		r = ept_map_hva2gpa(eptrt, 
 				    page2kva(p), (void *)ROUNDDOWN(gpa, PGSIZE), __EPTE_FULL, 0);
 		assert(r >= 0);
-
-		//cprintf("EPT violation for gpa:%x mapped KVA:%x\n", gpa, page2kva(p));
+		//cprintf("EPT violation for L2 gpa : %x mapped L1 gpa : %x\n", gpa, page2pa(p));
 		return true;
 	} else if (gpa >= CGA_BUF && gpa < CGA_BUF + PGSIZE) {
 		// FIXME: This give direct access to VGA MMIO region.
@@ -443,10 +455,22 @@ handle_vmwrite(struct Trapframe *tf, struct VmxGuestInfo *gInfo)
     vmptrld(PADDR(L1_env->L2_vmcs));
    
     vmcs_writel(tf->tf_regs.reg_rdx, tf->tf_regs.reg_rax);
-
-    // change back to L1 vmcs region
+    
+	// change back to L1 vmcs region
     vmptrld(PADDR(L1_env->env_vmxinfo.vmcs));
     
+	tf->tf_rip += vmcs_read32(VMCS_32BIT_VMEXIT_INSTRUCTION_LENGTH);
+    return true;
+}
+
+bool
+handle_vmread(struct Trapframe *tf, struct VmxGuestInfo *gInfo)
+{
+	
+	vmptrld(PADDR(vmcs_launch));
+	tf->tf_regs.reg_rax = vmcs_read32(tf->tf_regs.reg_rdx);
+	vmptrld(PADDR(L1_env->env_vmxinfo.vmcs));
+
 	tf->tf_rip += vmcs_read32(VMCS_32BIT_VMEXIT_INSTRUCTION_LENGTH);
     return true;
 }
@@ -462,16 +486,18 @@ handle_vmlaunch(struct Trapframe *tf, struct VmxGuestInfo *gInfo)
 	uintptr_t *vmcs;
 	uintptr_t *msr_host_area;
 	uintptr_t *msr_guest_area;
+	void *hva;
+	void *hva_1;
+
+	tf->tf_rip += vmcs_read32(VMCS_32BIT_VMEXIT_INSTRUCTION_LENGTH);
 
 	vmcs2cache(vmcs01);
 	vmptrld(PADDR(L1_env->L2_vmcs));
 	vmcs2cache(vmcs12);
-	vmptrld(PADDR(L1_env->env_vmxinfo.vmcs));
 
-	//cache2vmcs_host(vmcs01);
-	//cache2vmcs_guest(vmcs12);
-	//cache2vmcs_ctl_host(vmcs01);
-	//cache2vmcs_ctl_guest(vmcs12);
+	vmptrld(PADDR(vmcs_launch));
+	cache2vmcs_host(vmcs01);
+	cache2vmcs_guest(vmcs12);
 
 	//EPT table construct
 	ept_01 = (pml4e_t *)(~0xfff & (uint64_t)KADDR((physaddr_t)vmcs01->vmcs_64bit_control_eptptr));
@@ -479,20 +505,55 @@ handle_vmlaunch(struct Trapframe *tf, struct VmxGuestInfo *gInfo)
 	ept_gpa2hva(ept_01, ept_12_L1_gpa, (void **)&ept_12);
 	ept_02 = ept_construct(ept_01, ept_12);
 
-
-	vmptrld(PADDR(vmcs_launch));
 	// Set EPT to VMCS02 
 	vmcs_write64( VMCS_64BIT_CONTROL_EPTPTR, PADDR(ept_02) | VMX_EPT_DEFAULT_MT | (VMX_EPT_DEFAULT_GAW << VMX_EPT_GAW_EPTP_SHIFT) );		
 	
     // vmlaunch to L2
-	tf->tf_rsp = vmcs_read64(VMCS_GUEST_RSP);
-	tf->tf_rip = vmcs_read64(VMCS_GUEST_RIP);
-	//vmcs_dump_cpu_1();
-	//print_trapframe(tf);
-	
-	asm_vmrun_L2( tf );
+	tf_L2->tf_rsp = vmcs_read64(VMCS_GUEST_RSP);
+	tf_L2->tf_rip = vmcs_read64(VMCS_GUEST_RIP);
+	tf_L2->tf_ds = 1;
+
+	cprintf("L0 -> L2\n");
+	asm_vmrun_L2( tf_L2 );
 	panic("vmlaunch should never return^^");
 }
+
+bool
+handle_vmresume(struct Trapframe *tf, struct VmxGuestInfo *gInfo)
+{
+	pml4e_t *ept_01 = NULL;
+	pml4e_t *ept_12_L1_gpa = NULL;
+	pml4e_t *ept_12 = NULL;
+	pml4e_t *ept_02 = NULL;
+	void *hva = NULL;
+
+	tf->tf_rip += vmcs_read32(VMCS_32BIT_VMEXIT_INSTRUCTION_LENGTH);
+	
+	vmcs2cache(vmcs01);
+	vmptrld(PADDR(L1_env->L2_vmcs));
+	vmcs2cache(vmcs12);
+	
+	vmptrld(PADDR(vmcs_launch));
+
+	// EPT table construct
+	ept_01 = (pml4e_t *)(~0xfff & (uint64_t)KADDR((physaddr_t)vmcs01->vmcs_64bit_control_eptptr));
+	ept_12_L1_gpa = (pml4e_t *)(~0xfff & (uint64_t)vmcs12->vmcs_64bit_control_eptptr);
+	ept_gpa2hva(ept_01, ept_12_L1_gpa, (void **)&ept_12);
+	ept_02 = ept_construct(ept_01, ept_12);
+
+	// Set EPT to VMCS02 
+	vmcs_write64( VMCS_64BIT_CONTROL_EPTPTR, PADDR(ept_02) | VMX_EPT_DEFAULT_MT | (VMX_EPT_DEFAULT_GAW << VMX_EPT_GAW_EPTP_SHIFT) );		
+	
+	// vmresume to L2
+	tf_L2->tf_rsp = vmcs_read64(VMCS_GUEST_RSP);
+	tf_L2->tf_rip = vmcs_read64(VMCS_GUEST_RIP);
+	tf_L2->tf_ds += 1;
+
+ 	cprintf("L0 -> L2\n");
+	asm_vmrun_L2( tf_L2 );
+	panic("vmresume should never return^^");
+}
+
 
 pml4e_t *
 ept_construct(pml4e_t *ept_01, pml4e_t *ept_12)
@@ -511,16 +572,20 @@ ept_construct(pml4e_t *ept_01, pml4e_t *ept_12)
 	memset(p_ept02, 0, sizeof(struct PageInfo));
 	ept_02 = page2kva(p_ept02);
 
-	for (p = JOS_ENTRY; p < JOS_ENTRY + GUEST_MEM_SZ * 2; p += PGSIZE)
+	
+	for (p = 0; p < JOS_ENTRY + GUEST_MEM_SZ * 2; p += PGSIZE)
 	{
 		pte_L1 = pml4e_walk_L1(ept_01 ,ept_12, (void *)p, 0);	
 		if (pte_L1 == NULL)
 			continue;
 
+		if (*pte_L1 == 0)
+			continue;
+
 		pte_L0 = pml4e_walk(ept_01, (void *)(*pte_L1), 0);
 		if (pte_L0 == NULL)
 			panic("L2 is not mapped to L0");
-
+		
 		if (ept_map_hva2gpa(ept_02, (void *)KADDR(*pte_L0), (void *)p, __EPTE_FULL, 0) < 0)
 			panic("-E_NO_MEM");
 	}
@@ -896,27 +961,6 @@ cache2vmcs_guest(struct Vmcs *cache)
 	vmcs_write64(VMCS_GUEST_PENDING_DBG_EXCEPTIONS, cache->vmcs_guest_pending_dbg_exceptions);
 	vmcs_write64(VMCS_GUEST_IA32_SYSENTER_ESP_MSR, cache->vmcs_guest_ia32_sysenter_esp_msr);
 	vmcs_write64(VMCS_GUEST_IA32_SYSENTER_EIP_MSR, cache->vmcs_guest_ia32_sysenter_eip_msr);
-}
-
-void
-cache2vmcs_ctl_host(struct Vmcs *cache)
-{
-
-
-
-}
-
-void
-cache2vmcs_ctl_guest(struct Vmcs *cache)
-{
-	vmcs_write64(VMCS_64BIT_CONTROL_VMENTRY_MSR_LOAD_ADDR, cache->vmcs_64bit_control_vmentry_msr_load_addr);
-	vmcs_write32(VMCS_32BIT_CONTROL_VMENTRY_MSR_LOAD_COUNT, cache->vmcs_32bit_control_vmentry_msr_load_count);
-	vmcs_write32(VMCS_32BIT_CONTROL_VMENTRY_CONTROLS, cache->vmcs_32bit_control_vmentry_controls);
-
-	vmcs_write32(VMCS_32BIT_CONTROL_EXCEPTION_BITMAP, cache->vmcs_32bit_control_exception_bitmap);
-	vmcs_write32(VMCS_64BIT_CONTROL_IO_BITMAP_A, cache->vmcs_64bit_control_io_bitmap_a);
-	vmcs_write64(VMCS_64BIT_CONTROL_IO_BITMAP_B, cache->vmcs_64bit_control_io_bitmap_b);
-
 }
 
 

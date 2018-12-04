@@ -12,7 +12,9 @@ bool handle_vmcall(struct Trapframe *tf, struct VmxGuestInfo *gInfo, uint64_t *e
 bool handle_vmclear(struct Trapframe *tf, struct VmxGuestInfo *gInfo);
 bool handle_vmptrld(struct Trapframe *tf, struct VmxGuestInfo *gInfo);
 bool handle_vmwrite(struct Trapframe *tf, struct VmxGuestInfo *gInfo);
+bool handle_vmread(struct Trapframe *tf, struct VmxGuestInfo *gInfo);
 bool handle_vmlaunch(struct Trapframe *tf, struct VmxGuestInfo *gInfo);
+bool handle_vmresume(struct Trapframe *tf, struct VmxGuestInfo *gInfo);
 extern struct Env *L1_env;
 extern struct Env *L2_env;
 void vmcs2cache(struct Vmcs *cache);
@@ -25,3 +27,4 @@ void cache2vmcs_ctl_host(struct Vmcs *cache);
 void cache2vmcs_ctl_guest(struct Vmcs *cache);
 pml4e_t *ept_construct(pml4e_t *ept_01, pml4e_t *ept_12);
 extern unsigned char *vmcs_launch; 
+extern struct Trapframe *tf_L2; 

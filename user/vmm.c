@@ -26,7 +26,6 @@ map_in_guest( envid_t guest, uintptr_t gpa, size_t memsz,
 	void* hva;	
 	envid_t host_env_id;
 	
-cprintf(" map in guest %x\n", gpa);	
     if (seek(fd, fileoffset) < 0)
 		return -E_NO_SYS;
 	

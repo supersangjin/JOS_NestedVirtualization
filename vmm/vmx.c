@@ -11,6 +11,7 @@
 #include <kern/pmap.h>
 #include <inc/string.h>
 #include <inc/memlayout.h>
+#include <inc/malloc.h>
 #include <kern/sched.h>
 #include <kern/env.h>
 #include <kern/trap.h>
@@ -24,12 +25,13 @@ struct Vmcs *vmcs01 = NULL;
 struct Vmcs *vmcs12 = NULL;
 struct Vmcs *vmcs02 = NULL;
 unsigned char *vmcs_launch = NULL;
-
+struct Trapframe *tf_L2 = NULL;
 
 void vmcs_init() {
 	struct PageInfo *p1 = NULL;
 	struct PageInfo *p2 = NULL;
 	struct PageInfo *p3 = NULL;
+	struct PageInfo *p4 = NULL;
 
 	if (!(p1 = page_alloc(ALLOC_ZERO)))
 		panic("-E_NO_MEM");
@@ -60,6 +62,14 @@ void vmcs_init() {
 	p_vmxon_region->pp_ref += 1; 
     
 	vmcs_launch = (unsigned char *) page2kva( p_vmxon_region );
+	
+	if (!(p4 = page_alloc(ALLOC_ZERO)))
+		panic("-E_NO_MEM");
+
+	memset(p4, 0, sizeof(struct PageInfo));
+	p4->pp_ref += 1;
+
+	tf_L2 = (struct Trapframe *)page2kva(p4);
 }
 
 void vmx_list_vms() {
@@ -440,7 +450,6 @@ vmcs_ctls_init( struct Env* e ) {
 		      entry_ctls_or & entry_ctls_and );
     
 	uint64_t ept_ptr = e->env_cr3 | ( ( EPT_LEVELS - 1 ) << 3 );
-	cprintf("ept_ptr %x\n", ept_ptr);
 	vmcs_write64( VMCS_64BIT_CONTROL_EPTPTR, ept_ptr 
         	    	| VMX_EPT_DEFAULT_MT
         	    	| (VMX_EPT_DEFAULT_GAW << VMX_EPT_GAW_EPTP_SHIFT) );
@@ -651,8 +660,6 @@ void vmexit() {
 	
 	// Get the reason for VMEXIT from the VMCS.
 	exit_reason = vmcs_read32(VMCS_32BIT_VMEXIT_REASON);
-	cprintf( "---VMEXIT Reason: %x---\n", exit_reason ); 
-	//print_trapframe(&curenv->env_tf);
 
 	switch(exit_reason & EXIT_REASON_MASK) {
     case EXIT_REASON_EXTERNAL_INT:
@@ -669,7 +676,14 @@ void vmexit() {
 	    exit_handled = handle_wrmsr(&curenv->env_tf, &curenv->env_vmxinfo);
 		break;
     case EXIT_REASON_EPT_VIOLATION:
+#ifdef VMM_GUEST
+		cprintf( "L2 -> L1 : VMEXIT due to EPT_VIOLATION\n" ); 
+#endif
 		exit_handled = handle_eptviolation(curenv->env_pml4e, &curenv->env_vmxinfo);
+#ifdef VMM_GUEST
+		if (exit_handled)
+			vmresume();
+#endif
 		break;
     case EXIT_REASON_IO_INSTRUCTION:
 		exit_handled = handle_ioinstr(&curenv->env_tf, &curenv->env_vmxinfo);
@@ -687,21 +701,67 @@ void vmexit() {
 		exit_handled = true;
 		break;
 	case EXIT_REASON_VMCLEAR:
-        cprintf("VMEXIT due to VMCLEAR\n");
+        cprintf("L1 -> L0 : VMEXIT due to VMCLEAR\n");
         exit_handled = handle_vmclear(&curenv->env_tf, &curenv->env_vmxinfo);
-        break;
+     	cprintf("L0 -> L1\n");
+		break;
 	case EXIT_REASON_VMPTRLD:
-        cprintf("VMEXIT due to VMPTRLD\n");
+        cprintf("L1 -> L0 : VMEXIT due to VMPTRLD\n");
         exit_handled = handle_vmptrld(&curenv->env_tf, &curenv->env_vmxinfo);
+		cprintf("L0 -> L1\n");
         break;
     case EXIT_REASON_VMWRITE:
-        //cprintf("VMEXIT due to VMWRITE\n");
+        cprintf("L1 -> L0 : VMEXIT due to VMWRITE\n");
         exit_handled = handle_vmwrite(&curenv->env_tf, &curenv->env_vmxinfo);
+		cprintf("L0 -> L1\n");
         break;
     case EXIT_REASON_VMLAUNCH:
-        cprintf("VMEXIT due to VMLAUNCH\n");
+        cprintf("L1 -> L0 : VMEXIT due to VMLAUNCH\n");
         exit_handled = handle_vmlaunch(&curenv->env_tf, &curenv->env_vmxinfo);
+		panic("handle vmlaunch does not return\n");
         break;
+	case EXIT_REASON_VMRESUME:
+        cprintf("L1 -> L0 : VMEXIT due to VMRESUME\n");
+        exit_handled = handle_vmresume(&curenv->env_tf, &curenv->env_vmxinfo);
+        panic("handle vmresume does not return");
+		break;
+	case EXIT_REASON_VMREAD:
+		cprintf("L1 -> L0 : VMEXIT due to VMREAD\n");
+		exit_handled = handle_vmread(&curenv->env_tf, &curenv->env_vmxinfo);
+		cprintf("L0 -> L1\n");
+		break;
+	}   
+	if(!exit_handled) {
+#ifdef VMM_GUEST
+		cprintf("unhandled VMEXIT, %x\n", exit_reason);
+		panic("good");
+#endif
+		cprintf( "Unhandled VMEXIT, aborting guest.\n" );
+		vmcs_dump_cpu();
+        env_destroy(curenv);
+	}
+#ifdef VMM_GUEST
+	vmexit();
+#endif
+	sched_yield();
+}
+
+void vmexit_L2() {
+	int exit_reason = -1;
+	bool exit_handled = false;
+	static uint32_t host_vector;
+	
+	// Get the reason for VMEXIT from the VMCS.
+	exit_reason = vmcs_read32(VMCS_32BIT_VMEXIT_REASON);
+	//cprintf( "---L2 VMEXIT Reason: %x---\n", exit_reason ); 
+	//print_trapframe(&curenv->env_tf);
+
+	switch(exit_reason & EXIT_REASON_MASK) {
+    case EXIT_REASON_EPT_VIOLATION:
+		cprintf("L2 -> L0 : VMEXIT due to EPT_VIOLATION\n");
+		exit_handled = true;
+		cprintf("L0 -> L1\n");
+		break;
     }   
 	if(!exit_handled) {
 		cprintf( "Unhandled VMEXIT, aborting guest.\n" );
@@ -714,16 +774,10 @@ void vmexit() {
 void asm_vmrun(struct Trapframe *tf) {
 	// NOTE: Since we re-use Trapframe structure, tf.tf_err contains the value
 	// of cr2 of the guest.
-    //cprintf("asm_run %x\n",curenv->env_runs);
 	tf->tf_ds = curenv->env_runs;
 	tf->tf_es = 0;
 	unlock_kernel();
-#ifndef VMM_GUEST	
-	if (curenv->env_runs == 1) {
-		vmcs_dump_cpu_1();
-		print_trapframe(tf);
-	}
-#endif
+
 	asm(
 		"push %%rdx; push %%rbp;"
 		"push %%rcx \n\t" /* placeholder for guest rcx */
@@ -751,12 +805,13 @@ void asm_vmrun(struct Trapframe *tf) {
 		 *       you can use register offset addressing mode, such as '%c[rax](%0)' 
 		 *       to simplify the pointer arithmetic.
 		 */
+		
 		/* Your code here */
 		"mov %c[launched](%0), %%rax \n\t"
 		"mov $1, %%rdx\n\t"
 		"cmp %%rdx, %%rax\n\t"
 		"jne .Lvmx_resume \n\t"	
-		
+	
 		/* Load guest general purpose registers from the trap frame.  Don't clobber flags. 
 		 *
 		 */
@@ -766,7 +821,6 @@ void asm_vmrun(struct Trapframe *tf) {
 		//"movw (%%rsp), %%es\n"
 		//"movw 8(%%rsp), %%ds\n"
 		"vmlaunch\n"
-		
 		
 		/* Your code heres
 		 * 
@@ -778,31 +832,29 @@ void asm_vmrun(struct Trapframe *tf) {
 		 * that you don't do any compareison that would clobber the condition code, set
 		 * above.
 		 */
-		
 		".Lvmx_resume: \n\t"
 		"movq %0, %%rsp\n"
 		POPA
 		//"movw (%%rsp), %%es\n"
 		//"movw 8(%%rsp), %%ds\n"
-		"vmresume\n"	
+		"vmresume\n\t"	
+		//".Lvmx_return: "
 		
 		".Lvmx_return: "
-		
 		/* POST VM EXIT... */
 		"mov %0, %c[wordsize](%%rsp) \n\t"
 		"pop %0 \n\t"
-		
+	
 		/* Save general purpose guest registers and cr2 back to the trapframe.
 		 *
 		 * Be careful that the number of pushes (above) and pops are symmetrical.
 		 */
 		/* Your code here */
 	     	//"\tmovw %%ds,128(%0)\n" 
-	     	//"\tmovw %%es,120(%0)\n" 
-	     	"\tmovq %%rax,112(%0)\n" \
-	     	"\tmovq %%rbx,104(%0)\n" \
-	     //	"\tmovq %%rcx,96(%0)\n" 
-	     	"\tmovq %%rdx,88(%0)\n" \
+			"\tmovq %%rax,112(%0)\n" \
+	     	"\tmovq %%rbx,104(%0)\n" 
+	     	//"\tmovq %%rcx,96(%0)\n" 
+	     	"\tmovq %%rdx,88(%0)\n" 
 	     	"\tmovq %%rbp,80(%0)\n" \
 	     	"\tmovq %%rdi,72(%0)\n" \
 	     	"\tmovq %%rsi,64(%0)\n" \
@@ -812,7 +864,7 @@ void asm_vmrun(struct Trapframe *tf) {
 	     	"\tmovq %%r11,32(%0)\n" \
 	     	"\tmovq %%r12,24(%0)\n" \
 	     	"\tmovq %%r13,16(%0)\n" \
-    	     	"\tmovq %%r14,8(%0)\n" \
+    	    "\tmovq %%r14,8(%0)\n" \
 	     	"\tmovq %%r15,0(%0)\n"	
 		
 		"mov %%cr2, %%rax\n"
@@ -847,6 +899,7 @@ void asm_vmrun(struct Trapframe *tf) {
 		  , "r8", "r9", "r10", "r11", "r12", "r13", "r14", "r15"
 	);
 	lock_kernel();
+	
 	if(tf->tf_es) {
         cprintf("error %d\n",tf->tf_es);
 		cprintf("Error during VMLAUNCH/VMRESUME\n");
@@ -860,16 +913,12 @@ void asm_vmrun(struct Trapframe *tf) {
 void asm_vmrun_L2(struct Trapframe *tf) {
 	// NOTE: Since we re-use Trapframe structure, tf.tf_err contains the value
 	// of cr2 of the guest.
-    cprintf("asm_run %x\n",curenv->env_runs);
-	tf->tf_ds = curenv->env_runs;
-	tf->tf_ds = 1;
 	tf->tf_es = 0;
 	unlock_kernel();
 	
 	uint64_t tmpl;
 	asm("movabs $.Lvmx_return_1, %0" : "=r"(tmpl));
 	vmcs_writel(VMCS_HOST_RIP, tmpl);
-	
 	asm(
 		"push %%rdx; push %%rbp;"
 		"push %%rcx \n\t" /* placeholder for guest rcx */
@@ -958,7 +1007,7 @@ void asm_vmrun_L2(struct Trapframe *tf) {
 	     	"\tmovq %%r11,32(%0)\n" \
 	     	"\tmovq %%r12,24(%0)\n" \
 	     	"\tmovq %%r13,16(%0)\n" \
-    	     	"\tmovq %%r14,8(%0)\n" \
+    	    "\tmovq %%r14,8(%0)\n" \
 	     	"\tmovq %%r15,0(%0)\n"	
 		
 		"mov %%cr2, %%rax\n"
@@ -993,14 +1042,13 @@ void asm_vmrun_L2(struct Trapframe *tf) {
 		  , "r8", "r9", "r10", "r11", "r12", "r13", "r14", "r15"
 	);
 	lock_kernel();
-	panic("good");
 	if(tf->tf_es) {
         cprintf("error %d\n",tf->tf_es);
 		cprintf("Error during VMLAUNCH/VMRESUME\n");
 	} else {
-		curenv->env_tf.tf_rsp = vmcs_read64(VMCS_GUEST_RSP);
-		curenv->env_tf.tf_rip = vmcs_read64(VMCS_GUEST_RIP);
-		vmexit();
+		tf->tf_rsp = vmcs_read64(VMCS_GUEST_RSP);
+		tf->tf_rip = vmcs_read64(VMCS_GUEST_RIP);
+		vmexit_L2();
 	}
 }
 void
@@ -1096,7 +1144,10 @@ int vmx_vmrun( struct Env *e ) {
 		memcpy(vmcs_launch, e->env_vmxinfo.vmcs, PGSIZE);
 		error = vmptrld(PADDR(e->env_vmxinfo.vmcs));
 	}
-#endif
 	asm_vmrun( &e->env_tf );    
+#else
+	vmlaunch();
+	vmexit();
+#endif
 	return 0;
 }
